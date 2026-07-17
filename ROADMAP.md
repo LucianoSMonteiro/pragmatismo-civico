@@ -45,8 +45,8 @@ Os documentos centrais devem ser coerentes entre si, compreensíveis ao público
 - [x] matriz de avaliação de políticas públicas;
 - [x] PPC-003 — avaliação técnica de alternativas;
 - [x] ficha prática de avaliação técnica;
-- [ ] PPC-004 — decisão e justificativa;
-- [ ] ficha prática de decisão e justificativa;
+- [x] PPC-004 — decisão e justificativa;
+- [x] ficha prática de decisão e justificativa;
 - [ ] modelo de teoria da mudança;
 - [ ] ficha de indicadores;
 - [ ] protocolo de revisão periódica;
@@ -144,15 +144,15 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. desenvolver o PPC-004 — decisão e justificativa;
-2. criar a ficha prática do PPC-004;
-3. desenvolver o modelo de teoria da mudança;
-4. criar a ficha padrão de indicadores;
-5. desenvolver o checklist de transparência e rastreabilidade;
-6. criar o modelo de relatório de decisão;
-7. estruturar o protocolo de avaliação do próprio framework;
-8. selecionar e documentar o primeiro estudo de caso demonstrativo;
-9. revisar a licença para distinguir documentação, ferramentas e eventual software.
+1. desenvolver o modelo de teoria da mudança;
+2. criar a ficha padrão de indicadores;
+3. desenvolver o protocolo de revisão periódica;
+4. desenvolver o checklist de transparência e rastreabilidade;
+5. criar o modelo consolidado de relatório de decisão;
+6. estruturar o protocolo de avaliação do próprio framework;
+7. selecionar e documentar o primeiro estudo de caso demonstrativo;
+8. revisar a licença para distinguir documentação, ferramentas e eventual software;
+9. preparar versões para impressão dos padrões e fichas.
 
 ## Controle de coerência
 
