@@ -23,6 +23,7 @@ Toda nova entrega deve ser verificada à luz do `FRAMEWORK_DE_REFERENCIA.md`, pr
 - [x] glossário oficial;
 - [x] código de conduta;
 - [x] guia de contribuição;
+- [x] teoria inicial do Pragmatismo Cívico e da capacidade institucional;
 - [ ] revisão da adequação da licença ao conteúdo e às ferramentas.
 
 ### Critério de conclusão
@@ -31,28 +32,31 @@ Os documentos centrais devem ser coerentes entre si, compreensíveis ao público
 
 ## Fase 2 — Metodologia aplicada
 
-**Objetivo:** transformar princípios em instrumentos de uso prático.
+**Objetivo:** transformar princípios em padrões e instrumentos de uso prático.
 
 ### Entregas previstas
 
 - [x] ciclo operacional do Pragmatismo Cívico;
+- [x] PPC-000 — especificação do ecossistema de padrões;
 - [x] PPC-001 — definição e diagnóstico de problemas públicos;
-- [x] matriz de avaliação de políticas públicas;
 - [x] ficha prática preenchível de problema público;
-- [ ] ficha de alternativas;
+- [x] PPC-002 — formulação e comparação de alternativas;
+- [x] matriz de avaliação de políticas públicas;
+- [ ] ficha preenchível de formulação e comparação de alternativas;
 - [ ] modelo de teoria da mudança;
 - [ ] ficha de indicadores;
 - [ ] protocolo de revisão periódica;
 - [ ] checklist de transparência e rastreabilidade;
-- [ ] modelo de relatório de decisão.
+- [ ] modelo de relatório de decisão;
+- [ ] protocolo de avaliação do próprio framework.
 
 ### Critério de conclusão
 
-Uma equipe externa deve conseguir utilizar os modelos para analisar uma política sem depender de orientação informal dos autores.
+Uma equipe externa deve conseguir utilizar os padrões e modelos para analisar uma política sem depender de orientação informal dos autores.
 
-## Fase 3 — Casos-piloto
+## Fase 3 — Casos-piloto e validação
 
-**Objetivo:** testar o framework em problemas concretos.
+**Objetivo:** testar o framework, suas hipóteses e suas ferramentas em problemas concretos.
 
 ### Domínios iniciais sugeridos
 
@@ -68,14 +72,16 @@ Uma equipe externa deve conseguir utilizar os modelos para analisar uma polític
 
 - seleção transparente de casos;
 - aplicação completa do ciclo de governança;
+- aplicação dos PPCs e ferramentas associados;
 - publicação de dados, hipóteses e limitações;
 - revisão independente;
+- avaliação da utilidade e do custo metodológico;
 - relatório de lições aprendidas;
 - atualização do framework com base nos testes.
 
 ### Critério de conclusão
 
-Ao menos três casos, em domínios distintos, devem produzir documentação auditável e melhorias identificáveis no método.
+Ao menos três casos, em domínios distintos, devem produzir documentação auditável, evidências sobre a utilidade do método e melhorias identificáveis no framework.
 
 ## Fase 4 — Comunidade e governança aberta
 
@@ -86,6 +92,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - processo formal de propostas de mudança;
 - governança de versões;
 - política de revisão e aprovação;
+- ciclo de vida formal dos PPCs;
 - conselho consultivo plural;
 - regras sobre conflitos de interesse;
 - fóruns de discussão pública;
@@ -102,10 +109,11 @@ O projeto deve conseguir receber, avaliar e incorporar contribuições sem perde
 ### Entregas previstas
 
 - portal no GitHub Pages;
-- biblioteca de documentos e ferramentas;
+- biblioteca de princípios, padrões e ferramentas;
 - painel de indicadores demonstrativo;
 - catálogo de estudos de caso;
 - versões para impressão;
+- Livro Base do Pragmatismo Cívico;
 - materiais educativos;
 - tradução para outros idiomas.
 
@@ -132,14 +140,15 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. criar a ficha de formulação e comparação de alternativas;
+1. criar a ficha preenchível de formulação e comparação de alternativas;
 2. desenvolver o modelo de teoria da mudança;
 3. criar a ficha padrão de indicadores;
 4. desenvolver o checklist de transparência e rastreabilidade;
 5. criar o modelo de relatório de decisão;
-6. selecionar e documentar o primeiro estudo de caso demonstrativo;
-7. revisar a licença para distinguir documentação, ferramentas e eventual software;
-8. preparar a estrutura do portal.
+6. estruturar o protocolo de avaliação do próprio framework;
+7. selecionar e documentar o primeiro estudo de caso demonstrativo;
+8. revisar a licença para distinguir documentação, ferramentas e eventual software;
+9. preparar a estrutura do portal e do Livro Base.
 
 ## Controle de coerência
 
@@ -150,9 +159,11 @@ Antes de iniciar uma nova entrega, deve-se verificar:
 3. se já existe documento com a mesma função;
 4. se a nova estrutura simplifica ou complica o uso do framework;
 5. se a mudança exige atualização de documentos relacionados;
-6. se há impactos sobre direitos, transparência, auditabilidade ou neutralidade partidária.
+6. se há impactos sobre direitos, transparência, auditabilidade ou neutralidade partidária;
+7. como sua utilidade poderá ser testada;
+8. qual custo metodológico introduz.
 
-Mudanças no núcleo normativo devem ser raras, justificadas e explicitamente versionadas. Ferramentas e aplicações podem evoluir mais rapidamente, desde que não redefinam a essência do projeto.
+Mudanças no núcleo normativo devem ser raras, justificadas e explicitamente versionadas. Padrões, ferramentas e aplicações podem evoluir mais rapidamente, desde que não redefinam a essência do projeto.
 
 ## Princípios de execução do roadmap
 
@@ -161,7 +172,8 @@ Mudanças no núcleo normativo devem ser raras, justificadas e explicitamente ve
 - testar antes de escalar;
 - declarar limitações;
 - preservar abertura à revisão;
-- evitar crescimento institucional sem capacidade real;
+- preservar memória institucional;
+- evitar crescimento sem capacidade real;
 - medir o valor público produzido pelo próprio projeto;
 - rejeitar complexidade sem utilidade prática;
 - preservar os princípios fundadores em toda expansão.
@@ -169,10 +181,10 @@ Mudanças no núcleo normativo devem ser raras, justificadas e explicitamente ve
 ## Versionamento sugerido
 
 - `0.1` — fundação conceitual e arquitetura de referência;
-- `0.2` — ferramentas metodológicas iniciais;
-- `0.3` — primeiros casos-piloto;
+- `0.2` — padrões e ferramentas metodológicas iniciais;
+- `0.3` — primeiros casos-piloto e validação;
 - `0.4` — governança comunitária;
-- `0.5` — portal e biblioteca pública;
+- `0.5` — portal, biblioteca pública e Livro Base;
 - `1.0` — framework estável, testado e documentado.
 
 Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prático e contribuições públicas fundamentadas, sem descaracterizar o núcleo fundador do Pragmatismo Cívico.
