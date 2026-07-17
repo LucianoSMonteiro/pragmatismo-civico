@@ -58,6 +58,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
+extra_css:
+  - docs/assets/stylesheets/extra.css
+
 nav:
   - Início: README.md
   - Começar: docs/COMECAR.md
