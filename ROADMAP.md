@@ -20,9 +20,9 @@ Toda nova entrega deve ser verificada à luz do `FRAMEWORK_DE_REFERENCIA.md`, pr
 - [x] modelo de governança;
 - [x] estrutura de indicadores;
 - [x] roadmap inicial;
-- [ ] glossário oficial;
-- [ ] código de conduta;
-- [ ] guia de contribuição;
+- [x] glossário oficial;
+- [x] código de conduta;
+- [x] guia de contribuição;
 - [ ] revisão da adequação da licença ao conteúdo e às ferramentas.
 
 ### Critério de conclusão
@@ -130,12 +130,12 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. criar `GLOSSARIO.md`;
-2. criar `CONTRIBUTING.md`;
-3. criar `CODE_OF_CONDUCT.md`;
-4. revisar a licença para distinguir documentação, ferramentas e eventual software;
-5. desenvolver a matriz de avaliação de políticas;
-6. criar fichas práticas do ciclo de governança;
+1. revisar a licença para distinguir documentação, ferramentas e eventual software;
+2. desenvolver a matriz de avaliação de políticas públicas;
+3. criar a ficha padrão de problema público;
+4. criar a ficha de alternativas;
+5. criar a ficha padrão de indicadores;
+6. desenvolver o checklist de transparência;
 7. criar o primeiro estudo de caso demonstrativo;
 8. preparar a estrutura do portal.
 
