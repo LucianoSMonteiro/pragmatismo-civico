@@ -81,6 +81,7 @@ O projeto é desenvolvido em cinco níveis:
 
 - [`CICLO_DO_PRAGMATISMO_CIVICO.md`](CICLO_DO_PRAGMATISMO_CIVICO.md) — ciclo operacional de diagnóstico, decisão, implementação, avaliação e melhoria.
 - [`PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md`](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md) — padrão para definir e diagnosticar problemas públicos.
+- [`FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md`](FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md) — formulário prático preenchível para aplicar, revisar e auditar o PPC-001.
 - [`MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md`](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md) — instrumento para comparar alternativas com critérios, pesos, evidências, riscos e análise de sensibilidade.
 
 ### Planejamento e licença
@@ -90,11 +91,11 @@ O projeto é desenvolvido em cinco níveis:
 
 ## Próximas entregas
 
-- ficha prática preenchível para diagnóstico de problemas públicos;
 - ficha de formulação e comparação de alternativas;
 - modelo de teoria da mudança;
 - ficha padrão de indicadores;
 - checklist de transparência e rastreabilidade;
+- modelo de relatório de decisão;
 - primeiro estudo de caso demonstrativo;
 - revisão do modelo de licenciamento.
 
