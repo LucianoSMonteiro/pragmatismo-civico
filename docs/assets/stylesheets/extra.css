@@ -1,0 +1,67 @@
+:root {
+  --pc-radius: 0.75rem;
+}
+
+.pc-hero {
+  padding: 1.5rem 0 0.5rem;
+}
+
+.pc-hero h1 {
+  margin-bottom: 0.25rem;
+}
+
+.pc-tagline {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.pc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pc-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--pc-radius);
+  padding: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.pc-card h3 {
+  margin-top: 0;
+}
+
+.pc-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.pc-step {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pc-arrow {
+  opacity: 0.55;
+}
+
+.pc-status {
+  border-left: 0.25rem solid var(--md-primary-fg-color);
+  padding: 0.75rem 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 0 var(--pc-radius) var(--pc-radius) 0;
+}
