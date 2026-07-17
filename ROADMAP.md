@@ -38,7 +38,7 @@ Os documentos centrais devem ser coerentes entre si, compreensíveis ao público
 - [x] ciclo operacional do Pragmatismo Cívico;
 - [x] PPC-001 — definição e diagnóstico de problemas públicos;
 - [x] matriz de avaliação de políticas públicas;
-- [ ] ficha prática preenchível de problema público;
+- [x] ficha prática preenchível de problema público;
 - [ ] ficha de alternativas;
 - [ ] modelo de teoria da mudança;
 - [ ] ficha de indicadores;
@@ -132,15 +132,14 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. criar a ficha prática preenchível do PPC-001;
-2. criar a ficha de formulação e comparação de alternativas;
-3. desenvolver o modelo de teoria da mudança;
-4. criar a ficha padrão de indicadores;
-5. desenvolver o checklist de transparência e rastreabilidade;
-6. criar o modelo de relatório de decisão;
-7. selecionar e documentar o primeiro estudo de caso demonstrativo;
-8. revisar a licença para distinguir documentação, ferramentas e eventual software;
-9. preparar a estrutura do portal.
+1. criar a ficha de formulação e comparação de alternativas;
+2. desenvolver o modelo de teoria da mudança;
+3. criar a ficha padrão de indicadores;
+4. desenvolver o checklist de transparência e rastreabilidade;
+5. criar o modelo de relatório de decisão;
+6. selecionar e documentar o primeiro estudo de caso demonstrativo;
+7. revisar a licença para distinguir documentação, ferramentas e eventual software;
+8. preparar a estrutura do portal.
 
 ## Controle de coerência
 
