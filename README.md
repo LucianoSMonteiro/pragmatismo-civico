@@ -33,6 +33,8 @@ Contribuir para uma sociedade em que decisões públicas sejam tomadas com base 
 
 > O Pragmatismo Cívico não pergunta de onde veio uma ideia. Pergunta se ela funciona, se pode ser medida, se respeita direitos e se melhora a vida das pessoas.
 
+> Toda decisão pública é uma hipótese que deve ser testada, medida, revisada e aperfeiçoada em benefício das pessoas.
+
 ## O que não somos
 
 O Pragmatismo Cívico não pertence à esquerda, à direita, ao centro político, a governos ou a partidos.
@@ -63,23 +65,38 @@ O projeto é desenvolvido em cinco níveis:
 
 ## Documentos atuais
 
+### Fundação e governança
+
 - [`FRAMEWORK_DE_REFERENCIA.md`](FRAMEWORK_DE_REFERENCIA.md) — arquitetura do conhecimento, hierarquia documental e teste de coerência.
 - [`SPECIFICATION.md`](SPECIFICATION.md) — especificação conceitual e critérios mínimos do framework.
-- [`MANIFESTO.md`](MANIFESTO.md) — apresentação pública da visão do movimento.
+- [`MANIFESTO.md`](MANIFESTO.md) — apresentação pública da visão do projeto.
 - [`CARTA_DE_PRINCIPIOS.md`](CARTA_DE_PRINCIPIOS.md) — princípios fundamentais e compromissos normativos.
-- [`MODELO_DE_GOVERNANCA.md`](MODELO_DE_GOVERNANCA.md) — ciclo prático de formulação, execução, avaliação e revisão.
+- [`MODELO_DE_GOVERNANCA.md`](MODELO_DE_GOVERNANCA.md) — fundamentos de formulação, execução, avaliação e revisão.
 - [`INDICADORES.md`](INDICADORES.md) — estrutura de mensuração e cadeia de resultados.
+- [`GLOSSARIO.md`](GLOSSARIO.md) — definições oficiais dos principais termos.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — regras para contribuições e preservação da coerência.
+- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — padrões de convivência, integridade e debate.
+
+### Método e ferramentas
+
+- [`CICLO_DO_PRAGMATISMO_CIVICO.md`](CICLO_DO_PRAGMATISMO_CIVICO.md) — ciclo operacional de diagnóstico, decisão, implementação, avaliação e melhoria.
+- [`PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md`](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md) — padrão para definir e diagnosticar problemas públicos.
+- [`MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md`](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md) — instrumento para comparar alternativas com critérios, pesos, evidências, riscos e análise de sensibilidade.
+
+### Planejamento e licença
+
 - [`ROADMAP.md`](ROADMAP.md) — etapas previstas para evolução do projeto.
 - [`LICENSE`](LICENSE) — licença atualmente adotada pelo repositório.
 
 ## Próximas entregas
 
-- glossário oficial;
-- guia de contribuição;
-- código de conduta;
-- matriz de avaliação de políticas públicas;
-- fichas práticas de diagnóstico, alternativas, decisão e revisão;
-- primeiros estudos de caso.
+- ficha prática preenchível para diagnóstico de problemas públicos;
+- ficha de formulação e comparação de alternativas;
+- modelo de teoria da mudança;
+- ficha padrão de indicadores;
+- checklist de transparência e rastreabilidade;
+- primeiro estudo de caso demonstrativo;
+- revisão do modelo de licenciamento.
 
 ## Licença e colaboração
 
