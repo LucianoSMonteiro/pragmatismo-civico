@@ -4,9 +4,11 @@
 
 Este roadmap organiza a evolução do Pragmatismo Cívico de uma base conceitual para um framework aberto, testável e aplicável em contextos reais.
 
+Toda nova entrega deve ser verificada à luz do `FRAMEWORK_DE_REFERENCIA.md`, preservando a essência e os princípios fundadores do projeto.
+
 ## Fase 1 — Fundação conceitual
 
-**Objetivo:** consolidar identidade, princípios e método.
+**Objetivo:** consolidar identidade, princípios, arquitetura documental e método.
 
 ### Entregas
 
@@ -14,17 +16,18 @@ Este roadmap organiza a evolução do Pragmatismo Cívico de uma base conceitual
 - [x] especificação inicial;
 - [x] manifesto;
 - [x] carta de princípios;
+- [x] framework de referência e regra de preservação da essência;
 - [x] modelo de governança;
 - [x] estrutura de indicadores;
 - [x] roadmap inicial;
 - [ ] glossário oficial;
 - [ ] código de conduta;
 - [ ] guia de contribuição;
-- [ ] licença adequada ao conteúdo e às ferramentas.
+- [ ] revisão da adequação da licença ao conteúdo e às ferramentas.
 
 ### Critério de conclusão
 
-Os documentos centrais devem ser coerentes entre si, compreensíveis ao público e suficientemente precisos para orientar contribuições.
+Os documentos centrais devem ser coerentes entre si, compreensíveis ao público e suficientemente precisos para orientar contribuições sem permitir que a expansão do projeto altere silenciosamente seus princípios fundadores.
 
 ## Fase 2 — Metodologia aplicada
 
@@ -130,10 +133,24 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 1. criar `GLOSSARIO.md`;
 2. criar `CONTRIBUTING.md`;
 3. criar `CODE_OF_CONDUCT.md`;
-4. definir licença;
+4. revisar a licença para distinguir documentação, ferramentas e eventual software;
 5. desenvolver a matriz de avaliação de políticas;
-6. criar o primeiro estudo de caso demonstrativo;
-7. preparar a estrutura do portal.
+6. criar fichas práticas do ciclo de governança;
+7. criar o primeiro estudo de caso demonstrativo;
+8. preparar a estrutura do portal.
+
+## Controle de coerência
+
+Antes de iniciar uma nova entrega, deve-se verificar:
+
+1. qual princípio fundador ela concretiza;
+2. qual problema prático resolve;
+3. se já existe documento com a mesma função;
+4. se a nova estrutura simplifica ou complica o uso do framework;
+5. se a mudança exige atualização de documentos relacionados;
+6. se há impactos sobre direitos, transparência, auditabilidade ou neutralidade partidária.
+
+Mudanças no núcleo normativo devem ser raras, justificadas e explicitamente versionadas. Ferramentas e aplicações podem evoluir mais rapidamente, desde que não redefinam a essência do projeto.
 
 ## Princípios de execução do roadmap
 
@@ -143,15 +160,17 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 - declarar limitações;
 - preservar abertura à revisão;
 - evitar crescimento institucional sem capacidade real;
-- medir o valor público produzido pelo próprio projeto.
+- medir o valor público produzido pelo próprio projeto;
+- rejeitar complexidade sem utilidade prática;
+- preservar os princípios fundadores em toda expansão.
 
 ## Versionamento sugerido
 
-- `0.1` — fundação conceitual;
+- `0.1` — fundação conceitual e arquitetura de referência;
 - `0.2` — ferramentas metodológicas iniciais;
 - `0.3` — primeiros casos-piloto;
 - `0.4` — governança comunitária;
 - `0.5` — portal e biblioteca pública;
 - `1.0` — framework estável, testado e documentado.
 
-Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prático e contribuições públicas fundamentadas.
+Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prático e contribuições públicas fundamentadas, sem descaracterizar o núcleo fundador do Pragmatismo Cívico.
