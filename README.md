@@ -2,9 +2,9 @@
 
 ## Uma abordagem aberta de governança orientada por resultados
 
-O **Pragmatismo Cívico** é um framework aberto de governança baseado em evidências, resultados, transparência, responsabilidade, cooperação e melhoria contínua.
+O **Pragmatismo Cívico** é um framework aberto para decisões de interesse público baseado em evidências, resultados, transparência, responsabilidade, cooperação e melhoria contínua.
 
-Seu objetivo é desenvolver princípios, métodos e ferramentas para orientar decisões públicas capazes de melhorar concretamente a qualidade de vida, promover desenvolvimento sustentável e fortalecer a responsabilidade institucional.
+Seu objetivo é desenvolver princípios, métodos e ferramentas para orientar decisões capazes de melhorar concretamente a qualidade de vida, promover desenvolvimento sustentável e fortalecer a capacidade institucional de aprender.
 
 > A qualidade de uma política pública deve ser medida pelos resultados que produz para a sociedade, e não pela ideologia que a originou.
 
@@ -14,7 +14,7 @@ Desenvolver uma metodologia aberta de governança que ajude governos, instituiç
 
 ## Visão
 
-Contribuir para uma sociedade em que decisões públicas sejam tomadas com base em conhecimento, evidências, responsabilidade e compromisso permanente com a melhoria da vida das pessoas.
+Contribuir para uma sociedade em que decisões de interesse público sejam tomadas com base em conhecimento, evidências, responsabilidade e compromisso permanente com a melhoria da vida das pessoas.
 
 ## Princípios fundamentais
 
@@ -35,9 +35,11 @@ Contribuir para uma sociedade em que decisões públicas sejam tomadas com base 
 
 > Toda decisão pública é uma hipótese que deve ser testada, medida, revisada e aperfeiçoada em benefício das pessoas.
 
+> Decidir com evidências. Agir com responsabilidade. Aprender continuamente.
+
 ## O que não somos
 
-O Pragmatismo Cívico não pertence à esquerda, à direita, ao centro político, a governos ou a partidos.
+O Pragmatismo Cívico não é uma ideologia, doutrina, partido ou filosofia política. Também não pertence à esquerda, à direita, ao centro político, a governos ou a partidos.
 
 Ele existe como uma proposta cívica aberta, voltada às pessoas e ao interesse público. Nenhuma pessoa ou instituição pode reivindicar exclusividade sobre o framework.
 
@@ -53,21 +55,23 @@ Toda expansão do projeto deve concretizar os princípios fundadores, e não red
 
 O documento central para essa verificação é o [`FRAMEWORK_DE_REFERENCIA.md`](FRAMEWORK_DE_REFERENCIA.md).
 
-## Estrutura do projeto
+## Arquitetura do conhecimento
 
-O projeto é desenvolvido em cinco níveis:
+O projeto é desenvolvido em seis camadas:
 
-1. **Filosofia** — propósito, visão, missão, valores e limites.
-2. **Metodologia** — critérios para tomada de decisão e avaliação de políticas públicas.
-3. **Domínios de aplicação** — educação, saúde, segurança, mobilidade, habitação, meio ambiente, economia, cidades inteligentes e transformação digital.
-4. **Ferramentas** — matrizes de avaliação, indicadores, modelos de auditoria e guias práticos.
-5. **Comunidade** — contribuições abertas, debates fundamentados e evolução versionada do framework.
+1. **Identidade** — propósito, visão, missão, princípios e limites.
+2. **Teoria** — capacidade institucional, governança adaptativa, valor público e aprendizado.
+3. **Especificação** — arquitetura, requisitos e regras de coerência do framework.
+4. **Padrões PPC** — métodos reproduzíveis para etapas do processo decisório.
+5. **Ferramentas** — fichas, matrizes, indicadores, checklists e modelos.
+6. **Aplicações** — estudos de caso, pilotos, avaliações e lições aprendidas.
 
 ## Documentos atuais
 
-### Fundação e governança
+### Fundação, teoria e governança
 
 - [`FRAMEWORK_DE_REFERENCIA.md`](FRAMEWORK_DE_REFERENCIA.md) — arquitetura do conhecimento, hierarquia documental e teste de coerência.
+- [`TEORIA_DO_PRAGMATISMO_CIVICO.md`](TEORIA_DO_PRAGMATISMO_CIVICO.md) — hipótese central, capacidade institucional, governança adaptativa, memória, aprendizado e validação.
 - [`SPECIFICATION.md`](SPECIFICATION.md) — especificação conceitual e critérios mínimos do framework.
 - [`MANIFESTO.md`](MANIFESTO.md) — apresentação pública da visão do projeto.
 - [`CARTA_DE_PRINCIPIOS.md`](CARTA_DE_PRINCIPIOS.md) — princípios fundamentais e compromissos normativos.
@@ -77,10 +81,15 @@ O projeto é desenvolvido em cinco níveis:
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) — regras para contribuições e preservação da coerência.
 - [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — padrões de convivência, integridade e debate.
 
-### Método e ferramentas
+### Padrões e método
 
 - [`CICLO_DO_PRAGMATISMO_CIVICO.md`](CICLO_DO_PRAGMATISMO_CIVICO.md) — ciclo operacional de diagnóstico, decisão, implementação, avaliação e melhoria.
+- [`PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md`](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) — regras comuns para criação, validação, versionamento e substituição dos padrões PPC.
 - [`PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md`](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md) — padrão para definir e diagnosticar problemas públicos.
+- [`PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md`](PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md) — padrão para gerar, descrever e comparar alternativas, incluindo inação, riscos e reversibilidade.
+
+### Ferramentas
+
 - [`FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md`](FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md) — formulário prático preenchível para aplicar, revisar e auditar o PPC-001.
 - [`MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md`](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md) — instrumento para comparar alternativas com critérios, pesos, evidências, riscos e análise de sensibilidade.
 
@@ -91,11 +100,12 @@ O projeto é desenvolvido em cinco níveis:
 
 ## Próximas entregas
 
-- ficha de formulação e comparação de alternativas;
+- ficha preenchível de formulação e comparação de alternativas;
 - modelo de teoria da mudança;
 - ficha padrão de indicadores;
 - checklist de transparência e rastreabilidade;
 - modelo de relatório de decisão;
+- protocolo de avaliação do próprio framework;
 - primeiro estudo de caso demonstrativo;
 - revisão do modelo de licenciamento.
 
