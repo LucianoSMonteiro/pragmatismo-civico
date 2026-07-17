@@ -41,8 +41,11 @@ Os documentos centrais devem ser coerentes entre si, compreensíveis ao público
 - [x] PPC-001 — definição e diagnóstico de problemas públicos;
 - [x] ficha prática preenchível de problema público;
 - [x] PPC-002 — formulação e comparação de alternativas;
+- [x] ficha preenchível de formulação e comparação de alternativas;
 - [x] matriz de avaliação de políticas públicas;
-- [ ] ficha preenchível de formulação e comparação de alternativas;
+- [x] PPC-003 — avaliação técnica de alternativas;
+- [ ] ficha prática de avaliação técnica;
+- [ ] PPC-004 — decisão e justificativa;
 - [ ] modelo de teoria da mudança;
 - [ ] ficha de indicadores;
 - [ ] protocolo de revisão periódica;
@@ -108,14 +111,14 @@ O projeto deve conseguir receber, avaliar e incorporar contribuições sem perde
 
 ### Entregas previstas
 
-- portal no GitHub Pages;
-- biblioteca de princípios, padrões e ferramentas;
-- painel de indicadores demonstrativo;
-- catálogo de estudos de caso;
-- versões para impressão;
-- Livro Base do Pragmatismo Cívico;
-- materiais educativos;
-- tradução para outros idiomas.
+- [x] estrutura inicial do portal no GitHub Pages;
+- [x] biblioteca navegável de princípios, padrões e ferramentas;
+- [ ] painel de indicadores demonstrativo;
+- [ ] catálogo de estudos de caso;
+- [ ] versões para impressão;
+- [ ] Livro Base do Pragmatismo Cívico;
+- [ ] materiais educativos;
+- [ ] tradução para outros idiomas.
 
 ### Critério de conclusão
 
@@ -140,15 +143,15 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. criar a ficha preenchível de formulação e comparação de alternativas;
-2. desenvolver o modelo de teoria da mudança;
-3. criar a ficha padrão de indicadores;
-4. desenvolver o checklist de transparência e rastreabilidade;
-5. criar o modelo de relatório de decisão;
-6. estruturar o protocolo de avaliação do próprio framework;
-7. selecionar e documentar o primeiro estudo de caso demonstrativo;
-8. revisar a licença para distinguir documentação, ferramentas e eventual software;
-9. preparar a estrutura do portal e do Livro Base.
+1. criar a ficha prática do PPC-003;
+2. desenvolver o PPC-004 — decisão e justificativa;
+3. desenvolver o modelo de teoria da mudança;
+4. criar a ficha padrão de indicadores;
+5. desenvolver o checklist de transparência e rastreabilidade;
+6. criar o modelo de relatório de decisão;
+7. estruturar o protocolo de avaliação do próprio framework;
+8. selecionar e documentar o primeiro estudo de caso demonstrativo;
+9. revisar a licença para distinguir documentação, ferramentas e eventual software.
 
 ## Controle de coerência
 
