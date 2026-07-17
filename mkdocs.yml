@@ -1,0 +1,84 @@
+site_name: Pragmatismo Cívico
+site_description: Framework aberto para decisões de interesse público baseadas em evidências
+site_url: https://lucianosmonteiro.github.io/pragmatismo-civico/
+repo_name: LucianoSMonteiro/pragmatismo-civico
+repo_url: https://github.com/LucianoSMonteiro/pragmatismo-civico
+edit_uri: edit/main/
+
+docs_dir: .
+site_dir: site
+
+exclude_docs: |
+  site/
+  .github/
+  .git/
+  LICENSE
+  requirements.txt
+
+copyright: Conteúdo aberto e versionado pela comunidade do Pragmatismo Cívico.
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Usar modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Usar modo claro
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Início: README.md
+  - Começar: docs/COMECAR.md
+  - O projeto:
+      - Framework de referência: FRAMEWORK_DE_REFERENCIA.md
+      - Teoria: TEORIA_DO_PRAGMATISMO_CIVICO.md
+      - Manifesto: MANIFESTO.md
+      - Carta de princípios: CARTA_DE_PRINCIPIOS.md
+      - Especificação: SPECIFICATION.md
+      - Glossário: GLOSSARIO.md
+  - Método:
+      - Ciclo do Pragmatismo Cívico: CICLO_DO_PRAGMATISMO_CIVICO.md
+      - PPC-000 — Ecossistema PPC: PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md
+      - PPC-001 — Diagnóstico: PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md
+      - PPC-002 — Alternativas: PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md
+  - Ferramentas:
+      - Ficha PPC-001: FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md
+      - Matriz de avaliação: MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md
+  - Governança:
+      - Modelo de governança: MODELO_DE_GOVERNANCA.md
+      - Indicadores: INDICADORES.md
+      - Como contribuir: CONTRIBUTING.md
+      - Código de conduta: CODE_OF_CONDUCT.md
+      - Roadmap: ROADMAP.md
