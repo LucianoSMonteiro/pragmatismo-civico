@@ -1,3 +1,37 @@
+---
+id: GOV-001
+titulo: Modelo de Governança do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: governanca
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+produz_entrada_para:
+  - PPC-001
+  - PPC-002
+  - PPC-003
+  - PPC-004
+  - PPC-005
+  - PPC-006
+  - PPC-007
+  - PPC-008
+relaciona_se_com:
+  - PPC-000
+  - PPC-000A
+  - PPC-META-001
+  - ARQ-001
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Modelo de Governança do Pragmatismo Cívico
 
 ## 1. Finalidade
@@ -139,3 +173,9 @@ O modelo não admite:
 ## 7. Regra de humildade institucional
 
 Toda decisão pública é tomada com conhecimento incompleto. Por isso, deve declarar suas hipóteses, permitir verificação e permanecer aberta à correção.
+
+## 8. Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem mudança substantiva do modelo | Projeto Pragmatismo Cívico |
