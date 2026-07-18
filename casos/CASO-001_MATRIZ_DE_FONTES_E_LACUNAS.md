@@ -1,7 +1,7 @@
 ---
 id: CASO-001-FONTES
 titulo: Matriz de Fontes e Lacunas do CASO-001
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -20,11 +20,12 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - CASOS-INDEX
+  - CASO-001-GEOMETRIA
   - PPC-001
   - MODELO-INDICADORES-001
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 issue_acompanhamento: 10
 estado_da_matriz: preparacao
@@ -34,7 +35,7 @@ estado_da_matriz: preparacao
 
 ## 1. Estado
 
-Esta matriz consolida as fontes públicas localizadas para preparar o CASO-001. Ela distingue comunicação institucional, norma, plano, cartografia e portal de dados; registra o que foi apenas localizado, o que pôde ser consultado e o que ainda precisa ser obtido integralmente.
+Esta matriz consolida **15 fontes públicas** localizadas para preparar o CASO-001. Ela distingue comunicação institucional, norma, plano, cartografia, documentação técnica e portal de dados; registra o que foi apenas localizado, o que pôde ser consultado e o que ainda precisa ser obtido integralmente.
 
 A matriz **não valida diagnóstico, causalidade, desempenho de órgão, eficácia de obra ou suficiência da evidência**. O portão permanece fechado.
 
@@ -52,248 +53,112 @@ Data desta verificação: **18 de julho de 2026**.
 
 Nenhuma fonte desta versão está classificada como `obtida` ou `tratada` para fins empíricos do caso.
 
-## 3. Registro resumido
+## 3. Registro canônico
 
-| ID | Fonte | Classe | Estado | Papel principal |
+| ID | Órgão e fonte | Classe | Estado | Cobertura ou data principal |
 |---|---|---|---|---|
-| F-001 | Plano de Contingência Municipal 2026 | plano / comunicação institucional | localizada | protocolos, riscos e resposta |
-| F-002 | Contratos anunciados em janeiro de 2026 | comunicação institucional | consultada | contexto de intervenções em Itapeba |
-| F-003 | Registro municipal das chuvas de abril de 2022 | registro operacional publicado | consultada | evento de referência e ocorrências |
-| F-004 | Programa Municipal de Drenagem e Manejo de Águas Pluviais | plano / comunicação institucional | consultada | processo, prognóstico e alternativas |
-| F-005 | Portal do Plano Diretor | repositório oficial | consultada | documentos territoriais e participação |
-| F-006 | Lei Complementar nº 400/2025 | norma | consultada | marco urbanístico vigente |
-| F-007 | Anexo II — Mapas do Plano Diretor | cartografia | localizada, pendente | contexto cartográfico municipal |
-| F-008 | Pluviômetros automáticos do Cemaden | documentação de dados | consultada | natureza, horário e limites dos dados |
-| F-009 | Página da estação Itapeba — parâmetro `idpcd=3717` | portal de dados | consultada | identificação preliminar da estação |
-| F-010 | Download mensal do Mapa Interativo do Cemaden | portal de dados | consultada, coleta pendente | série pluviométrica bruta |
-| F-011 | Monitoramento hidrometeorológico do INEA | portal de dados | consultada | chuva, nível, radar e inventário estadual |
-| F-012 | Hidroweb / Rede Hidrometeorológica Nacional | portal de dados | consultada | estações e séries complementares |
-| F-013 | Sistema inteligente de prevenção de enchentes de 2026 | comunicação institucional | consultada | iniciativa de monitoramento da drenagem |
+| F-001 | Prefeitura / Plano de Contingência Municipal 2026 | plano referido por comunicação institucional | localizada | município; prevenção e resposta em 2026 |
+| F-002 | Prefeitura / contratos anunciados em janeiro de 2026 | comunicação institucional | consultada | Itapeba e Itaipuaçu; publicação de 2026-01-06 |
+| F-003 | Prefeitura e Defesa Civil / chuvas de abril de 2022 | registro operacional publicado | consultada | evento de 1º e 2 de abril de 2022 |
+| F-004 | Prefeitura e SOMAR / Programa Municipal de Drenagem | plano referido por comunicação institucional | consultada | município; prognóstico e audiência de 2023-10-25 |
+| F-005 | Prefeitura / portal do Plano Diretor | repositório oficial | consultada | território municipal e processo de revisão |
+| F-006 | Município / Lei Complementar nº 400/2025 | norma | consultada | Plano Diretor vigente; publicação oficial de 2025 |
+| F-007 | Prefeitura / Anexo II — Mapas do Plano Diretor | cartografia | localizada, pendente | território municipal; revisão cartográfica de 2024 |
+| F-008 | Cemaden / Pluviômetros Automáticos | documentação de dados | consultada | rede nacional; dados brutos em UTC |
+| F-009 | Cemaden / página da estação Itapeba `idpcd=3717` | portal de dados | consultada | estação denominada Itapeba; metadados pendentes |
+| F-010 | Cemaden / download mensal do Mapa Interativo | portal de dados | consultada, coleta pendente | arquivos mensais por UF e município |
+| F-011 | INEA / Monitoramento Hidrometeorológico | portal de dados e documentação | consultada | Estado do Rio de Janeiro |
+| F-012 | ANA / Hidroweb e Rede Hidrometeorológica Nacional | portal de dados | consultada | rede nacional de chuva, nível e vazão |
+| F-013 | Prefeitura / sistema inteligente de prevenção de enchentes | comunicação institucional | consultada | iniciativa municipal divulgada em 2026-06-18 |
+| F-014 | INEA / `GPL_SUBBACIAS_ERJ_50`, camada 4 | geosserviço vetorial poligonal | consultada, feição pendente | sub-bacias do Estado do Rio de Janeiro |
+| F-015 | INEA, IBGE e SEA-RJ / hidrografia RJ25 | geosserviço vetorial linear | consultada, dados pendentes | hidrografia estadual na escala 1:25.000 |
 
-## 4. Fontes detalhadas
+## 4. Proveniência, formato e integridade
 
-### F-001 — Plano de Contingência Municipal 2026
+| ID | URL canônica | Formato consultado | Licença ou restrição conhecida | Hash |
+|---|---|---|---|---|
+| F-001 | <https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-apresenta-plano-de-contingencia-municipal-2026-em-audiencia-publica/> | HTML | não identificada; plano integral pendente | não aplicável à página dinâmica |
+| F-002 | <https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-assina-contratos-de-r-267-milhoes-com-o-governo-federal-para-investimentos-em-transporte-saneamento-e-drenagem/> | HTML | não identificada; contratos integrais pendentes | não aplicável à página dinâmica |
+| F-003 | <https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-cria-cinturao-de-apoio-as-vitimas-das-enchentes/> | HTML | não identificada | não aplicável à página dinâmica |
+| F-004 | <https://www.marica.rj.gov.br/noticia/moradores-de-marica-debatem-programa-municipal-de-drenagem-2/> | HTML | não identificada; produtos técnicos pendentes | não aplicável à página dinâmica |
+| F-005 | <https://www.marica.rj.gov.br/plano-diretor/> | HTML com ligações para documentos | não identificada | não aplicável à página dinâmica |
+| F-006 | <https://www.marica.rj.gov.br/wp-content/uploads/2025/02/Lei_400_17-01-2025-PDM_JOM_1691.pdf> | PDF oficial, 22 páginas | ato normativo público; redistribuição do arquivo não verificada | pendente; bytes não preservados |
+| F-007 | <https://www.marica.rj.gov.br/wp-content/uploads/2024/11/ANEXOS_Mapas-PDM22-rev24_compressed.pdf> | PDF cartográfico | não verificada | pendente |
+| F-008 | <https://www2.cemaden.gov.br/pluviometros-automatico/> | HTML | redistribuição dos arquivos mensais não verificada | não aplicável à página dinâmica |
+| F-009 | <https://resources.cemaden.gov.br/graficos/interativo/grafico_CEMADEN.php?idpcd=3717&uf=RJ> | página dinâmica | não verificada | não aplicável |
+| F-010 | <https://mapainterativo.cemaden.gov.br/> | interface e arquivos mensais | confirmação humana; licença dos arquivos pendente | pendente para cada arquivo |
+| F-011 | <https://www.inea.rj.gov.br/ar-agua-e-solo/monitoramento-hidrometeorologico/> | HTML e sistemas ligados | licença dos dados históricos não verificada | não aplicável à página dinâmica |
+| F-012 | <https://www.gov.br/ana/pt-br/assuntos/aplicativos-sistemas> e <https://www.snirh.gov.br/hidroweb> | portais e serviços | licença dos conjuntos deve ser confirmada separadamente | pendente para arquivos obtidos |
+| F-013 | <https://www.marica.rj.gov.br/noticia/marica-investe-em-sistema-inteligente-para-prevencao-de-enchentes/> | HTML | não identificada | não aplicável à página dinâmica |
+| F-014 | <https://geoportal.inea.rj.gov.br/server/rest/services/Recursos_Hidricos_Gestao_Costeira/MapServer/4> | ArcGIS Feature Layer; JSON, GeoJSON e PBF | metadados e condições de redistribuição ainda devem ser preservados | pendente para a resposta consultada |
+| F-015 | <https://geoportal.inea.rj.gov.br/server/rest/services/GLN_HIDROGRAFIA_SEM_CANAL_25K/MapServer/0> | ArcGIS Feature Layer; JSON, GeoJSON e PBF | copyright publicado do IBGE; condições do arquivo exportado devem ser verificadas | pendente |
 
-- **órgão:** Prefeitura de Maricá / Secretaria de Proteção e Defesa Civil;
-- **título público:** Prefeitura de Maricá apresenta Plano de Contingência Municipal 2026 em Audiência Pública;
-- **data da publicação:** 2025-11-19;
-- **URL:** <https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-apresenta-plano-de-contingencia-municipal-2026-em-audiencia-publica/>;
-- **classe:** plano referido por comunicação institucional;
-- **cobertura:** município de Maricá; prevenção, preparação e resposta em 2026;
-- **formato consultado:** página HTML;
-- **licença e restrição:** não identificadas na página consultada;
-- **hash:** não aplicável à página dinâmica; documento técnico integral não obtido;
-- **uso possível:** identificar níveis de severidade, atribuições, rotas, pontos de apoio e protocolos a confirmar;
-- **risco de interpretação:** a notícia resume o plano, mas não substitui o documento integral nem comprova capacidade ou desempenho;
-- **requisito do portão:** atores, riscos, resposta e comunicação;
-- **lacuna:** obter o PLACON integral, anexos, versão e data canônica.
+## 5. Uso, limitações e lacunas
 
-### F-002 — Contratos anunciados em janeiro de 2026
+| ID | Uso permitido nesta etapa | Limitação ou lacuna principal |
+|---|---|---|
+| F-001 | identificar protocolos, riscos, atribuições e pontos de apoio a confirmar | notícia não substitui PLACON integral nem comprova capacidade |
+| F-002 | confirmar que contratos relacionados a drenagem e saneamento foram anunciados | faltam contratos, financiamentos, projetos, geometrias, cronogramas, medições e indicadores |
+| F-003 | selecionar evento de referência e orientar pedidos de registros agregados | acumulado, ocorrência, dano e causa não são equivalentes; série bruta pendente |
+| F-004 | identificar processo, alternativas e participação já divulgados | faltam plano de trabalho, diagnóstico, prognóstico, ações, bases, mapas e atas |
+| F-005 | localizar produtos territoriais e memória participativa | minutas e produtos podem ter sido superados pela lei aprovada |
+| F-006 | confirmar marco urbanístico, anexos e diretrizes vigentes | a lei não define sozinha o polígono da sub-bacia |
+| F-007 | fornecer contexto municipal de macrozoneamento e sistemas territoriais | não foi demonstrado que contenha limite hidrográfico de Itapeba; escala e SRID pendentes |
+| F-008 | documentar natureza bruta, inconsistências possíveis e horário UTC | disponibilidade não equivale a qualidade ou representatividade espacial |
+| F-009 | orientar identificação preliminar e filtro da estação | nome e parâmetro não comprovam localização dentro do futuro polígono |
+| F-010 | permitir aquisição da série conforme protocolo pluviométrico | coleta real, hashes, processamento e revisão ainda pendentes |
+| F-011 | buscar chuva, nível, radar e fonte independente de comparação | cobertura estadual não garante estação representativa de Itapeba |
+| F-012 | localizar estações e séries complementares | presença ou ausência de estação não define comparabilidade espacial ou temporal |
+| F-013 | identificar possível fonte futura e alternativa de monitoramento | anúncio não comprova implantação, precisão, cobertura ou eficácia |
+| F-014 | fornecer camada candidata de polígonos estaduais de sub-bacias | não foi confirmada feição denominada Itapeba nem equivalência com o recorte municipal |
+| F-015 | conferir drenagem e coerência topológica na escala 1:25.000 | linhas de drenagem não definem divisor ou polígono de sub-bacia |
 
-- **órgão:** Prefeitura de Maricá;
-- **título:** Prefeitura de Maricá assina contratos de R$ 267 milhões com o Governo Federal para investimentos em transporte, saneamento e drenagem;
-- **data da publicação:** 2026-01-06;
-- **URL:** <https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-assina-contratos-de-r-267-milhoes-com-o-governo-federal-para-investimentos-em-transporte-saneamento-e-drenagem/>;
-- **classe:** comunicação institucional sobre contratos;
-- **cobertura:** intervenções anunciadas em Itapeba e Itaipuaçu; a página separa esgotamento sanitário de macrodrenagem;
-- **formato consultado:** página HTML;
-- **licença e restrição:** não identificadas;
-- **hash:** não aplicável à página dinâmica;
-- **uso possível:** confirmar que foram anunciados contratos de drenagem e saneamento relacionados a Itapeba;
-- **risco de interpretação:** valores e benefícios anunciados não equivalem a escopo executivo, medição, entrega ou eficácia;
-- **requisito do portão:** contexto de intervenção e autoridades relacionadas;
-- **lacuna:** obter contratos, financiamentos, projetos, geometrias, cronogramas, medições e indicadores.
+## 6. Fontes geoespaciais candidatas
 
-### F-003 — Chuvas e ocorrências de abril de 2022
-
-- **órgão:** Prefeitura de Maricá / Defesa Civil;
-- **título:** Prefeitura de Maricá cria cinturão de apoio às vítimas das enchentes;
-- **data da publicação:** 2022-04-02;
-- **URL:** <https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-cria-cinturao-de-apoio-as-vitimas-das-enchentes/>;
-- **classe:** registro operacional publicado em comunicação institucional;
-- **cobertura:** evento de 1º e 2 de abril de 2022; município e bairros atingidos;
-- **informações publicadas:** 261,39 mm em 24 horas no pluviômetro de Itapeba e 30 ocorrências no bairro;
-- **formato consultado:** página HTML;
-- **licença e restrição:** não identificadas;
-- **hash:** não aplicável à página dinâmica;
-- **uso possível:** selecionar evento de referência e formular pedidos de registros agregados;
-- **risco de interpretação:** acumulado, ocorrência, dano e causa não são equivalentes; o texto é registro de resposta, não série validada;
-- **requisito do portão:** evento, período, fontes mínimas e grupos afetados;
-- **lacuna:** confrontar com dados brutos, horários, inventário de ocorrências e critérios administrativos.
-
-### F-004 — Programa Municipal de Drenagem
-
-- **órgão:** Prefeitura de Maricá / Serviços de Obras de Maricá — SOMAR;
-- **título:** Moradores de Maricá debatem Programa Municipal de Drenagem;
-- **data da publicação:** 2023-10-25;
-- **URL:** <https://www.marica.rj.gov.br/noticia/moradores-de-marica-debatem-programa-municipal-de-drenagem-2/>;
-- **classe:** plano referido por comunicação institucional;
-- **cobertura:** município; quarta audiência pública e prognóstico;
-- **formato consultado:** página HTML;
-- **licença e restrição:** não identificadas;
-- **hash:** não aplicável à página dinâmica;
-- **uso possível:** identificar que houve diagnóstico/prognóstico e propostas incluindo amortecimento, canais naturais e soluções não exclusivamente estruturais;
-- **risco de interpretação:** a notícia não contém produtos técnicos, critérios, bases ou priorização completa;
-- **requisito do portão:** fontes técnicas, alternativas e participação;
-- **lacuna:** obter plano de trabalho, diagnóstico, prognóstico, plano de ações, bases, mapas e atas.
-
-### F-005 — Portal do Plano Diretor
-
-- **órgão:** Prefeitura de Maricá / Urbanismo;
-- **título:** Plano Diretor — processo de revisão;
-- **URL:** <https://www.marica.rj.gov.br/plano-diretor/>;
-- **classe:** repositório oficial de documentos e participação;
-- **cobertura:** território municipal e processo de revisão;
-- **formato consultado:** página HTML com ligações para projeto de lei, mapas e produtos;
-- **licença e restrição:** não identificadas;
-- **hash:** não aplicável à página dinâmica;
-- **uso possível:** localizar documentos territoriais e memória participativa;
-- **risco de interpretação:** produtos de elaboração podem ter sido superados pela lei aprovada;
-- **requisito do portão:** território, uso do solo, participação e fontes mínimas;
-- **lacuna:** arquivar versões canônicas e distinguir minuta, produto técnico e norma vigente.
-
-### F-006 — Lei Complementar nº 400/2025
-
-- **órgão:** Município de Maricá / Jornal Oficial de Maricá;
-- **título:** Lei Complementar nº 400, de 17 de janeiro de 2025;
-- **data oficial:** 2025-01-17; publicação no JOM em 2025-01-24;
-- **URL:** <https://www.marica.rj.gov.br/wp-content/uploads/2025/02/Lei_400_17-01-2025-PDM_JOM_1691.pdf>;
-- **classe:** norma;
-- **cobertura:** território municipal; Plano Diretor de Desenvolvimento Urbano Sustentável;
-- **formato consultado:** PDF oficial, 22 páginas;
-- **estado:** texto integral consultado, arquivo não incorporado ao acervo do caso;
-- **licença e restrição:** ato normativo público; condições de redistribuição do arquivo não verificadas;
-- **hash:** pendente, pois os bytes não foram arquivados localmente;
-- **uso possível:** confirmar marco vigente, anexos indissociáveis e diretrizes de saneamento, drenagem, recursos hídricos, clima e participação;
-- **risco de interpretação:** a lei não define por si só o polígono da sub-bacia nem substitui planos setoriais;
-- **requisito do portão:** território, marco normativo e participação;
-- **lacuna:** preservar cópia canônica com hash e relacionar artigos e anexos ao recorte.
-
-### F-007 — Anexo II: Mapas do Plano Diretor
-
-- **órgão:** Prefeitura de Maricá / Urbanismo;
-- **título observado:** Anexos — Mapas PDM22 revisão 2024;
-- **URL:** <https://www.marica.rj.gov.br/wp-content/uploads/2024/11/ANEXOS_Mapas-PDM22-rev24_compressed.pdf>;
-- **classe:** cartografia oficial associada ao processo do Plano Diretor;
-- **cobertura esperada:** território municipal;
-- **formato:** PDF cartográfico;
-- **estado:** URL oficial localizada; obtenção e inspeção integral pendentes;
-- **licença e restrição:** não verificadas;
-- **hash:** pendente;
-- **uso possível:** contexto de macrozoneamento, sistemas territoriais e referências espaciais;
-- **risco de interpretação:** o título e a associação ao Plano Diretor não demonstram que contenha limite oficial da sub-bacia de Itapeba;
-- **requisito do portão:** território;
-- **lacuna:** obter o PDF, calcular hash, identificar sistema de referência, escala, data e verificar se existe geometria hidrográfica útil.
-
-### F-008 — Documentação dos pluviômetros automáticos do Cemaden
-
-- **órgão:** Centro Nacional de Monitoramento e Alertas de Desastres Naturais — Cemaden;
-- **título:** Pluviômetros Automáticos;
-- **URL:** <https://www2.cemaden.gov.br/pluviometros-automatico/>;
-- **classe:** documentação de fonte de dados;
-- **cobertura:** rede nacional do Cemaden;
-- **formato consultado:** página HTML;
-- **licença e restrição:** não verificadas para redistribuição dos arquivos mensais;
-- **hash:** não aplicável à página dinâmica;
-- **uso possível:** registrar que os dados são brutos, podem conter inconsistências e usam UTC;
-- **risco de interpretação:** disponibilidade pública não equivale a controle de qualidade ou representatividade espacial;
-- **requisito do portão:** plano de dados e qualidade;
-- **lacuna:** verificar metadados, licença e histórico da estação.
-
-### F-009 — Página da estação Itapeba
-
-- **órgão:** Cemaden;
-- **título:** Informações das PCDs Cemaden;
-- **URL:** <https://resources.cemaden.gov.br/graficos/interativo/grafico_CEMADEN.php?idpcd=3717&uf=RJ>;
-- **classe:** portal de dados;
-- **cobertura observada:** estações de Maricá, incluindo Itapeba;
-- **estado:** consultada com parâmetro `idpcd=3717`; identificação canônica ainda deve ser confirmada nos arquivos mensais e metadados;
-- **formato:** página dinâmica;
-- **licença e restrição:** não verificadas;
-- **hash:** não aplicável;
-- **uso possível:** confirmar existência pública de estação denominada Itapeba e orientar filtro inicial;
-- **risco de interpretação:** nome e parâmetro de URL não comprovam localização dentro do futuro polígono da sub-bacia;
-- **requisito do portão:** fontes mínimas e plano de dados;
-- **lacuna:** obter coordenadas, histórico de equipamento, código canônico e cobertura temporal.
-
-### F-010 — Download mensal do Mapa Interativo do Cemaden
-
-- **órgão:** Cemaden;
-- **título:** Mapa Interativo — Download de Dados Pluviométricos;
-- **URL:** <https://mapainterativo.cemaden.gov.br/>;
-- **classe:** portal de dados;
-- **cobertura:** arquivos mensais por UF e, opcionalmente, município;
-- **formato:** interface web e arquivos de dados;
-- **estado:** interface consultada; downloads reais pendentes;
-- **restrição operacional:** confirmação humana de segurança para cada download;
-- **hash:** pendente para cada arquivo;
-- **uso possível:** aquisição da série bruta conforme `CASO-001-DADOS-CHUVA`;
-- **risco de interpretação:** o arquivo municipal pode conter múltiplas estações e dados inconsistentes;
-- **requisito do portão:** fontes mínimas, período e plano de dados;
-- **lacuna:** executar coleta autorizada, preservar originais, gerar manifesto e revisar flags.
-
-### F-011 — Monitoramento hidrometeorológico do INEA
+### F-014 — Camada estadual de sub-bacias
 
 - **órgão:** Instituto Estadual do Ambiente — INEA;
-- **título:** Monitoramento Hidrometeorológico;
-- **URL:** <https://www.inea.rj.gov.br/ar-agua-e-solo/monitoramento-hidrometeorologico/>;
-- **classe:** portal de dados e documentação;
-- **cobertura:** Estado do Rio de Janeiro; estações automáticas, radares e boletins;
-- **formato consultado:** página HTML;
-- **licença e restrição:** não verificadas para dados históricos;
-- **hash:** não aplicável à página dinâmica;
-- **uso possível:** buscar chuva, nível, radar, inventário de estações e fonte independente de comparação;
-- **risco de interpretação:** cobertura estadual não garante estação representativa da sub-bacia de Itapeba;
-- **requisito do portão:** fontes mínimas, qualidade e comparação;
-- **lacuna:** consultar inventário, coordenadas, períodos e disponibilidade histórica para Maricá.
+- **serviço:** `Recursos_Hidricos_Gestao_Costeira/MapServer`;
+- **camada:** `GPL_SUBBACIAS_ERJ_50`, ID `4`;
+- **tipo:** Feature Layer, geometria poligonal;
+- **campo de exibição:** `sub_bacias`;
+- **campo regional:** `rh`;
+- **referência espacial publicada:** EPSG:4674 — SIRGAS 2000;
+- **formatos:** JSON, GeoJSON e PBF;
+- **item do serviço:** `e20f5ed7320d45e7a2d0fa2f0e84cf54`;
+- **estado:** metadados consultados; resposta com feição de Itapeba não obtida;
+- **tratamento previsto:** `CASO-001-GEOMETRIA` e `scripts/validar_geojson_subbacia.py`.
 
-### F-012 — Hidroweb e Rede Hidrometeorológica Nacional
+A camada é candidata prioritária, mas sua classificação pode não coincidir com a sub-bacia usada pelo programa municipal de drenagem.
 
-- **órgão:** Agência Nacional de Águas e Saneamento Básico — ANA;
-- **título:** Hidroweb / Rede Hidrometeorológica Nacional;
-- **URLs:** <https://www.gov.br/ana/pt-br/assuntos/aplicativos-sistemas> e <https://www.snirh.gov.br/hidroweb>;
-- **classe:** portal de dados hidrológicos;
-- **cobertura:** rede nacional; chuva, níveis, vazões e metadados de estações;
-- **formato consultado:** páginas de serviço;
-- **licença indicada no portal gov.br:** Creative Commons Atribuição-SemDerivações 3.0 Não Adaptada para o conteúdo do site; licença dos conjuntos deve ser confirmada separadamente;
-- **hash:** não aplicável às páginas dinâmicas;
-- **uso possível:** localizar estações complementares e séries convencionais ou telemétricas;
-- **risco de interpretação:** ausência de estação na sub-bacia não invalida a rede; presença de estação municipal não garante comparabilidade;
-- **requisito do portão:** fontes mínimas e qualidade;
-- **lacuna:** pesquisar inventário por município, bacia, coordenadas, operador e período.
+### F-015 — Hidrografia do Projeto RJ25
 
-### F-013 — Sistema inteligente de prevenção de enchentes
+- **órgãos:** IBGE e Governo do Estado do Rio de Janeiro / SEA-RJ;
+- **serviço:** `GLN_HIDROGRAFIA_SEM_CANAL_25K/MapServer`;
+- **camada:** trechos de drenagem, ID `0`;
+- **escala declarada:** 1:25.000;
+- **referência espacial publicada:** EPSG:4674 — SIRGAS 2000;
+- **formatos:** JSON, GeoJSON e PBF;
+- **item do serviço:** `3cfe5a77b64c480ea3de9a062f766599`;
+- **estado:** metadados consultados; recorte de Itapeba não obtido;
+- **uso:** comparação topológica e contextual, nunca geração automática do limite oficial.
 
-- **órgão:** Prefeitura de Maricá / Meio Ambiente e Sustentabilidade;
-- **título:** Maricá investe em sistema inteligente para prevenção de enchentes;
-- **data da publicação:** 2026-06-18;
-- **URL:** <https://www.marica.rj.gov.br/noticia/marica-investe-em-sistema-inteligente-para-prevencao-de-enchentes/>;
-- **classe:** comunicação institucional sobre iniciativa tecnológica;
-- **cobertura anunciada:** rede municipal de microdrenagem;
-- **formato consultado:** página HTML;
-- **licença e restrição:** não identificadas;
-- **hash:** não aplicável à página dinâmica;
-- **uso possível:** identificar possível fonte futura de dados operacionais e alternativa de monitoramento;
-- **risco de interpretação:** anúncio de investimento e funcionalidades não comprova implantação, cobertura, interoperabilidade, precisão ou eficácia;
-- **requisito do portão:** contexto, alternativas, dados e conflitos;
-- **lacuna:** obter processo, contrato, arquitetura, pontos instalados, governança dos dados, métricas e resultados.
-
-## 5. Relação com o portão de prontidão
+## 7. Relação com o portão de prontidão
 
 | Requisito | Fontes relacionadas | Estado atual |
 |---|---|---|
 | pergunta preliminar | F-002, F-003, F-004, F-013 | suficiente apenas para formular a pergunta, não para respondê-la |
-| território e período | F-003, F-005, F-006, F-007, F-009 | parcial; período preliminar definido, polígono pendente |
-| autoridades e interlocutores | F-001, F-002, F-004, F-013 | potenciais, sem participação confirmada |
-| fontes mínimas | F-001 a F-013 | matriz consolidada; arquivos técnicos e dados reais pendentes |
-| plano de dados | F-008 a F-012 e `CASO-001-DADOS-CHUVA` | processador e regras testados com dados sintéticos; execução real pendente |
-| grupos afetados e participação | F-001, F-003, F-004, F-005 | categorias e processos localizados; recorte e canais do caso pendentes |
-| riscos e conflitos | F-002, F-004, F-013 | comunicações e fornecedores não serão tratados como avaliação independente |
+| território e período | F-003, F-005, F-006, F-007, F-009, F-014 e F-015 | parcial; período preliminar definido, serviço candidato localizado e polígono pendente |
+| autoridades e interlocutores | F-001, F-002, F-004 e F-013 | potenciais, sem participação confirmada |
+| fontes mínimas | F-001 a F-015 | inventário consolidado; arquivos técnicos, feição oficial e dados reais pendentes |
+| plano de dados | F-008 a F-012, F-014, F-015, `CASO-001-DADOS-CHUVA` e `CASO-001-GEOMETRIA` | processadores testados somente com dados sintéticos; execução real pendente |
+| grupos afetados e participação | F-001, F-003, F-004 e F-005 | categorias e processos localizados; recorte e canais do caso pendentes |
+| riscos e conflitos | F-002, F-004 e F-013 | comunicações e fornecedores não serão tratados como avaliação independente |
 | estratégia de revisão | todas | não atendida; cadastro de revisores permanece vazio |
 
-## 6. Lacunas prioritárias
+## 8. Lacunas prioritárias
 
-1. **geometria:** obter fonte cartográfica com limite reproduzível da sub-bacia, sistema de referência, escala, data, licença e hash;
+1. **geometria:** consultar e preservar a feição oficial ou documentar ausência de correspondência nominal; registrar sistema de referência, escala, data, licença e hash;
 2. **programa de drenagem:** obter produtos técnicos integrais e bases do diagnóstico, prognóstico e plano de ações;
 3. **intervenções de 2026:** obter contratos, projetos, geometrias, cronogramas, medições e indicadores;
 4. **chuva real:** realizar downloads mensais autorizados, gerar hashes, processar e revisar flags;
@@ -302,32 +167,38 @@ Nenhuma fonte desta versão está classificada como `obtida` ou `tratada` para f
 7. **participação:** confirmar interlocutores e canais acessíveis para pessoas situadas no polígono;
 8. **revisão:** formar capacidade técnica independente e registrar conflitos.
 
-## 7. Regras de manutenção
+## 9. Regras de manutenção
 
 - uma fonte nova recebe identificador estável `F-nnn`;
-- página localizada não é marcada como arquivo obtido;
+- página ou serviço localizado não é marcado como arquivo obtido;
 - hash somente é registrado após preservação dos bytes exatos;
-- republicação deve gerar nova versão ou novo registro de origem;
-- notícia institucional permanece classificada como comunicação, mesmo quando descreve contrato ou resultado;
+- consulta sem feição também deve ser preservada;
+- republicação gera nova versão ou novo registro de origem;
+- notícia institucional permanece comunicação, mesmo quando descreve contrato ou resultado;
 - fonte superada não é apagada: seu estado e substituição são registrados;
-- toda transformação deve apontar para origem, script, parâmetros e saída;
+- transformação aponta para origem, script, parâmetros e saída;
+- linha de drenagem não pode ser convertida silenciosamente em polígono;
 - a matriz deve ser revisada antes de nova decisão do portão.
 
-## 8. Resultado
+## 10. Resultado
 
-- [x] fontes localizadas consolidadas;
+- [x] 15 fontes localizadas consolidadas;
 - [x] classes e estados diferenciados;
-- [x] limitações e riscos registrados;
+- [x] limitações, licenças conhecidas e riscos registrados;
 - [x] fontes relacionadas aos requisitos do portão;
+- [x] geosserviço poligonal candidato identificado;
+- [x] validador geoespacial testado com fixture sintético;
+- [ ] feição oficial de Itapeba obtida e preservada;
 - [ ] arquivos técnicos integrais obtidos e preservados;
-- [ ] hashes das fontes de arquivo calculados;
+- [ ] hashes das fontes reais calculados;
 - [ ] séries reais coletadas e tratadas;
 - [ ] suficiência revisada independentemente.
 
 A conclusão documental desta matriz resolve a dispersão do inventário, mas **não resolve as lacunas empíricas**.
 
-## 9. Histórico de alterações
+## 11. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-18 | inicial | Consolidação de fontes oficiais, estados de obtenção, usos, limitações e lacunas do portão | Projeto Pragmatismo Cívico |
+| 0.1.0 | 2026-07-18 | inicial | Consolidação de 13 fontes oficiais, estados de obtenção, usos, limitações e lacunas do portão | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Inclusão das camadas de sub-bacias e hidrografia do GeoINEA e do protocolo de validação geoespacial | Projeto Pragmatismo Cívico |
