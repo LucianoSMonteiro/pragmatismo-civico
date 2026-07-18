@@ -1,3 +1,37 @@
+---
+id: PPC-000
+titulo: Especificação do Ecossistema PPC
+versao: 0.1.0
+status: rascunho
+tipo: padrao-transversal
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+produz_entrada_para:
+  - PPC-001
+  - PPC-002
+  - PPC-003
+  - PPC-004
+  - PPC-005
+  - PPC-006
+  - PPC-007
+  - PPC-008
+relaciona_se_com:
+  - PPC-000A
+  - PPC-META-001
+  - ARQ-001
+  - GOV-001
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # PPC-000 — Especificação do Ecossistema PPC
 
 ## Status
@@ -226,3 +260,9 @@ Atualmente, complementam este documento:
 
 - `PPC-META-001_METADADOS_E_VERSIONAMENTO.md` — identificação, metadados, histórico, versionamento, compatibilidade e migração documental;
 - `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md` — estados, transições, validação, manutenção, substituição, obsolescência e arquivamento.
+
+## 16. Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem mudança substantiva das regras | Projeto Pragmatismo Cívico |
