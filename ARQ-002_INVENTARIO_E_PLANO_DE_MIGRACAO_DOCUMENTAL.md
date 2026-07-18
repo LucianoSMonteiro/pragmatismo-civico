@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.27.0
+versao: 0.27.1
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -51,7 +51,7 @@ A estrutura física é governada pelo ARQ-003; propostas pelo GOV-005; revisão 
 
 O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. O cadastro de revisores permanece vazio. O CASO-001 está em preparação e não possui diagnóstico ou resultado empírico.
 
-A camada de aplicações agora contém registros distintos para fontes gerais, documentos técnicos e contratações, geometria e chuva. O inventário técnico está estruturado e validado, mas nenhum programa final, contrato integral, projeto, medição ou as-built foi obtido com hash.
+A camada de aplicações contém registros distintos para fontes gerais, documentos técnicos e contratações, geometria e chuva. O inventário técnico está estruturado e validado, mas nenhum programa final, contrato integral, projeto, medição ou as-built foi obtido com hash.
 
 ## 1. Objetivo
 
@@ -61,7 +61,7 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 
 - `mkdocs.yml` para a navegação;
 - metadados estruturados dos documentos;
-- `CATALOGO_DOCUMENTAL.md` para a visão consolidada;
+- `CATALOGO_DOCUMENTAL.md` para identificadores, versões, estados, caminhos e relações vigentes;
 - GOV-005 a GOV-008 para mudança, revisão, revisores e casos;
 - `casos/README.md` para o índice público;
 - `CASO-001-PRONTIDAO` para a decisão vigente do portão;
@@ -71,6 +71,8 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 - `CASO-001-DADOS-CHUVA` para aquisição, qualidade, retenção e descarte pluviométrico;
 - ARQ-003 para caminhos e diretórios;
 - branch padrão, commits, estados e artefatos da CI como evidência operacional.
+
+Versões documentais não são repetidas neste inventário. O catálogo gerado é a fonte canônica dessa informação e sua correspondência é verificada pela CI.
 
 ## 3. Resumo do acervo público
 
@@ -90,29 +92,27 @@ Cinquenta e cinco documentos usam cabeçalho YAML. O `README.md` utiliza represe
 
 ### 4.1 Publicação e acesso
 
-| Documento | Identificador | Versão |
-|---|---|---:|
-| Página inicial | `PORTAL-INICIO` | 0.13.0 |
-| Guia de início | `GUIA-COMECAR` | 0.13.0 |
-| Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
+- `PORTAL-INICIO` — página inicial;
+- `GUIA-COMECAR` — guia de início;
+- `CATALOGO-DOCUMENTAL` — catálogo gerado e fonte canônica das versões.
 
 ### 4.2 Princípios, governança, método e ferramentas
 
-As camadas permanecem nas versões registradas no catálogo. O inventário corrente é `ARQ-002` 0.27.0; o roadmap será sincronizado com a linha de base de 56 documentos.
+As cinco camadas permanecem integralmente representadas na navegação. Identificadores, versões e estados vigentes são lidos dos metadados e publicados no catálogo, sem duplicação manual neste documento.
 
 ### 4.3 Aplicações e evidências
 
-| Documento | Identificador | Versão | Estado material |
-|---|---|---:|---|
-| Índice de Casos e Evidências | `CASOS-INDEX` | 0.6.0 | índice público |
-| Drenagem e alerta preventivo em Itapeba | `CASO-001` | 0.4.0 | preparação |
-| Registro de Prontidão | `CASO-001-PRONTIDAO` | 0.3.1 | portão não aprovado |
-| Matriz de Fontes e Lacunas | `CASO-001-FONTES` | 0.2.1 | 15 fontes; obtenção empírica pendente |
-| Documentos Técnicos e Contratações | `CASO-001-DOCUMENTOS-TECNICOS` | 0.1.0 | 8 fontes, 20 alegações e 7 grupos documentais pendentes |
-| Protocolo de Geometria e Delimitação | `CASO-001-GEOMETRIA` | 0.2.0 | coleta hospedada bloqueada; feição pendente |
-| Protocolo de Dados Pluviométricos | `CASO-001-DADOS-CHUVA` | 0.2.0 | processador sintético; série real pendente |
+| Documento | Identificador | Estado material |
+|---|---|---|
+| Índice de Casos e Evidências | `CASOS-INDEX` | índice público |
+| Drenagem e alerta preventivo em Itapeba | `CASO-001` | preparação |
+| Registro de Prontidão | `CASO-001-PRONTIDAO` | portão não aprovado |
+| Matriz de Fontes e Lacunas | `CASO-001-FONTES` | 15 fontes; obtenção empírica pendente |
+| Documentos Técnicos e Contratações | `CASO-001-DOCUMENTOS-TECNICOS` | 8 fontes, 20 alegações e 7 grupos documentais pendentes |
+| Protocolo de Geometria e Delimitação | `CASO-001-GEOMETRIA` | coleta hospedada bloqueada; feição pendente |
+| Protocolo de Dados Pluviométricos | `CASO-001-DADOS-CHUVA` | processador sintético; série real pendente |
 
-Nenhuma fonte foi classificada como obtida ou tratada para uso empírico. O novo registro técnico diferencia comunicação institucional, registro financeiro, orientação procedimental, índice de contratação e registro histórico.
+Nenhuma fonte foi classificada como obtida ou tratada para uso empírico. O registro técnico diferencia comunicação institucional, registro financeiro, orientação procedimental, índice de contratação e registro histórico.
 
 ## 5. Infraestrutura de validação e dados
 
@@ -134,7 +134,7 @@ Nenhuma fonte foi classificada como obtida ou tratada para uso empírico. O novo
 
 ## 6. Regras de evidência incorporadas
 
-A automação agora impede:
+A automação impede:
 
 - comunicação institucional classificada como evidência financeira primária;
 - fonte `obtida` ou `tratada` sem caminho local e SHA-256;
@@ -196,6 +196,7 @@ Arquivos integrais ainda não publicáveis devem permanecer em `work/caso-001/do
 | DD-052 | risco de confundir geosserviço com polígono obtido | controlada | estados e critérios explícitos |
 | DD-053 | GeoINEA inacessível aos runners hospedados nas tentativas documentadas | aberta, controlada | coletor local, transporte IPv4 e workflow manual |
 | DD-054 | risco de confundir anúncio, financiamento, contratação, projeto e execução | controlada | registro estruturado, classes de evidência e validação automática |
+| DD-055 | versões duplicadas manualmente no inventário ficaram obsoletas | resolvida | versões removidas das tabelas; catálogo permanece fonte canônica |
 
 DD-046 permanece aberta: estruturar o inventário não equivale a obter os documentos integrais. DD-054 está controlada, mas só poderá ser considerada resolvida após uso consistente em casos posteriores.
 
@@ -234,3 +235,4 @@ Obter e preservar os sete grupos documentais REQ-001 a REQ-007, começando pelo 
 | 0.25.0 | 2026-07-18 | compatível | Protocolo geoespacial, validador GeoJSON e linha de base de 55 documentos | Projeto Pragmatismo Cívico |
 | 0.26.0 | 2026-07-18 | compatível | Coletor auditável, transporte IPv4, tentativas reais e dívida DD-053 | Projeto Pragmatismo Cívico |
 | 0.27.0 | 2026-07-18 | compatível | Registro técnico estruturado, validação de evidências, dívida DD-054 e linha de base de 56 documentos | Projeto Pragmatismo Cívico |
+| 0.27.1 | 2026-07-18 | correção | Remoção de versões duplicadas e obsoletas; catálogo confirmado como fonte canônica | Projeto Pragmatismo Cívico |
