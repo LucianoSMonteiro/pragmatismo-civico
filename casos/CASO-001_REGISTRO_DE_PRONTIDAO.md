@@ -1,7 +1,7 @@
 ---
 id: CASO-001-PRONTIDAO
 titulo: Registro de Prontidão do CASO-001 — Sub-bacia de Itapeba
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -21,11 +21,13 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - CASOS-INDEX
+  - CASO-001-FONTES
+  - CASO-001-DADOS-CHUVA
   - PPC-001
   - MODELO-INDICADORES-001
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 estado_do_portao: preparacao
 territorio_preliminar: Sub-bacia de Itapeba, Maricá/RJ; polígono oficial pendente
@@ -39,7 +41,9 @@ issue_acompanhamento: 2
 
 **Permanece em preparação.**
 
-A pesquisa de fontes públicas permitiu reduzir o escopo municipal para a **sub-bacia de Itapeba** e definir um período preliminar de **1º de janeiro de 2022 a 30 de junho de 2026**. O portão não está aprovado porque ainda faltam o polígono oficial, documentação técnica completa, confirmação de interlocutores institucionais, plano participativo local e revisão independente.
+A pesquisa de fontes públicas permitiu reduzir o escopo municipal para a **sub-bacia de Itapeba** e definir um período preliminar de **1º de janeiro de 2022 a 30 de junho de 2026**. A matriz canônica consolidou 13 fontes e diferenciou comunicação institucional, norma, cartografia e portais de dados. O protocolo pluviométrico definiu processamento, retenção e descarte e passou em teste sintético.
+
+O portão não está aprovado porque ainda faltam o polígono oficial, arquivos técnicos integrais, coleta e revisão das séries reais, confirmação de interlocutores institucionais, plano participativo local e revisão independente.
 
 Este registro não inicia o PPC-001 e não constitui diagnóstico, avaliação de obra, recomendação ou decisão oficial.
 
@@ -74,20 +78,21 @@ O período começa em 2022 para incluir um evento público com acumulado elevado
 
 A listagem não representa parceria, anuência, responsabilidade atribuída nem participação confirmada dessas instituições.
 
-## 5. Inventário inicial de fontes verificadas
+## 5. Matriz canônica de fontes
 
-| Fonte pública | Uso previsto | Situação | Limitação principal |
-|---|---|---|---|
-| [Plano de Contingência Municipal 2026](https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-apresenta-plano-de-contingencia-municipal-2026-em-audiencia-publica/) | cenários, níveis de severidade, resposta, pontos de apoio e atribuições | resumo público localizado | documento técnico integral ainda não obtido |
-| [Contratos de saneamento e macrodrenagem de janeiro de 2026](https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-assina-contratos-de-r-267-milhoes-com-o-governo-federal-para-investimentos-em-transporte-saneamento-e-drenagem/) | confirmar intervenção anunciada na sub-bacia de Itapeba | comunicação oficial localizada | faltam contrato, projeto, cronograma, geometria e indicadores |
-| [Registro municipal das chuvas de abril de 2022](https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-cria-cinturao-de-apoio-as-vitimas-das-enchentes/) | evento de referência e ocorrência operacional | acumulado de 261,39 mm em 24 h e 30 ocorrências informados para Itapeba | relato de resposta; exige validação contra série pluviométrica e registros administrativos |
-| [Programa Municipal de Drenagem](https://www.marica.rj.gov.br/noticia/moradores-de-marica-debatem-programa-municipal-de-drenagem-2/) | contexto técnico, alternativas e processo participativo | audiência e prognóstico confirmados | produtos técnicos e bases ainda não obtidos |
-| [Plano Diretor e documentos](https://www.marica.rj.gov.br/plano-diretor/documentos/) | uso do solo, diagnóstico territorial e estratégias | repositório oficial identificado | documentos precisam ser arquivados, lidos e relacionados ao recorte |
-| [Lei Complementar 400/2025](https://www.marica.rj.gov.br/legislacao-urbanismo/) | marco territorial e urbanístico vigente | referência oficial identificada | anexos cartográficos precisam ser extraídos e verificados |
-| [Pluviômetros automáticos do Cemaden](https://www2.cemaden.gov.br/pluviometros-automatico/) | série bruta de chuva | acesso público e estação Itapeba identificada | dados brutos, em UTC, sujeitos a falhas e controle de qualidade |
-| [Mapa interativo do Cemaden](https://mapainterativo.cemaden.gov.br/) | download mensal de dados pluviométricos | acesso público identificado | exige coleta reproduzível, conversão UTC e registro da estação |
-| [Monitoramento hidrometeorológico do INEA](https://www.inea.rj.gov.br/ar-agua-e-solo/monitoramento-hidrometeorologico/) | chuva, nível, radar e inventário de estações | sistemas oficiais identificados | cobertura específica de Itapeba ainda não confirmada |
-| [Sistema inteligente de drenagem de junho de 2026](https://www.marica.rj.gov.br/noticia/marica-investe-em-sistema-inteligente-para-prevencao-de-enchentes/) | iniciativa de monitoramento e manutenção | comunicação oficial localizada | não demonstra eficácia; documentos técnicos, implantação e dados ainda pendentes |
+A [Matriz de Fontes e Lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) é o registro canônico desta etapa. Ela contém identificadores `F-001` a `F-013`, órgão, título, data, URL, classe, cobertura, formato, licença conhecida, estado de obtenção, hash, uso, risco e relação com o portão.
+
+Resultados relevantes:
+
+- 13 fontes públicas foram consolidadas;
+- a Lei Complementar nº 400/2025 foi consultada em PDF oficial;
+- o Anexo II de mapas do Plano Diretor foi localizado, mas ainda não foi obtido e inspecionado com hash;
+- a página pública do Cemaden confirma estação denominada Itapeba no conjunto de Maricá, mas código, coordenadas e histórico ainda devem ser confirmados nos arquivos e metadados;
+- o Cemaden informa que os dados são brutos e usam UTC;
+- INEA e ANA foram registrados como fontes complementares, sem cobertura específica confirmada para a sub-bacia;
+- nenhuma fonte desta versão foi classificada como `obtida` ou `tratada` para fins empíricos.
+
+Comunicação institucional permanece identificada como tal e não substitui contrato, projeto, medição ou avaliação de eficácia.
 
 ## 6. Plano de dados
 
@@ -97,13 +102,22 @@ Regras:
 
 - arquivar URL, título, órgão, data de acesso, período coberto e versão;
 - preservar dados brutos separadamente de dados tratados;
+- calcular hash somente após preservar os bytes exatos;
 - converter horários UTC de forma explícita;
 - verificar lacunas, duplicidades, valores impossíveis e mudanças de estação;
 - não combinar registros de chuva, ocorrência e dano como se fossem equivalentes;
 - não inferir causalidade a partir de correlação temporal;
 - publicar somente dados agregados quando houver risco de identificação;
 - registrar licença, restrição e método de transformação;
-- não utilizar comunicação institucional como prova suficiente de desempenho.
+- não utilizar comunicação institucional como prova suficiente de desempenho;
+- revisar retenção, descarte, backups e acesso conforme `CASO-001-DADOS-CHUVA`.
+
+Estado de execução:
+
+- processador, manifesto, relatório e flags foram testados com fixture sintético;
+- estrutura local e política de retenção e descarte estão definidas;
+- nenhum arquivo mensal real foi adquirido, processado ou revisado;
+- a suficiência da estação e do período ainda não foi demonstrada.
 
 ## 7. Grupos e serviços a mapear
 
@@ -135,6 +149,8 @@ O plano participativo ainda não está definido.
 |---|---:|
 | GOV-008 | 0.1.0 |
 | FICHA-GOV-008 | 0.1.0 |
+| CASO-001-FONTES | 0.1.0 |
+| CASO-001-DADOS-CHUVA | 0.2.0 |
 | PPC-001 | 0.1.1 |
 | CICLO-PC-001 | 0.1.0 |
 | MODELO-INDICADORES-001 | 0.1.0 |
@@ -150,8 +166,8 @@ As versões serão congeladas novamente quando o portão for decidido.
 | pergunta preliminar | atendido | pergunta revisada para a sub-bacia de Itapeba |
 | território e período | parcial | unidade e período definidos; polígono oficial pendente |
 | responsável | atendido | Projeto Pragmatismo Cívico responsável pela documentação |
-| fontes mínimas | parcial | fontes oficiais localizadas; séries e documentos técnicos ainda não coletados integralmente |
-| plano de dados | parcial | regras definidas; execução e teste de qualidade pendentes |
+| fontes mínimas | parcial | 13 fontes consolidadas; arquivos técnicos e séries reais ainda não obtidos |
+| plano de dados | parcial | processador, retenção e descarte definidos; execução real e revisão manual pendentes |
 | grupos afetados | parcial | categorias mapeadas; território e canais de participação pendentes |
 | riscos e conflitos | atendido nesta etapa | salvaguardas e ausência de solução pré-selecionada registradas |
 | versões | atendido | conjunto inicial registrado |
@@ -173,7 +189,7 @@ O caso permanecerá em preparação, será suspenso ou encerrado quando ocorrer:
 
 ## 12. Pendências prioritárias
 
-1. obter o polígono oficial da sub-bacia de Itapeba;
+1. obter e inspecionar o anexo cartográfico do Plano Diretor e localizar geometria oficial da sub-bacia;
 2. obter produtos técnicos do Programa Municipal de Drenagem;
 3. obter documentação técnica e geometrias das intervenções anunciadas para 2026;
 4. baixar e testar as séries da estação Cemaden Itapeba;
@@ -196,3 +212,4 @@ O caso permanecerá em preparação, será suspenso ou encerrado quando ocorrer:
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Verificação de fontes públicas, recorte preliminar da sub-bacia de Itapeba e decisão de manter o caso em preparação | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Consolidação da matriz de fontes, protocolo de retenção e atualização da avaliação do portão | Projeto Pragmatismo Cívico |
