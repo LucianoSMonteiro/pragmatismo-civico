@@ -1,7 +1,7 @@
 ---
 id: FICHA-PPC-003
 titulo: Ficha de Avaliação Técnica de Alternativas
-versao: 0.1.1
+versao: 0.1.2
 status: piloto
 tipo: ferramenta
 idioma: pt-BR
@@ -406,10 +406,11 @@ Pontos formais de revisão:
 
 ## 16. Histórico de alterações
 
-| Versão | Data | Alteração | Responsável |
-|---|---|---|---|
-| 0.1.0 | 2026-07-17 | Versão piloto da ficha registrada no repositório | Comunidade Pragmatismo Cívico |
-| 0.1.1 | 2026-07-17 | Normalização dos metadados conforme PPC-META-001, sem alteração metodológica | Projeto Pragmatismo Cívico |
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Versão piloto da ficha registrada no repositório | Comunidade Pragmatismo Cívico |
+| 0.1.1 | 2026-07-17 | correção | Normalização dos metadados conforme PPC-META-001, sem alteração metodológica | Projeto Pragmatismo Cívico |
+| 0.1.2 | 2026-07-17 | correção | Alinhamento do histórico ao formato mínimo do PPC-META-001 | Projeto Pragmatismo Cívico |
 
 ## 17. Saída para o PPC-004
 
