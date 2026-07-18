@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.21.0
+versao: 0.21.1
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -105,7 +105,7 @@ Cinquenta documentos usam cabeçalho YAML. O `README.md` utiliza representação
 | Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
 | Modelo de Governança | `GOV-001` | 0.1.0 |
 | Roadmap | `GOV-002` | 0.17.0 |
-| Guia de Contribuição | `GOV-003` | 0.4.0 |
+| Guia de Contribuição | `GOV-003` | 0.5.0 |
 | Código de Conduta | `GOV-004` | 0.1.0 |
 | Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
 | Política de Revisão e Aprovação | `GOV-006` | 0.1.0 |
@@ -115,7 +115,7 @@ Cinquenta documentos usam cabeçalho YAML. O `README.md` utiliza representação
 | Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
 | Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
 | Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.21.0 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.21.1 |
 | Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
@@ -240,3 +240,4 @@ Completar o portão de prontidão do CASO-001 e realizar a primeira chamada púb
 | 0.20.0 | 2026-07-18 | compatível | Publicação do GOV-007 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.20.1 | 2026-07-18 | correção | Eliminação do ciclo GOV-003/GOV-007 | Projeto Pragmatismo Cívico |
 | 0.21.0 | 2026-07-18 | compatível | Publicação do GOV-008, ativação da sexta camada e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
+| 0.21.1 | 2026-07-18 | correção | Sincronização da versão do Guia de Contribuição | Projeto Pragmatismo Cívico |
