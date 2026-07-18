@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.14.0
+versao: 0.15.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -23,6 +23,7 @@ relaciona_se_com:
   - GOV-003
   - GOV-004
   - GOV-005
+  - GOV-006
   - ARQ-003
 substitui: []
 substituido_por: null
@@ -109,10 +110,11 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] decisão sobre a estrutura física — Fase 7;
 - [x] processo formal de propostas de mudança — GOV-005;
 - [x] ficha e formulário de issue para propostas;
-- [ ] política permanente de revisão e aprovação;
-- [ ] regras institucionais sobre conflitos, impedimentos e recusas;
+- [x] política permanente de revisão e aprovação — GOV-006;
+- [x] regras institucionais sobre conflitos, impedimentos e recusas;
+- [x] registro de revisão e template de pull request;
+- [ ] cadastro público e programa de revisores;
 - [ ] fóruns de discussão pública;
-- [ ] programa de colaboradores e revisores;
 - [ ] conselho consultivo plural.
 
 ### Critério de conclusão
@@ -126,10 +128,10 @@ O projeto deve receber, avaliar e incorporar contribuições sem perder coerênc
 ### Entregas
 
 - [x] infraestrutura reproduzível do portal;
-- [x] biblioteca navegável com 42 documentos;
+- [x] biblioteca navegável com 44 documentos;
 - [x] catálogo e mapa de relações;
 - [x] validação de metadados, grafo, links e catálogo;
-- [x] validação dos formulários de issue;
+- [x] validação dos templates de contribuição;
 - [x] análise automática da estrutura física;
 - [x] artefatos e status separados de CI;
 - [ ] ativação inicial do GitHub Pages e primeiro deploy — issue #1;
@@ -165,12 +167,18 @@ O GOV-005 estabelece:
 - tipos e níveis de impacto;
 - triagem e admissibilidade;
 - fluxos simplificado, ordinário e reforçado;
-- consulta pública, revisão e conflitos de interesse;
-- competência provisória dos mantenedores;
-- limites para mudanças fundacionais;
-- implementação, verificação, reversão e reconsideração.
+- consulta pública, implementação, reversão e reconsideração.
 
-A próxima evolução deve transformar esse processo provisório em uma política permanente de revisão e aprovação, sem fingir representatividade que ainda não existe.
+O GOV-006 estabelece:
+
+- separação entre secretaria, relatoria, revisão, decisão, implementação e verificação;
+- competência, independência, conflitos, impedimentos e recusas;
+- quórum e maiorias proporcionais ao impacto;
+- limites do regime provisório;
+- critérios para constituir uma instância plural permanente;
+- decisões emergenciais e reconsideração.
+
+A próxima evolução é criar um cadastro público de revisores elegíveis e testar a política em propostas reais, sem presumir que a instância plural já existe.
 
 ## Decisão arquitetural vigente
 
@@ -183,7 +191,7 @@ O ARQ-003 adotou uma estrutura híbrida:
 
 ## Prioridades imediatas
 
-1. criar a política permanente de revisão e aprovação;
+1. criar o cadastro público e o programa de revisores;
 2. selecionar e documentar o primeiro estudo de caso demonstrativo;
 3. habilitar o GitHub Pages para GitHub Actions e confirmar o primeiro deploy — issue #1;
 4. criar a ficha padrão de indicadores;
@@ -234,3 +242,4 @@ Antes de iniciar uma entrega, deve-se verificar:
 | 0.12.0 | 2026-07-18 | compatível | Conclusão da Fase 6 e relatório persistente | Projeto Pragmatismo Cívico |
 | 0.13.0 | 2026-07-18 | compatível | Conclusão da Fase 7 e decisão pela estrutura híbrida | Projeto Pragmatismo Cívico |
 | 0.14.0 | 2026-07-18 | compatível | Publicação do GOV-005, da ficha, do formulário e da validação de issue forms | Projeto Pragmatismo Cívico |
+| 0.15.0 | 2026-07-18 | compatível | Publicação do GOV-006, do registro de revisão e do template de pull request | Projeto Pragmatismo Cívico |
