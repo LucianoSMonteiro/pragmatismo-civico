@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.8.0
+versao: 0.9.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -67,7 +67,7 @@ A navegação atual contém **38 documentos Markdown**.
 | Princípios e fundamentos | 6 | núcleo consolidado; migração deve ser cautelosa |
 | Governança e arquitetura | 9 | todos os nove documentos possuem cabeçalho PPC-META-001 |
 | Método | 10 | todos os dez documentos migrados e reciprocidade obrigatória verificada |
-| Ferramentas | 11 | Ficha PPC-003 normalizada; demais vínculos ainda precisam ser estruturados |
+| Ferramentas | 11 | cinco ferramentas conformes; lote 3A concluído e seis instrumentos pendentes |
 | Aplicações e evidências | 0 | camada ainda sem estudo de caso publicado |
 | **Total** | **38** | migração necessária, sem alteração imediata de caminhos |
 
@@ -126,15 +126,15 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 | Documento | Caminho | Documento associado | Metadados | Prioridade |
 |---|---|---|---|---|
-| Ficha PPC-001 | `FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md` | PPC-001 | a migrar | média |
-| Ficha PPC-002 | `FICHA_PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md` | PPC-002 | a migrar | média |
+| Ficha PPC-001 | `FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md` | PPC-001 versão 0.1.1 | presente | concluída nesta dimensão |
+| Ficha PPC-002 | `FICHA_PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md` | PPC-002 versão 0.1.0 | presente; estado piloto preservado | concluída nesta dimensão |
 | Ficha PPC-003 | `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` | PPC-003 | presente | concluída nesta dimensão |
-| Ficha PPC-004 | `FICHA_PPC-004_DECISAO_E_JUSTIFICATIVA.md` | PPC-004 | a migrar | média |
-| Ficha de teoria da mudança | `FICHA_TEORIA_DA_MUDANCA.md` | modelo de teoria da mudança | a migrar | média |
-| Ficha PPC-005 | `FICHA_PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md` | PPC-005 | a migrar | média |
-| Ficha PPC-006 | `FICHA_PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md` | PPC-006 | a migrar | média |
-| Ficha PPC-007 | `FICHA_PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md` | PPC-007 | a migrar | média |
-| Ficha PPC-008 | `FICHA_PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md` | PPC-008 | a migrar | média |
+| Ficha PPC-004 | `FICHA_PPC-004_DECISAO_E_JUSTIFICATIVA.md` | PPC-004 versão 0.1.0 | presente | concluída nesta dimensão |
+| Ficha de teoria da mudança | `FICHA_TEORIA_DA_MUDANCA.md` | MODELO-TDM-001 versão 0.1.0 | presente | concluída nesta dimensão |
+| Ficha PPC-005 | `FICHA_PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md` | PPC-005 | a migrar | alta |
+| Ficha PPC-006 | `FICHA_PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md` | PPC-006 | a migrar | alta |
+| Ficha PPC-007 | `FICHA_PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md` | PPC-007 | a migrar | alta |
+| Ficha PPC-008 | `FICHA_PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md` | PPC-008 | a migrar | alta |
 | Matriz de avaliação | `MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md` | PPC-002 e PPC-003 | a migrar | média |
 | Indicadores | `INDICADORES.md` | ciclo metodológico e avaliações | a migrar | média |
 
@@ -157,7 +157,6 @@ Possuem cabeçalho estruturado alinhado ao PPC-META-001:
 - `ROADMAP.md`;
 - `CONTRIBUTING.md`;
 - `CODE_OF_CONDUCT.md`;
-- `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`;
 - `CICLO_DO_PRAGMATISMO_CIVICO.md`;
 - `PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md`;
 - `PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md`;
@@ -167,7 +166,12 @@ Possuem cabeçalho estruturado alinhado ao PPC-META-001:
 - `PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md`;
 - `PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md`;
 - `PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md`;
-- `PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md`.
+- `PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md`;
+- `FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md`;
+- `FICHA_PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md`;
+- `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`;
+- `FICHA_PPC-004_DECISAO_E_JUSTIFICATIVA.md`;
+- `FICHA_TEORIA_DA_MUDANCA.md`.
 
 ### 5.2 Documentos ainda não migrados
 
@@ -188,9 +192,9 @@ Quando uma informação não puder ser comprovada, deve ser registrada como `nul
 
 | ID | Problema | Risco | Prioridade | Tratamento proposto |
 |---|---|---|---|---|
-| DD-001 | 18 dos 38 documentos navegáveis ainda não possuem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | migração em lotes controlados |
+| DD-001 | 14 dos 38 documentos navegáveis ainda não possuem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | migração em lotes controlados |
 | DD-002 | reciprocidade das dependências obrigatórias do ciclo metodológico precisava ser verificada | incoerência entre padrões | resolvida | auditoria concluída no lote 2C; futura automação deve impedir regressões |
-| DD-003 | ferramentas não registram necessariamente a versão do padrão utilizada | aplicações podem ficar irreplicáveis | alta | adicionar campo de versão e vínculo |
+| DD-003 | seis ferramentas ainda não registram a versão do padrão ou modelo utilizado | aplicações podem ficar irreplicáveis | alta | concluir os lotes 3B e 3C |
 | DD-004 | identificadores e metadados ainda heterogêneos nas ferramentas remanescentes | automação e catálogo dificultados | média | normalizar progressivamente sem descartar dados úteis |
 | DD-005 | acervo predominantemente na raiz | manutenção futura pode ficar difícil | baixa no estágio atual | não mover arquivos antes de medir benefício |
 | DD-006 | ausência de catálogo documental gerado | localização depende do `mkdocs.yml` | média | criar catálogo após migração mínima |
@@ -216,7 +220,8 @@ As revisões do repositório produziram as seguintes correções e avanços:
 - normalização do cabeçalho da Ficha PPC-003 sem alteração de seu conteúdo metodológico;
 - conclusão do lote 2A com a migração do ciclo, PPC-001 a PPC-004 e Modelo de Teoria da Mudança;
 - conclusão do lote 2B com a migração de PPC-005 a PPC-008;
-- conclusão do lote 2C com a auditoria das dependências obrigatórias e da retroalimentação PPC-008 → PPC-001.
+- conclusão do lote 2C com a auditoria das dependências obrigatórias e da retroalimentação PPC-008 → PPC-001;
+- conclusão do lote 3A com a migração das fichas PPC-001, PPC-002, PPC-004 e Teoria da Mudança, mantendo o estado piloto da Ficha PPC-002.
 
 A configuração do workflow está presente e coerente com GitHub Pages, mas a execução mais recente ainda deve ser confirmada no histórico do GitHub Actions, pois o conector utilizado não retorna os eventos de push desse workflow.
 
@@ -308,18 +313,23 @@ Relações em `relaciona_se_com` não precisam ser simétricas quando um dos doc
 
 ### Fase 3 — Ferramentas
 
-**Estado:** próxima.
+**Estado:** em andamento — lote 3A concluído; 5 de 11 ferramentas conformes.
 
 **Objetivo:** vincular cada instrumento à versão do padrão que operacionaliza.
 
-Ações:
+Lotes:
 
-- atribuir identificadores estáveis;
-- declarar documento associado;
-- inserir campo para versão do padrão utilizado;
-- distinguir campos obrigatórios e opcionais;
-- verificar coerência entre ficha e PPC;
-- preservar nomes de arquivo atuais nesta etapa.
+- **3A — concluído:** fichas PPC-001, PPC-002, PPC-004 e Teoria da Mudança; a Ficha PPC-003 já estava normalizada;
+- **3B — próximo:** fichas PPC-005 a PPC-008;
+- **3C:** matriz de avaliação, indicadores e revisão final dos vínculos.
+
+Ações concluídas no lote 3A:
+
+- atribuição dos identificadores `FICHA-PPC-001`, `FICHA-PPC-002`, `FICHA-PPC-004` e `FICHA-TDM-001`;
+- declaração do documento associado e de sua versão;
+- preservação do estado `piloto` da Ficha PPC-002;
+- preservação de campos, instruções, checklists e modelos de preenchimento;
+- separação entre histórico da ferramenta e registro de revisões de cada aplicação, quando necessário.
 
 ### Fase 4 — Fundamentos e entrada
 
@@ -422,12 +432,13 @@ Esta versão decide que:
 - documentos sem evidência histórica não receberão datas ou aprovações retroativas;
 - a Fase 2 está concluída, incluindo a revisão de reciprocidade do lote 2C;
 - a retroalimentação PPC-008 → PPC-001 não cria dependência circular obrigatória;
-- a próxima execução da migração será a Fase 3 — Ferramentas;
+- o lote 3A está concluído e preserva o estado piloto anteriormente declarado para a Ficha PPC-002;
+- a próxima execução da migração será o lote 3B — fichas PPC-005 a PPC-008;
 - a estrutura física do repositório será decidida somente depois de metadados, catálogo e validação.
 
 ## 13. Próxima ação
 
-Executar a **Fase 3 — Ferramentas**, começando pelas fichas PPC-001, PPC-002, PPC-004 e Teoria da Mudança, antes de avançar para as fichas PPC-005 a PPC-008, matriz e indicadores.
+Executar a **Fase 3B — Ferramentas**, migrando as fichas PPC-005 a PPC-008 e vinculando cada uma à versão corrente do padrão correspondente.
 
 ## 14. Histórico de alterações
 
@@ -441,3 +452,4 @@ Executar a **Fase 3 — Ferramentas**, começando pelas fichas PPC-001, PPC-002,
 | 0.6.0 | 2026-07-17 | compatível | Conclusão da Fase 2A com a migração do ciclo, PPC-001 a PPC-004 e Modelo de Teoria da Mudança | Projeto Pragmatismo Cívico |
 | 0.7.0 | 2026-07-17 | compatível | Conclusão da Fase 2B com a migração de PPC-005 a PPC-008 | Projeto Pragmatismo Cívico |
 | 0.8.0 | 2026-07-17 | compatível | Conclusão da Fase 2C com auditoria da reciprocidade obrigatória e registro da retroalimentação do ciclo | Projeto Pragmatismo Cívico |
+| 0.9.0 | 2026-07-17 | compatível | Conclusão do lote 3A com a migração das fichas PPC-001, PPC-002, PPC-004 e Teoria da Mudança | Projeto Pragmatismo Cívico |
