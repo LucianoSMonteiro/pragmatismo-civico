@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.17.0
+versao: 0.18.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -21,6 +21,7 @@ produz_entrada_para:
   - ARQ-003
 relaciona_se_com:
   - GOV-002
+  - GOV-005
   - MKDOCS
   - PORTAL-INICIO
   - GUIA-COMECAR
@@ -34,13 +35,13 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 7 estão concluídas. Os 40 documentos públicos estão identificados, versionados, catalogados e submetidos a validação automática. A estrutura física vigente foi avaliada e a decisão registrada no ARQ-003.
+Rascunho ativo. As Fases 0 a 7 estão concluídas. Os 42 documentos públicos estão identificados, versionados, catalogados e submetidos a validação automática. A estrutura física foi decidida no ARQ-003 e o processo de propostas de mudança foi publicado no GOV-005.
 
 O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. Esse bloqueio operacional não invalida o acervo nem a compilação.
 
 ## 1. Objetivo
 
-Transformar a arquitetura do ARQ-001 em um processo verificável de inventário, catálogo, validação e evolução documental, preservando URLs e histórico e evitando mudanças físicas sem benefício demonstrado.
+Manter um inventário verificável do acervo, de sua arquitetura, automação, dívida e evolução, preservando URLs e histórico e evitando mudanças sem benefício demonstrado.
 
 ## 2. Fontes canônicas
 
@@ -49,7 +50,8 @@ O processo utiliza:
 - `mkdocs.yml` para a navegação pública;
 - metadados estruturados de cada documento;
 - `CATALOGO_DOCUMENTAL.md` para a visão consolidada;
-- ARQ-003 para a decisão sobre caminhos e diretórios;
+- GOV-005 para propostas e decisões de mudança;
+- ARQ-003 para caminhos e diretórios;
 - a branch padrão como fonte canônica;
 - commits, status e artefatos da CI como evidência operacional.
 
@@ -59,13 +61,13 @@ O processo utiliza:
 |---|---:|---|
 | Publicação e acesso | 3 | página inicial, guia e catálogo conformes |
 | Princípios e fundamentos | 6 | todos conformes |
-| Governança e arquitetura | 10 | todos conformes, incluindo ARQ-003 |
+| Governança e arquitetura | 11 | inclui GOV-005 e ARQ-003 |
 | Método | 10 | todos conformes |
-| Ferramentas | 11 | todas conformes e vinculadas aos padrões |
+| Ferramentas | 12 | inclui a Ficha GOV-005 |
 | Aplicações e evidências | 0 | nenhum estudo de caso oficial publicado |
-| **Total** | **40** | **40 documentos catalogados e validados** |
+| **Total** | **42** | **42 documentos catalogados e validados** |
 
-Trinta e nove documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável.
+Quarenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável.
 
 ## 4. Inventário resumido
 
@@ -73,8 +75,8 @@ Trinta e nove documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 
 | Documento | Identificador | Versão |
 |---|---|---:|
-| Página inicial | `PORTAL-INICIO` | 0.5.0 |
-| Guia de início | `GUIA-COMECAR` | 0.5.0 |
+| Página inicial | `PORTAL-INICIO` | 0.6.0 |
+| Guia de início | `GUIA-COMECAR` | 0.6.0 |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
 
 ### 4.2 Princípios e fundamentos
@@ -94,13 +96,14 @@ Trinta e nove documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 |---|---|---:|
 | Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
 | Modelo de Governança | `GOV-001` | 0.1.0 |
-| Roadmap | `GOV-002` | 0.13.0 |
-| Guia de Contribuição | `GOV-003` | 0.1.0 |
+| Roadmap | `GOV-002` | 0.14.0 |
+| Guia de Contribuição | `GOV-003` | 0.2.0 |
 | Código de Conduta | `GOV-004` | 0.1.0 |
+| Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
 | Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
 | Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
 | Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.17.0 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.18.0 |
 | Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
@@ -122,15 +125,9 @@ Trinta e nove documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 
 | Documento | Identificador | Versão |
 |---|---|---:|
-| Ficha PPC-001 | `FICHA-PPC-001` | 0.1.0 |
-| Ficha PPC-002 | `FICHA-PPC-002` | 0.1.0, piloto |
-| Ficha PPC-003 | `FICHA-PPC-003` | 0.1.4, piloto |
-| Ficha PPC-004 | `FICHA-PPC-004` | 0.1.0 |
+| Fichas PPC-001 a PPC-008 | `FICHA-PPC-001` a `FICHA-PPC-008` | versões vigentes no catálogo |
 | Ficha de Teoria da Mudança | `FICHA-TDM-001` | 0.1.0 |
-| Ficha PPC-005 | `FICHA-PPC-005` | 0.1.0 |
-| Ficha PPC-006 | `FICHA-PPC-006` | 0.1.1 |
-| Ficha PPC-007 | `FICHA-PPC-007` | 0.1.1 |
-| Ficha PPC-008 | `FICHA-PPC-008` | 0.1.0 |
+| Ficha de Proposta de Mudança | `FICHA-GOV-005` | 0.1.0 |
 | Matriz de avaliação | `MATRIZ-PPC-001` | 0.1.0 |
 | Indicadores | `MODELO-INDICADORES-001` | 0.1.0 |
 
@@ -141,12 +138,28 @@ Trinta e nove documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 | `scripts/generate_catalog.py` | gera o catálogo a partir da navegação e dos metadados |
 | `scripts/validate_metadata_graph.py` | valida campos, formatos, histórico, relações, substituições e ciclos |
 | `scripts/validate_links.py` | valida destinos internos e âncoras |
+| `scripts/validate_issue_forms.py` | valida a estrutura dos formulários YAML de issue |
 | `scripts/generate_validation_report.py` | produz relatório consolidado e dívida manual conhecida |
-| `scripts/analyze_repository_structure.py` | calcula o impacto de uma migração física por camada |
+| `scripts/analyze_repository_structure.py` | calcula o impacto de migração física por camada |
 | `scripts/prepare_mkdocs.py` | prepara a árvore temporária compatível com MkDocs |
 | `.github/workflows/pages.yml` | valida, analisa, compara catálogo, compila e empacota o portal |
 
-## 6. Validação automática
+## 6. Governança de mudanças
+
+O GOV-005 estabelece:
+
+- identificadores `PM-AAAA-NNN`;
+- tipos editorial, corretivo, metodológico, arquitetural, de governança, fundacional, de ciclo de vida e emergencial;
+- níveis de impacto;
+- triagem e admissibilidade;
+- fluxos simplificado, ordinário e reforçado;
+- consulta, revisão, decisão e conflitos de interesse;
+- implementação, verificação, reversão e reconsideração;
+- competência provisória e limite para mudanças fundacionais.
+
+A `FICHA-GOV-005` e o formulário `.github/ISSUE_TEMPLATE/proposta-de-mudanca.yml` operacionalizam o processo.
+
+## 7. Validação automática
 
 A CI verifica:
 
@@ -155,6 +168,7 @@ A CI verifica:
 - existência e reciprocidade das relações obrigatórias;
 - substituições e ciclos de dependência;
 - links internos e âncoras;
+- estrutura mínima dos formulários de issue;
 - correspondência entre catálogo gerado e publicado;
 - preparação e `mkdocs build --strict --clean`.
 
@@ -164,43 +178,32 @@ São registrados os status:
 - `documentation/catalog`;
 - `portal/build`.
 
-Os artefatos incluem `validation-report`, `catalog-preview`, `structure-analysis` e `github-pages` nas execuções aplicáveis.
+## 8. Estrutura física
 
-## 7. Resultado da Fase 7
+O ARQ-003 preserva os caminhos existentes e determina:
 
-A análise executada no run `29633432120`, com 39 documentos na linha de base, mostrou:
+- aplicações novas em `casos/`;
+- relatórios oficiais em `relatorios/`;
+- automações em `scripts/`;
+- ativos em `docs/assets/`;
+- reavaliação após três casos oficiais, 60 documentos ou evidência de custo material.
 
-| Medida | Resultado |
-|---|---:|
-| Documentos na raiz | 38 |
-| Documentos que seriam movidos | 37 |
-| Links entre documentos públicos | 125 |
-| Referências potencialmente afetadas | 124 |
-| Entradas de navegação a revisar | 37 |
-
-A migração atingiria quase todo o acervo sem melhorar a navegação do portal, que já é lógica e independente da estrutura física.
-
-O ARQ-003 decidiu pela estrutura híbrida:
-
-- preservar os caminhos existentes;
-- usar `casos/` para novas aplicações;
-- usar `relatorios/` para relatórios oficiais;
-- manter automações, workflows e ativos nos diretórios atuais;
-- reavaliar após três casos oficiais, 60 documentos ou evidência de custo material da estrutura vigente.
-
-## 8. Dívida documental e operacional
+## 9. Dívida documental e operacional
 
 | ID | Problema | Estado | Tratamento |
 |---|---|---|---|
-| DD-005 | acervo predominantemente na raiz | controlada | estrutura híbrida adotada no ARQ-003 |
+| DD-005 | acervo predominantemente na raiz | controlada | estrutura híbrida do ARQ-003 |
 | DD-008 | ausência de estudos de caso | aberta, alta | preparar primeiro caso demonstrativo |
 | DD-009 | datas históricas incompletas | controlada | preservar `null` e commits |
 | DD-015 | README incompatível com front matter comum | controlada | representação equivalente reconhecida |
 | DD-018 | GitHub Pages não habilitado | aberta | issue #1 |
-| DD-026 | migração física ameaçaria quase todos os links | resolvida | caminhos existentes preservados |
-| DD-027 | crescimento futuro poderia ampliar a raiz indefinidamente | controlada | casos e relatórios terão diretórios próprios |
+| DD-028 | mudanças relevantes não possuíam processo operacional único | resolvida | GOV-005, ficha e formulário publicados |
+| DD-029 | formulário poderia depender de rótulo inexistente | resolvida | dependência removida |
+| DD-030 | GOV-003 e GOV-005 formariam ciclo obrigatório | resolvida | GOV-003 permanece dependente; GOV-005 apenas se relaciona ao guia |
+| DD-031 | ausência de política permanente de revisão e aprovação | aberta | próxima prioridade de governança |
+| DD-032 | ausência de instância plural constituída | aberta | decisões fundacionais permanecem limitadas |
 
-## 9. Plano progressivo
+## 10. Plano progressivo
 
 | Fase | Tema | Estado |
 |---|---|---|
@@ -209,33 +212,21 @@ O ARQ-003 decidiu pela estrutura híbrida:
 | 6 | validação automática | concluída |
 | 7 | estrutura física | concluída |
 
-A evolução arquitetural deixa de ser uma migração em aberto. Alterações futuras dependerão dos gatilhos e requisitos do ARQ-003.
+A evolução passa a ser governada pelo GOV-005. Alterações futuras devem possuir proposta formal quando ultrapassarem o fluxo editorial simplificado.
 
-## 10. Próxima ação
+## 11. Próxima ação
 
-A prioridade geral passa a ser a governança de mudanças: criar um processo formal de propostas, análise, decisão, implementação e registro público. Em paralelo, deve ser preparado o primeiro estudo de caso demonstrativo.
+Criar a política permanente de revisão e aprovação, detalhando competências, quóruns ou critérios decisórios, independência, impedimentos, prazos, consulta e transição entre a governança provisória e uma instância plural. Em paralelo, preparar o primeiro estudo de caso demonstrativo.
 
-## 11. Histórico de alterações
+## 12. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Inventário inicial, dívida documental e plano progressivo | Projeto Pragmatismo Cívico |
-| 0.2.0 | 2026-07-17 | compatível | Migração do PPC-000 e do Modelo de Governança | Projeto Pragmatismo Cívico |
-| 0.3.0 | 2026-07-17 | compatível | Correção das camadas e revisão da navegação | Projeto Pragmatismo Cívico |
-| 0.4.0 | 2026-07-17 | compatível | Conclusão da Fase 1 | Projeto Pragmatismo Cívico |
-| 0.5.0 | 2026-07-17 | compatível | Correções de identificadores e da Ficha PPC-003 | Projeto Pragmatismo Cívico |
-| 0.6.0 | 2026-07-17 | compatível | Conclusão da Fase 2A | Projeto Pragmatismo Cívico |
-| 0.7.0 | 2026-07-17 | compatível | Conclusão da Fase 2B | Projeto Pragmatismo Cívico |
-| 0.8.0 | 2026-07-17 | compatível | Conclusão da Fase 2C | Projeto Pragmatismo Cívico |
-| 0.9.0 | 2026-07-17 | compatível | Conclusão da Fase 3A | Projeto Pragmatismo Cívico |
-| 0.10.0 | 2026-07-18 | compatível | Conclusão da Fase 3B e consolidação editorial | Projeto Pragmatismo Cívico |
-| 0.11.0 | 2026-07-18 | compatível | Conclusão da Fase 3C | Projeto Pragmatismo Cívico |
-| 0.12.0 | 2026-07-18 | compatível | Conclusão da Fase 4A | Projeto Pragmatismo Cívico |
-| 0.13.0 | 2026-07-18 | compatível | Conclusão da Fase 4B e reparos normativos | Projeto Pragmatismo Cívico |
-| 0.14.0 | 2026-07-18 | compatível | Conclusão da Fase 4C e cobertura dos 38 documentos | Projeto Pragmatismo Cívico |
-| 0.14.1 | 2026-07-18 | correção | Sincronização do README 0.2.2 | Projeto Pragmatismo Cívico |
-| 0.15.0 | 2026-07-18 | compatível | Conclusão da Fase 5 e publicação do catálogo | Projeto Pragmatismo Cívico |
-| 0.15.1 | 2026-07-18 | correção | Registro da verificação de deriva do catálogo | Projeto Pragmatismo Cívico |
-| 0.16.0 | 2026-07-18 | compatível | Conclusão da Fase 6 e validação automática completa | Projeto Pragmatismo Cívico |
-| 0.16.1 | 2026-07-18 | correção | Sincronização das versões e dos três status de CI | Projeto Pragmatismo Cívico |
-| 0.17.0 | 2026-07-18 | compatível | Conclusão da Fase 7, adoção da estrutura híbrida e incorporação do ARQ-003 | Projeto Pragmatismo Cívico |
+| 0.2.0 a 0.14.1 | 2026-07-17 a 2026-07-18 | compatível | Migração, cobertura e sincronizações progressivas do acervo | Projeto Pragmatismo Cívico |
+| 0.15.0 | 2026-07-18 | compatível | Conclusão da Fase 5 e estabilização do build | Projeto Pragmatismo Cívico |
+| 0.15.1 | 2026-07-18 | correção | Verificação de deriva do catálogo | Projeto Pragmatismo Cívico |
+| 0.16.0 | 2026-07-18 | compatível | Conclusão da Fase 6 | Projeto Pragmatismo Cívico |
+| 0.16.1 | 2026-07-18 | correção | Sincronização final da validação | Projeto Pragmatismo Cívico |
+| 0.17.0 | 2026-07-18 | compatível | Conclusão da Fase 7 e decisão pela estrutura híbrida | Projeto Pragmatismo Cívico |
+| 0.18.0 | 2026-07-18 | compatível | Publicação do GOV-005, da ficha de proposta e da validação de formulários de issue | Projeto Pragmatismo Cívico |
