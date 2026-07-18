@@ -1,7 +1,7 @@
 ---
 id: FICHA-PPC-007
 titulo: Ficha PPC-007 — Avaliação de Resultados e Impactos
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: ferramenta
 idioma: pt-BR
@@ -20,10 +20,10 @@ produz_entrada_para: []
 relaciona_se_com:
   - CICLO-PC-001
   - PPC-008
-  - INDICADORES
+  - MODELO-INDICADORES-001
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 documento_associado: PPC-007
 versao_documento_associado: 0.1.0
@@ -127,3 +127,4 @@ Use esta ficha para planejar e registrar uma avaliação proporcional à import�
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com vínculo à versão 0.1.0 do PPC-007 e preservação dos campos operacionais | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-18 | correção | Substituição do vínculo genérico `INDICADORES` pelo identificador canônico `MODELO-INDICADORES-001` | Projeto Pragmatismo Cívico |
