@@ -1,3 +1,39 @@
+---
+id: PPC-007
+titulo: Avaliação de Resultados e Impactos
+versao: 0.1.0
+status: rascunho
+tipo: padrao-metodologico
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-004
+  - MODELO-TDM-001
+  - PPC-005
+  - PPC-006
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-008
+relaciona_se_com:
+  - PPC-001
+  - PPC-003
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md
+  - INDICADORES.md
+---
+
 # PPC-007 — Avaliação de Resultados e Impactos
 
 ## 1. Objetivo
@@ -145,3 +181,9 @@ Uma avaliação atende ao PPC-007 quando:
 - explicita incertezas e limitações;
 - produz recomendações proporcionais às evidências;
 - preserva rastreabilidade até os dados e métodos.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do padrão | Projeto Pragmatismo Cívico |
