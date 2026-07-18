@@ -1,3 +1,39 @@
+---
+id: MODELO-TDM-001
+titulo: Modelo de Teoria da Mudança
+versao: 0.1.0
+status: rascunho
+tipo: metodo
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-001
+  - PPC-002
+  - PPC-003
+  - PPC-004
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-005
+relaciona_se_com:
+  - PPC-006
+  - PPC-007
+  - PPC-008
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_TEORIA_DA_MUDANCA.md
+---
+
 # Modelo de Teoria da Mudança
 
 ## 1. Objetivo
@@ -125,3 +161,9 @@ A teoria da mudança deve ser revisada quando houver:
 - mudança estratégica de escopo;
 - efeitos não previstos importantes;
 - decisão formal de continuidade, expansão, reformulação ou encerramento.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do modelo | Projeto Pragmatismo Cívico |
