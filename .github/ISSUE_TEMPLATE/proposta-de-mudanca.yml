@@ -1,8 +1,6 @@
 name: Proposta de mudança
 description: Propor alteração editorial, corretiva, metodológica, arquitetural, de governança, fundacional ou de ciclo de vida.
 title: "[PM] "
-labels:
-  - proposta-de-mudanca
 body:
   - type: markdown
     attributes:
