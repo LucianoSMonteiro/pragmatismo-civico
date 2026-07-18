@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -23,7 +23,7 @@ relaciona_se_com:
   - MKDOCS
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -57,17 +57,17 @@ Arquivos fora da navegação, anexos, ativos, automações e registros históric
 
 ## 3. Resumo do acervo público
 
-A navegação atual contém **37 documentos Markdown**.
+A navegação atual contém **38 documentos Markdown**.
 
 | Camada | Quantidade inicial | Situação geral |
 |---|---:|---|
 | Entrada e publicação | 2 | páginas de entrada sem metadados padronizados verificados |
-| Princípios e fundamentos | 7 | núcleo consolidado; migração deve ser cautelosa |
-| Método | 11 | ciclo completo publicado; relações e versões precisam ser normalizadas |
+| Princípios e fundamentos | 8 | núcleo consolidado; migração deve ser cautelosa |
+| Método | 11 | ciclo completo publicado; PPC-000 já migrado, demais relações e versões precisam ser normalizadas |
 | Ferramentas | 10 | conjunto completo de fichas do ciclo; metadados e vínculos precisam ser adicionados |
-| Governança e arquitetura | 7 | três documentos já adotam cabeçalho estruturado |
+| Governança e arquitetura | 7 | modelo de governança, PPC-META-001 e PPC-000A já adotam cabeçalho estruturado |
 | Aplicações e evidências | 0 | camada ainda sem estudo de caso publicado |
-| **Total** | **37** | migração necessária, sem alteração imediata de caminhos |
+| **Total** | **38** | migração necessária, sem alteração imediata de caminhos |
 
 Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENSE`, ativos de estilo e automações em `.github/`. Eles serão inventariados separadamente como infraestrutura, não como documentos metodológicos.
 
@@ -86,6 +86,7 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 |---|---|---|---|---|
 | Framework de referência | `FRAMEWORK_DE_REFERENCIA.md` | fonte conceitual superior | a migrar | crítica |
 | Arquitetura documental | `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md` | arquitetura do acervo | presente | concluída nesta dimensão |
+| Inventário e plano de migração | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` | linha de base e execução da migração | presente | concluída nesta dimensão |
 | Teoria do Pragmatismo Cívico | `TEORIA_DO_PRAGMATISMO_CIVICO.md` | fundamento teórico | a migrar | alta |
 | Manifesto | `MANIFESTO.md` | declaração identitária | a migrar | média |
 | Carta de princípios | `CARTA_DE_PRINCIPIOS.md` | princípios normativos | a migrar | crítica |
@@ -97,7 +98,7 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 | Documento | Caminho | Relação principal | Metadados | Prioridade |
 |---|---|---|---|---|
 | Ciclo do Pragmatismo Cívico | `CICLO_DO_PRAGMATISMO_CIVICO.md` | visão integrada | a migrar | alta |
-| PPC-000 | `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md` | metanorma | parcial, sem cabeçalho YAML | crítica |
+| PPC-000 | `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md` | metanorma | presente | concluída nesta dimensão |
 | PPC-001 | `PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md` | diagnóstico | a migrar | alta |
 | PPC-002 | `PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md` | alternativas | a migrar | alta |
 | PPC-003 | `PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` | avaliação técnica | a migrar | alta |
@@ -127,7 +128,7 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 | Documento | Caminho | Função | Metadados | Prioridade |
 |---|---|---|---|---|
-| Modelo de governança | `MODELO_DE_GOVERNANCA.md` | governança institucional | a migrar | crítica |
+| Modelo de governança | `MODELO_DE_GOVERNANCA.md` | governança institucional | presente | concluída nesta dimensão |
 | PPC-META-001 | `PPC-META-001_METADADOS_E_VERSIONAMENTO.md` | metadados e versões | presente | concluída nesta dimensão |
 | PPC-000A | `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md` | ciclo de vida | presente | concluída nesta dimensão |
 | Indicadores | `INDICADORES.md` | estrutura geral de indicadores | a migrar | média |
@@ -139,6 +140,8 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 ### 5.1 Documentos com cabeçalho estruturado verificado
 
+- `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md`;
+- `MODELO_DE_GOVERNANCA.md`;
 - `PPC-META-001_METADADOS_E_VERSIONAMENTO.md`;
 - `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md`;
 - `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md`;
@@ -197,22 +200,24 @@ A migração deve seguir estas regras:
 
 Entregas:
 
-- inventário inicial dos 37 documentos navegáveis;
+- inventário inicial dos 38 documentos navegáveis;
 - classificação por camada;
 - registro da dívida documental inicial;
 - proibição explícita de movimentação prematura.
 
 ### Fase 1 — Núcleo de governança
 
+**Estado:** em andamento — 2 de 5 documentos migrados.
+
 **Objetivo:** garantir que as regras que governam o restante do acervo sejam elas próprias rastreáveis.
 
 Lote recomendado:
 
-1. `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md`;
-2. `MODELO_DE_GOVERNANCA.md`;
-3. `ROADMAP.md`;
-4. `CONTRIBUTING.md`;
-5. `CODE_OF_CONDUCT.md`.
+1. [x] `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md`;
+2. [x] `MODELO_DE_GOVERNANCA.md`;
+3. [ ] `ROADMAP.md`;
+4. [ ] `CONTRIBUTING.md`;
+5. [ ] `CODE_OF_CONDUCT.md`.
 
 Ações:
 
@@ -333,7 +338,7 @@ Após o commit:
 
 A migração mínima estará concluída quando:
 
-- todos os 37 documentos navegáveis possuírem identificação, versão, status e responsáveis;
+- todos os 38 documentos navegáveis possuírem identificação, versão, status e responsáveis;
 - PPCs e ferramentas declararem relações recíprocas verificáveis;
 - documentos fundadores possuírem fonte canônica e histórico preservado;
 - o portal exibir ou permitir localizar versão e status;
@@ -354,10 +359,11 @@ Esta versão decide que:
 
 ## 12. Próxima ação
 
-Executar a **Fase 1 — Núcleo de governança**, começando pelo PPC-000 e pelo Modelo de Governança, em um lote pequeno, verificável e sem mudança substantiva de suas regras.
+Completar a **Fase 1 — Núcleo de governança**, migrando `ROADMAP.md`, `CONTRIBUTING.md` e `CODE_OF_CONDUCT.md`, sem alterar substantivamente suas regras.
 
 ## 13. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Inventário inicial, dívida documental e plano progressivo de migração | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-17 | compatível | Atualização do inventário e registro da migração do PPC-000 e do Modelo de Governança | Projeto Pragmatismo Cívico |
