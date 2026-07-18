@@ -1,3 +1,34 @@
+---
+id: FICHA-PPC-007
+titulo: Ficha PPC-007 — Avaliação de Resultados e Impactos
+versao: 0.1.0
+status: rascunho
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-007
+  - PPC-006
+  - MODELO-TDM-001
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - CICLO-PC-001
+  - PPC-008
+  - INDICADORES
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+documento_associado: PPC-007
+versao_documento_associado: 0.1.0
+---
+
 # Ficha PPC-007 — Avaliação de Resultados e Impactos
 
 Use esta ficha para planejar e registrar uma avaliação proporcional à importância, ao risco e à maturidade da intervenção.
@@ -90,3 +121,9 @@ Use esta ficha para planejar e registrar uma avaliação proporcional à import�
 - [ ] força da evidência indicada;
 - [ ] recomendações rastreáveis aos achados;
 - [ ] resposta institucional prevista.
+
+## Histórico de alterações da ferramenta
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com vínculo à versão 0.1.0 do PPC-007 e preservação dos campos operacionais | Projeto Pragmatismo Cívico |
