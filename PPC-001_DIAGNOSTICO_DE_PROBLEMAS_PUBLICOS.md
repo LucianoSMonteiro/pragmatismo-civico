@@ -1,3 +1,37 @@
+---
+id: PPC-001
+titulo: Definição e Diagnóstico de Problemas Públicos
+versao: 0.1.0
+status: rascunho
+tipo: padrao-metodologico
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-002
+  - MODELO-TDM-001
+relaciona_se_com:
+  - PPC-006
+  - PPC-007
+  - PPC-008
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md
+---
+
 # PPC-001 — Definição e Diagnóstico de Problemas Públicos
 
 ## Status
@@ -216,3 +250,9 @@ Toda informação relevante deve possuir fonte, data, responsável e histórico 
 ## Evolução
 
 Este padrão pode ser aperfeiçoado com base em testes, estudos de caso e revisões públicas, mas nenhuma alteração poderá enfraquecer os princípios fundadores do Pragmatismo Cívico.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do padrão | Projeto Pragmatismo Cívico |
