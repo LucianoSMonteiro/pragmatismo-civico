@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.2.2
+versao: 0.3.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -19,6 +19,7 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - GUIA-COMECAR
+  - CATALOGO-DOCUMENTAL
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -38,12 +39,13 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 [Começar agora](docs/COMECAR.md){ .md-button .md-button--primary }
 [Explorar o método](CICLO_DO_PRAGMATISMO_CIVICO.md){ .md-button }
+[Consultar o catálogo](CATALOGO_DOCUMENTAL.md){ .md-button }
 
 </div>
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. O ciclo metodológico completo — PPC-001 a PPC-008 —, a Teoria da Mudança, suas fichas práticas e os padrões de governança documental estão publicados para revisão, teste e aplicação experimental. Os 38 documentos da navegação canônica possuem identificação e versionamento documental. A migração mínima de metadados foi concluída, mas ainda não há estudo de caso oficial publicado nem validação empírica suficiente para declarar o framework estável.
+**Estado atual:** desenvolvimento aberto. Os 39 documentos da navegação canônica estão identificados, versionados e catalogados. O ciclo PPC-001 a PPC-008, a Teoria da Mudança, as onze ferramentas e os padrões de governança estão disponíveis para revisão e aplicação experimental. O grafo documental e o build estrito do portal são verificados pela automação. O deploy público ainda depende da ativação inicial do GitHub Pages registrada na issue #1. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar o framework estável.
 
 </div>
 
@@ -174,7 +176,7 @@ O acervo é organizado em seis camadas lógicas conectadas:
 5. **Aplicações e evidências** — estudos de caso, pilotos, avaliações e lições aprendidas.
 6. **Publicação e acesso** — repositório, portal, busca, navegação e versões de distribuição.
 
-A definição completa está no [ARQ-001 — Arquitetura Documental do Framework](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md). O estado do acervo e a migração progressiva são acompanhados pelo [ARQ-002 — Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md).
+A definição completa está no [ARQ-001 — Arquitetura Documental do Framework](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md). O estado do acervo é acompanhado pelo [ARQ-002 — Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md), enquanto o [Catálogo Documental](CATALOGO_DOCUMENTAL.md) reúne identificadores, versões, estados, caminhos e relações dos documentos públicos.
 
 ## Padrões metodológicos disponíveis
 
@@ -199,7 +201,7 @@ A definição completa está no [ARQ-001 — Arquitetura Documental do Framework
 | [PPC-000A](PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) | Define estados, transições, revisão, substituição, obsolescência e arquivamento. |
 | [Modelo de Governança](MODELO_DE_GOVERNANCA.md) | Organiza o ciclo decisório, os papéis e as salvaguardas de governança. |
 | [ARQ-001](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | Define camadas, categorias, dependências e organização do acervo. |
-| [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | Inventaria o acervo, registra dívida documental e organiza a migração. |
+| [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | Inventaria o acervo, registra dívida documental e organiza a evolução. |
 
 ## Ferramentas disponíveis
 
@@ -234,8 +236,8 @@ O documento central para essa verificação é o [Framework de Referência](FRAM
 As prioridades atuais são:
 
 - formalizar o processo de propostas de mudança;
-- criar o catálogo documental público e o mapa de dependências;
-- implementar validação automática de metadados, identificadores e links;
+- concluir a validação automática de versões, compatibilidade, links, substituições e correspondência do catálogo;
+- habilitar o GitHub Pages para GitHub Actions e confirmar o primeiro deploy — issue #1;
 - criar a ficha padrão de indicadores;
 - desenvolver o checklist de transparência e rastreabilidade;
 - estruturar o protocolo de avaliação do próprio framework;
@@ -257,7 +259,7 @@ Contribuições são organizadas por regras públicas de governança, integridad
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.2.2
+versao: 0.3.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -274,6 +276,7 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - GUIA-COMECAR
+  - CATALOGO-DOCUMENTAL
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -292,3 +295,4 @@ proxima_revisao: null
 | 0.2.0 | 2026-07-18 | compatível | Registro da conclusão da migração mínima dos 38 documentos e atualização das prioridades de catálogo e validação | Projeto Pragmatismo Cívico |
 | 0.2.1 | 2026-07-18 | correção | Inclusão de representação humana colapsável dos metadados, sem prejudicar a abertura da página | Projeto Pragmatismo Cívico |
 | 0.2.2 | 2026-07-18 | correção | Ativação do processamento Markdown no bloco colapsável de metadados | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Inclusão do catálogo, atualização para 39 documentos e registro do build estrito validado e do bloqueio de deploy | Projeto Pragmatismo Cívico |
