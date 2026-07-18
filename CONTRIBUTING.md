@@ -1,7 +1,7 @@
 ---
 id: GOV-003
 titulo: Guia de Contribuição do Pragmatismo Cívico
-versao: 0.2.0
+versao: 0.3.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -17,12 +17,14 @@ depende_de:
   - PPC-META-001
   - ARQ-001
   - GOV-005
+  - GOV-006
 produz_entrada_para: []
 relaciona_se_com:
   - GOV-001
   - GOV-002
   - GOV-004
   - FICHA-GOV-005
+  - FICHA-GOV-006
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -42,9 +44,10 @@ Leia, nesta ordem:
 3. `FRAMEWORK_DE_REFERENCIA.md`;
 4. `SPECIFICATION.md`;
 5. `GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md`;
-6. este guia e o `CODE_OF_CONDUCT.md`.
+6. `GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md`;
+7. este guia e o `CODE_OF_CONDUCT.md`.
 
-Para mudanças formais, utilize a `FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md` ou o formulário **Proposta de mudança** disponível nas issues do repositório.
+Para mudanças formais, utilize a `FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md` ou o formulário **Proposta de mudança** disponível nas issues. Revisões e decisões moderadas ou superiores devem possuir registro compatível com a `FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md`.
 
 ## 2. Regra central
 
@@ -129,7 +132,18 @@ A proposta deve ser aberta antes ou junto do trabalho de implementação e inclu
 - plano de implementação, verificação e reversão;
 - conflitos de interesse.
 
-A issue é o registro canônico da proposta. O pull request implementa a decisão, mas não substitui a triagem, a revisão ou a justificativa pública.
+A issue é o registro canônico da proposta. O pull request implementa a decisão, mas não substitui triagem, revisão ou justificativa pública.
+
+### 6.3 Revisão e aprovação
+
+A revisão e a decisão seguem o GOV-006. O rigor depende do impacto:
+
+- baixo impacto: revisão distinta da autoria quando houver capacidade;
+- impacto moderado: ao menos duas manifestações fundamentadas;
+- impacto alto: painel ampliado, independência proporcional e plano de migração;
+- impacto crítico ou fundacional: fluxo reforçado, consulta pública e quórum permanente.
+
+Enquanto a instância plural permanente não existir, propostas altas, críticas ou fundacionais permanecem sujeitas aos limites do regime provisório. A insuficiência de revisores deve ser declarada, não ocultada por reclassificação artificial.
 
 ## 7. Mudanças no núcleo e nas aplicações
 
@@ -139,7 +153,7 @@ Inclui a Carta de Princípios, a Especificação e o Framework de Referência. M
 
 ### Metodologias e ferramentas
 
-Podem evoluir com maior frequência, desde que permaneçam compatíveis com o núcleo, tenham utilidade verificável e sigam o rigor proporcional do GOV-005.
+Podem evoluir com maior frequência, desde que permaneçam compatíveis com o núcleo, tenham utilidade verificável e sigam o rigor proporcional do GOV-005 e do GOV-006.
 
 ### Aplicações e estudos de caso
 
@@ -179,9 +193,9 @@ Novos casos devem seguir a estrutura híbrida do ARQ-003 e ser publicados em `ca
 
 ## 11. Conflitos de interesse
 
-Contribuidores e revisores devem declarar vínculos financeiros, partidários, profissionais, institucionais ou pessoais que possam influenciar materialmente uma proposta. A existência de vínculo não invalida automaticamente a contribuição, mas sua ocultação compromete a confiança.
+Contribuidores, revisores e decisores devem declarar vínculos financeiros, partidários, profissionais, institucionais ou pessoais que possam influenciar materialmente uma proposta.
 
-Conflitos relevantes devem ser tratados segundo o GOV-005, inclusive com abstenção decisória quando a independência estiver comprometida.
+Conflitos relevantes são tratados pelo GOV-006. Declaração pode ser suficiente para vínculo de baixa intensidade; conflito material pode exigir restrição, abstenção, impedimento ou substituição.
 
 ## 12. Revisão
 
@@ -194,14 +208,22 @@ As contribuições serão avaliadas por:
 - proporcionalidade da complexidade;
 - impactos sobre direitos, equidade e sustentabilidade;
 - compatibilidade e reversibilidade;
-- capacidade de auditoria e revisão;
-- conformidade da implementação com a decisão registrada.
+- capacidade de auditoria e manutenção;
+- conformidade da implementação com a decisão registrada;
+- competência, independência e quórum do processo decisório.
 
 Discordâncias fundamentadas são legítimas. O objetivo da revisão não é eliminar o dissenso, mas tornar decisões e justificativas públicas e verificáveis.
 
-## 13. Histórico de alterações
+## 13. Pull requests
+
+O template de pull request deve ser preenchido de forma proporcional. Mudanças formais devem referenciar a proposta canônica, o registro de revisão, a compatibilidade, os conflitos e as evidências de CI.
+
+A aprovação de uma proposta não aprova automaticamente qualquer implementação. O diff deve corresponder à decisão e às condições registradas.
+
+## 14. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva das regras de contribuição | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-18 | compatível | Integração do GOV-005, da ficha canônica e do formulário de issue ao fluxo de contribuição | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Integração do GOV-006, do registro de revisão e do template de pull request | Projeto Pragmatismo Cívico |
