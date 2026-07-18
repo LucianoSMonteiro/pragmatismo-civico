@@ -1,8 +1,4 @@
-"""Gera o catálogo público a partir da navegação e dos metadados canônicos.
-
-O gerador não altera documentos de origem. Ele valida campos mínimos, detecta
-identificadores duplicados e produz uma visão pública agrupada por camada.
-"""
+"""Gera o catálogo público a partir da navegação e dos metadados canônicos."""
 
 from __future__ import annotations
 
@@ -20,7 +16,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "mkdocs.yml"
 CATALOG_PATH = "CATALOGO_DOCUMENTAL.md"
-CATALOG_METADATA = {
+
+CATALOG_METADATA: dict[str, object] = {
     "id": "CATALOGO-DOCUMENTAL",
     "titulo": "Catálogo Documental do Pragmatismo Cívico",
     "versao": "0.1.0",
@@ -40,6 +37,14 @@ CATALOG_METADATA = {
     "proxima_revisao": None,
 }
 
+LAYER_ORDER = [
+    "Publicação e acesso",
+    "Princípios e fundamentos",
+    "Governança e arquitetura",
+    "Método",
+    "Ferramentas",
+]
+
 LAYER_BY_PATH = {
     "README.md": "Publicação e acesso",
     "docs/COMECAR.md": "Publicação e acesso",
@@ -56,6 +61,7 @@ LAYER_BY_PATH = {
     "PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md": "Governança e arquitetura",
     "ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md": "Governança e arquitetura",
     "ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md": "Governança e arquitetura",
+    "ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md": "Governança e arquitetura",
     "CONTRIBUTING.md": "Governança e arquitetura",
     "CODE_OF_CONDUCT.md": "Governança e arquitetura",
     "ROADMAP.md": "Governança e arquitetura",
@@ -82,13 +88,6 @@ LAYER_BY_PATH = {
     "INDICADORES.md": "Ferramentas",
 }
 
-LAYER_ORDER = [
-    "Publicação e acesso",
-    "Princípios e fundamentos",
-    "Governança e arquitetura",
-    "Método",
-    "Ferramentas",
-]
 REQUIRED_FIELDS = ("id", "titulo", "versao", "status", "tipo", "responsaveis")
 
 
@@ -101,13 +100,10 @@ class Document:
 
 
 def iter_nav_entries(node: object) -> Iterator[tuple[str, str]]:
-    """Retorna pares ``(rótulo, caminho)`` da configuração de navegação."""
     if isinstance(node, list):
         for item in node:
             yield from iter_nav_entries(item)
-        return
-
-    if isinstance(node, dict):
+    elif isinstance(node, dict):
         for label, value in node.items():
             if isinstance(value, str):
                 yield str(label), value
@@ -116,7 +112,6 @@ def iter_nav_entries(node: object) -> Iterator[tuple[str, str]]:
 
 
 def extract_metadata(text: str, path: str) -> dict[str, object]:
-    """Extrai YAML comum ou a representação HTML equivalente do README."""
     if text.startswith("---\n"):
         end = text.find("\n---\n", 4)
         if end < 0:
@@ -124,26 +119,23 @@ def extract_metadata(text: str, path: str) -> dict[str, object]:
         raw = text[4:end]
     else:
         match = re.match(r"<!--\s*\n---\n(.*?)\n---\s*\n-->", text, re.DOTALL)
-        if not match:
+        if match is None:
             raise ValueError(f"Metadados estruturados não encontrados: {path}")
         raw = match.group(1)
 
-    data = yaml.safe_load(raw)
-    if not isinstance(data, dict):
+    metadata = yaml.safe_load(raw)
+    if not isinstance(metadata, dict):
         raise ValueError(f"Metadados inválidos: {path}")
-    return data
+    return metadata
 
 
 def validate_metadata(metadata: dict[str, object], path: str) -> None:
     missing = [field for field in REQUIRED_FIELDS if field not in metadata]
     if missing:
         raise ValueError(f"Campos ausentes em {path}: {', '.join(missing)}")
-
     for field in ("depende_de", "produz_entrada_para", "relaciona_se_com"):
         value = metadata.get(field, [])
-        if value is None:
-            continue
-        if not isinstance(value, list):
+        if value is not None and not isinstance(value, list):
             raise TypeError(f"{field} deve ser lista em {path}")
 
 
@@ -153,7 +145,6 @@ def load_documents(include_catalog: bool = True) -> list[Document]:
 
     documents: list[Document] = []
     seen_paths: set[str] = set()
-
     for label, path in iter_nav_entries(config.get("nav", [])):
         if not path.lower().endswith(".md") or path in seen_paths:
             continue
@@ -166,23 +157,26 @@ def load_documents(include_catalog: bool = True) -> list[Document]:
         layer = LAYER_BY_PATH.get(path)
         if layer is None:
             raise ValueError(f"Camada não definida para {path}")
-        documents.append(Document(label=label, path=path, layer=layer, metadata=metadata))
+        documents.append(Document(label, path, layer, metadata))
 
     if include_catalog and CATALOG_PATH not in seen_paths:
         documents.append(
             Document(
-                label="Catálogo documental",
-                path=CATALOG_PATH,
-                layer=LAYER_BY_PATH[CATALOG_PATH],
-                metadata=CATALOG_METADATA,
+                "Catálogo documental",
+                CATALOG_PATH,
+                LAYER_BY_PATH[CATALOG_PATH],
+                CATALOG_METADATA,
             )
         )
 
-    identifiers = [str(doc.metadata["id"]) for doc in documents]
-    duplicates = sorted(identifier for identifier, count in Counter(identifiers).items() if count > 1)
+    identifiers = [str(document.metadata["id"]) for document in documents]
+    duplicates = sorted(
+        identifier
+        for identifier, count in Counter(identifiers).items()
+        if count > 1
+    )
     if duplicates:
         raise ValueError(f"Identificadores duplicados: {', '.join(duplicates)}")
-
     return documents
 
 
@@ -195,52 +189,58 @@ def format_list(value: object) -> str:
 
 
 def yaml_front_matter(metadata: dict[str, object]) -> str:
-    return "---\n" + yaml.safe_dump(
+    body = yaml.safe_dump(
         metadata,
         allow_unicode=True,
         sort_keys=False,
         default_flow_style=False,
-    ).rstrip() + "\n---\n"
+    ).rstrip()
+    return f"---\n{body}\n---\n"
+
+
+def append_document_tables(lines: list[str], documents: list[Document]) -> None:
+    for layer in LAYER_ORDER:
+        lines.extend(
+            [
+                f"## {layer}",
+                "",
+                "| Identificador | Documento | Versão | Estado | Tipo | Caminho |",
+                "|---|---|---:|---|---|---|",
+            ]
+        )
+        for document in sorted(
+            (item for item in documents if item.layer == layer),
+            key=lambda item: (str(item.metadata["id"]), item.path),
+        ):
+            metadata = document.metadata
+            title = str(metadata["titulo"]).replace("|", "\\|")
+            lines.append(
+                f"| `{metadata['id']}` | [{title}]({document.path}) | "
+                f"`{metadata['versao']}` | `{metadata['status']}` | "
+                f"`{metadata['tipo']}` | `{document.path}` |"
+            )
+        lines.append("")
 
 
 def generate_catalog(documents: list[Document]) -> str:
-    counts = Counter(doc.layer for doc in documents)
-    lines = [yaml_front_matter(CATALOG_METADATA), "# Catálogo Documental do Pragmatismo Cívico", ""]
-    lines.extend(
-        [
-            "Este catálogo apresenta a fonte canônica dos documentos públicos, seus identificadores, versões, estados e relações principais.",
-            "",
-            "Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A presença no catálogo não significa aprovação, estabilidade ou validação empírica; essas propriedades são determinadas pelo campo `status` e pelo histórico correspondente.",
-            "",
-            "## Visão geral",
-            "",
-            "| Camada | Documentos |",
-            "|---|---:|",
-        ]
-    )
-    for layer in LAYER_ORDER:
-        lines.append(f"| {layer} | {counts[layer]} |")
+    counts = Counter(document.layer for document in documents)
+    lines = [
+        yaml_front_matter(CATALOG_METADATA),
+        "# Catálogo Documental do Pragmatismo Cívico",
+        "",
+        "Este catálogo apresenta a fonte canônica dos documentos públicos, seus identificadores, versões, estados e relações principais.",
+        "",
+        "Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A presença no catálogo não significa aprovação, estabilidade ou validação empírica; essas propriedades são determinadas pelo campo `status` e pelo histórico correspondente.",
+        "",
+        "## Visão geral",
+        "",
+        "| Camada | Documentos |",
+        "|---|---:|",
+    ]
+    lines.extend(f"| {layer} | {counts[layer]} |" for layer in LAYER_ORDER)
     lines.extend([f"| **Total** | **{len(documents)}** |", ""])
 
-    for layer in LAYER_ORDER:
-        lines.extend([f"## {layer}", "", "| Identificador | Documento | Versão | Estado | Tipo | Caminho |", "|---|---|---:|---|---|---|"])
-        layer_docs = sorted(
-            (doc for doc in documents if doc.layer == layer),
-            key=lambda doc: (str(doc.metadata["id"]), doc.path),
-        )
-        for doc in layer_docs:
-            metadata = doc.metadata
-            lines.append(
-                "| `{id}` | [{title}]({path}) | `{version}` | `{status}` | `{type_}` | `{path}` |".format(
-                    id=metadata["id"],
-                    title=str(metadata["titulo"]).replace("|", "\\|"),
-                    version=metadata["versao"],
-                    status=metadata["status"],
-                    type_=metadata["tipo"],
-                    path=doc.path,
-                )
-            )
-        lines.append("")
+    append_document_tables(lines, documents)
 
     lines.extend(
         [
@@ -252,8 +252,8 @@ def generate_catalog(documents: list[Document]) -> str:
             "|---|---|---|",
         ]
     )
-    for doc in sorted(documents, key=lambda item: str(item.metadata["id"])):
-        metadata = doc.metadata
+    for document in sorted(documents, key=lambda item: str(item.metadata["id"])):
+        metadata = document.metadata
         lines.append(
             f"| `{metadata['id']}` | {format_list(metadata.get('depende_de'))} | "
             f"{format_list(metadata.get('produz_entrada_para'))} |"
@@ -268,10 +268,10 @@ def generate_catalog(documents: list[Document]) -> str:
             "|---|---|",
         ]
     )
-    for doc in sorted(documents, key=lambda item: str(item.metadata["id"])):
-        related = doc.metadata.get("relaciona_se_com")
+    for document in sorted(documents, key=lambda item: str(item.metadata["id"])):
+        related = document.metadata.get("relaciona_se_com")
         if related:
-            lines.append(f"| `{doc.metadata['id']}` | {format_list(related)} |")
+            lines.append(f"| `{document.metadata['id']}` | {format_list(related)} |")
 
     lines.extend(
         [
@@ -288,7 +288,7 @@ def generate_catalog(documents: list[Document]) -> str:
             "",
             "### Compreender a governança documental",
             "",
-            "`PPC-000` → `PPC-000A` → `PPC-META-001` → `ARQ-001` → `ARQ-002` → `CATALOGO-DOCUMENTAL`.",
+            "`PPC-000` → `PPC-000A` → `PPC-META-001` → `ARQ-001` → `ARQ-002` → `ARQ-003` → `CATALOGO-DOCUMENTAL`.",
             "",
             "## Limites e manutenção",
             "",
