@@ -1,7 +1,7 @@
 ---
 id: FRAMEWORK-DE-REFERENCIA
 titulo: Framework de Referência do Pragmatismo Cívico
-versao: 0.1.1
+versao: 0.2.0
 status: rascunho
 tipo: principio
 idioma: pt-BR
@@ -77,44 +77,69 @@ Novas propostas devem demonstrar explicitamente qual problema resolvem, quais pr
 
 ## 5. Arquitetura do conhecimento
 
-### 5.1 Fundamentos
+A arquitetura vigente possui seis camadas lógicas, conforme o ARQ-001.
 
-Definem identidade, propósito e limites.
+### 5.1 Princípios e fundamentos
 
-- `README.md`
-- `MANIFESTO.md`
-- `CARTA_DE_PRINCIPIOS.md`
-- `SPECIFICATION.md`
+Definem identidade, propósito, teoria, vocabulário e limites normativos.
 
-### 5.2 Método
+- `CARTA_DE_PRINCIPIOS.md`;
+- `SPECIFICATION.md`;
+- `FRAMEWORK_DE_REFERENCIA.md`;
+- `TEORIA_DO_PRAGMATISMO_CIVICO.md`;
+- `MANIFESTO.md`;
+- `GLOSSARIO.md`.
 
-Transforma princípios em processos de decisão.
+### 5.2 Governança e arquitetura
 
-- `MODELO_DE_GOVERNANCA.md`
-- futuras fichas de diagnóstico, alternativas, decisão e revisão
+Organizam responsabilidades, evolução, metadados, ciclo de vida e estrutura do acervo.
 
-### 5.3 Mensuração e ferramentas
+- `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md`;
+- `MODELO_DE_GOVERNANCA.md`;
+- `PPC-META-001_METADADOS_E_VERSIONAMENTO.md`;
+- `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md`;
+- `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md`;
+- `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md`;
+- `ROADMAP.md`;
+- `CONTRIBUTING.md`;
+- `CODE_OF_CONDUCT.md`.
 
-Permite verificar resultados, custos, riscos, equidade e impacto.
+### 5.3 Método
 
-- `INDICADORES.md`
-- futura matriz de avaliação de políticas públicas
-- futuros modelos de relatório e auditoria
+Transforma princípios em um ciclo rastreável de decisão, implementação, avaliação e aprendizagem.
 
-### 5.4 Aplicações
+- `CICLO_DO_PRAGMATISMO_CIVICO.md`;
+- PPC-001 a PPC-004;
+- `MODELO_DE_TEORIA_DA_MUDANCA.md`;
+- PPC-005 a PPC-008.
 
-Demonstra o uso do framework em problemas reais, sem alterar o núcleo fundador.
+### 5.4 Ferramentas
+
+Operacionaliza o método por instrumentos reutilizáveis.
+
+- fichas PPC-001 a PPC-008;
+- ficha de Teoria da Mudança;
+- `MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md`;
+- `INDICADORES.md`.
+
+### 5.5 Aplicações e evidências
+
+Demonstra o uso do framework em problemas reais ou simulados sem alterar o núcleo fundador.
 
 - estudos de caso;
 - projetos-piloto;
+- avaliações independentes;
+- relatórios de implementação, resultados e aprendizagem;
 - guias por domínio, como saúde, educação, mobilidade e saneamento.
 
-### 5.5 Evolução e comunidade
+### 5.6 Publicação e acesso
 
-Organiza contribuições, versões e revisão pública.
+Torna o acervo localizável, compreensível e reutilizável.
 
-- `ROADMAP.md`
-- futuros `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` e processo formal de propostas de mudança.
+- `README.md`;
+- `docs/COMECAR.md`;
+- `mkdocs.yml` e o portal público;
+- busca, catálogo, versões para impressão e registros de publicação.
 
 ## 6. Hierarquia documental
 
@@ -166,7 +191,7 @@ Sua evolução deve permanecer pública, versionada, fundamentada e acessível �
 
 ## 10. Estado do documento
 
-Esta é a versão inicial do FRPC. Ela consolida a arquitetura já presente no repositório e estabelece uma proteção explícita contra perda de foco durante a expansão do projeto.
+Esta é uma versão inicial do FRPC. Ela consolida a arquitetura presente no repositório e estabelece proteção explícita contra perda de foco durante a expansão do projeto.
 
 O documento deverá evoluir de forma incremental, preservando sempre a definição central e os princípios fundadores.
 
@@ -176,3 +201,4 @@ O documento deverá evoluir de forma incremental, preservando sempre a definiç�
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica, relações de autoridade e preservação integral do conteúdo normativo | Projeto Pragmatismo Cívico |
 | 0.1.1 | 2026-07-18 | correção | Registro da saída consumida pelo Glossário, completando a relação documental sem alterar o conteúdo normativo | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Atualização da arquitetura do conhecimento para as seis camadas vigentes e substituição das referências históricas a entregas futuras, sem mudança do núcleo fundador | Projeto Pragmatismo Cívico |
