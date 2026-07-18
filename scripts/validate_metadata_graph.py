@@ -6,7 +6,6 @@ import re
 import sys
 from dataclasses import dataclass, field
 from datetime import date
-from pathlib import Path
 
 from generate_catalog import ROOT, Document, load_documents
 
@@ -100,14 +99,22 @@ def has_current_version_in_history(document: Document) -> bool:
     source = (ROOT / document.path).read_text(encoding="utf-8")
     version = re.escape(str(document.metadata["versao"]))
     history_match = re.search(
-        r"^##+\s+Hist[oó]rico de altera[cç][oõ]es\s*$",
+        r"^##+\s+(?:\d+(?:\.\d+)*\s*[-—.]?\s*)?"
+        r"Hist[oó]rico de (?:altera[cç][oõ]es|vers[oõ]es)\s*$",
         source,
         flags=re.MULTILINE | re.IGNORECASE,
     )
     if history_match is None:
         return False
     history = source[history_match.end() :]
-    return re.search(rf"^\|\s*{version}\s*\|", history, flags=re.MULTILINE) is not None
+    return (
+        re.search(
+            rf"^\|\s*(?:`|\*\*)?{version}(?:`|\*\*)?\s*\|",
+            history,
+            flags=re.MULTILINE,
+        )
+        is not None
+    )
 
 
 def detect_dependency_cycles(by_id: dict[str, Document]) -> list[str]:
@@ -129,7 +136,10 @@ def detect_dependency_cycles(by_id: dict[str, Document]) -> list[str]:
         if node in visiting:
             start = visiting.index(node)
             cycle = visiting[start:] + [node]
-            rotations = [tuple(cycle[index:-1] + cycle[:index] + [cycle[index]]) for index in range(len(cycle) - 1)]
+            rotations = [
+                tuple(cycle[index:-1] + cycle[:index] + [cycle[index]])
+                for index in range(len(cycle) - 1)
+            ]
             cycles.add(min(rotations))
             return
         if node in visited:
