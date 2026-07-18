@@ -1,3 +1,30 @@
+---
+id: TEORIA-DO-PRAGMATISMO-CIVICO
+titulo: Teoria do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: principio
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - CARTA-DE-PRINCIPIOS
+  - SPECIFICATION
+produz_entrada_para: []
+relaciona_se_com:
+  - FRAMEWORK-DE-REFERENCIA
+  - CICLO-PC-001
+  - GOV-001
+  - PPC-008
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Teoria do Pragmatismo Cívico
 
 ## Status
@@ -193,3 +220,9 @@ O Pragmatismo Cívico deve ser validado por:
 - revisão pública e versionada.
 
 > Decidir com evidências. Agir com responsabilidade. Aprender continuamente.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica e preservação integral da base teórica | Projeto Pragmatismo Cívico |
