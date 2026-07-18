@@ -32,7 +32,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Construir portal
-        run: mkdocs build --strict
+        run: mkdocs build --strict --clean
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
@@ -40,7 +40,7 @@ jobs:
       - name: Enviar artefato
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: ../site
 
   deploy:
     environment:
