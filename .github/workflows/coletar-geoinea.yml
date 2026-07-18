@@ -2,6 +2,12 @@ name: Consultar GeoINEA
 
 on:
   workflow_dispatch:
+    inputs:
+      search_term:
+        description: Termo nominal no campo sub_bacias
+        required: true
+        default: Itapeba
+        type: string
   push:
     paths:
       - .github/workflows/coletar-geoinea.yml
@@ -20,6 +26,8 @@ concurrency:
 jobs:
   consultar:
     runs-on: ubuntu-latest
+    env:
+      SEARCH_TERM: ${{ inputs.search_term || 'Itapeba' }}
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
@@ -40,11 +48,11 @@ jobs:
           status=1
           : > geoinea-query.log
           for attempt in 1 2 3; do
-            echo "Tentativa ${attempt}/3" | tee -a geoinea-query.log
+            echo "Tentativa ${attempt}/3 para o termo: ${SEARCH_TERM}" | tee -a geoinea-query.log
             rm -rf geoinea-result
             python scripts/coletar_geoinea_subbacia.py \
               --output-dir geoinea-result \
-              --search-term Itapeba \
+              --search-term "$SEARCH_TERM" \
               --timeout 120 \
               >> geoinea-query.log 2>&1
             status=$?
@@ -77,7 +85,7 @@ jobs:
             --source-url "$source_url" \
             --accessed-at "$(date -u +%F)" \
             --source-srid EPSG:4674 \
-            --expected-name Itapeba \
+            --expected-name "$SEARCH_TERM" \
             > geoinea-geometry-validation.log 2>&1
           status=$?
           cat geoinea-geometry-validation.log
@@ -98,6 +106,7 @@ jobs:
           lines = [
               '# Consulta GeoINEA',
               '',
+              f"- Termo: `{data['query']['search_term']}`",
               f"- Objetos na camada: {result['object_id_count']}",
               f"- Feições consultadas: {result['attribute_feature_count']}",
               f"- Correspondências nominais: {result['match_count']}",
@@ -113,7 +122,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: geoinea-itapeba-query
+          name: geoinea-source-query
           path: |
             geoinea-result/
             geoinea-query.log
