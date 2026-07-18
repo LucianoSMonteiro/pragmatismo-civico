@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.8.0
+versao: 0.9.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -143,7 +143,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] conclusão da Fase 3B — fichas PPC-005 a PPC-008;
 - [x] conclusão da Fase 3C — matriz, indicadores e revisão dos vínculos das ferramentas;
 - [x] conclusão da Fase 4A — metadados do Framework de Referência e da Carta de Princípios;
-- [ ] Fase 4B — teoria, especificação, manifesto e glossário;
+- [x] conclusão da Fase 4B — teoria, especificação, manifesto, glossário e reparos de coerência;
 - [ ] Fase 4C — README e guia de início;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
@@ -198,7 +198,7 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 ## Prioridades imediatas
 
 1. formalizar o processo de propostas de mudança;
-2. executar a Fase 4B da migração documental para a Teoria do Pragmatismo Cívico, a Especificação, o Manifesto e o Glossário;
+2. executar a Fase 4C da migração documental para o README e o guia de início;
 3. criar a ficha padrão de indicadores;
 4. desenvolver o checklist de transparência e rastreabilidade;
 5. estruturar o protocolo de avaliação do próprio framework;
@@ -257,3 +257,4 @@ Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prá
 | 0.6.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 3B e promoção da Fase 3C | Projeto Pragmatismo Cívico |
 | 0.7.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 3C e promoção da Fase 4A | Projeto Pragmatismo Cívico |
 | 0.8.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4A e promoção da Fase 4B | Projeto Pragmatismo Cívico |
+| 0.9.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4B, dos reparos de coerência e promoção da Fase 4C | Projeto Pragmatismo Cívico |
