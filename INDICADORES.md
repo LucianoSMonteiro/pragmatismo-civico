@@ -1,4 +1,48 @@
+---
+id: MODELO-INDICADORES-001
+titulo: Indicadores do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - CICLO-PC-001
+  - PPC-001
+  - MODELO-TDM-001
+  - PPC-006
+  - PPC-007
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - FICHA-PPC-001
+  - FICHA-TDM-001
+  - FICHA-PPC-006
+  - FICHA-PPC-007
+  - MATRIZ-PPC-001
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+documentos_associados:
+  - id: PPC-001
+    versao: 0.1.1
+  - id: MODELO-TDM-001
+    versao: 0.1.0
+  - id: PPC-006
+    versao: 0.1.0
+  - id: PPC-007
+    versao: 0.1.0
+---
+
 # Indicadores do Pragmatismo Cívico
+
+O campo `documentos_associados` registra os documentos e versões que esta ferramenta operacionaliza.
 
 ## 1. Propósito
 
@@ -219,3 +263,9 @@ Antes de aceitar um painel, deve-se perguntar:
 7. O resultado pode ser razoavelmente atribuído à política?
 
 > Medir não é produzir números. É criar condições para aprender, prestar contas e decidir melhor.
+
+## Histórico de alterações da ferramenta
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, identificação formal e vínculo às versões correntes do PPC-001, Modelo de Teoria da Mudança, PPC-006 e PPC-007 | Projeto Pragmatismo Cívico |
