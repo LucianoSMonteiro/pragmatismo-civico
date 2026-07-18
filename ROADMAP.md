@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.3.0
+versao: 0.4.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -138,7 +138,8 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] conclusão da Fase 1 da migração documental — roadmap, guia de contribuição e código de conduta;
 - [x] conclusão da Fase 2A da migração documental — ciclo, PPC-001 a PPC-004 e teoria da mudança;
 - [x] conclusão da Fase 2B da migração documental — PPC-005 a PPC-008;
-- [ ] revisão de reciprocidade das dependências do ciclo completo;
+- [x] conclusão da Fase 2C — revisão de reciprocidade das dependências do ciclo completo;
+- [ ] migração documental das ferramentas;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
 - [ ] política de revisão e aprovação;
@@ -192,7 +193,7 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 ## Prioridades imediatas
 
 1. formalizar o processo de propostas de mudança;
-2. executar a Fase 2C de revisão da reciprocidade das dependências do ciclo completo;
+2. executar a Fase 3 da migração documental das ferramentas;
 3. criar a ficha padrão de indicadores;
 4. desenvolver o checklist de transparência e rastreabilidade;
 5. estruturar o protocolo de avaliação do próprio framework;
@@ -246,3 +247,4 @@ Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prá
 | 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001 e registro da conclusão da Fase 1 da migração de governança | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 2A e atualização das prioridades de migração metodológica | Projeto Pragmatismo Cívico |
 | 0.3.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 2B e promoção da revisão de reciprocidade para a próxima etapa | Projeto Pragmatismo Cívico |
+| 0.4.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 2C e promoção da migração das ferramentas | Projeto Pragmatismo Cívico |
