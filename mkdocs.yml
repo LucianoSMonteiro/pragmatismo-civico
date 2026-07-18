@@ -67,6 +67,7 @@ nav:
   - O projeto:
       - Framework de referência: FRAMEWORK_DE_REFERENCIA.md
       - Arquitetura documental: ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md
+      - Inventário e plano de migração: ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md
       - Teoria: TEORIA_DO_PRAGMATISMO_CIVICO.md
       - Manifesto: MANIFESTO.md
       - Carta de princípios: CARTA_DE_PRINCIPIOS.md
