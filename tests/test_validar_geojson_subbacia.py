@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 import subprocess
 import sys
@@ -89,6 +90,29 @@ class ValidarGeojsonSubbaciaTest(unittest.TestCase):
             self.assertFalse(data["summary"]["ok"])
             self.assertTrue(any("anel não fechado" in item for item in data["errors"]))
             self.assertIn("REPROVADO", (base / "report.md").read_text(encoding="utf-8"))
+
+
+def load_module_from_tests(name: str):
+    path = ROOT / "tests" / f"{name}.py"
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Não foi possível carregar {path}.")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_tests(loader, standard_tests, pattern):
+    """Mantém um único ponto de entrada para todo o pipeline geoespacial da CI."""
+    suite = unittest.TestSuite()
+    suite.addTests(standard_tests)
+    for module_name in (
+        "test_coletar_geoinea_subbacia",
+        "test_geoinea_ipv4_transport",
+    ):
+        suite.addTests(loader.loadTestsFromModule(load_module_from_tests(module_name)))
+    return suite
 
 
 if __name__ == "__main__":
