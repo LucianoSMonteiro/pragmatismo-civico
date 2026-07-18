@@ -104,12 +104,13 @@ def load_module_from_tests(name: str):
 
 
 def load_tests(loader, standard_tests, pattern):
-    """Mantém um único ponto de entrada para todo o pipeline geoespacial da CI."""
+    """Mantém um ponto de entrada para geometria, coleta e evidências do caso."""
     suite = unittest.TestSuite()
     suite.addTests(standard_tests)
     for module_name in (
         "test_coletar_geoinea_subbacia",
         "test_geoinea_ipv4_transport",
+        "test_validar_registro_documentos_tecnicos",
     ):
         suite.addTests(loader.loadTestsFromModule(load_module_from_tests(module_name)))
     return suite
