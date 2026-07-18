@@ -1,7 +1,7 @@
 ---
 id: GUIA-COMECAR
 titulo: Começar no Pragmatismo Cívico
-versao: 0.6.0
+versao: 0.7.0
 status: rascunho
 tipo: guia
 idioma: pt-BR
@@ -21,6 +21,7 @@ relaciona_se_com:
   - CATALOGO-DOCUMENTAL
   - ARQ-003
   - GOV-005
+  - GOV-006
   - PPC-000
   - GOV-003
 substitui: []
@@ -74,19 +75,23 @@ A leitura recomendada é:
 1. [PPC-000](../PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) — estrutura do ecossistema;
 2. [PPC-000A](../PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) — estados e transições;
 3. [PPC-META-001](../PPC-META-001_METADADOS_E_VERSIONAMENTO.md) — metadados e versões;
-4. [GOV-005](../GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md) — propostas, revisão, decisão e verificação;
-5. [ARQ-001](../ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) — camadas e relações;
-6. [ARQ-002](../ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) — cobertura, validação e dívida;
-7. [ARQ-003](../ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md) — caminhos e estrutura híbrida;
-8. [Catálogo Documental](../CATALOGO_DOCUMENTAL.md) — visão consolidada.
+4. [GOV-005](../GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md) — identificação, triagem e ciclo das propostas;
+5. [GOV-006](../GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md) — competência, independência, quórum e decisão;
+6. [ARQ-001](../ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) — camadas e relações;
+7. [ARQ-002](../ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) — cobertura, validação e dívida;
+8. [ARQ-003](../ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md) — caminhos e estrutura híbrida;
+9. [Catálogo Documental](../CATALOGO_DOCUMENTAL.md) — visão consolidada.
 
-## Quero propor uma mudança
+## Quero propor e revisar uma mudança
 
 Use:
 
 - [GOV-005 — Processo de Propostas de Mudança](../GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md);
 - [Ficha GOV-005](../FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md);
-- formulário **Proposta de mudança** nas issues do repositório;
+- [GOV-006 — Política de Revisão e Aprovação](../GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md);
+- [Registro GOV-006](../FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md);
+- formulário **Proposta de mudança** nas issues;
+- template de pull request;
 - [Guia de Contribuição](../CONTRIBUTING.md).
 
 Uma proposta formal deve registrar:
@@ -100,7 +105,19 @@ Uma proposta formal deve registrar:
 - conflitos de interesse;
 - implementação, verificação e reversão.
 
-A issue registra a proposta. O pull request implementa a decisão e não substitui a revisão ou a justificativa pública.
+A revisão deve registrar composição, competência, independência, impedimentos, quórum, votos, fundamentos, condições e dissensos.
+
+A issue registra a proposta. O pull request implementa a decisão e não substitui revisão, quórum ou justificativa pública.
+
+## Regime provisório de aprovação
+
+A política permanente está publicada, mas a instância plural ainda não foi constituída. Enquanto isso:
+
+- mudanças de baixo impacto podem ser mantidas pelos responsáveis atuais com revisão proporcional;
+- propostas moderadas exigem ao menos duas manifestações fundamentadas;
+- propostas altas não avançam para estabilidade sem o painel mínimo;
+- propostas críticas ou fundacionais não podem produzir alteração definitiva do núcleo sem o quórum permanente;
+- limitações e acumulações de função devem ser publicadas.
 
 ## Estrutura física vigente
 
@@ -115,7 +132,7 @@ O crescimento futuro seguirá a estrutura híbrida:
 
 ## Estado atual
 
-O acervo navegável contém 42 documentos identificados, versionados, catalogados e validados automaticamente. O processo formal de mudanças está publicado como rascunho. A política permanente de revisão e a instância plural ainda são pendências. Também não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público aguarda a ativação inicial do GitHub Pages registrada na issue #1.
+O acervo navegável contém 44 documentos identificados, versionados, catalogados e validados automaticamente. O processo de propostas e a política de revisão estão publicados como rascunhos operacionais. A instância plural permanente e o cadastro público de revisores ainda são pendências. Também não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público aguarda a ativação inicial do GitHub Pages registrada na issue #1.
 
 ## Histórico de alterações
 
@@ -127,3 +144,4 @@ O acervo navegável contém 42 documentos identificados, versionados, catalogado
 | 0.4.0 | 2026-07-18 | compatível | Registro da conclusão da validação automática | Projeto Pragmatismo Cívico |
 | 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003 e atualização para 40 documentos | Projeto Pragmatismo Cívico |
 | 0.6.0 | 2026-07-18 | compatível | Inclusão do GOV-005, da ficha, do formulário e atualização para 42 documentos | Projeto Pragmatismo Cívico |
+| 0.7.0 | 2026-07-18 | compatível | Inclusão do GOV-006, do registro de revisão, do template de pull request e atualização para 44 documentos | Projeto Pragmatismo Cívico |
