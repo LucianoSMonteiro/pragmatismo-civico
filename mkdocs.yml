@@ -58,6 +58,7 @@ nav:
   - Início: README.md
   - Começar: docs/COMECAR.md
   - O projeto:
+      - Catálogo documental: CATALOGO_DOCUMENTAL.md
       - Framework de referência: FRAMEWORK_DE_REFERENCIA.md
       - Arquitetura documental: ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md
       - Inventário e plano de migração: ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md
