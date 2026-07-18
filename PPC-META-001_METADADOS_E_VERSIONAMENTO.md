@@ -1,3 +1,26 @@
+---
+id: PPC-META-001
+titulo: Metadados e Versionamento
+versao: 0.2.0
+status: rascunho
+tipo: padrao-transversal
+idioma: pt-BR
+data_criacao: 2026-07-17
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-000
+produz_entrada_para: []
+relaciona_se_com:
+  - PPC-000A
+substitui: []
+substituido_por: null
+compatibilidade: compativel
+proxima_revisao: null
+---
+
 # PPC-META-001 — Metadados e Versionamento
 
 ## Status
@@ -32,9 +55,11 @@ Aplica-se a:
 
 Documentos históricos podem ser migrados progressivamente. Todo documento novo ou submetido a revisão estrutural deve adotar este padrão.
 
-## 3. Relação com o PPC-000
+## 3. Relação com o PPC-000 e o PPC-000A
 
 O `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md` define as regras gerais do ecossistema de padrões.
+
+O `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md` define os estados canônicos, as transições, os portões de decisão e os registros necessários para mudança de estado.
 
 O PPC-META-001 detalha especificamente:
 
@@ -45,7 +70,7 @@ O PPC-META-001 detalha especificamente:
 - a declaração de dependências e compatibilidade;
 - os critérios de validação documental.
 
-Em caso de conflito, o PPC-000 orienta a governança geral, e o PPC-META-001 orienta a representação documental e o versionamento.
+Em caso de conflito, o PPC-000 orienta a governança geral, o PPC-000A orienta o ciclo de vida, e o PPC-META-001 orienta a representação documental e o versionamento.
 
 ## 4. Princípios
 
@@ -138,9 +163,9 @@ Versão semântica no formato `X.Y.Z`.
 
 ### 7.4 `status`
 
-Estado vigente do documento, conforme o ciclo de vida oficial.
+Estado vigente do documento, conforme o ciclo de vida oficial definido pelo PPC-000A.
 
-Até a publicação do padrão específico de ciclo de vida, são aceitos:
+Os valores aceitos são:
 
 - `ideia`;
 - `proposta`;
@@ -152,6 +177,8 @@ Até a publicação do padrão específico de ciclo de vida, são aceitos:
 - `substituido`;
 - `obsoleto`;
 - `arquivado`.
+
+A alteração desse campo deve corresponder a uma transição registrada segundo o PPC-000A.
 
 ### 7.5 `tipo`
 
@@ -297,6 +324,8 @@ Alterações menores ou maiores devem informar:
 
 Esse registro pode constar do próprio documento, de uma proposta de mudança, de uma issue ou de um pull request, desde que exista referência rastreável.
 
+Mudanças do campo `status` devem também conter o registro de transição exigido pelo PPC-000A.
+
 ## 13. Dependências e relacionamentos
 
 As dependências devem utilizar identificadores oficiais, evitando referências apenas por título.
@@ -352,6 +381,7 @@ Antes da publicação ou atualização, deve-se verificar:
 - validade do formato da versão;
 - coerência entre versão e tipo de mudança;
 - validade do status;
+- correspondência da mudança de estado com o PPC-000A;
 - datas em formato padronizado;
 - existência dos documentos referenciados;
 - reciprocidade das dependências obrigatórias;
@@ -419,4 +449,5 @@ Esses temas devem ser tratados pelos documentos próprios de governança, arquit
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
+| 0.2.0 | 2026-07-17 | evolução compatível | Integração com o PPC-000A e adoção de metadados no próprio documento | Projeto Pragmatismo Cívico |
 | 0.1.0 | 2026-07-17 | inicial | Primeira publicação do padrão de metadados e versionamento | Projeto Pragmatismo Cívico |
