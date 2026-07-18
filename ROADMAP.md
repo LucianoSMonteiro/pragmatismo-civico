@@ -19,6 +19,7 @@ Toda nova entrega deve ser verificada à luz do `FRAMEWORK_DE_REFERENCIA.md`, pr
 - [x] framework de referência e regra de preservação da essência;
 - [x] arquitetura documental do framework;
 - [x] inventário e plano de migração documental;
+- [x] revisão de coerência do README, do inventário e da navegação;
 - [x] modelo de governança;
 - [x] estrutura de indicadores;
 - [x] roadmap inicial;
@@ -124,6 +125,8 @@ O projeto deve conseguir receber, avaliar e incorporar contribuições sem perde
 
 - [x] estrutura inicial do portal no GitHub Pages;
 - [x] biblioteca navegável de princípios, padrões e ferramentas;
+- [x] README sincronizado com o ciclo completo e a governança documental;
+- [x] navegação revisada segundo a arquitetura documental;
 - [ ] painel de indicadores demonstrativo;
 - [ ] catálogo de estudos de caso;
 - [ ] versões para impressão;
