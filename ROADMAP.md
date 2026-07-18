@@ -103,7 +103,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
 - [ ] política de revisão e aprovação;
-- [ ] ciclo de vida formal dos PPCs;
+- [x] PPC-000A — ciclo de vida formal dos PPCs;
 - [ ] conselho consultivo plural;
 - [ ] regras sobre conflitos de interesse;
 - [ ] fóruns de discussão pública;
@@ -151,9 +151,9 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. formalizar o PPC-000A — ciclo de vida dos padrões;
-2. consolidar a arquitetura documental do framework;
-3. planejar a migração progressiva dos documentos para o PPC-META-001;
+1. consolidar a arquitetura documental do framework;
+2. planejar a migração progressiva dos documentos para o PPC-META-001 e o PPC-000A;
+3. formalizar o processo de propostas de mudança;
 4. criar a ficha padrão de indicadores;
 5. desenvolver o checklist de transparência e rastreabilidade;
 6. estruturar o protocolo de avaliação do próprio framework;
