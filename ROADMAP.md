@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.18.0
+versao: 0.19.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -29,6 +29,7 @@ relaciona_se_com:
   - ARQ-003
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-DADOS-CHUVA
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -87,12 +88,16 @@ Toda entrega deve preservar os princípios fundadores, resolver problema demonst
 - [x] período preliminar de 2022-01-01 a 2026-06-30;
 - [x] inventário inicial de fontes oficiais e registro de prontidão;
 - [x] decisão motivada de manter o caso em preparação;
-- [ ] obter polígono oficial da sub-bacia de Itapeba;
-- [ ] obter produtos técnicos, projetos, geometrias e cronogramas;
-- [ ] coletar e testar séries pluviométricas e registros administrativos;
-- [ ] confirmar interlocutores e plano participativo local;
-- [ ] obter capacidade de revisão compatível;
-- [ ] aprovar, suspender ou encerrar o portão de prontidão;
+- [x] processador reproduzível de chuva, manifesto, relatório e teste sintético;
+- [x] protocolo público de aquisição e qualidade de dados pluviométricos;
+- [x] status de CI separado `data/pipeline`;
+- [ ] obter polígono oficial da sub-bacia de Itapeba — issue #6;
+- [ ] obter produtos técnicos, projetos, geometrias e cronogramas — issue #7;
+- [ ] baixar mensalmente e revisar a série pluviométrica real — issue #4;
+- [ ] consolidar matriz de fontes e lacunas — issue #10;
+- [ ] confirmar interlocutores e plano participativo local — issue #8;
+- [ ] obter capacidade de revisão compatível — issue #9;
+- [ ] aprovar, suspender ou encerrar o portão de prontidão — issue #2;
 - [ ] aplicar o PPC-001 somente após aprovação do portão;
 - [ ] aplicar o ciclo completo quando proporcional e viável;
 - [ ] publicar dados, hipóteses e limitações;
@@ -100,7 +105,7 @@ Toda entrega deve preservar os princípios fundadores, resolver problema demonst
 - [ ] publicar relatório de lições aprendidas;
 - [ ] atualizar o framework com base nos testes.
 
-O CASO-001 continua em preparação. O registro de fontes e a delimitação preliminar não constituem diagnóstico, recomendação, avaliação de órgão ou validação empírica.
+O CASO-001 continua em preparação. O processador foi validado apenas com dados sintéticos; nenhuma série real foi coletada ou tratada como evidência.
 
 ### Critério de conclusão
 
@@ -122,7 +127,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] programa e cadastro público de revisores — GOV-007;
 - [x] ficha e formulário de candidatura;
 - [x] protocolo de casos demonstrativos — GOV-008;
-- [ ] primeira chamada pública e primeiras admissões;
+- [ ] primeira chamada pública e primeiras admissões — issue #3;
 - [ ] fóruns de discussão pública;
 - [ ] instância plural permanente.
 
@@ -137,7 +142,7 @@ O projeto deve receber, revisar e incorporar contribuições sem perder coerênc
 ### Entregas
 
 - [x] infraestrutura reproduzível do portal;
-- [x] biblioteca navegável com 52 documentos;
+- [x] biblioteca navegável com 53 documentos;
 - [x] catálogo e mapa de relações nas seis camadas;
 - [x] índice público de casos e evidências;
 - [x] validação de metadados, grafo, links e catálogo;
@@ -145,6 +150,7 @@ O projeto deve receber, revisar e incorporar contribuições sem perder coerênc
 - [x] salvaguardas de privacidade na candidatura pública;
 - [x] análise automática da estrutura física;
 - [x] artefatos e status separados de CI;
+- [x] teste sintético e artefato do pipeline de dados;
 - [ ] ativação inicial do GitHub Pages e primeiro deploy — issue #1;
 - [ ] painel de indicadores demonstrativo;
 - [ ] versões para impressão;
@@ -179,22 +185,23 @@ O cadastro público de revisores permanece vazio. Isso impede que o CASO-001 ale
 
 ## Decisão arquitetural vigente
 
-O ARQ-003 preserva caminhos existentes, direciona aplicações para `casos/` e relatórios para `relatorios/`. A decisão será revista após três casos, 60 documentos ou evidência de custo material.
+O ARQ-003 preserva caminhos existentes, direciona aplicações para `casos/`, relatórios para `relatorios/` e arquivos locais ainda não publicáveis para `work/`, ignorado pelo Git. A decisão será revista após três casos, 60 documentos ou evidência de custo material.
 
 ## Prioridades imediatas
 
-1. obter o polígono oficial da sub-bacia de Itapeba;
-2. coletar e testar as séries da estação Cemaden Itapeba;
-3. obter produtos técnicos do Programa Municipal de Drenagem e das intervenções de 2026;
-4. confirmar interlocutores, registros agregados e plano participativo;
-5. realizar a primeira chamada pública de revisores;
-6. emitir nova decisão do portão de prontidão;
-7. habilitar o GitHub Pages — issue #1;
-8. criar a ficha padrão de indicadores;
-9. desenvolver o checklist de transparência e rastreabilidade;
-10. estruturar o protocolo de avaliação do framework;
-11. revisar a licença;
-12. preparar versões para impressão.
+1. executar os downloads mensais autorizados da estação Itapeba e revisar as flags — issue #4;
+2. obter o polígono oficial da sub-bacia — issue #6;
+3. obter produtos técnicos do Programa Municipal de Drenagem e das intervenções — issue #7;
+4. consolidar a matriz de fontes — issue #10;
+5. confirmar interlocutores e participação local — issue #8;
+6. realizar a primeira chamada pública de revisores — issue #3;
+7. obter revisão técnica compatível — issue #9;
+8. emitir nova decisão do portão — issue #2;
+9. habilitar o GitHub Pages — issue #1;
+10. criar a ficha padrão de indicadores;
+11. desenvolver o checklist de transparência e rastreabilidade;
+12. estruturar o protocolo de avaliação do framework;
+13. revisar a licença.
 
 ## Controle de coerência
 
@@ -241,4 +248,5 @@ Antes de iniciar uma entrega, verificar:
 | 0.15.0 | 2026-07-18 | compatível | Publicação do GOV-006 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.16.0 | 2026-07-18 | compatível | Publicação do GOV-007 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.17.0 | 2026-07-18 | compatível | Publicação do GOV-008 e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
-| 0.18.0 | 2026-07-18 | compatível | Recorte preliminar de Itapeba, inventário de fontes e decisão de manter o portão fechado | Projeto Pragmatismo Cívico |
+| 0.18.0 | 2026-07-18 | compatível | Recorte de Itapeba, inventário de fontes e decisão de manter o portão fechado | Projeto Pragmatismo Cívico |
+| 0.19.0 | 2026-07-18 | compatível | Pipeline pluviométrico reproduzível, protocolo público, quarto status de CI e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
