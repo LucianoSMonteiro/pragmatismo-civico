@@ -1,7 +1,7 @@
 ---
 id: CASO-001
 titulo: Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo na Sub-bacia de Itapeba
-versao: 0.2.0
+versao: 0.3.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -22,6 +22,8 @@ produz_entrada_para: []
 relaciona_se_com:
   - CASOS-INDEX
   - CASO-001-PRONTIDAO
+  - CASO-001-FONTES
+  - CASO-001-DADOS-CHUVA
   - GOV-006
   - GOV-007
   - MODELO-INDICADORES-001
@@ -42,9 +44,9 @@ issue_acompanhamento: 2
 
 **Preparação.** Este documento não contém diagnóstico oficial, recomendação de obra, contratação, avaliação de política ou conclusão sobre o sistema de drenagem de Maricá.
 
-A pesquisa inicial reduziu o escopo para a sub-bacia de Itapeba e definiu o período preliminar de 2022-01-01 a 2026-06-30. O polígono oficial, as séries tratadas, os documentos técnicos, a participação local e a revisão independente ainda estão pendentes.
+A pesquisa inicial reduziu o escopo para a sub-bacia de Itapeba e definiu o período preliminar de 2022-01-01 a 2026-06-30. A matriz consolidou 13 fontes públicas e o protocolo de dados definiu processamento, retenção e descarte, mas o polígono oficial, as séries reais, os documentos técnicos, a participação local e a revisão independente ainda estão pendentes.
 
-O PPC-001 somente poderá começar após nova decisão do portão de prontidão do GOV-008. Consulte o [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md) e a issue #2.
+O PPC-001 somente poderá começar após nova decisão do portão de prontidão do GOV-008. Consulte o [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md), a [matriz de fontes](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) e a issue #2.
 
 ## 1. Pergunta decisória preliminar
 
@@ -99,16 +101,20 @@ Esta versão:
 
 ## 5. Fontes verificadas e fontes pendentes
 
-O [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md) mantém o inventário inicial de fontes oficiais, incluindo:
+A [Matriz de Fontes e Lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) registra 13 fontes com identificador, classe, órgão, URL, cobertura, estado de obtenção, formato, licença conhecida, hash, uso, risco e relação com o portão.
+
+Ela inclui:
 
 - Plano de Contingência Municipal 2026;
-- Programa Municipal de Drenagem;
-- Plano Diretor e Lei Complementar 400/2025;
-- contratos anunciados em 2026 para a sub-bacia de Itapeba;
+- contratos anunciados em 2026 para Itapeba;
 - registro municipal das chuvas de abril de 2022;
-- estação pluviométrica Itapeba e dados brutos do Cemaden;
-- sistemas hidrometeorológicos do INEA e da ANA;
-- iniciativa municipal de monitoramento inteligente de drenagem.
+- Programa Municipal de Drenagem;
+- Plano Diretor, Lei Complementar nº 400/2025 e anexo de mapas;
+- estação pluviométrica Itapeba e interfaces do Cemaden;
+- monitoramento hidrometeorológico do INEA e Hidroweb da ANA;
+- iniciativa municipal de monitoramento inteligente da drenagem.
+
+A matriz diferencia fonte `localizada`, `consultada`, `obtida` e `tratada`. Nenhuma fonte desta versão foi classificada como obtida ou tratada para fins empíricos.
 
 Ainda precisam ser obtidos ou verificados:
 
@@ -163,6 +169,7 @@ Participação não será usada apenas para confirmar uma proposta previamente e
 |---|---|
 | limite da sub-bacia ainda indefinido | obter polígono e documentar método de recorte |
 | dados incompletos ou incompatíveis | registrar cobertura, qualidade, UTC, lacunas e transformações |
+| retenção excessiva ou publicação acidental | aplicar política de retenção, quarentena, descarte e revisão periódica |
 | foco excessivo em tecnologia | comparar alternativas operacionais, ambientais, estruturais e não intervenção |
 | exposição de pessoas afetadas | usar agregação e minimização de dados |
 | confusão com plano ou avaliação oficial | declarar natureza demonstrativa e não vinculante |
@@ -180,10 +187,12 @@ Situação atual:
 - [x] riscos e conflitos iniciais registrados;
 - [x] versões iniciais registradas;
 - [x] critérios de suspensão e encerramento definidos;
+- [x] matriz de fontes e lacunas consolidada;
+- [x] processamento, retenção e descarte documentados e testados sinteticamente;
 - [ ] polígono territorial oficial obtido;
 - [ ] período confirmado após teste de completude das séries;
-- [ ] fontes mínimas coletadas e avaliadas;
-- [ ] plano de dados executado e testado;
+- [ ] fontes mínimas obtidas e avaliadas integralmente;
+- [ ] plano de dados executado com dados reais e revisão manual;
 - [ ] grupos afetados e canais preliminares confirmados;
 - [ ] interlocutores institucionais confirmados;
 - [ ] estratégia de revisão viável.
@@ -206,14 +215,15 @@ O caso pode ser encerrado antes de etapas posteriores quando dados, capacidade, 
 
 ## 11. Produtos esperados da preparação
 
-- registro de prontidão atualizado;
-- polígono e memória de delimitação;
-- matriz de fontes e lacunas;
-- teste de qualidade das séries de chuva;
-- mapa preliminar de partes afetadas;
-- registro de conflitos e interlocutores;
-- decisão de prontidão, suspensão ou encerramento;
-- plano de trabalho do PPC-001.
+- [x] registro de prontidão atualizado;
+- [ ] polígono e memória de delimitação;
+- [x] matriz de fontes e lacunas;
+- [x] processador e protocolo de qualidade das séries de chuva;
+- [ ] teste e revisão da série real;
+- [ ] mapa preliminar de partes afetadas;
+- [ ] registro de conflitos e interlocutores confirmados;
+- [ ] decisão de prontidão, suspensão ou encerramento;
+- [ ] plano de trabalho do PPC-001.
 
 ## 12. Critério de sucesso desta etapa
 
@@ -225,3 +235,4 @@ A preparação será bem-sucedida quando permitir decidir, com honestidade, se e
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Seleção do primeiro tema demonstrativo e registro dos limites, fontes e portão de prontidão | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-18 | compatível | Recorte preliminar da sub-bacia de Itapeba, período inicial, fontes verificadas e decisão de manter preparação | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Integração da matriz de fontes, retenção de dados e atualização dos produtos e bloqueios do portão | Projeto Pragmatismo Cívico |
