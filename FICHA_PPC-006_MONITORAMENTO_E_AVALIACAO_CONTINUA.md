@@ -1,7 +1,7 @@
 ---
 id: FICHA-PPC-006
 titulo: Ficha PPC-006 — Monitoramento e Avaliação Contínua
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: ferramenta
 idioma: pt-BR
@@ -21,10 +21,10 @@ relaciona_se_com:
   - CICLO-PC-001
   - PPC-007
   - PPC-008
-  - INDICADORES
+  - MODELO-INDICADORES-001
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 documento_associado: PPC-006
 versao_documento_associado: 0.1.0
@@ -131,3 +131,4 @@ Tipos sugeridos: insumo, atividade, produto, resultado, equidade, qualidade, ris
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com vínculo à versão 0.1.0 do PPC-006 e preservação dos campos operacionais | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-18 | correção | Substituição do vínculo genérico `INDICADORES` pelo identificador canônico `MODELO-INDICADORES-001` | Projeto Pragmatismo Cívico |
