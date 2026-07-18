@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.9.0
+versao: 0.10.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -144,7 +144,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] conclusão da Fase 3C — matriz, indicadores e revisão dos vínculos das ferramentas;
 - [x] conclusão da Fase 4A — metadados do Framework de Referência e da Carta de Princípios;
 - [x] conclusão da Fase 4B — teoria, especificação, manifesto, glossário e reparos de coerência;
-- [ ] Fase 4C — README e guia de início;
+- [x] conclusão da Fase 4C — README, guia de início e cobertura dos 38 documentos navegáveis;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
 - [ ] política de revisão e aprovação;
@@ -167,6 +167,9 @@ O projeto deve conseguir receber, avaliar e incorporar contribuições sem perde
 - [x] biblioteca navegável de princípios, padrões e ferramentas;
 - [x] README sincronizado com o ciclo completo e a governança documental;
 - [x] navegação revisada segundo a arquitetura documental;
+- [x] cobertura de identificação e versionamento dos 38 documentos navegáveis;
+- [ ] catálogo documental público e mapa de dependências;
+- [ ] apresentação de identificador, versão e estado no portal;
 - [ ] painel de indicadores demonstrativo;
 - [ ] catálogo de estudos de caso;
 - [ ] versões para impressão;
@@ -198,13 +201,14 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 ## Prioridades imediatas
 
 1. formalizar o processo de propostas de mudança;
-2. executar a Fase 4C da migração documental para o README e o guia de início;
-3. criar a ficha padrão de indicadores;
-4. desenvolver o checklist de transparência e rastreabilidade;
-5. estruturar o protocolo de avaliação do próprio framework;
-6. selecionar e documentar o primeiro estudo de caso demonstrativo;
-7. revisar a licença para distinguir documentação, ferramentas e eventual software;
-8. preparar versões para impressão dos padrões e fichas.
+2. criar o catálogo documental público e o mapa de dependências;
+3. implementar validação automática de metadados, identificadores e links;
+4. criar a ficha padrão de indicadores;
+5. desenvolver o checklist de transparência e rastreabilidade;
+6. estruturar o protocolo de avaliação do próprio framework;
+7. selecionar e documentar o primeiro estudo de caso demonstrativo;
+8. revisar a licença para distinguir documentação, ferramentas e eventual software;
+9. preparar versões para impressão dos padrões e fichas.
 
 ## Controle de coerência
 
@@ -258,3 +262,4 @@ Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prá
 | 0.7.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 3C e promoção da Fase 4A | Projeto Pragmatismo Cívico |
 | 0.8.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4A e promoção da Fase 4B | Projeto Pragmatismo Cívico |
 | 0.9.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4B, dos reparos de coerência e promoção da Fase 4C | Projeto Pragmatismo Cívico |
+| 0.10.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4C, da cobertura dos 38 documentos e promoção do catálogo e da validação | Projeto Pragmatismo Cívico |
