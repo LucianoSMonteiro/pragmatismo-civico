@@ -4,7 +4,7 @@
 
 <p class="pc-tagline">Decidir com evidências. Agir com responsabilidade. Aprender continuamente.</p>
 
-O **Pragmatismo Cívico** é um framework aberto para governança e decisões de interesse público. Ele organiza princípios, métodos, padrões e ferramentas para melhorar a qualidade das decisões por meio de evidências, transparência, responsabilidade, sustentabilidade, cooperação e aprendizado contínuo.
+O **Pragmatismo Cívico** é um framework aberto para governança e decisões de interesse público. Ele organiza princípios, governança, métodos, ferramentas e evidências de aplicação para melhorar a qualidade das decisões por meio de transparência, responsabilidade, sustentabilidade, cooperação e aprendizado contínuo.
 
 [Começar agora](docs/COMECAR.md){ .md-button .md-button--primary }
 [Explorar o método](CICLO_DO_PRAGMATISMO_CIVICO.md){ .md-button }
@@ -13,7 +13,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. A arquitetura teórica, o ciclo decisório, os padrões PPC-000, PPC-001 e PPC-002 e as primeiras ferramentas já estão publicados para revisão e aplicação experimental.
+**Estado atual:** desenvolvimento aberto. O ciclo metodológico completo — PPC-001 a PPC-008 —, a Teoria da Mudança, suas fichas práticas e os padrões iniciais de governança documental já estão publicados para revisão, teste e aplicação experimental. Ainda não há estudo de caso oficial publicado.
 
 </div>
 
@@ -25,7 +25,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 ### Entender o projeto
 
-Conheça a identidade, os princípios, a teoria e os limites do framework.
+Conheça a identidade, os princípios, a teoria, a arquitetura e os limites do framework.
 
 [Conhecer o framework](FRAMEWORK_DE_REFERENCIA.md)
 
@@ -35,7 +35,7 @@ Conheça a identidade, os princípios, a teoria e os limites do framework.
 
 ### Resolver um problema público
 
-Comece pelo diagnóstico estruturado e avance pelo ciclo de decisão, implementação e aprendizado.
+Comece pelo diagnóstico estruturado e avance pelo ciclo de alternativas, decisão, implementação, avaliação e aprendizado.
 
 [Aplicar o PPC-001](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md)
 
@@ -45,7 +45,7 @@ Comece pelo diagnóstico estruturado e avance pelo ciclo de decisão, implementa
 
 ### Usar ferramentas
 
-Acesse fichas, matrizes e instrumentos práticos para documentar e comparar decisões.
+Acesse fichas, matrizes e instrumentos práticos para documentar, comparar, implementar e avaliar decisões.
 
 [Explorar as ferramentas](FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md)
 
@@ -67,18 +67,39 @@ Participe da evolução do framework com propostas rastreáveis, revisáveis e c
 
 <div class="pc-cycle" markdown>
 <span class="pc-step">Diagnosticar</span><span class="pc-arrow">→</span>
-<span class="pc-step">Compreender</span><span class="pc-arrow">→</span>
-<span class="pc-step">Projetar</span><span class="pc-arrow">→</span>
-<span class="pc-step">Comparar</span><span class="pc-arrow">→</span>
+<span class="pc-step">Formular alternativas</span><span class="pc-arrow">→</span>
+<span class="pc-step">Avaliar</span><span class="pc-arrow">→</span>
 <span class="pc-step">Decidir</span><span class="pc-arrow">→</span>
+<span class="pc-step">Explicitar a mudança</span><span class="pc-arrow">→</span>
 <span class="pc-step">Implementar</span><span class="pc-arrow">→</span>
 <span class="pc-step">Monitorar</span><span class="pc-arrow">→</span>
-<span class="pc-step">Avaliar</span><span class="pc-arrow">→</span>
-<span class="pc-step">Aprender</span><span class="pc-arrow">→</span>
-<span class="pc-step">Melhorar</span>
+<span class="pc-step">Avaliar resultados</span><span class="pc-arrow">→</span>
+<span class="pc-step">Aprender e melhorar</span>
 </div>
 
-O ciclo não termina na decisão. Resultados geram evidências; evidências geram aprendizado; aprendizado melhora a próxima decisão. Veja a descrição completa no [Ciclo do Pragmatismo Cívico](CICLO_DO_PRAGMATISMO_CIVICO.md).
+O ciclo não termina na decisão. Resultados geram evidências; evidências geram aprendizado; aprendizado melhora a próxima decisão. Veja a descrição integrada no [Ciclo do Pragmatismo Cívico](CICLO_DO_PRAGMATISMO_CIVICO.md).
+
+```text
+PPC-001 — Diagnóstico
+    ↓
+PPC-002 — Formulação e comparação de alternativas
+    ↓
+PPC-003 — Avaliação técnica
+    ↓
+PPC-004 — Decisão e justificativa pública
+    ↓
+Teoria da Mudança
+    ↓
+PPC-005 — Implementação e gestão adaptativa
+    ↓
+PPC-006 — Monitoramento e avaliação contínua
+    ↓
+PPC-007 — Avaliação de resultados e impactos
+    ↓
+PPC-008 — Aprendizagem institucional e melhoria contínua
+    ↺
+Novo ciclo pelo PPC-001
+```
 
 ## Ideia central
 
@@ -112,26 +133,59 @@ O Pragmatismo Cívico **não é uma ideologia, filosofia política, doutrina, pa
 9. Inovação deve ser acompanhada de avaliação, responsabilidade e aprendizado.
 10. A complexidade metodológica deve ser proporcional à importância, ao risco e à reversibilidade da decisão.
 
-## Arquitetura do conhecimento
+## Arquitetura documental
 
-O projeto é desenvolvido em seis camadas conectadas:
+O acervo é organizado em seis camadas lógicas conectadas:
 
-1. **Identidade** — propósito, missão, visão, princípios e limites.
-2. **Teoria** — capacidade institucional, governança adaptativa, memória, humildade e aprendizado.
-3. **Especificação** — arquitetura, requisitos e regras de coerência.
-4. **Padrões PPC** — métodos reproduzíveis para as etapas do processo decisório.
-5. **Ferramentas** — fichas, matrizes, indicadores, checklists e modelos.
-6. **Aplicações** — estudos de caso, pilotos, avaliações e lições aprendidas.
+1. **Princípios e fundamentos** — identidade, teoria, princípios e especificações fundadoras.
+2. **Governança e arquitetura** — manutenção, metadados, ciclo de vida, contribuição e organização documental.
+3. **Método** — ciclo operacional e padrões PPC aplicáveis às decisões públicas.
+4. **Ferramentas** — fichas, matrizes, indicadores, checklists e modelos.
+5. **Aplicações e evidências** — estudos de caso, pilotos, avaliações e lições aprendidas.
+6. **Publicação e acesso** — repositório, portal, busca, navegação e versões de distribuição.
 
-## Padrões e ferramentas disponíveis
+A definição completa está no [ARQ-001 — Arquitetura Documental do Framework](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md). O estado do acervo e a migração progressiva são acompanhados pelo [ARQ-002 — Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md).
+
+## Padrões metodológicos disponíveis
 
 | Recurso | Função |
 |---|---|
-| [PPC-000](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) | Define como os padrões PPC são criados, versionados, validados e substituídos. |
-| [PPC-001](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md) | Estrutura o diagnóstico de um problema público antes da formulação de soluções. |
+| [PPC-001](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md) | Define e diagnostica o problema público, sua linha de base, causas, efeitos e grupos afetados. |
 | [PPC-002](PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md) | Orienta a geração e comparação de alternativas, incluindo inação, riscos e reversibilidade. |
-| [Ficha PPC-001](FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md) | Instrumento preenchível para aplicar e auditar o diagnóstico. |
-| [Matriz de avaliação](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md) | Compara alternativas por critérios, pesos, evidências, riscos e sensibilidade. |
+| [PPC-003](PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md) | Estrutura a avaliação técnica, a qualidade das evidências e a recomendação. |
+| [PPC-004](PPC-004_DECISAO_E_JUSTIFICATIVA.md) | Registra a decisão pública, a competência, a justificativa e as alternativas descartadas. |
+| [Teoria da Mudança](MODELO_DE_TEORIA_DA_MUDANCA.md) | Explicita a lógica causal, as hipóteses, os resultados e os impactos pretendidos. |
+| [PPC-005](PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md) | Transforma a decisão em intervenção executável, responsável e adaptável. |
+| [PPC-006](PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md) | Acompanha execução, produtos, resultados, riscos e hipóteses. |
+| [PPC-007](PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md) | Avalia resultados, impactos, atribuição, custos e efeitos adversos. |
+| [PPC-008](PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md) | Converte evidências e experiência em memória institucional e melhoria contínua. |
+
+## Governança dos padrões
+
+| Recurso | Função |
+|---|---|
+| [PPC-000](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) | Define como os padrões PPC são estruturados, validados, mantidos e relacionados. |
+| [PPC-META-001](PPC-META-001_METADADOS_E_VERSIONAMENTO.md) | Padroniza identificadores, metadados, versões, compatibilidade e histórico. |
+| [PPC-000A](PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) | Define estados, transições, revisão, substituição, obsolescência e arquivamento. |
+| [Modelo de Governança](MODELO_DE_GOVERNANCA.md) | Organiza o ciclo decisório, os papéis e as salvaguardas de governança. |
+| [ARQ-001](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | Define camadas, categorias, dependências e organização do acervo. |
+| [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | Inventaria o acervo, registra dívida documental e organiza a migração. |
+
+## Ferramentas disponíveis
+
+Cada etapa possui instrumento prático correspondente:
+
+- [Ficha PPC-001](FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md);
+- [Ficha PPC-002](FICHA_PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md);
+- [Ficha PPC-003](FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md);
+- [Ficha PPC-004](FICHA_PPC-004_DECISAO_E_JUSTIFICATIVA.md);
+- [Ficha de Teoria da Mudança](FICHA_TEORIA_DA_MUDANCA.md);
+- [Ficha PPC-005](FICHA_PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md);
+- [Ficha PPC-006](FICHA_PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md);
+- [Ficha PPC-007](FICHA_PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md);
+- [Ficha PPC-008](FICHA_PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md);
+- [Matriz de Avaliação de Políticas Públicas](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md);
+- [Indicadores do Pragmatismo Cívico](INDICADORES.md).
 
 ## Regra de preservação da essência
 
@@ -149,18 +203,20 @@ O documento central para essa verificação é o [Framework de Referência](FRAM
 
 As prioridades atuais são:
 
-- ficha prática do PPC-002;
-- modelo de teoria da mudança;
-- ficha padrão de indicadores;
-- checklist de transparência e rastreabilidade;
-- modelo de relatório de decisão;
-- protocolo de avaliação do próprio framework;
-- primeiro estudo de caso demonstrativo.
+- completar a migração documental do núcleo de governança;
+- formalizar o processo de propostas de mudança;
+- iniciar a migração do núcleo metodológico;
+- criar a ficha padrão de indicadores;
+- desenvolver o checklist de transparência e rastreabilidade;
+- estruturar o protocolo de avaliação do próprio framework;
+- selecionar e documentar o primeiro estudo de caso demonstrativo;
+- revisar a licença aplicável à documentação, às ferramentas e a eventual software;
+- preparar versões para impressão dos padrões e fichas.
 
 A evolução planejada está registrada no [Roadmap](ROADMAP.md).
 
 ## Licença e colaboração
 
-O repositório utiliza atualmente a licença MIT. A adequação entre a licença, os documentos conceituais e futuras ferramentas será revisada antes da primeira versão estável.
+O repositório utiliza atualmente a licença MIT. A adequação entre a licença, os documentos conceituais, as ferramentas e eventual software será revisada antes da primeira versão estável.
 
 Contribuições são organizadas por regras públicas de governança, integridade, rastreabilidade e preservação dos princípios fundadores.
