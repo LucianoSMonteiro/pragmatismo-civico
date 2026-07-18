@@ -137,6 +137,7 @@ def build_geoinea_appendix() -> str:
         return ""
 
     from coletar_geoinea_subbacia import CollectionError, collect
+    from geoinea_ipv4_transport import curl_ipv4_fetch
 
     search_term = GEOINEA_MARKER.read_text(encoding="utf-8").strip() or "Itapeba"
     output_dir = ROOT / "geoinea-result"
@@ -150,7 +151,8 @@ def build_geoinea_appendix() -> str:
             manifest = collect(
                 output_dir=output_dir,
                 search_term=search_term,
-                timeout=120,
+                timeout=60,
+                fetch=curl_ipv4_fetch,
             )
             last_error = None
             break
@@ -164,6 +166,7 @@ def build_geoinea_appendix() -> str:
         "",
         f"- **Marcador:** `{GEOINEA_MARKER.relative_to(ROOT)}`",
         f"- **Termo nominal:** `{search_term}`",
+        "- **Transporte:** `curl --ipv4`;",
         "- **Natureza:** coleta externa temporária; não altera o resultado da validação documental",
         "",
     ]
