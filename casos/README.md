@@ -1,7 +1,7 @@
 ---
 id: CASOS-INDEX
 titulo: Casos e Evidências do Pragmatismo Cívico
-versao: 0.2.0
+versao: 0.3.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -21,6 +21,7 @@ relaciona_se_com:
   - CATALOGO-DOCUMENTAL
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-DADOS-CHUVA
   - FICHA-GOV-008
 substitui: []
 substituido_por: null
@@ -36,9 +37,11 @@ Esta área reúne aplicações, pilotos, avaliações e lições aprendidas. A p
 
 | Caso | Tema | Território | Estado | Resultado disponível |
 |---|---|---|---|---|
-| [CASO-001](CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) | drenagem urbana e alerta preventivo | sub-bacia de Itapeba; polígono oficial pendente | preparação | [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md), inventário inicial de fontes e pendências |
+| [CASO-001](CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) | drenagem urbana e alerta preventivo | sub-bacia de Itapeba; polígono oficial pendente | preparação | [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md) e [protocolo de dados pluviométricos](CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md) |
 
-O período preliminar do CASO-001 é 2022-01-01 a 2026-06-30. A pergunta foi refinada e fontes oficiais foram localizadas, mas o portão permanece fechado por falta de geometria oficial, documentos técnicos integrais, dados tratados, participação local e revisão independente.
+O período preliminar do CASO-001 é 2022-01-01 a 2026-06-30. A pergunta foi refinada e fontes oficiais foram localizadas, mas o portão permanece fechado por falta de geometria oficial, documentos técnicos integrais, coleta real de dados, participação local e revisão independente.
+
+O processador pluviométrico está testado apenas com fixture sintético. Nenhum arquivo mensal real do Cemaden foi incluído ou tratado como evidência do caso.
 
 Ainda não há estudo concluído, diagnóstico oficial, recomendação, implementação avaliada ou estimativa de impacto publicada.
 
@@ -65,13 +68,15 @@ Casos devem:
 
 ## Pendências do CASO-001
 
-1. obter polígono oficial da sub-bacia de Itapeba;
-2. obter produtos técnicos e geometrias de drenagem;
-3. baixar e testar séries pluviométricas;
-4. confirmar interlocutores e registros administrativos;
-5. estruturar participação local;
-6. obter capacidade de revisão ou declarar impossibilidade;
+1. obter polígono oficial da sub-bacia de Itapeba — issue #6;
+2. obter produtos técnicos e geometrias de drenagem — issue #7;
+3. realizar downloads mensais autorizados e revisar a série — issue #4;
+4. consolidar a matriz de fontes e lacunas — issue #10;
+5. confirmar interlocutores e participação local — issue #8;
+6. obter capacidade de revisão — issue #9;
 7. emitir nova decisão do portão na issue #2.
+
+A implementação do processador e da estrutura local segura é acompanhada pelas issues #5 e #11.
 
 ## Casos futuros
 
@@ -83,3 +88,4 @@ Novos casos somente serão adicionados quando houver responsável, escopo prelim
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Criação do índice público da camada de aplicações e evidências | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-18 | compatível | Inclusão do registro de prontidão, recorte de Itapeba e decisão de manter o CASO-001 em preparação | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Inclusão do protocolo pluviométrico, pipeline sintético e rastreamento das frentes do portão | Projeto Pragmatismo Cívico |
