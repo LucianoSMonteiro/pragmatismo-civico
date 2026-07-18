@@ -1,12 +1,12 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.5.0
+versao: 0.6.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
 data_criacao: null
-data_versao: 2026-07-17
+data_versao: 2026-07-18
 responsaveis:
   - Projeto Pragmatismo Cívico
 aprovadores: []
@@ -140,7 +140,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] conclusão da Fase 2B da migração documental — PPC-005 a PPC-008;
 - [x] conclusão da Fase 2C — revisão de reciprocidade das dependências do ciclo completo;
 - [x] conclusão da Fase 3A — fichas PPC-001, PPC-002, PPC-004 e Teoria da Mudança;
-- [ ] Fase 3B — fichas PPC-005 a PPC-008;
+- [x] conclusão da Fase 3B — fichas PPC-005 a PPC-008;
 - [ ] Fase 3C — matriz de avaliação, indicadores e revisão dos vínculos das ferramentas;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
@@ -195,14 +195,13 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 ## Prioridades imediatas
 
 1. formalizar o processo de propostas de mudança;
-2. executar a Fase 3B da migração documental para as fichas PPC-005 a PPC-008;
-3. executar a Fase 3C para matriz, indicadores e revisão dos vínculos das ferramentas;
-4. criar a ficha padrão de indicadores;
-5. desenvolver o checklist de transparência e rastreabilidade;
-6. estruturar o protocolo de avaliação do próprio framework;
-7. selecionar e documentar o primeiro estudo de caso demonstrativo;
-8. revisar a licença para distinguir documentação, ferramentas e eventual software;
-9. preparar versões para impressão dos padrões e fichas.
+2. executar a Fase 3C para matriz, indicadores e revisão dos vínculos das ferramentas;
+3. criar a ficha padrão de indicadores;
+4. desenvolver o checklist de transparência e rastreabilidade;
+5. estruturar o protocolo de avaliação do próprio framework;
+6. selecionar e documentar o primeiro estudo de caso demonstrativo;
+7. revisar a licença para distinguir documentação, ferramentas e eventual software;
+8. preparar versões para impressão dos padrões e fichas.
 
 ## Controle de coerência
 
@@ -252,3 +251,4 @@ Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prá
 | 0.3.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 2B e promoção da revisão de reciprocidade para a próxima etapa | Projeto Pragmatismo Cívico |
 | 0.4.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 2C e promoção da migração das ferramentas | Projeto Pragmatismo Cívico |
 | 0.5.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 3A e definição dos lotes 3B e 3C | Projeto Pragmatismo Cívico |
+| 0.6.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 3B e promoção da Fase 3C | Projeto Pragmatismo Cívico |
