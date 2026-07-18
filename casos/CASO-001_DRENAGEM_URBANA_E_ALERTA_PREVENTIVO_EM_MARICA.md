@@ -1,7 +1,7 @@
 ---
 id: CASO-001
 titulo: Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo na Sub-bacia de Itapeba
-versao: 0.3.0
+versao: 0.4.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -23,6 +23,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001-PRONTIDAO
   - CASO-001-FONTES
+  - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
   - GOV-006
   - GOV-007
@@ -44,9 +45,9 @@ issue_acompanhamento: 2
 
 **Preparação.** Este documento não contém diagnóstico oficial, recomendação de obra, contratação, avaliação de política ou conclusão sobre o sistema de drenagem de Maricá.
 
-A pesquisa inicial reduziu o escopo para a sub-bacia de Itapeba e definiu o período preliminar de 2022-01-01 a 2026-06-30. A matriz consolidou 13 fontes públicas e o protocolo de dados definiu processamento, retenção e descarte, mas o polígono oficial, as séries reais, os documentos técnicos, a participação local e a revisão independente ainda estão pendentes.
+A pesquisa inicial reduziu o escopo para a sub-bacia de Itapeba e definiu o período preliminar de 2022-01-01 a 2026-06-30. A matriz consolidou 15 fontes públicas; os protocolos de chuva e geometria possuem validadores testados com fixtures sintéticos. O polígono oficial, as séries reais, os documentos técnicos, a participação local e a revisão independente continuam pendentes.
 
-O PPC-001 somente poderá começar após nova decisão do portão de prontidão do GOV-008. Consulte o [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md), a [matriz de fontes](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) e a issue #2.
+O PPC-001 somente poderá começar após nova decisão do portão de prontidão do GOV-008. Consulte o [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md), a [matriz de fontes](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md), o [protocolo geoespacial](CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md) e a issue #2.
 
 ## 1. Pergunta decisória preliminar
 
@@ -75,7 +76,8 @@ Essas razões justificam preparar o estudo, mas não demonstram que uma interven
 |---|---|
 | Município | Maricá/RJ |
 | Unidade | sub-bacia de Itapeba |
-| Polígono | pendente de fonte oficial |
+| Polígono | pendente; camada estadual candidata localizada, feição ainda não obtida |
+| Sistema de referência candidato | EPSG:4674 — SIRGAS 2000, conforme serviços do GeoINEA |
 | Período | 2022-01-01 a 2026-06-30, sujeito à completude das séries |
 | Evento de referência | chuvas de abril de 2022, ainda sem validação completa dos dados brutos |
 | População e grupos afetados | pendente do polígono e de dados oficiais |
@@ -83,13 +85,14 @@ Essas razões justificam preparar o estudo, mas não demonstram que uma interven
 | Responsável pela documentação | Projeto Pragmatismo Cívico |
 | Revisores | cadastro ainda sem pessoas elegíveis |
 
-O nome da sub-bacia não será tratado como limite cartográfico suficiente. O estudo não avançará sem geometria verificável.
+O nome da sub-bacia não será tratado como limite cartográfico suficiente. A camada `GPL_SUBBACIAS_ERJ_50` é fonte candidata, mas sua existência não comprova que haja feição denominada Itapeba ou equivalência com o recorte municipal. O estudo não avançará sem geometria verificável.
 
 ## 4. Limites desta versão
 
 Esta versão:
 
 - não afirma que todas as fontes necessárias estejam disponíveis;
+- não afirma que uma feição oficial de Itapeba tenha sido obtida;
 - não atribui causa a eventos;
 - não avalia desempenho de órgão, contrato, sistema ou serviço;
 - não estima custos ou benefícios;
@@ -97,11 +100,12 @@ Esta versão:
 - não define prioridade territorial fora do recorte preparatório;
 - não coleta dados pessoais;
 - não substitui planos oficiais de emergência, drenagem, defesa civil, saneamento ou ordenamento territorial;
-- não trata comunicação institucional como prova de eficácia.
+- não trata comunicação institucional como prova de eficácia;
+- não trata fixture sintético como dado ou mapa real.
 
 ## 5. Fontes verificadas e fontes pendentes
 
-A [Matriz de Fontes e Lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) registra 13 fontes com identificador, classe, órgão, URL, cobertura, estado de obtenção, formato, licença conhecida, hash, uso, risco e relação com o portão.
+A [Matriz de Fontes e Lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) registra 15 fontes com identificador, classe, órgão, URL, cobertura, estado de obtenção, formato, licença conhecida, hash, uso, risco e relação com o portão.
 
 Ela inclui:
 
@@ -112,13 +116,15 @@ Ela inclui:
 - Plano Diretor, Lei Complementar nº 400/2025 e anexo de mapas;
 - estação pluviométrica Itapeba e interfaces do Cemaden;
 - monitoramento hidrometeorológico do INEA e Hidroweb da ANA;
-- iniciativa municipal de monitoramento inteligente da drenagem.
+- iniciativa municipal de monitoramento inteligente da drenagem;
+- camada estadual poligonal de sub-bacias do GeoINEA;
+- base de hidrografia RJ25, na escala 1:25.000.
 
 A matriz diferencia fonte `localizada`, `consultada`, `obtida` e `tratada`. Nenhuma fonte desta versão foi classificada como obtida ou tratada para fins empíricos.
 
 Ainda precisam ser obtidos ou verificados:
 
-- polígono oficial da sub-bacia;
+- feição oficial da sub-bacia ou evidência documentada de ausência de correspondência nominal;
 - produtos técnicos completos do programa de drenagem;
 - contrato, projeto, cronograma, geometrias e indicadores das intervenções;
 - séries brutas e metadados de estações;
@@ -126,9 +132,24 @@ Ainda precisam ser obtidos ou verificados:
 - regras e dados de alertas aplicáveis ao recorte;
 - fontes de participação e conhecimento local.
 
-Nenhuma lacuna será preenchida por número inventado ou inferência apresentada como fato.
+Nenhuma lacuna será preenchida por número inventado, digitalização apresentada como oficial ou inferência apresentada como fato.
 
-## 6. Alternativas que o diagnóstico deverá permitir examinar
+## 6. Infraestrutura geoespacial
+
+O [protocolo de geometria e delimitação](CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md) registra:
+
+- camada poligonal `GPL_SUBBACIAS_ERJ_50`, ID `4`, do GeoINEA;
+- hidrografia do Projeto RJ25, em escala 1:25.000;
+- referência espacial EPSG:4674 publicada pelos serviços;
+- procedimento de consulta, preservação, hash e revisão;
+- hierarquia de evidência cartográfica;
+- critérios que impedem converter nome de bairro ou linha de drenagem em polígono oficial;
+- validador `scripts/validar_geojson_subbacia.py`;
+- fixture sintético e teste de rejeição de geometria inválida.
+
+O status `geodata/pipeline` confirma apenas o funcionamento do validador sobre dados sintéticos.
+
+## 7. Alternativas que o diagnóstico deverá permitir examinar
 
 Sem antecipar recomendação, o caso deverá manter abertas alternativas como:
 
@@ -146,7 +167,7 @@ Sem antecipar recomendação, o caso deverá manter abertas alternativas como:
 
 Alternativas inviáveis ou inadequadas só poderão ser eliminadas com justificativa verificável.
 
-## 7. Pessoas e unidades a considerar
+## 8. Pessoas e unidades a considerar
 
 A preparação deverá mapear, sem presumir representação:
 
@@ -163,11 +184,12 @@ A preparação deverá mapear, sem presumir representação:
 
 Participação não será usada apenas para confirmar uma proposta previamente escolhida.
 
-## 8. Riscos iniciais
+## 9. Riscos iniciais
 
 | Risco | Salvaguarda inicial |
 |---|---|
-| limite da sub-bacia ainda indefinido | obter polígono e documentar método de recorte |
+| limite da sub-bacia ainda indefinido | obter feição oficial, preservar consulta e documentar método de recorte |
+| camada estadual incompatível com o recorte municipal | comparar atributos, conceitos, projetos e fontes municipais |
 | dados incompletos ou incompatíveis | registrar cobertura, qualidade, UTC, lacunas e transformações |
 | retenção excessiva ou publicação acidental | aplicar política de retenção, quarentena, descarte e revisão periódica |
 | foco excessivo em tecnologia | comparar alternativas operacionais, ambientais, estruturais e não intervenção |
@@ -178,7 +200,7 @@ Participação não será usada apenas para confirmar uma proposta previamente e
 | comunicação institucional tomada como avaliação | exigir documentos, dados e verificação independente |
 | urgência usada para pular diagnóstico | separar resposta emergencial de decisão estrutural |
 
-## 9. Portão de prontidão
+## 10. Portão de prontidão
 
 Situação atual:
 
@@ -188,7 +210,8 @@ Situação atual:
 - [x] versões iniciais registradas;
 - [x] critérios de suspensão e encerramento definidos;
 - [x] matriz de fontes e lacunas consolidada;
-- [x] processamento, retenção e descarte documentados e testados sinteticamente;
+- [x] processamento, retenção e descarte de chuva documentados e testados sinteticamente;
+- [x] protocolo e validador geoespacial testados sinteticamente;
 - [ ] polígono territorial oficial obtido;
 - [ ] período confirmado após teste de completude das séries;
 - [ ] fontes mínimas obtidas e avaliadas integralmente;
@@ -199,7 +222,7 @@ Situação atual:
 
 **Resultado atual:** permanece em preparação.
 
-## 10. Sequência metodológica prevista
+## 11. Sequência metodológica prevista
 
 1. GOV-008 — seleção e prontidão;
 2. PPC-001 — diagnóstico do problema delimitado;
@@ -213,26 +236,28 @@ Situação atual:
 
 O caso pode ser encerrado antes de etapas posteriores quando dados, capacidade, ética ou proporcionalidade não permitirem continuidade.
 
-## 11. Produtos esperados da preparação
+## 12. Produtos esperados da preparação
 
 - [x] registro de prontidão atualizado;
-- [ ] polígono e memória de delimitação;
 - [x] matriz de fontes e lacunas;
 - [x] processador e protocolo de qualidade das séries de chuva;
+- [x] protocolo e validador de geometria;
+- [ ] polígono oficial e memória de delimitação aplicada ao arquivo real;
 - [ ] teste e revisão da série real;
 - [ ] mapa preliminar de partes afetadas;
 - [ ] registro de conflitos e interlocutores confirmados;
 - [ ] decisão de prontidão, suspensão ou encerramento;
 - [ ] plano de trabalho do PPC-001.
 
-## 12. Critério de sucesso desta etapa
+## 13. Critério de sucesso desta etapa
 
 A preparação será bem-sucedida quando permitir decidir, com honestidade, se existe capacidade mínima para iniciar o diagnóstico. Avançar de etapa não é, por si só, medida de sucesso.
 
-## 13. Histórico de alterações
+## 14. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Seleção do primeiro tema demonstrativo e registro dos limites, fontes e portão de prontidão | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-18 | compatível | Recorte preliminar da sub-bacia de Itapeba, período inicial, fontes verificadas e decisão de manter preparação | Projeto Pragmatismo Cívico |
 | 0.3.0 | 2026-07-18 | compatível | Integração da matriz de fontes, retenção de dados e atualização dos produtos e bloqueios do portão | Projeto Pragmatismo Cívico |
+| 0.4.0 | 2026-07-18 | compatível | Inclusão das fontes geoespaciais, protocolo de delimitação, validador e status `geodata/pipeline` | Projeto Pragmatismo Cívico |
