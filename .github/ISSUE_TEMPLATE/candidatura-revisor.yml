@@ -1,0 +1,108 @@
+name: Candidatura a revisor
+ description: Candidatar-se ao programa público de revisores conforme o GOV-007.
+ title: "[REV] "
+ body:
+   - type: markdown
+     attributes:
+       value: |
+         Esta issue é pública. Não informe endereço, telefone, documento oficial, data de nascimento, informações médicas, renda ou contato privado. A candidatura não garante admissão ou convite para painéis.
+
+   - type: input
+     id: public_identity
+     attributes:
+       label: Identificação pública
+       description: Nome ou identificação profissional que poderá aparecer no cadastro.
+       placeholder: Como deseja ser identificado publicamente?
+     validations:
+       required: true
+
+   - type: textarea
+     id: competencies
+     attributes:
+       label: Áreas de competência
+       description: Indique áreas nas quais consegue produzir revisão fundamentada e seus limites.
+     validations:
+       required: true
+
+   - type: textarea
+     id: experience
+     attributes:
+       label: Experiência pertinente
+       description: Descreva experiência técnica, institucional, comunitária, prática ou vivencial relevante.
+     validations:
+       required: true
+
+   - type: textarea
+     id: public_links
+     attributes:
+       label: Referências públicas opcionais
+       description: Inclua apenas links públicos que ajudem a verificar experiência. Não inclua contatos privados.
+
+   - type: textarea
+     id: contexts
+     attributes:
+       label: Setores, territórios ou contextos conhecidos
+       description: Não informe dados pessoais de terceiros ou características sensíveis desnecessárias.
+     validations:
+       required: true
+
+   - type: textarea
+     id: affiliations
+     attributes:
+       label: Vínculos institucionais relevantes
+       description: Declare vínculos atuais ou recentes que possam afetar independência ou seleção de painéis.
+     validations:
+       required: true
+
+   - type: textarea
+     id: conflicts
+     attributes:
+       label: Conflitos gerais conhecidos
+       description: Declare conflitos gerais ou informe que não há conflitos conhecidos. Conflitos específicos serão atualizados antes de cada painel.
+     validations:
+       required: true
+
+   - type: dropdown
+     id: availability
+     attributes:
+       label: Disponibilidade mensal aproximada
+       options:
+         - Até 2 horas por mês
+         - De 2 a 5 horas por mês
+         - De 5 a 10 horas por mês
+         - Acima de 10 horas por mês
+         - Indisponível temporariamente
+     validations:
+       required: true
+
+   - type: input
+     id: languages
+     attributes:
+       label: Idiomas de trabalho
+       placeholder: Exemplo: português; inglês para leitura técnica
+     validations:
+       required: true
+
+   - type: textarea
+     id: limitations
+     attributes:
+       label: Limitações ou escopos que não deve revisar
+       description: Informe temas, relações ou condições que exigiriam recusa, abstenção ou apoio adicional.
+     validations:
+       required: true
+
+   - type: checkboxes
+     id: declarations
+     attributes:
+       label: Declarações
+       options:
+         - label: Li o GOV-006, o GOV-007 e o Código de Conduta.
+           required: true
+         - label: Recusarei painéis para os quais não tenha competência, tempo ou independência.
+           required: true
+         - label: Autorizo a publicação apenas dos campos mínimos definidos pelo GOV-007.
+           required: true
+         - label: Não inseri dados pessoais sensíveis ou contatos privados nesta issue pública.
+           required: true
+         - label: Compreendo que elegibilidade não garante convite, remuneração ou posição institucional.
+           required: true
