@@ -1,0 +1,9 @@
+UF;Cidade;Nome Estacao;IDPCD;DataHora;ValorMedida
+RJ;Maricá;Itapeba;3717;2022-04-01 00:00:00;0,0
+RJ;Maricá;Itapeba;3717;2022-04-01 00:10:00;1,0
+RJ;Maricá;Itapeba;3717;2022-04-01 00:20:00;2,0
+RJ;Maricá;Itapeba;3717;2022-04-01 00:20:00;2,0
+RJ;Maricá;Itapeba;3717;2022-04-01 01:00:00;-0,1
+RJ;Maricá;Itapeba;3717;invalido;3,0
+RJ;Maricá;Itapeba;3717;2022-04-01 01:10:00;ND
+RJ;Maricá;Espraiado;9999;2022-04-01 00:30:00;4,0
