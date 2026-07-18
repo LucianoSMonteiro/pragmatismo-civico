@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.26.0
+versao: 0.27.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -32,6 +32,7 @@ relaciona_se_com:
   - CASO-001
   - CASO-001-PRONTIDAO
   - CASO-001-FONTES
+  - CASO-001-DOCUMENTOS-TECNICOS
   - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
 substitui: []
@@ -44,13 +45,13 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 7 estão concluídas e a Fase 8 está em execução. Os **55 documentos públicos** estão identificados, versionados e submetidos a validação automática.
+Rascunho ativo. As Fases 0 a 7 estão concluídas e a Fase 8 está em execução. Os **56 documentos públicos** estão identificados, versionados e submetidos a validação automática.
 
 A estrutura física é governada pelo ARQ-003; propostas pelo GOV-005; revisão pelo GOV-006; revisores pelo GOV-007; e seleção, prontidão e condução de casos pelo GOV-008.
 
 O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. O cadastro de revisores permanece vazio. O CASO-001 está em preparação e não possui diagnóstico ou resultado empírico.
 
-Os pipelines de chuva e geometria passam em testes controlados. A coleta oficial do GeoINEA foi tentada por HTTP padrão e `curl --ipv4`, mas os runners hospedados não receberam bytes do servidor. A limitação de conectividade está registrada sem ser confundida com ausência da feição.
+A camada de aplicações agora contém registros distintos para fontes gerais, documentos técnicos e contratações, geometria e chuva. O inventário técnico está estruturado e validado, mas nenhum programa final, contrato integral, projeto, medição ou as-built foi obtido com hash.
 
 ## 1. Objetivo
 
@@ -64,7 +65,8 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 - GOV-005 a GOV-008 para mudança, revisão, revisores e casos;
 - `casos/README.md` para o índice público;
 - `CASO-001-PRONTIDAO` para a decisão vigente do portão;
-- `CASO-001-FONTES` para fontes, obtenção e lacunas;
+- `CASO-001-FONTES` para fontes gerais, obtenção e lacunas;
+- `CASO-001-DOCUMENTOS-TECNICOS` e seu registro JSON para comunicações, financiamentos, contratações, alegações e documentos requeridos;
 - `CASO-001-GEOMETRIA` para coleta, validação e delimitação geoespacial;
 - `CASO-001-DADOS-CHUVA` para aquisição, qualidade, retenção e descarte pluviométrico;
 - ARQ-003 para caminhos e diretórios;
@@ -79,10 +81,10 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 | Governança e arquitetura | 15 | inclui GOV-005 a GOV-008, cadastro e ARQ-003 |
 | Método | 10 | todos conformes |
 | Ferramentas | 15 | inclui FICHAS GOV-005 a GOV-008 |
-| Aplicações e evidências | 6 | índice, CASO-001, prontidão, fontes, geometria e chuva |
-| **Total** | **55** | **55 documentos submetidos à validação** |
+| Aplicações e evidências | 7 | índice, caso, prontidão, fontes, documentos técnicos, geometria e chuva |
+| **Total** | **56** | **56 documentos submetidos à validação** |
 
-Cinquenta e quatro documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente.
+Cinquenta e cinco documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente.
 
 ## 4. Inventário resumido
 
@@ -94,46 +96,23 @@ Cinquenta e quatro documentos usam cabeçalho YAML. O `README.md` utiliza repres
 | Guia de início | `GUIA-COMECAR` | 0.13.0 |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
 
-### 4.2 Princípios e fundamentos
+### 4.2 Princípios, governança, método e ferramentas
 
-Carta de Princípios, Especificação, Framework de Referência, Teoria, Manifesto e Glossário permanecem nas versões registradas no catálogo.
+As camadas permanecem nas versões registradas no catálogo. O inventário corrente é `ARQ-002` 0.27.0; o roadmap será sincronizado com a linha de base de 56 documentos.
 
-### 4.3 Governança e arquitetura
-
-| Documento | Identificador | Versão |
-|---|---|---:|
-| Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
-| Modelo de Governança | `GOV-001` | 0.1.0 |
-| Roadmap | `GOV-002` | 0.21.0 |
-| Guia de Contribuição | `GOV-003` | 0.5.0 |
-| Código de Conduta | `GOV-004` | 0.1.0 |
-| Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
-| Política de Revisão e Aprovação | `GOV-006` | 0.1.0 |
-| Programa e Cadastro de Revisores | `GOV-007` | 0.1.1 |
-| Cadastro Público de Revisores | `CADASTRO-REVISORES` | 0.1.1 |
-| Protocolo de Casos Demonstrativos | `GOV-008` | 0.1.0 |
-| Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
-| Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
-| Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.26.0 |
-| Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
-
-### 4.4 Método e ferramentas
-
-O método permanece composto por `CICLO-PC-001`, PPC-001 a PPC-008 e `MODELO-TDM-001`. As ferramentas incluem fichas PPC-001 a PPC-008, Teoria da Mudança, matriz, indicadores e FICHAS GOV-005 a GOV-008.
-
-### 4.5 Aplicações e evidências
+### 4.3 Aplicações e evidências
 
 | Documento | Identificador | Versão | Estado material |
 |---|---|---:|---|
-| Índice de Casos e Evidências | `CASOS-INDEX` | 0.5.0 | índice público |
+| Índice de Casos e Evidências | `CASOS-INDEX` | 0.6.0 | índice público |
 | Drenagem e alerta preventivo em Itapeba | `CASO-001` | 0.4.0 | preparação |
 | Registro de Prontidão | `CASO-001-PRONTIDAO` | 0.3.1 | portão não aprovado |
-| Matriz de Fontes e Lacunas | `CASO-001-FONTES` | 0.2.1 | 15 fontes; coleta oficial pendente |
+| Matriz de Fontes e Lacunas | `CASO-001-FONTES` | 0.2.1 | 15 fontes; obtenção empírica pendente |
+| Documentos Técnicos e Contratações | `CASO-001-DOCUMENTOS-TECNICOS` | 0.1.0 | 8 fontes, 20 alegações e 7 grupos documentais pendentes |
 | Protocolo de Geometria e Delimitação | `CASO-001-GEOMETRIA` | 0.2.0 | coleta hospedada bloqueada; feição pendente |
 | Protocolo de Dados Pluviométricos | `CASO-001-DADOS-CHUVA` | 0.2.0 | processador sintético; série real pendente |
 
-Nenhuma fonte foi classificada como obtida ou tratada para uso empírico. Geosserviços candidatos foram localizados; nenhuma resposta oficial da API ou feição de Itapeba foi preservada.
+Nenhuma fonte foi classificada como obtida ou tratada para uso empírico. O novo registro técnico diferencia comunicação institucional, registro financeiro, orientação procedimental, índice de contratação e registro histórico.
 
 ## 5. Infraestrutura de validação e dados
 
@@ -143,25 +122,28 @@ Nenhuma fonte foi classificada como obtida ou tratada para uso empírico. Geosse
 | `scripts/validate_metadata_graph.py` | valida campos, formatos, histórico, relações, substituições e ciclos |
 | `scripts/validate_links.py` | valida destinos internos e âncoras |
 | `scripts/validate_issue_forms.py` | valida formulários e template de pull request |
-| `scripts/generate_validation_report.py` | produz relatório consolidado; permite sonda externa apenas com marcador explícito |
-| `scripts/analyze_repository_structure.py` | calcula impacto de migração física |
-| `scripts/prepare_mkdocs.py` | prepara a árvore temporária do portal |
+| `scripts/generate_validation_report.py` | produz relatório consolidado e inclui o registro de evidências técnicas |
+| `scripts/validar_registro_documentos_tecnicos.py` | valida fontes, alegações, inconsistências, estados e exigência de hash |
+| `casos/CASO-001_REGISTRO_DOCUMENTOS_TECNICOS.json` | registro estruturado de 8 fontes, 20 alegações, 3 inconsistências e 7 documentos requeridos |
+| `tests/test_validar_registro_documentos_tecnicos.py` | testa classificação, hash e referências entre alegações |
 | `scripts/processar_chuva_cemaden.py` | normaliza chuva, calcula hashes e produz manifesto e relatório |
-| `scripts/coletar_geoinea_subbacia.py` | consulta metadados, IDs, atributos e GeoJSON e preserva proveniência e hashes |
+| `scripts/coletar_geoinea_subbacia.py` | consulta metadados, IDs, atributos e GeoJSON |
 | `scripts/coletar_geoinea_subbacia_ipv4.py` | executa a coleta local forçando IPv4 |
-| `scripts/geoinea_ipv4_transport.py` | transporte `curl --ipv4` com preservação dos bytes |
 | `scripts/validar_geojson_subbacia.py` | valida GeoJSON, anéis, coordenadas, extensão, nome e proveniência |
-| `tests/test_coletar_geoinea_subbacia.py` | testa correspondência, coleta e consulta nominal vazia com respostas controladas |
-| `tests/test_geoinea_ipv4_transport.py` | testa sucesso, falha de conexão e status HTTP do transporte |
-| `tests/test_validar_geojson_subbacia.py` | ponto de entrada da suíte geoespacial e validação de geometria |
-| `.github/workflows/coletar-geoinea.yml` | coleta manual e artefato quando o ambiente alcança o serviço |
-| `.github/workflows/pages.yml` | valida documentação, chuva, geometria, catálogo e portal |
+| `.github/workflows/pages.yml` | valida documentação, evidências, chuva, geometria, catálogo e portal |
 
-## 6. Governança vigente
+## 6. Regras de evidência incorporadas
 
-GOV-005 governa propostas; GOV-006, revisão e aprovação; GOV-007, revisores; GOV-008, seleção e condução dos casos.
+A automação agora impede:
 
-O cadastro começa vazio. O CASO-001 publica essa limitação e não pode simular revisão independente.
+- comunicação institucional classificada como evidência financeira primária;
+- fonte `obtida` ou `tratada` sem caminho local e SHA-256;
+- identificadores duplicados de fonte, alegação, inconsistência ou documento requerido;
+- inconsistência que referencie alegação inexistente;
+- valor numérico sem unidade;
+- URL de fonte sem HTTPS.
+
+Essas verificações controlam estrutura e rastreabilidade. Não comprovam autenticidade, completude, mérito técnico, execução, entrega ou eficácia.
 
 ## 7. Validação automática
 
@@ -171,6 +153,7 @@ A CI verifica:
 - identificadores, dependências, reciprocidade, substituições e ciclos;
 - links internos e âncoras;
 - formulários, privacidade e template de pull request;
+- registro de evidências técnicas e financeiras;
 - pipeline pluviométrico com fixture sintético;
 - coleta ArcGIS e transporte IPv4 com respostas controladas;
 - pipeline GeoJSON com fixture sintético;
@@ -185,13 +168,11 @@ Estados registrados:
 - `documentation/catalog`;
 - `portal/build`.
 
-O workflow manual pode registrar `geodata/source-query` quando uma consulta externa for concluída ou falhar. Esse estado não substitui `geodata/pipeline`.
-
 ## 8. Estrutura física
 
 O ARQ-003 preserva caminhos existentes e determina aplicações em `casos/`, relatórios em `relatorios/`, automações em `scripts/` e ativos em `docs/assets/`.
 
-Arquivos locais não publicáveis permanecem em `work/`, ignorado pelo Git. Saídas locais `geoinea-result/` e logs de consulta também são ignorados.
+Arquivos integrais ainda não publicáveis devem permanecer em `work/caso-001/documentos-tecnicos/`, ignorado pelo Git, até revisão de licença, privacidade, integridade e necessidade de publicação.
 
 ## 9. Dívida documental e operacional
 
@@ -206,16 +187,17 @@ Arquivos locais não publicáveis permanecem em `work/`, ignorado pelo Git. Saí
 | DD-041 | CASO-001 sem prontidão mínima | aberta, alta | issue #2 e registro de prontidão |
 | DD-044 | feição oficial da sub-bacia indisponível | aberta, alta | issue #6; geosserviço candidato localizado |
 | DD-045 | série pluviométrica real não coletada | aberta, alta | issue #4; processador pronto |
-| DD-046 | documentos técnicos integrais indisponíveis | aberta, alta | issue #7 |
+| DD-046 | documentos técnicos integrais indisponíveis | aberta, alta | issue #7; inventário e lista REQ-001 a REQ-007 estruturados |
 | DD-047 | participação e interlocutores não confirmados | aberta, alta | issue #8 |
 | DD-048 | matriz de fontes dispersa | resolvida | `CASO-001-FONTES` |
 | DD-049 | publicação acidental e retenção indefinida | controlada | `work/`, prazos, quarentena e descarte |
 | DD-050 | pipeline de chuva sem teste | resolvida | `data/pipeline` |
 | DD-051 | ausência de protocolo e validação geoespacial | resolvida | `CASO-001-GEOMETRIA` e `geodata/pipeline` |
-| DD-052 | risco de confundir geosserviço com polígono obtido | controlada | estados de fonte e critérios explícitos |
-| DD-053 | GeoINEA inacessível aos runners hospedados nas tentativas de 2026-07-18 | aberta, controlada | coletor local, transporte IPv4, workflow manual e artefatos `29658467155` e `29658776194` |
+| DD-052 | risco de confundir geosserviço com polígono obtido | controlada | estados e critérios explícitos |
+| DD-053 | GeoINEA inacessível aos runners hospedados nas tentativas documentadas | aberta, controlada | coletor local, transporte IPv4 e workflow manual |
+| DD-054 | risco de confundir anúncio, financiamento, contratação, projeto e execução | controlada | registro estruturado, classes de evidência e validação automática |
 
-DD-053 não demonstra indisponibilidade geral do serviço. Registra apenas a incapacidade dos ambientes hospedados utilizados de estabelecer conexão durante as tentativas documentadas.
+DD-046 permanece aberta: estruturar o inventário não equivale a obter os documentos integrais. DD-054 está controlada, mas só poderá ser considerada resolvida após uso consistente em casos posteriores.
 
 ## 10. Plano progressivo
 
@@ -227,11 +209,9 @@ DD-053 não demonstra indisponibilidade geral do serviço. Registra apenas a inc
 | 7 | estrutura física | concluída |
 | 8 | primeiros casos e evidências | em execução |
 
-A evolução é governada pelos GOV-005 a GOV-008, com rigor proporcional e limites explícitos de capacidade.
-
 ## 11. Próxima ação
 
-Executar o coletor em rede que alcance o GeoINEA, preservar a resposta oficial e somente então confirmar ou refutar correspondência nominal com Itapeba. Em paralelo, executar a coleta pluviométrica autorizada, obter documentos técnicos integrais e formar capacidade de revisão antes de nova decisão do portão.
+Obter e preservar os sete grupos documentais REQ-001 a REQ-007, começando pelo programa final, contratação da consultoria, termos e contratos de financiamento e anexos técnicos das três operações. Em paralelo, executar o coletor em rede que alcance o GeoINEA, coletar a série pluviométrica autorizada e formar capacidade de revisão antes de nova decisão do portão.
 
 ## 12. Histórico de alterações
 
@@ -252,4 +232,5 @@ Executar o coletor em rede que alcance o GeoINEA, preservar a resposta oficial e
 | 0.23.0 | 2026-07-18 | compatível | Protocolo pluviométrico e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
 | 0.24.0 | 2026-07-18 | compatível | Matriz de fontes, retenção e linha de base de 54 documentos | Projeto Pragmatismo Cívico |
 | 0.25.0 | 2026-07-18 | compatível | Protocolo geoespacial, validador GeoJSON e linha de base de 55 documentos | Projeto Pragmatismo Cívico |
-| 0.26.0 | 2026-07-18 | compatível | Coletor auditável, transporte IPv4, tentativas reais, dívida DD-053 e suíte geoespacial ampliada | Projeto Pragmatismo Cívico |
+| 0.26.0 | 2026-07-18 | compatível | Coletor auditável, transporte IPv4, tentativas reais e dívida DD-053 | Projeto Pragmatismo Cívico |
+| 0.27.0 | 2026-07-18 | compatível | Registro técnico estruturado, validação de evidências, dívida DD-054 e linha de base de 56 documentos | Projeto Pragmatismo Cívico |
