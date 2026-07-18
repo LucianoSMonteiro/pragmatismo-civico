@@ -98,6 +98,7 @@ LAYER_BY_PATH = {
     "casos/README.md": "Aplicações e evidências",
     "casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md": "Aplicações e evidências",
     "casos/CASO-001_REGISTRO_DE_PRONTIDAO.md": "Aplicações e evidências",
+    "casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md": "Aplicações e evidências",
 }
 REQUIRED_FIELDS = ("id", "titulo", "versao", "status", "tipo", "responsaveis")
 
@@ -298,7 +299,7 @@ def generate_catalog(documents: list[Document]) -> str:
             "",
             "### Conduzir casos e produzir evidências",
             "",
-            "`GOV-008` → `FICHA-GOV-008` → `CASOS-INDEX` → `CASO-001` → `CASO-001-PRONTIDAO` → `PPC-001`.",
+            "`GOV-008` → `FICHA-GOV-008` → `CASOS-INDEX` → `CASO-001` → `CASO-001-PRONTIDAO` → `CASO-001-DADOS-CHUVA` → `PPC-001`.",
             "",
             "### Compreender a arquitetura documental",
             "",
@@ -313,6 +314,7 @@ def generate_catalog(documents: list[Document]) -> str:
             "- a instância plural permanente do GOV-006 ainda não foi constituída;",
             "- o CASO-001 está em preparação na sub-bacia de Itapeba e ainda não contém diagnóstico ou resultados;",
             "- o registro de prontidão documenta fontes e pendências, mas não autoriza o PPC-001;",
+            "- o protocolo pluviométrico foi testado apenas com dados sintéticos e não contém série real;",
             "- não há estudo de caso concluído nem validação empírica suficiente.",
             "",
             "## Histórico de alterações",
