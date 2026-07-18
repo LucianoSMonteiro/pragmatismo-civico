@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -24,7 +24,7 @@ relaciona_se_com:
   - GOV-004
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -136,6 +136,9 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] PPC-000A — ciclo de vida formal dos PPCs;
 - [x] primeiro lote da migração documental — PPC-000 e Modelo de Governança;
 - [x] conclusão da Fase 1 da migração documental — roadmap, guia de contribuição e código de conduta;
+- [x] conclusão da Fase 2A da migração documental — ciclo, PPC-001 a PPC-004 e teoria da mudança;
+- [ ] Fase 2B da migração documental — PPC-005 a PPC-008;
+- [ ] revisão de reciprocidade das dependências do ciclo completo;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
 - [ ] política de revisão e aprovação;
@@ -189,13 +192,14 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 ## Prioridades imediatas
 
 1. formalizar o processo de propostas de mudança;
-2. iniciar a Fase 2A da migração documental pelo ciclo, PPC-001 a PPC-004 e teoria da mudança;
-3. criar a ficha padrão de indicadores;
-4. desenvolver o checklist de transparência e rastreabilidade;
-5. estruturar o protocolo de avaliação do próprio framework;
-6. selecionar e documentar o primeiro estudo de caso demonstrativo;
-7. revisar a licença para distinguir documentação, ferramentas e eventual software;
-8. preparar versões para impressão dos padrões e fichas.
+2. executar a Fase 2B da migração documental para PPC-005 a PPC-008;
+3. revisar a reciprocidade das dependências do ciclo completo;
+4. criar a ficha padrão de indicadores;
+5. desenvolver o checklist de transparência e rastreabilidade;
+6. estruturar o protocolo de avaliação do próprio framework;
+7. selecionar e documentar o primeiro estudo de caso demonstrativo;
+8. revisar a licença para distinguir documentação, ferramentas e eventual software;
+9. preparar versões para impressão dos padrões e fichas.
 
 ## Controle de coerência
 
@@ -241,3 +245,4 @@ Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prá
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001 e registro da conclusão da Fase 1 da migração de governança | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 2A e atualização das prioridades de migração metodológica | Projeto Pragmatismo Cívico |
