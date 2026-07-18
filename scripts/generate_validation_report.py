@@ -16,7 +16,7 @@ from validate_metadata_graph import ValidationResult, validate_documents
 
 MANUAL_DEBT = (
     "GitHub Pages ainda exige ativação inicial pelo proprietário na issue #1.",
-    "A camada de aplicações e evidências ainda não possui estudo de caso oficial.",
+    "O CASO-001 existe apenas em preparação e ainda não possui diagnóstico, revisão independente ou resultado empírico.",
     "A adequação da licença para documentação, ferramentas e eventual software permanece pendente.",
     "O cadastro público de revisores existe, mas ainda não possui pessoa elegível ou ativa.",
     "A instância plural permanente de revisão e aprovação ainda não foi constituída.",
