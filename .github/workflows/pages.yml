@@ -61,6 +61,8 @@ jobs:
       - name: Configurar GitHub Pages
         if: steps.build.outputs.status == '0'
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Enviar artefato
         if: steps.build.outputs.status == '0'
