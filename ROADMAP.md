@@ -18,6 +18,7 @@ Toda nova entrega deve ser verificada à luz do `FRAMEWORK_DE_REFERENCIA.md`, pr
 - [x] carta de princípios;
 - [x] framework de referência e regra de preservação da essência;
 - [x] arquitetura documental do framework;
+- [x] inventário e plano de migração documental;
 - [x] modelo de governança;
 - [x] estrutura de indicadores;
 - [x] roadmap inicial;
@@ -152,14 +153,15 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. criar o inventário e o plano de migração progressiva para o PPC-META-001, o PPC-000A e a arquitetura documental;
-2. formalizar o processo de propostas de mudança;
-3. criar a ficha padrão de indicadores;
-4. desenvolver o checklist de transparência e rastreabilidade;
-5. estruturar o protocolo de avaliação do próprio framework;
-6. selecionar e documentar o primeiro estudo de caso demonstrativo;
-7. revisar a licença para distinguir documentação, ferramentas e eventual software;
-8. preparar versões para impressão dos padrões e fichas.
+1. executar a Fase 1 da migração documental no PPC-000 e no Modelo de Governança;
+2. completar o lote de governança com roadmap, contribuição e código de conduta;
+3. formalizar o processo de propostas de mudança;
+4. criar a ficha padrão de indicadores;
+5. desenvolver o checklist de transparência e rastreabilidade;
+6. estruturar o protocolo de avaliação do próprio framework;
+7. selecionar e documentar o primeiro estudo de caso demonstrativo;
+8. revisar a licença para distinguir documentação, ferramentas e eventual software;
+9. preparar versões para impressão dos padrões e fichas.
 
 ## Controle de coerência
 
