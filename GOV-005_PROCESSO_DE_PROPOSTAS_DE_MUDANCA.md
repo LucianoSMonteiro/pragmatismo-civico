@@ -1,7 +1,7 @@
 ---
 id: GOV-005
 titulo: Processo de Propostas de Mudança
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -13,7 +13,6 @@ aprovadores: []
 depende_de:
   - FRAMEWORK-DE-REFERENCIA
   - GOV-001
-  - GOV-003
   - GOV-004
   - PPC-000A
   - PPC-META-001
@@ -21,11 +20,12 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - GOV-002
+  - GOV-003
   - ARQ-002
   - FICHA-GOV-005
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ferramentas_associadas:
   - FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md
@@ -412,3 +412,4 @@ Este processo ainda depende de mantenedores provisórios e não possui conselho 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Criação do processo formal de propostas, revisão, decisão, implementação e registro público | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-18 | correção | Reclassificação do Guia de Contribuição como relação complementar, eliminando ciclo de dependência obrigatória | Projeto Pragmatismo Cívico |
