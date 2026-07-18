@@ -1,3 +1,31 @@
+---
+id: GOV-004
+titulo: Código de Conduta do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: governanca
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+  - GOV-001
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - GOV-002
+  - GOV-003
+  - PPC-000A
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Código de Conduta do Pragmatismo Cívico
 
 ## 1. Propósito
@@ -104,3 +132,9 @@ O processo não deve ser usado para silenciar crítica legítima, perseguir adve
 ## 11. Regra de síntese
 
 > Divergir sobre ideias é parte do Pragmatismo Cívico. Desrespeitar pessoas, manipular evidências ou capturar o projeto para fins partidários não é.
+
+## 12. Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva das regras de conduta | Projeto Pragmatismo Cívico |
