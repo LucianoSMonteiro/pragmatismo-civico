@@ -1,7 +1,7 @@
 ---
 id: GOV-007
 titulo: Programa e Cadastro Público de Revisores
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -12,7 +12,6 @@ responsaveis:
 aprovadores: []
 depende_de:
   - FRAMEWORK-DE-REFERENCIA
-  - GOV-003
   - GOV-004
   - GOV-005
   - GOV-006
@@ -24,10 +23,11 @@ produz_entrada_para:
 relaciona_se_com:
   - GOV-001
   - GOV-002
+  - GOV-003
   - ARQ-002
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ferramentas_associadas:
   - FICHA_GOV-007_CANDIDATURA_E_AVALIACAO_DE_REVISOR.md
@@ -251,3 +251,4 @@ O programa atende ao GOV-007 quando:
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Criação do programa, critérios de candidatura, proteção de dados e formação de painéis | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-18 | correção | Reclassificação do vínculo com o GOV-003 como relação complementar, eliminando ciclo obrigatório | Projeto Pragmatismo Cívico |
