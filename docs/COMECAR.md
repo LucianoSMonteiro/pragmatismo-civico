@@ -1,7 +1,7 @@
 ---
 id: GUIA-COMECAR
 titulo: Começar no Pragmatismo Cívico
-versao: 0.5.0
+versao: 0.6.0
 status: rascunho
 tipo: guia
 idioma: pt-BR
@@ -20,6 +20,7 @@ relaciona_se_com:
   - PORTAL-INICIO
   - CATALOGO-DOCUMENTAL
   - ARQ-003
+  - GOV-005
   - PPC-000
   - GOV-003
 substitui: []
@@ -73,10 +74,33 @@ A leitura recomendada é:
 1. [PPC-000](../PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) — estrutura do ecossistema;
 2. [PPC-000A](../PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) — estados e transições;
 3. [PPC-META-001](../PPC-META-001_METADADOS_E_VERSIONAMENTO.md) — metadados e versões;
-4. [ARQ-001](../ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) — camadas e relações;
-5. [ARQ-002](../ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) — cobertura, validação e dívida;
-6. [ARQ-003](../ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md) — caminhos e estrutura híbrida;
-7. [Catálogo Documental](../CATALOGO_DOCUMENTAL.md) — visão consolidada.
+4. [GOV-005](../GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md) — propostas, revisão, decisão e verificação;
+5. [ARQ-001](../ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) — camadas e relações;
+6. [ARQ-002](../ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) — cobertura, validação e dívida;
+7. [ARQ-003](../ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md) — caminhos e estrutura híbrida;
+8. [Catálogo Documental](../CATALOGO_DOCUMENTAL.md) — visão consolidada.
+
+## Quero propor uma mudança
+
+Use:
+
+- [GOV-005 — Processo de Propostas de Mudança](../GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md);
+- [Ficha GOV-005](../FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md);
+- formulário **Proposta de mudança** nas issues do repositório;
+- [Guia de Contribuição](../CONTRIBUTING.md).
+
+Uma proposta formal deve registrar:
+
+- problema demonstrado;
+- tipo e impacto;
+- evidências e alternativas;
+- princípios e documentos afetados;
+- riscos, direitos e salvaguardas;
+- compatibilidade e migração;
+- conflitos de interesse;
+- implementação, verificação e reversão.
+
+A issue registra a proposta. O pull request implementa a decisão e não substitui a revisão ou a justificativa pública.
 
 ## Estrutura física vigente
 
@@ -89,21 +113,9 @@ O crescimento futuro seguirá a estrutura híbrida:
 - automações em `scripts/`;
 - ativos em `docs/assets/`.
 
-## Quero contribuir
-
-Consulte o [Guia de Contribuição](../CONTRIBUTING.md), o [Código de Conduta](../CODE_OF_CONDUCT.md) e o [Roadmap](../ROADMAP.md).
-
-Toda contribuição deve declarar:
-
-- o problema concreto que resolve;
-- os princípios que concretiza;
-- como sua utilidade será avaliada;
-- os riscos e custos que introduz;
-- as relações com documentos existentes.
-
 ## Estado atual
 
-O acervo navegável contém 40 documentos identificados, versionados, catalogados e validados automaticamente. A estrutura física foi decidida no ARQ-003. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público aguarda a ativação inicial do GitHub Pages registrada na issue #1.
+O acervo navegável contém 42 documentos identificados, versionados, catalogados e validados automaticamente. O processo formal de mudanças está publicado como rascunho. A política permanente de revisão e a instância plural ainda são pendências. Também não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público aguarda a ativação inicial do GitHub Pages registrada na issue #1.
 
 ## Histórico de alterações
 
@@ -113,4 +125,5 @@ O acervo navegável contém 40 documentos identificados, versionados, catalogado
 | 0.2.0 | 2026-07-18 | compatível | Cobertura do ciclo completo e correção da governança dos padrões | Projeto Pragmatismo Cívico |
 | 0.3.0 | 2026-07-18 | compatível | Integração do catálogo e atualização para 39 documentos | Projeto Pragmatismo Cívico |
 | 0.4.0 | 2026-07-18 | compatível | Registro da conclusão da validação automática | Projeto Pragmatismo Cívico |
-| 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003, atualização para 40 documentos e orientação sobre a estrutura híbrida | Projeto Pragmatismo Cívico |
+| 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003 e atualização para 40 documentos | Projeto Pragmatismo Cívico |
+| 0.6.0 | 2026-07-18 | compatível | Inclusão do GOV-005, da ficha, do formulário e atualização para 42 documentos | Projeto Pragmatismo Cívico |
