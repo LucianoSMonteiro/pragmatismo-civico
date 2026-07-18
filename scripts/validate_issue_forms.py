@@ -25,6 +25,44 @@ REQUIRED_PR_SECTIONS = (
     "## Evidências de validação",
 )
 REQUIRED_PR_REFERENCES = ("GOV-005", "GOV-006", "PM-AAAA-NNN", "CI foi aprovada")
+REQUIRED_FORM_IDS = {
+    "proposta-de-mudanca.yml": {
+        "problem",
+        "proposal_type",
+        "impact",
+        "current_state",
+        "proposed_change",
+        "evidence",
+        "alternatives",
+        "principles",
+        "risks",
+        "compatibility",
+        "implementation",
+        "conflicts",
+        "declarations",
+    },
+    "candidatura-revisor.yml": {
+        "public_identity",
+        "competencies",
+        "experience",
+        "contexts",
+        "affiliations",
+        "conflicts",
+        "availability",
+        "languages",
+        "limitations",
+        "declarations",
+    },
+}
+REQUIRED_FORM_REFERENCES = {
+    "proposta-de-mudanca.yml": ("GOV-005", "GOV-006"),
+    "candidatura-revisor.yml": (
+        "GOV-007",
+        "Esta issue é pública",
+        "dados pessoais sensíveis",
+        "não garante admissão",
+    ),
+}
 
 
 @dataclass
@@ -56,7 +94,6 @@ def validate_pull_request_template(result: IssueFormValidationResult) -> None:
     for section in REQUIRED_PR_SECTIONS:
         if section not in text:
             result.errors.append(f"seção obrigatória ausente em {relative}: {section}")
-
     for reference in REQUIRED_PR_REFERENCES:
         if reference not in text:
             result.errors.append(f"referência obrigatória ausente em {relative}: {reference}")
@@ -70,6 +107,28 @@ def validate_pull_request_template(result: IssueFormValidationResult) -> None:
         )
 
 
+def validate_form_contract(
+    path: Path,
+    text: str,
+    seen_ids: set[str],
+    result: IssueFormValidationResult,
+) -> None:
+    relative = path.relative_to(ROOT).as_posix()
+    required_ids = REQUIRED_FORM_IDS.get(path.name)
+    if required_ids is not None:
+        missing_ids = sorted(required_ids - seen_ids)
+        if missing_ids:
+            result.errors.append(
+                f"campos canônicos ausentes em {relative}: {', '.join(missing_ids)}"
+            )
+
+    for reference in REQUIRED_FORM_REFERENCES.get(path.name, ()):
+        if reference not in text:
+            result.errors.append(
+                f"referência ou salvaguarda obrigatória ausente em {relative}: {reference}"
+            )
+
+
 def validate_issue_forms() -> IssueFormValidationResult:
     result = IssueFormValidationResult()
     if not ISSUE_FORMS_DIR.is_dir():
@@ -81,11 +140,17 @@ def validate_issue_forms() -> IssueFormValidationResult:
             if path.suffix.lower() in {".yml", ".yaml"} and path.name != "config.yml"
         )
 
+        known_names = set(REQUIRED_FORM_IDS)
+        found_names = {path.name for path in form_paths}
+        for missing_form in sorted(known_names - found_names):
+            result.errors.append(f"formulário canônico ausente: {missing_form}")
+
         for path in form_paths:
             result.forms += 1
             relative = path.relative_to(ROOT).as_posix()
+            text = path.read_text(encoding="utf-8")
             try:
-                data = yaml.safe_load(path.read_text(encoding="utf-8"))
+                data = yaml.safe_load(text)
             except yaml.YAMLError as error:
                 result.errors.append(f"YAML inválido em {relative}: {error}")
                 continue
@@ -131,9 +196,8 @@ def validate_issue_forms() -> IssueFormValidationResult:
                     continue
 
                 if item_type == "markdown":
-                    if not isinstance(attributes.get("value"), str) or not attributes[
-                        "value"
-                    ].strip():
+                    value = attributes.get("value")
+                    if not isinstance(value, str) or not value.strip():
                         result.errors.append(f"markdown sem value em {prefix}")
                     continue
 
@@ -145,9 +209,8 @@ def validate_issue_forms() -> IssueFormValidationResult:
                 else:
                     seen_ids.add(item_id)
 
-                if not isinstance(attributes.get("label"), str) or not attributes[
-                    "label"
-                ].strip():
+                label = attributes.get("label")
+                if not isinstance(label, str) or not label.strip():
                     result.errors.append(f"label ausente em {prefix}")
 
                 if item_type == "dropdown":
@@ -169,6 +232,12 @@ def validate_issue_forms() -> IssueFormValidationResult:
                                 result.errors.append(
                                     f"opção inválida em {prefix}, posição {option_index}"
                                 )
+                            elif option.get("required") is not True:
+                                result.errors.append(
+                                    f"declaração deve ser obrigatória em {prefix}, posição {option_index}"
+                                )
+
+            validate_form_contract(path, text, seen_ids, result)
 
             title = data.get("title")
             if title is not None and not isinstance(title, str):
