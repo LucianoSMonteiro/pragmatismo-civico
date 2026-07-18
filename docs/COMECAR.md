@@ -1,7 +1,7 @@
 ---
 id: GUIA-COMECAR
 titulo: Começar no Pragmatismo Cívico
-versao: 0.9.0
+versao: 0.10.0
 status: rascunho
 tipo: guia
 idioma: pt-BR
@@ -27,6 +27,7 @@ relaciona_se_com:
   - CADASTRO-REVISORES
   - CASOS-INDEX
   - CASO-001
+  - CASO-001-PRONTIDAO
   - PPC-000
   - GOV-003
 substitui: []
@@ -89,9 +90,12 @@ Use:
 - [GOV-008](../GOV-008_PROTOCOLO_DE_SELECAO_E_CONDUCAO_DE_CASOS.md);
 - [Ficha GOV-008](../FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md);
 - [Índice de Casos e Evidências](../casos/README.md);
-- [CASO-001](../casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md).
+- [CASO-001](../casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md);
+- [Registro de Prontidão](../casos/CASO-001_REGISTRO_DE_PRONTIDAO.md).
 
-O CASO-001 examina, em preparação, drenagem urbana e alerta preventivo em Maricá/RJ. Ainda não existe diagnóstico, recomendação, avaliação de órgão, seleção de tecnologia ou resultado empírico. O caso só pode iniciar o PPC-001 após cumprir o portão de prontidão.
+O CASO-001 está em preparação na sub-bacia de Itapeba. O registro atual define período preliminar de 2022-01-01 a 2026-06-30 e localiza fontes oficiais, mas não autoriza o diagnóstico.
+
+Faltam polígono oficial, produtos técnicos, séries tratadas, registros agregados, interlocutores confirmados, participação local e revisão independente. A issue #2 acompanha a próxima decisão do portão.
 
 ## Quero propor uma mudança
 
@@ -124,7 +128,7 @@ Elegibilidade não garante convite, remuneração ou posição institucional. O 
 
 ## Estrutura física vigente
 
-Os caminhos existentes foram preservados. O crescimento futuro seguirá:
+Os caminhos existentes foram preservados. O crescimento seguirá:
 
 - aplicações em `casos/`;
 - relatórios em `relatorios/`;
@@ -133,7 +137,7 @@ Os caminhos existentes foram preservados. O crescimento futuro seguirá:
 
 ## Estado atual
 
-O acervo contém **51 documentos** identificados, versionados e submetidos à validação automática. A camada de aplicações e evidências contém um índice e o CASO-001 em preparação. Ainda não há estudo concluído, revisor elegível ou ativo, instância plural permanente ou validação empírica suficiente. O deploy público aguarda a ativação inicial do GitHub Pages na issue #1.
+O acervo contém **52 documentos** identificados, versionados e submetidos à validação automática. A camada de aplicações contém índice, CASO-001 e registro de prontidão. Ainda não há estudo concluído, revisor elegível ou ativo, instância plural permanente ou validação empírica suficiente. O deploy público aguarda a ativação inicial do GitHub Pages na issue #1.
 
 ## Histórico de alterações
 
@@ -143,5 +147,6 @@ O acervo contém **51 documentos** identificados, versionados e submetidos à va
 | 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003 | Projeto Pragmatismo Cívico |
 | 0.6.0 | 2026-07-18 | compatível | Inclusão do GOV-005 | Projeto Pragmatismo Cívico |
 | 0.7.0 | 2026-07-18 | compatível | Inclusão do GOV-006 | Projeto Pragmatismo Cívico |
-| 0.8.0 | 2026-07-18 | compatível | Inclusão do GOV-007, cadastro, candidatura e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
-| 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008, da camada de aplicações e do CASO-001 em preparação | Projeto Pragmatismo Cívico |
+| 0.8.0 | 2026-07-18 | compatível | Inclusão do GOV-007 e cadastro | Projeto Pragmatismo Cívico |
+| 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008 e CASO-001 | Projeto Pragmatismo Cívico |
+| 0.10.0 | 2026-07-18 | compatível | Recorte de Itapeba, registro de prontidão e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
