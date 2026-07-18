@@ -91,6 +91,7 @@ nav:
       - Ficha PPC-007: FICHA_PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md
       - Ficha PPC-008: FICHA_PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md
       - Ficha de proposta de mudança: FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md
+      - Registro de revisão e aprovação: FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md
       - Matriz de avaliação: MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md
       - Indicadores: INDICADORES.md
   - Governança:
@@ -98,6 +99,7 @@ nav:
       - PPC-META-001 — Metadados e versionamento: PPC-META-001_METADADOS_E_VERSIONAMENTO.md
       - PPC-000A — Ciclo de vida dos padrões: PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md
       - Processo de propostas de mudança: GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md
+      - Política de revisão e aprovação: GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md
       - Como contribuir: CONTRIBUTING.md
       - Código de conduta: CODE_OF_CONDUCT.md
       - Roadmap: ROADMAP.md
