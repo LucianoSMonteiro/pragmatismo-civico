@@ -1,3 +1,38 @@
+---
+id: CICLO-PC-001
+titulo: Ciclo do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: metodo
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - PPC-001
+  - PPC-002
+  - PPC-003
+  - PPC-004
+  - MODELO-TDM-001
+  - PPC-005
+  - PPC-006
+  - PPC-007
+  - PPC-008
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Ciclo do Pragmatismo Cívico
 
 ## Finalidade
@@ -205,3 +240,9 @@ O ciclo é considerado aplicado quando existem registros suficientes para respon
 ## Evolução
 
 O ciclo deve evoluir com base em aplicação prática, avaliação independente e aprendizado acumulado, sem alterar os princípios fundadores do Pragmatismo Cívico.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do ciclo | Projeto Pragmatismo Cívico |
