@@ -1,0 +1,421 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "CASO-001",
+  "updated_at": "2026-07-18",
+  "issue": 7,
+  "records": [
+    {
+      "id": "DT-001",
+      "title": "Moradores de Maricá debatem Programa Municipal de Drenagem",
+      "organization": "Prefeitura de Maricá / SOMAR",
+      "source_type": "comunicacao_institucional",
+      "evidence_level": "contextual",
+      "state": "consultada",
+      "published_at": "2023-10-25",
+      "accessed_at": "2026-07-18",
+      "url": "https://www.marica.rj.gov.br/noticia/moradores-de-marica-debatem-programa-municipal-de-drenagem-2/",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Audiência pública e apresentação do prognóstico do Programa Municipal de Drenagem e Manejo de Águas Pluviais.",
+      "identifiers": {},
+      "claims": [
+        {
+          "id": "C-001",
+          "topic": "produto_tecnico",
+          "scope": "programa_municipal",
+          "statement": "Uma empresa de consultoria contratada apresentou o prognóstico com propostas para o plano de ações.",
+          "value": null,
+          "unit": null
+        },
+        {
+          "id": "C-002",
+          "topic": "alternativas",
+          "scope": "programa_municipal",
+          "statement": "O prognóstico mencionou detenção e amortecimento, recuperação de lagoas e orlas, ocupação urbana e valorização de canais naturais.",
+          "value": null,
+          "unit": null
+        }
+      ],
+      "limitations": [
+        "A notícia não identifica o nome da consultoria, o contrato, a versão ou a URL do prognóstico integral.",
+        "A apresentação pública não substitui o produto técnico final nem seus anexos."
+      ]
+    },
+    {
+      "id": "DT-002",
+      "title": "Última audiência pública do Programa de Drenagem e Manejo de Águas Pluviais",
+      "organization": "Prefeitura de Maricá / SOMAR",
+      "source_type": "comunicacao_institucional",
+      "evidence_level": "contextual",
+      "state": "consultada",
+      "published_at": "2023-11-07",
+      "accessed_at": "2026-07-18",
+      "url": "https://www.marica.rj.gov.br/noticia/marica-promove-ultima-audiencia-publica-sobre-o-programa-de-drenagem-e-manejo-de-aguas-pluviais/",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Encerramento da etapa de audiências, diretrizes e metas do programa.",
+      "identifiers": {},
+      "claims": [
+        {
+          "id": "C-003",
+          "topic": "produto_tecnico",
+          "scope": "programa_municipal",
+          "statement": "Após a audiência seria compilado documento com propostas e parecer técnico da SOMAR e da SANEMAR.",
+          "value": null,
+          "unit": null
+        },
+        {
+          "id": "C-004",
+          "topic": "horizonte",
+          "scope": "programa_municipal",
+          "statement": "O programa teria metas de curto, médio e longo prazo.",
+          "value": null,
+          "unit": null
+        }
+      ],
+      "limitations": [
+        "O documento compilado e o parecer técnico não foram localizados nesta etapa.",
+        "O endereço maricaprogramadrenagem.com.br citado pela notícia não foi tratado como fonte obtida."
+      ]
+    },
+    {
+      "id": "DT-003",
+      "title": "PAC Seleções direciona recursos para saneamento e drenagem em Maricá",
+      "organization": "Prefeitura de Maricá",
+      "source_type": "comunicacao_institucional",
+      "evidence_level": "contextual",
+      "state": "consultada",
+      "published_at": "2024-07-26",
+      "accessed_at": "2026-07-18",
+      "url": "https://www.marica.rj.gov.br/noticia/pac-selecoes-direciona-valor-recorde-de-r-159-milhoes-para-marica-nas-areas-de-saneamento-e-drenagem/",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Anúncio municipal do resultado do Novo PAC Seleções.",
+      "identifiers": {
+        "program": "Novo PAC Seleções"
+      },
+      "claims": [
+        {
+          "id": "C-005",
+          "topic": "financiamento",
+          "scope": "tres_projetos_drenagem",
+          "statement": "Três projetos da SOMAR foram selecionados para Barroco, Jardim Atlântico Oeste e Itapeba.",
+          "value": 117000000,
+          "unit": "BRL_FGTS"
+        },
+        {
+          "id": "C-006",
+          "topic": "esgotamento_sanitario",
+          "scope": "sanemar_itapeba_parque_nanci_ponta_grossa",
+          "statement": "Projeto da SANEMAR foi anunciado separadamente para esgotamento sanitário.",
+          "value": 42100000,
+          "unit": "BRL_FGTS"
+        }
+      ],
+      "limitations": [
+        "A notícia não informa os números das propostas, operações ou contratos.",
+        "Os R$ 117 milhões são agregados para três projetos e não individualizam Itapeba."
+      ]
+    },
+    {
+      "id": "DT-004",
+      "title": "CAIXA e Governo Federal assinam contratos de financiamento do Novo PAC com Maricá",
+      "organization": "CAIXA Econômica Federal",
+      "source_type": "registro_financiamento",
+      "evidence_level": "primario_financiamento",
+      "state": "consultada",
+      "published_at": "2026-01-06",
+      "accessed_at": "2026-07-18",
+      "url": "https://caixanoticias.caixa.gov.br/Paginas/Not%C3%ADcias/2026/01-JANEIRO/CAIXA-e-Governo-Federal-assinam-contratos-de-financiamento--do-Novo-PAC-com-a-prefeitura-de-Marica-RJ.aspx",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Registro institucional do agente financeiro sobre três termos e cinco operações.",
+      "identifiers": {
+        "funding_source": "FGTS",
+        "program": "Novo PAC"
+      },
+      "claims": [
+        {
+          "id": "C-007",
+          "topic": "estrutura_financeira",
+          "scope": "conjunto_marica",
+          "statement": "Foram assinados três termos de compromisso com cinco operações de financiamento.",
+          "value": 254400000,
+          "unit": "BRL_FGTS"
+        },
+        {
+          "id": "C-008",
+          "topic": "investimento",
+          "scope": "tres_intervencoes_drenagem",
+          "statement": "As três intervenções de drenagem somam investimento total informado pela CAIXA.",
+          "value": 123100000,
+          "unit": "BRL_TOTAL"
+        },
+        {
+          "id": "C-009",
+          "topic": "financiamento",
+          "scope": "tres_intervencoes_drenagem",
+          "statement": "As três intervenções de drenagem contam com recursos do FGTS.",
+          "value": 117000000,
+          "unit": "BRL_FGTS"
+        },
+        {
+          "id": "C-010",
+          "topic": "beneficiarios",
+          "scope": "tres_intervencoes_drenagem",
+          "statement": "A CAIXA informa aproximadamente 19.500 pessoas beneficiadas pelas três intervenções.",
+          "value": 19500,
+          "unit": "pessoas"
+        },
+        {
+          "id": "C-011",
+          "topic": "escopo_fisico",
+          "scope": "tres_intervencoes_drenagem",
+          "statement": "Estão previstas galerias, redes, pavimentação e intervenção em canal existente no Jardim Atlântico.",
+          "value": null,
+          "unit": null
+        }
+      ],
+      "limitations": [
+        "A página não publica números individuais das operações, contratos integrais, valores por território, cronograma ou anexos técnicos.",
+        "O registro do agente financeiro não substitui os termos e contratos assinados."
+      ]
+    },
+    {
+      "id": "DT-005",
+      "title": "Prefeitura assina contratos para transporte, saneamento e drenagem",
+      "organization": "Prefeitura de Maricá",
+      "source_type": "comunicacao_institucional",
+      "evidence_level": "contextual",
+      "state": "consultada",
+      "published_at": "2026-01-06",
+      "accessed_at": "2026-07-18",
+      "url": "https://www.marica.rj.gov.br/noticia/prefeitura-de-marica-assina-contratos-de-r-267-milhoes-com-o-governo-federal-para-investimentos-em-transporte-saneamento-e-drenagem/",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Anúncio municipal da assinatura dos financiamentos.",
+      "identifiers": {
+        "funding_source": "FGTS",
+        "program": "Novo PAC"
+      },
+      "claims": [
+        {
+          "id": "C-012",
+          "topic": "investimento",
+          "scope": "tres_intervencoes_drenagem",
+          "statement": "O município informa contratos de drenagem que totalizam aproximadamente R$ 123 milhões.",
+          "value": 123000000,
+          "unit": "BRL_TOTAL_APROXIMADO"
+        },
+        {
+          "id": "C-013",
+          "topic": "beneficiarios",
+          "scope": "tres_intervencoes_drenagem",
+          "statement": "O município informa mais de 300 mil beneficiários diretos.",
+          "value": 300000,
+          "unit": "pessoas_minimo"
+        },
+        {
+          "id": "C-014",
+          "topic": "escopo_fisico",
+          "scope": "tres_intervencoes_drenagem",
+          "statement": "O anúncio menciona galerias, macro e microdrenagem e intervenções sustentáveis em Itapeba e Itaipuaçu.",
+          "value": null,
+          "unit": null
+        }
+      ],
+      "limitations": [
+        "A notícia agrega as três intervenções e não publica contratos, projetos, geometrias, valores individuais ou cronogramas.",
+        "O número de beneficiários diverge materialmente do divulgado pela CAIXA."
+      ]
+    },
+    {
+      "id": "DT-006",
+      "title": "Requisitos do Novo PAC para drenagem urbana",
+      "organization": "Ministério das Cidades",
+      "source_type": "orientacao_selecao",
+      "evidence_level": "requisito_procedimental",
+      "state": "consultada",
+      "published_at": null,
+      "accessed_at": "2026-07-18",
+      "url": "https://www.gov.br/cidades/pt-br/novo-pac-selecoes-2026/prevencao-a-desastres-naturais-drenagem-urbana",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Requisitos atuais de inscrição e enquadramento para financiamento de drenagem urbana.",
+      "identifiers": {},
+      "claims": [
+        {
+          "id": "C-015",
+          "topic": "documentos_requeridos",
+          "scope": "selecao_drenagem",
+          "statement": "A seleção requer projeto ou anteprojeto, composição do investimento, comprovação e delimitação de risco, pontos de intervenção e relatório fotográfico.",
+          "value": null,
+          "unit": null
+        },
+        {
+          "id": "C-016",
+          "topic": "natureza_recurso",
+          "scope": "selecao_drenagem",
+          "statement": "Na fonte onerosa, os recursos são financiamento FGTS e exigem contrato com agente financeiro.",
+          "value": null,
+          "unit": null
+        }
+      ],
+      "limitations": [
+        "A página de requisitos não prova quais anexos foram entregues na proposta de Maricá.",
+        "As regras consultadas em 2026 podem diferir das regras específicas da seleção de 2024."
+      ]
+    },
+    {
+      "id": "DT-007",
+      "title": "Pregão Eletrônico 14/2026 — Smart Drainage",
+      "organization": "Prefeitura de Maricá",
+      "source_type": "portal_transparencia",
+      "evidence_level": "indice_contratacao",
+      "state": "consultada",
+      "published_at": null,
+      "accessed_at": "2026-07-18",
+      "url": "https://transparencia.marica.rj.gov.br/licitacoes/licitacoes",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Registro indexado de contratação tecnológica para microdrenagem urbana.",
+      "identifiers": {
+        "procedure": "14/2026",
+        "administrative_process": "25402/2025",
+        "modality": "Pregão Eletrônico"
+      },
+      "claims": [
+        {
+          "id": "C-017",
+          "topic": "valor_estimado",
+          "scope": "smart_drainage",
+          "statement": "O portal informa valor estimado para registro de preços da solução Smart Drainage.",
+          "value": 92038805.89,
+          "unit": "BRL_ESTIMADO"
+        },
+        {
+          "id": "C-018",
+          "topic": "objeto",
+          "scope": "smart_drainage",
+          "statement": "O objeto inclui hardware IoT como serviço, software e serviços de engenharia sanitária.",
+          "value": null,
+          "unit": null
+        },
+        {
+          "id": "C-019",
+          "topic": "situacao",
+          "scope": "smart_drainage",
+          "statement": "O portal indicava o certame em andamento na data de acesso.",
+          "value": null,
+          "unit": null
+        }
+      ],
+      "limitations": [
+        "Não foi demonstrado vínculo financeiro ou contratual entre o Pregão 14/2026 e as três operações de drenagem do Novo PAC.",
+        "Registro de preços e valor estimado não equivalem a contrato celebrado, despesa executada ou implantação concluída.",
+        "Edital, termo de referência e anexos ainda precisam ser preservados com hash."
+      ]
+    },
+    {
+      "id": "DT-008",
+      "title": "Obra do acesso ao João Português em Itapeba",
+      "organization": "Prefeitura de Maricá / SOMAR",
+      "source_type": "registro_historico",
+      "evidence_level": "contextual_historico",
+      "state": "consultada",
+      "published_at": "2020-07-16",
+      "accessed_at": "2026-07-18",
+      "url": "https://www.marica.rj.gov.br/noticia/obra-do-novo-acesso-ao-joao-portugues-avanca-em-itapeba/",
+      "local_path": null,
+      "sha256": null,
+      "scope": "Intervenção histórica em córrego e galeria em Itapeba.",
+      "identifiers": {},
+      "claims": [
+        {
+          "id": "C-020",
+          "topic": "escopo_fisico",
+          "scope": "joao_portugues_2020",
+          "statement": "A notícia descreve estruturas pré-moldadas de 2 m por 4 m em cerca de 300 m de córrego.",
+          "value": 300,
+          "unit": "metros_aproximados"
+        }
+      ],
+      "limitations": [
+        "A intervenção de 2020 não deve ser confundida com os projetos do Novo PAC anunciados em 2024 e contratados em 2026.",
+        "A notícia não substitui projeto, contrato, medição ou as-built."
+      ]
+    }
+  ],
+  "known_inconsistencies": [
+    {
+      "id": "INC-001",
+      "topic": "beneficiarios_drenagem",
+      "claim_ids": [
+        "C-010",
+        "C-013"
+      ],
+      "status": "aberta",
+      "description": "A CAIXA informa aproximadamente 19.500 pessoas para as três intervenções; o município informa mais de 300 mil beneficiários diretos. A diferença não foi reconciliada."
+    },
+    {
+      "id": "INC-002",
+      "topic": "nomes_territoriais",
+      "claim_ids": [
+        "C-005",
+        "C-011",
+        "C-014"
+      ],
+      "status": "aberta",
+      "description": "As fontes usam Barroco, Jardim Atlântico Oeste, Jardim Atlântico e Itaipuaçu de maneiras não completamente equivalentes. Os três objetos territoriais devem ser individualizados nos contratos e projetos."
+    },
+    {
+      "id": "INC-003",
+      "topic": "valor_total_e_fgts",
+      "claim_ids": [
+        "C-007",
+        "C-008",
+        "C-009",
+        "C-012"
+      ],
+      "status": "explicacao_provisoria",
+      "description": "Os valores totais de investimento e os recursos do FGTS são grandezas distintas. A soma aproximada municipal é compatível com o investimento total divulgado pela CAIXA, mas os instrumentos integrais devem confirmar contrapartidas e valores por operação."
+    }
+  ],
+  "required_documents": [
+    {
+      "id": "REQ-001",
+      "document": "Programa Municipal de Drenagem e Manejo de Águas Pluviais — versão final e produtos intermediários",
+      "state": "pendente"
+    },
+    {
+      "id": "REQ-002",
+      "document": "Contrato da consultoria responsável pelo programa e ordens de serviço",
+      "state": "pendente"
+    },
+    {
+      "id": "REQ-003",
+      "document": "Cartas-consulta e anexos das três operações de drenagem do Novo PAC",
+      "state": "pendente"
+    },
+    {
+      "id": "REQ-004",
+      "document": "Termo de compromisso e contratos de financiamento, com números e valores individualizados",
+      "state": "pendente"
+    },
+    {
+      "id": "REQ-005",
+      "document": "Projetos ou anteprojetos, QCI, mapas de risco, geometrias e relatórios fotográficos",
+      "state": "pendente"
+    },
+    {
+      "id": "REQ-006",
+      "document": "Edital, termo de referência e anexos do Pregão Eletrônico 14/2026",
+      "state": "pendente"
+    },
+    {
+      "id": "REQ-007",
+      "document": "Cronogramas físico-financeiros, medições, indicadores e relatórios de execução",
+      "state": "pendente"
+    }
+  ]
+}
