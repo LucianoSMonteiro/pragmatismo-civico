@@ -1,3 +1,31 @@
+---
+id: FICHA-PPC-001
+titulo: Ficha PPC-001 — Diagnóstico de Problema Público
+versao: 0.1.0
+status: rascunho
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-001
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - CICLO-PC-001
+  - PPC-002
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+documento_associado: PPC-001
+versao_documento_associado: 0.1.1
+---
+
 # Ficha PPC-001 — Diagnóstico de Problema Público
 
 ## Finalidade
@@ -320,7 +348,7 @@ Marque apenas quando houver justificativa documentada.
 
 ---
 
-## Registro de revisões
+## Registro de revisões da aplicação
 
 | Versão | Data | Responsável | Alteração | Motivo e evidência |
 |---|---|---|---|---|
@@ -335,3 +363,9 @@ Marque apenas quando houver justificativa documentada.
 - [`FRAMEWORK_DE_REFERENCIA.md`](FRAMEWORK_DE_REFERENCIA.md)
 
 Esta ficha é um instrumento metodológico e pode evoluir com aprendizado prático. Qualquer revisão deve aumentar sua utilidade sem alterar os princípios fundadores do Pragmatismo Cívico.
+
+## Histórico de alterações da ferramenta
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, com vínculo à versão 0.1.1 do PPC-001 e preservação dos campos operacionais | Projeto Pragmatismo Cívico |
