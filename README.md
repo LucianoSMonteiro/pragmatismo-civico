@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.2.0
+versao: 0.2.1
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -251,9 +251,43 @@ O repositório utiliza atualmente a licença MIT. A adequação entre a licença
 
 Contribuições são organizadas por regras públicas de governança, integridade, rastreabilidade e preservação dos princípios fundadores.
 
+<details>
+<summary>Metadados documentais</summary>
+
+```yaml
+id: PORTAL-INICIO
+titulo: Pragmatismo Cívico — Página inicial
+versao: 0.2.1
+status: rascunho
+tipo: publicacao
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+  - ARQ-001
+  - ARQ-002
+  - GOV-002
+produz_entrada_para: []
+relaciona_se_com:
+  - GUIA-COMECAR
+  - CICLO-PC-001
+  - GOV-003
+substitui: []
+substituido_por: null
+compatibilidade: compativel
+proxima_revisao: null
+```
+
+</details>
+
 ## Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001 por representação estruturada equivalente, preservando a apresentação do README no GitHub e no portal | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-18 | compatível | Registro da conclusão da migração mínima dos 38 documentos e atualização das prioridades de catálogo e validação | Projeto Pragmatismo Cívico |
+| 0.2.1 | 2026-07-18 | correção | Inclusão de representação humana colapsável dos metadados, sem prejudicar a abertura da página | Projeto Pragmatismo Cívico |
