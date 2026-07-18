@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.8.0
+versao: 0.9.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -24,7 +24,10 @@ relaciona_se_com:
   - GOV-005
   - GOV-006
   - GOV-007
+  - GOV-008
   - CADASTRO-REVISORES
+  - CASOS-INDEX
+  - CASO-001
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -40,17 +43,18 @@ proxima_revisao: null
 
 <p class="pc-tagline">Decidir com evidências. Agir com responsabilidade. Aprender continuamente.</p>
 
-O **Pragmatismo Cívico** é um framework aberto para governança e decisões de interesse público. Ele organiza princípios, métodos, ferramentas, revisão e aprendizagem para melhorar decisões por meio de transparência, responsabilidade, sustentabilidade, cooperação e evidências.
+O **Pragmatismo Cívico** é um framework aberto para governança e decisões de interesse público. Ele organiza princípios, métodos, ferramentas, revisão, casos e aprendizagem para melhorar decisões por meio de transparência, responsabilidade, sustentabilidade, cooperação e evidências.
 
 [Começar agora](docs/COMECAR.md){ .md-button .md-button--primary }
 [Explorar o método](CICLO_DO_PRAGMATISMO_CIVICO.md){ .md-button }
+[Consultar os casos](casos/README.md){ .md-button }
 [Consultar o catálogo](CATALOGO_DOCUMENTAL.md){ .md-button }
 
 </div>
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os **47 documentos** da navegação canônica estão identificados, versionados, catalogados e validados automaticamente. O processo de mudanças, a política de revisão e o programa público de revisores estão publicados como rascunhos. O cadastro de revisores existe, mas não possui pessoa elegível ou ativa e não constitui instância plural. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público depende da ativação inicial do GitHub Pages registrada na issue #1.
+**Estado atual:** desenvolvimento aberto. Os **51 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O processo de mudanças, a política de revisão, o programa de revisores e o protocolo de casos estão publicados como rascunhos. O CASO-001, sobre drenagem urbana e alerta preventivo em Maricá/RJ, está apenas em preparação: não contém diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e não constitui instância plural. O deploy público depende da ativação inicial do GitHub Pages registrada na issue #1.
 
 </div>
 
@@ -80,21 +84,21 @@ Avance por diagnóstico, alternativas, decisão, implementação, avaliação e 
 
 <div class="pc-card" markdown>
 
-### Propor uma mudança
+### Acompanhar o primeiro caso
 
-Registre problema, alternativas, riscos, compatibilidade, decisão e verificação.
+Veja a preparação, as lacunas e o portão que impede avançar sem dados e revisão suficientes.
 
-[Conhecer o processo](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md)
+[Consultar o CASO-001](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md)
 
 </div>
 
 <div class="pc-card" markdown>
 
-### Candidatar-se a revisor
+### Contribuir ou revisar
 
-Declare competências, vínculos, disponibilidade e limites sem publicar dados sensíveis.
+Proponha mudanças ou candidate-se ao programa público de revisores.
 
-[Conhecer o programa](GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md)
+[Como contribuir](CONTRIBUTING.md)
 
 </div>
 
@@ -161,7 +165,7 @@ Consulte:
 - [ARQ-003 — Estrutura Física](ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md);
 - [Catálogo Documental](CATALOGO_DOCUMENTAL.md).
 
-Os caminhos existentes permanecem estáveis. Novas aplicações serão publicadas em `casos/` e relatórios oficiais em `relatorios/`.
+Os caminhos existentes permanecem estáveis. Novas aplicações são publicadas em `casos/` e relatórios oficiais em `relatorios/`.
 
 ## Padrões metodológicos
 
@@ -177,7 +181,7 @@ Os caminhos existentes permanecem estáveis. Novas aplicações serão publicada
 | [PPC-007](PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md) | avaliar resultados e impactos |
 | [PPC-008](PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md) | aprender e melhorar |
 
-## Governança de mudanças e revisores
+## Governança de mudanças, revisores e casos
 
 | Recurso | Função |
 |---|---|
@@ -188,6 +192,8 @@ Os caminhos existentes permanecem estáveis. Novas aplicações serão publicada
 | [GOV-007](GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md) | candidatura, elegibilidade, disponibilidade e painéis |
 | [Ficha GOV-007](FICHA_GOV-007_CANDIDATURA_E_AVALIACAO_DE_REVISOR.md) | candidatura e avaliação |
 | [Cadastro de Revisores](CADASTRO_PUBLICO_DE_REVISORES.md) | registro público canônico, atualmente vazio |
+| [GOV-008](GOV-008_PROTOCOLO_DE_SELECAO_E_CONDUCAO_DE_CASOS.md) | seleção, prontidão, condução e encerramento de casos |
+| [Ficha GOV-008](FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md) | registro de seleção e portão de prontidão |
 | [Guia de Contribuição](CONTRIBUTING.md) | orientação para propostas, revisão e candidatura |
 
 ### Fluxo de governança
@@ -197,13 +203,33 @@ Problema → Proposta PM-AAAA-NNN → Triagem → Revisão GOV-006
 → Decisão → Implementação → Verificação → Encerramento
 ```
 
-Revisores podem ser convidados apenas após candidatura e avaliação pelo GOV-007. Elegibilidade não garante convite, remuneração ou posição institucional.
+### Fluxo de casos
 
-## Privacidade na candidatura
+```text
+Seleção GOV-008 → Portão de prontidão → PPC-001 → ciclo metodológico
+→ revisão → publicação de evidências e limitações → encerramento
+```
 
-Issues são públicas. A candidatura não deve conter endereço, telefone, documento oficial, data de nascimento, informação médica, renda, contato privado ou dado sensível de terceiros.
+## Primeiro caso demonstrativo
 
-Enquanto não houver canal privado formal, informação confidencial não deve ser enviada ao repositório.
+O [CASO-001](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) foi selecionado para preparar um estudo sobre drenagem urbana e alerta preventivo em Maricá/RJ.
+
+Nesta versão:
+
+- o território interno e o período ainda não estão delimitados;
+- as fontes ainda precisam ser verificadas;
+- não existe diagnóstico ou avaliação de órgão;
+- não foi escolhida tecnologia, obra ou fornecedor;
+- o cadastro de revisores ainda não oferece revisão independente;
+- o caso permanece impedido de iniciar o PPC-001 até cumprir o portão de prontidão.
+
+Consulte também o [Índice de Casos e Evidências](casos/README.md).
+
+## Privacidade na candidatura e nos casos
+
+Issues são públicas. Candidaturas não devem conter endereço, telefone, documento oficial, data de nascimento, informação médica, renda, contato privado ou dado sensível de terceiros.
+
+Casos não devem publicar dados pessoais, sigilosos ou de segurança apenas para aumentar aparência de transparência. Enquanto não houver canal privado formal, informação confidencial não deve ser enviada ao repositório.
 
 ## Validação automática
 
@@ -215,7 +241,7 @@ A CI verifica:
 - formulários de proposta e candidatura;
 - salvaguardas públicas de privacidade;
 - template de pull request;
-- catálogo e estrutura física;
+- catálogo nas seis camadas e estrutura física;
 - `mkdocs build --strict --clean`.
 
 Status registrados:
@@ -226,8 +252,9 @@ Status registrados:
 
 ## Próximas entregas
 
-- selecionar e documentar o primeiro estudo de caso;
+- completar o portão de prontidão do CASO-001;
 - realizar a primeira chamada pública de revisores;
+- delimitar território, período e fontes do caso;
 - habilitar o GitHub Pages — issue #1;
 - criar a ficha padrão de indicadores;
 - desenvolver o checklist de transparência;
@@ -247,7 +274,7 @@ O repositório utiliza atualmente a licença MIT. Sua adequação para documenta
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.8.0
+versao: 0.9.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -269,7 +296,10 @@ relaciona_se_com:
   - GOV-005
   - GOV-006
   - GOV-007
+  - GOV-008
   - CADASTRO-REVISORES
+  - CASOS-INDEX
+  - CASO-001
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -289,3 +319,4 @@ proxima_revisao: null
 | 0.6.0 | 2026-07-18 | compatível | Inclusão do GOV-005 | Projeto Pragmatismo Cívico |
 | 0.7.0 | 2026-07-18 | compatível | Inclusão do GOV-006 | Projeto Pragmatismo Cívico |
 | 0.8.0 | 2026-07-18 | compatível | Inclusão do GOV-007, cadastro, candidatura e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
+| 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008, da camada de aplicações e do CASO-001 em preparação | Projeto Pragmatismo Cívico |
