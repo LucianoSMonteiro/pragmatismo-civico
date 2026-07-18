@@ -1,7 +1,7 @@
 ---
 id: SPECIFICATION
 titulo: Especificação do Pragmatismo Cívico
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: principio
 idioma: pt-BR
@@ -14,14 +14,14 @@ depende_de:
   - CARTA-DE-PRINCIPIOS
 produz_entrada_para:
   - FRAMEWORK-DE-REFERENCIA
-relaciona_se_com:
-  - MANIFESTO
   - TEORIA-DO-PRAGMATISMO-CIVICO
+  - MANIFESTO
   - GLOSSARIO
+relaciona_se_com:
   - PPC-000
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -196,3 +196,4 @@ Esta é a versão inicial da especificação. Seu conteúdo deverá ser aprofund
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica, relação de autoridade e preservação integral da especificação fundadora | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-18 | correção | Normalização das saídas para os documentos fundadores que declaram dependência da Especificação e remoção de relações redundantes | Projeto Pragmatismo Cívico |
