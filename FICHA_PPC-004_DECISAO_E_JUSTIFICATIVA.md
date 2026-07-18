@@ -1,3 +1,33 @@
+---
+id: FICHA-PPC-004
+titulo: Ficha PPC-004 — Decisão e Justificativa Pública
+versao: 0.1.0
+status: rascunho
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-004
+  - PPC-003
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - CICLO-PC-001
+  - MODELO-TDM-001
+  - PPC-005
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+documento_associado: PPC-004
+versao_documento_associado: 0.1.0
+---
+
 # Ficha PPC-004 — Decisão e Justificativa Pública
 
 > Use esta ficha após o PPC-003. Preencha de forma proporcional ao impacto, à incerteza e à reversibilidade da decisão.
@@ -263,8 +293,8 @@ Marque uma opção:
 - [ ] a publicação ou restrição foi justificada;
 - [ ] um revisor independente consegue reconstruir o raciocínio.
 
-## 20. Controle de versões
+## 20. Histórico de alterações da ferramenta
 
-| Versão | Data | Autor | Alteração | Aprovação |
+| Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1 | | | Primeira versão | |
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, com vínculo à versão 0.1.0 do PPC-004 e preservação integral dos campos da ficha | Projeto Pragmatismo Cívico |
