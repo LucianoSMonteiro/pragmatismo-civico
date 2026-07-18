@@ -1,7 +1,7 @@
 ---
 id: CASO-001-PRONTIDAO
 titulo: Registro de Prontidão do CASO-001 — Sub-bacia de Itapeba
-versao: 0.3.1
+versao: 0.4.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -22,6 +22,7 @@ produz_entrada_para: []
 relaciona_se_com:
   - CASOS-INDEX
   - CASO-001-FONTES
+  - CASO-001-DOCUMENTOS-TECNICOS
   - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
   - PPC-001
@@ -42,11 +43,9 @@ issue_acompanhamento: 2
 
 **Permanece em preparação.**
 
-A pesquisa de fontes públicas permitiu reduzir o escopo municipal para a **sub-bacia de Itapeba** e definir um período preliminar de **1º de janeiro de 2022 a 30 de junho de 2026**. A matriz canônica consolidou 15 fontes. Foram localizados serviços oficiais do GeoINEA com polígonos estaduais de sub-bacias e hidrografia na escala 1:25.000.
+A pesquisa consolidou 15 fontes gerais e um registro técnico com 8 fontes oficiais ou institucionais, 20 alegações, 3 inconsistências e 7 grupos documentais requeridos. Foram distinguidos comunicação institucional, registro financeiro, orientação procedimental, índice de contratação e registro histórico.
 
-O coletor, o transporte IPv4 e o validador geoespacial passaram em testes controlados. Duas séries de consulta real, com três tentativas cada, falharam antes do recebimento dos metadados da camada porque os runners hospedados não conseguiram estabelecer conexão com o servidor. Não houve consulta nominal concluída nem resposta vazia.
-
-O portão não está aprovado porque ainda faltam a feição oficial de Itapeba, arquivos técnicos integrais, coleta e revisão das séries reais, confirmação de interlocutores institucionais, plano participativo local e revisão independente.
+Essa estrutura melhora a rastreabilidade, mas não substitui documentos integrais. Ainda faltam a feição oficial de Itapeba, o programa final, contratos, projetos, geometrias, cronogramas, medições, séries reais, interlocutores, participação local e revisão independente.
 
 Este registro não inicia o PPC-001 e não constitui diagnóstico, avaliação de obra, recomendação ou decisão oficial.
 
@@ -59,163 +58,129 @@ Como estruturar uma decisão pública auditável para reduzir riscos e impactos 
 | Elemento | Definição atual | Limitação |
 |---|---|---|
 | unidade territorial | sub-bacia de Itapeba, Maricá/RJ | polígono e limites oficiais ainda não obtidos |
-| fonte poligonal candidata | GeoINEA `GPL_SUBBACIAS_ERJ_50`, camada 4 | metadados conhecidos; resposta de API não recebida pelos runners hospedados |
-| fonte hidrográfica complementar | Projeto RJ25, escala 1:25.000 | linhas de drenagem não definem o polígono da bacia |
-| referência espacial candidata | EPSG:4674 — SIRGAS 2000 | deve ser confirmada no arquivo e nos metadados preservados |
-| foco operacional | drenagem pluvial, ocorrências de alagamento, monitoramento e alerta | não inclui avaliação integral de saneamento ou risco geológico |
-| período | 2022-01-01 a 2026-06-30 | poderá mudar após avaliação de completude das séries |
-| evento de referência | chuvas de abril de 2022 | registro público operacional ainda precisa ser confrontado com séries brutas |
-| contexto de intervenção | contratos e iniciativas divulgados em 2026 | comunicações institucionais não substituem projetos, medições ou contratos completos |
-| população | moradores, usuários, trabalhadores e serviços situados na área delimitada | quantidade e perfil dependem do polígono e de dados oficiais |
+| fonte poligonal candidata | GeoINEA `GPL_SUBBACIAS_ERJ_50`, camada 4 | resposta oficial não recebida pelos runners hospedados |
+| fonte hidrográfica complementar | Projeto RJ25, escala 1:25.000 | linhas de drenagem não definem o polígono |
+| referência espacial candidata | EPSG:4674 — SIRGAS 2000 | deve ser confirmada no arquivo preservado |
+| período | 2022-01-01 a 2026-06-30 | poderá mudar após avaliação de completude |
+| evento de referência | chuvas de abril de 2022 | deve ser confrontado com séries brutas |
+| população | moradores, usuários, trabalhadores e serviços na área | depende do polígono e de dados oficiais |
 
-Falha de conectividade não significa ausência da feição. O período começa em 2022 para incluir um evento público com acumulado elevado registrado em Itapeba e termina em junho de 2026 para preservar uma janela fechada anterior a este registro.
+Falha de conectividade não significa ausência da feição.
 
-## 4. Responsabilidade documental e atores a consultar
+## 4. Responsabilidade documental e atores potenciais
 
-| Função | Situação |
+| Função ou unidade | Situação |
 |---|---|
-| responsável pela documentação | Projeto Pragmatismo Cívico |
-| Secretaria de Proteção e Defesa Civil | fonte e interlocutora potencial para riscos, monitoramento, alertas e ocorrências |
-| Serviços de Obras de Maricá — SOMAR | fonte e interlocutora potencial para drenagem, manutenção e obras |
-| Secretaria de Urbanismo e Planejamento Territorial | fonte e interlocutora potencial para Plano Diretor, uso do solo e cartografia |
-| Secretaria de Meio Ambiente e Sustentabilidade | fonte e interlocutora potencial para soluções ambientais e monitoramento inteligente |
-| Companhia de Saneamento de Maricá — SANEMAR | interlocutora potencial apenas nas interfaces entre drenagem, esgotamento e recursos hídricos |
-| Instituto Estadual do Ambiente — INEA | órgão produtor de geosserviços candidatos e sistemas hidrometeorológicos |
-| revisão independente | não disponível; cadastro público permanece vazio |
+| Projeto Pragmatismo Cívico | responsável pela documentação |
+| Defesa Civil | fonte potencial para riscos, alertas e ocorrências |
+| SOMAR | fonte potencial para drenagem, manutenção e obras |
+| Urbanismo e Planejamento Territorial | fonte potencial para uso do solo e cartografia |
+| Meio Ambiente e Sustentabilidade | fonte potencial para soluções ambientais e monitoramento |
+| SANEMAR | interface com esgotamento e recursos hídricos |
+| INEA | produtor de geosserviços e sistemas hidrometeorológicos |
+| CAIXA | agente financeiro das operações divulgadas |
+| revisão independente | indisponível; cadastro permanece vazio |
 
-A listagem não representa parceria, anuência, responsabilidade atribuída nem participação confirmada dessas instituições.
+A listagem não representa parceria, anuência ou participação confirmada.
 
-## 5. Matriz canônica de fontes
+## 5. Fontes e documentos técnicos
 
-A [Matriz de Fontes e Lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) contém identificadores `F-001` a `F-015`, órgão, URL, classe, cobertura, formato, licença conhecida, estado de obtenção, hash, uso, risco e relação com o portão.
+A [Matriz de Fontes](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) contém `F-001` a `F-015`. O [Registro Técnico](CASO-001_DOCUMENTOS_TECNICOS_E_CONTRATACOES.md) e seu JSON estruturado registram:
 
-Resultados relevantes:
+- 8 fontes técnicas ou financeiras;
+- 20 alegações identificadas;
+- 3 inconsistências abertas;
+- 7 grupos documentais necessários;
+- regras que impedem promover notícia a contrato;
+- exigência de arquivo local e SHA-256 para fonte obtida ou tratada.
 
-- 15 fontes públicas foram consolidadas;
-- a Lei Complementar nº 400/2025 foi consultada em PDF oficial;
-- o Anexo II de mapas do Plano Diretor foi localizado, mas ainda não foi obtido e inspecionado com hash;
-- a página pública do Cemaden confirma estação denominada Itapeba, mas código, coordenadas e histórico ainda devem ser confirmados;
-- a camada `GPL_SUBBACIAS_ERJ_50` publica polígonos em EPSG:4674 e aceita GeoJSON;
-- nenhuma resposta da API do GeoINEA foi recebida nas tentativas hospedadas;
-- a hidrografia RJ25 é fonte de conferência topológica, não limite automático;
-- nenhuma fonte foi classificada como `obtida` ou `tratada` para fins empíricos.
+Nenhuma fonte está classificada como obtida ou tratada para uso empírico.
 
-Comunicação institucional permanece identificada como tal e não substitui contrato, projeto, medição ou avaliação de eficácia.
+## 6. Estrutura financeira preliminar
 
-## 6. Plano de dados e geometria
+As fontes consultadas atribuem às três intervenções de drenagem:
 
-A etapa de preparação utilizará apenas fontes públicas ou formalmente autorizadas.
+- investimento total agregado de aproximadamente R$ 123,1 milhões;
+- R$ 117 milhões em recursos do FGTS;
+- territórios descritos com variações entre Itaipuaçu, Itapeba, Jardim Atlântico, Jardim Atlântico Oeste e Barroco.
 
-Regras gerais:
+Ainda faltam valores individualizados, números de proposta e operação, contratos, contrapartidas, cronogramas, metas e condições de desembolso.
 
-- arquivar URL, órgão, data de acesso, período coberto e versão;
-- preservar dados brutos separadamente de dados tratados;
+O Pregão Eletrônico 14/2026 — Smart Drainage permanece separado das operações do Novo PAC. Valor estimado e registro de preços não equivalem a contrato ou implantação.
+
+## 7. Inconsistências que bloqueiam uso decisório
+
+| ID | Tema | Estado |
+|---|---|---|
+| `INC-001` | aproximadamente 19.500 beneficiários na fonte da CAIXA versus mais de 300 mil na comunicação municipal | aberta |
+| `INC-002` | nomes territoriais não individualizados | aberta |
+| `INC-003` | investimento total versus recurso financiado | explicação provisória; contratos pendentes |
+
+Os números permanecem atribuídos às respectivas fontes até reconciliação documental.
+
+## 8. Documentos requeridos
+
+| ID | Documento | Estado |
+|---|---|---|
+| `REQ-001` | programa final e produtos intermediários | pendente |
+| `REQ-002` | contratação da consultoria e ordens de serviço | pendente |
+| `REQ-003` | cartas-consulta e anexos das operações | pendente |
+| `REQ-004` | termos e contratos de financiamento individualizados | pendente |
+| `REQ-005` | projetos, QCI, riscos, geometrias e fotografias | pendente |
+| `REQ-006` | edital, termo de referência e anexos do Pregão 14/2026 | pendente |
+| `REQ-007` | cronogramas, medições, indicadores e relatórios | pendente |
+
+## 9. Plano de dados e evidências
+
+Regras:
+
+- preservar dados e documentos brutos separadamente de extrações;
 - calcular hash somente após preservar os bytes exatos;
-- registrar parâmetros, falhas de conexão, erros do serviço e respostas vazias como estados distintos;
-- converter horários UTC de forma explícita;
-- verificar lacunas, duplicidades, valores impossíveis e mudanças de estação;
-- não combinar registros de chuva, ocorrência e dano como se fossem equivalentes;
+- distinguir falha de conexão, resposta vazia e documento ausente;
+- distinguir notícia, financiamento, contratação, projeto, medição e resultado;
+- não combinar chuva, ocorrência, dano e obra como grandezas equivalentes;
 - não inferir causalidade a partir de correlação temporal;
-- não transformar linha de drenagem, nome de bairro ou croqui em polígono oficial;
-- publicar somente dados agregados quando houver risco de identificação;
-- registrar licença, restrição e método de transformação;
-- não utilizar comunicação institucional como prova suficiente de desempenho;
-- revisar retenção, descarte, backups e acesso conforme `CASO-001-DADOS-CHUVA`.
+- não transformar linha de drenagem, bairro ou croqui em polígono oficial;
+- registrar licença, restrição, transformação e revisão;
+- publicar somente dados agregados quando necessário.
 
 Estado de execução:
 
 - processador pluviométrico testado com fixture sintético;
-- coletor ArcGIS testado com respostas sintéticas, incluindo correspondência e ausência nominal;
-- transporte IPv4 testado para sucesso, falha de conexão e status HTTP não exitoso;
-- validador GeoJSON testado com geometria válida e anel aberto;
-- duas séries reais de conexão foram preservadas em artefatos de diagnóstico;
-- nenhum arquivo mensal real foi adquirido, processado ou revisado;
-- nenhuma resposta oficial do GeoINEA ou geometria foi adquirida;
-- a suficiência da estação, do período e do recorte ainda não foi demonstrada.
-
-## 7. Evidência das tentativas GeoINEA
-
-| Execução | Transporte | Tentativas | Resultado | SHA-256 do artefato de diagnóstico |
-|---:|---|---:|---|---|
-| `29658467155` | Python HTTP padrão | 3 | timeout antes dos metadados | `4d2d2b2c450f1967cbf4ec8113de39d146bad01e408d3bdb4b4f8e4741e87bbe` |
-| `29658776194` | `curl --ipv4` | 3 | conexão ao host na porta 443 não estabelecida | `7be511784a29ec17b4ef26b02778e2fd8f97d82e89cdef1a4304cd5147718914` |
-
-Esses hashes pertencem aos artefatos de diagnóstico da CI. Não são hashes de conteúdo do INEA.
-
-Próxima rota válida: executar `scripts/coletar_geoinea_subbacia.py` ou `scripts/coletar_geoinea_subbacia_ipv4.py` em rede que alcance o servidor e preservar a resposta com o protocolo publicado.
-
-## 8. Grupos, conflitos e salvaguardas
-
-A delimitação deverá identificar moradores, trabalhadores, pessoas com barreiras de mobilidade ou comunicação, escolas, saúde, assistência, transporte, comércio, equipes de manutenção, organizações locais e territórios conectados. O plano participativo ainda não está definido.
-
-Salvaguardas:
-
-- não existe fornecedor ou tecnologia selecionada;
-- não existe vínculo declarado com órgão municipal, contratada ou financiador;
-- comunicações oficiais não são avaliação independente;
-- geosserviço oficial não será tratado como feição adequada sem consulta e revisão;
-- falha de rede não será interpretada como ausência cartográfica;
-- qualquer contato institucional, apoio ou conflito posterior deverá ser registrado;
-- urgência operacional não autoriza pular diagnóstico ou proteção de dados.
-
-## 9. Documentos e versões previstos
-
-| Documento | Versão |
-|---|---:|
-| GOV-008 | 0.1.0 |
-| FICHA-GOV-008 | 0.1.0 |
-| CASO-001-FONTES | 0.2.1 |
-| CASO-001-GEOMETRIA | 0.2.0 |
-| CASO-001-DADOS-CHUVA | 0.2.0 |
-| PPC-001 | 0.1.1 |
-| CICLO-PC-001 | 0.1.0 |
-| MODELO-INDICADORES-001 | 0.1.0 |
-| GOV-006 | 0.1.0 |
-| GOV-007 | 0.1.1 |
-
-As versões serão congeladas novamente quando o portão for decidido.
+- coletor e validador geoespacial testados com respostas controladas;
+- registro técnico validado automaticamente;
+- nenhuma série real, resposta GeoINEA ou documento técnico integral foi incorporado.
 
 ## 10. Avaliação do portão
 
 | Requisito | Estado | Evidência ou pendência |
 |---|---|---|
-| pergunta preliminar | atendido | pergunta revisada para a sub-bacia de Itapeba |
-| território e período | parcial | unidade, período e fonte candidata definidos; conexão hospedada bloqueada e feição pendente |
-| responsável | atendido | Projeto Pragmatismo Cívico responsável pela documentação |
-| fontes mínimas | parcial | 15 fontes consolidadas; arquivos técnicos, geometria e séries reais ainda não obtidos |
-| plano de dados | parcial | códigos e retenção definidos; execução real e revisão manual pendentes |
-| grupos afetados | parcial | categorias mapeadas; território e canais de participação pendentes |
-| riscos e conflitos | atendido nesta etapa | salvaguardas e ausência de solução pré-selecionada registradas |
-| versões | atendido | conjunto inicial registrado |
+| pergunta preliminar | atendido | pergunta revisada para Itapeba |
+| território e período | parcial | unidade e período definidos; feição oficial pendente |
+| responsável | atendido | responsável documental identificado |
+| fontes mínimas | parcial | inventários estruturados; arquivos integrais pendentes |
+| plano de dados | parcial | códigos e regras definidos; execução real pendente |
+| documentos técnicos | parcial | 8 fontes e 7 grupos requeridos; nenhum integral obtido |
+| grupos afetados | parcial | categorias mapeadas; canais e território pendentes |
+| riscos e conflitos | atendido nesta etapa | salvaguardas e inconsistências registradas |
 | estratégia de revisão | não atendido | cadastro sem revisor elegível ou ativo |
-| critérios de suspensão | atendido | definidos na seção seguinte |
+| critérios de suspensão | atendido | definidos abaixo |
 
 ## 11. Critérios de suspensão ou encerramento
 
-O caso permanecerá em preparação, será suspenso ou encerrado quando ocorrer:
-
-- impossibilidade de obter delimitação territorial confiável;
-- ausência de séries ou registros mínimos para o período;
-- qualidade de dados incompatível com a pergunta;
-- impossibilidade de tratar riscos de privacidade ou segurança;
-- ausência prolongada de capacidade de revisão;
-- conflito material sem salvaguarda;
-- exigência de promover solução, fornecedor ou narrativa prévia;
-- custo de continuidade desproporcional ao aprendizado possível.
+O caso permanecerá em preparação, será suspenso ou encerrado diante de impossibilidade de obter delimitação confiável, fontes mínimas, qualidade compatível, proteção de dados, capacidade de revisão, salvaguardas para conflitos ou proporcionalidade de custo e aprendizado.
 
 ## 12. Pendências prioritárias
 
-1. repetir a consulta `GPL_SUBBACIAS_ERJ_50` em rede que alcance o GeoINEA e preservar a resposta;
-2. confirmar ou refutar correspondência nominal somente após consulta concluída;
-3. obter recorte da hidrografia RJ25 para conferência topológica;
-4. obter e inspecionar o anexo cartográfico do Plano Diretor;
-5. obter produtos técnicos do Programa Municipal de Drenagem e das intervenções de 2026;
-6. baixar e testar as séries da estação Cemaden Itapeba;
-7. verificar estações e dados históricos do INEA e da ANA;
-8. localizar registros administrativos agregados de ocorrências;
-9. confirmar interlocutores institucionais e estruturar participação local;
-10. obter revisão técnica elegível ou registrar impossibilidade;
-11. emitir nova decisão do portão.
+1. obter REQ-001 e REQ-002;
+2. obter REQ-003 a REQ-005;
+3. obter REQ-006 e REQ-007;
+4. reconciliar beneficiários e nomes territoriais;
+5. executar o coletor GeoINEA em rede acessível;
+6. baixar e revisar a série Cemaden;
+7. confirmar interlocutores e participação;
+8. obter revisão técnica;
+9. emitir nova decisão do portão.
 
 ## 13. Resultado
 
@@ -228,7 +193,8 @@ O caso permanecerá em preparação, será suspenso ou encerrado quando ocorrer:
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-18 | inicial | Verificação de fontes públicas, recorte preliminar da sub-bacia de Itapeba e decisão de manter o caso em preparação | Projeto Pragmatismo Cívico |
-| 0.2.0 | 2026-07-18 | compatível | Consolidação da matriz de fontes, protocolo de retenção e atualização da avaliação do portão | Projeto Pragmatismo Cívico |
-| 0.3.0 | 2026-07-18 | compatível | Inclusão de fontes geoespaciais, protocolo de delimitação, validador GeoJSON e novo status de CI | Projeto Pragmatismo Cívico |
-| 0.3.1 | 2026-07-18 | correção | Registro das tentativas reais, distinção entre falha de conexão e consulta vazia e manutenção do portão fechado | Projeto Pragmatismo Cívico |
+| 0.1.0 | 2026-07-18 | inicial | Fontes, recorte preliminar e decisão de preparação | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Matriz de fontes e retenção | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Fontes e protocolo geoespacial | Projeto Pragmatismo Cívico |
+| 0.3.1 | 2026-07-18 | correção | Tentativas GeoINEA e distinção de falha de conexão | Projeto Pragmatismo Cívico |
+| 0.4.0 | 2026-07-18 | compatível | Registro técnico, estrutura financeira, inconsistências e documentos requeridos | Projeto Pragmatismo Cívico |
