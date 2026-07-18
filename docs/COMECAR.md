@@ -1,7 +1,7 @@
 ---
 id: GUIA-COMECAR
 titulo: Começar no Pragmatismo Cívico
-versao: 0.2.0
+versao: 0.3.0
 status: rascunho
 tipo: guia
 idioma: pt-BR
@@ -18,6 +18,7 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - PORTAL-INICIO
+  - CATALOGO-DOCUMENTAL
   - PPC-000
   - GOV-003
 substitui: []
@@ -31,6 +32,8 @@ proxima_revisao: null
 O Pragmatismo Cívico é um framework aberto para governança e decisões de interesse público baseadas em evidências, transparência, responsabilidade e aprendizado contínuo.
 
 Esta página oferece rotas curtas para diferentes objetivos. A profundidade da aplicação deve ser proporcional ao impacto, ao risco, à incerteza e à reversibilidade da decisão.
+
+Para localizar versões, estados, caminhos e relações de todo o acervo, consulte o [Catálogo Documental](../CATALOGO_DOCUMENTAL.md).
 
 ## Quero entender o projeto
 
@@ -71,7 +74,8 @@ A leitura recomendada é:
 2. [PPC-000A](../PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) — estados, transições, revisão e encerramento dos padrões;
 3. [PPC-META-001](../PPC-META-001_METADADOS_E_VERSIONAMENTO.md) — identificação, metadados, versões e relações documentais;
 4. [ARQ-001](../ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) — camadas, categorias e organização do acervo;
-5. [ARQ-002](../ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) — inventário, dívida documental e plano de evolução.
+5. [ARQ-002](../ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) — inventário, dívida documental e plano de evolução;
+6. [Catálogo Documental](../CATALOGO_DOCUMENTAL.md) — visão consolidada dos documentos e de suas relações.
 
 ## Quero contribuir
 
@@ -87,7 +91,7 @@ Toda contribuição deve declarar:
 
 ## Estado atual
 
-O portal permanece em desenvolvimento aberto. O acervo navegável possui identificação e versionamento documental, mas ainda não há estudo de caso oficial publicado nem validação empírica suficiente para declarar o framework estável.
+O acervo navegável contém 39 documentos identificados, versionados e catalogados. A automação valida o grafo documental e o build estrito do portal. O deploy público aguarda a ativação inicial do GitHub Pages registrada na issue #1. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar o framework estável.
 
 ## Histórico de alterações
 
@@ -95,3 +99,4 @@ O portal permanece em desenvolvimento aberto. O acervo navegável possui identif
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, preservando as rotas e orientações existentes | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-18 | compatível | Cobertura do ciclo completo, correção da governança dos padrões e atualização do estado do portal | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Integração do catálogo, atualização para 39 documentos e registro da validação automatizada e do bloqueio de deploy | Projeto Pragmatismo Cívico |
