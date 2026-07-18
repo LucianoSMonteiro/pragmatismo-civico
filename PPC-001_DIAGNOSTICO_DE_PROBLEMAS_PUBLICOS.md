@@ -1,7 +1,7 @@
 ---
 id: PPC-001
 titulo: Definição e Diagnóstico de Problemas Públicos
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: padrao-metodologico
 idioma: pt-BR
@@ -26,7 +26,7 @@ relaciona_se_com:
   - PPC-008
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ferramentas_associadas:
   - FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md
@@ -36,7 +36,7 @@ ferramentas_associadas:
 
 ## Status
 
-Versão inicial para aplicação, teste e revisão pública.
+Rascunho inicial para aplicação experimental e preparação de revisão pública formal.
 
 ## Finalidade
 
@@ -256,3 +256,4 @@ Este padrão pode ser aperfeiçoado com base em testes, estudos de caso e revis�
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do padrão | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-17 | correção | Alinhamento da descrição textual do estado ao status canônico `rascunho` | Projeto Pragmatismo Cívico |
