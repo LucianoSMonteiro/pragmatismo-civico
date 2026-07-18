@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.20.0
+versao: 0.21.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -30,6 +30,7 @@ relaciona_se_com:
   - CASO-001
   - CASO-001-PRONTIDAO
   - CASO-001-FONTES
+  - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
 substitui: []
 substituido_por: null
@@ -87,14 +88,15 @@ Toda entrega deve preservar os princípios fundadores, resolver problema demonst
 - [x] seleção do primeiro caso — CASO-001;
 - [x] recorte preliminar para a sub-bacia de Itapeba;
 - [x] período preliminar de 2022-01-01 a 2026-06-30;
-- [x] inventário inicial de fontes oficiais e registro de prontidão;
 - [x] decisão motivada de manter o caso em preparação;
+- [x] matriz canônica de 15 fontes, estados de obtenção e lacunas;
 - [x] processador reproduzível de chuva, manifesto, relatório e teste sintético;
-- [x] protocolo público de aquisição e qualidade de dados pluviométricos;
-- [x] política de armazenamento, retenção, quarentena e descarte local;
-- [x] matriz canônica de 13 fontes, estados de obtenção e lacunas;
-- [x] status de CI separado `data/pipeline`;
-- [ ] obter polígono oficial da sub-bacia de Itapeba — issue #6;
+- [x] protocolo de aquisição, qualidade, retenção e descarte pluviométrico;
+- [x] identificação de camada poligonal de sub-bacias e hidrografia RJ25 no GeoINEA;
+- [x] protocolo de aquisição, validação e delimitação geoespacial;
+- [x] validador GeoJSON, manifesto, relatório e testes sintéticos;
+- [x] estados separados `data/pipeline` e `geodata/pipeline`;
+- [ ] consultar e preservar a feição oficial de Itapeba — issue #6;
 - [ ] obter produtos técnicos, projetos, geometrias e cronogramas — issue #7;
 - [ ] baixar mensalmente e revisar a série pluviométrica real — issue #4;
 - [ ] confirmar interlocutores e plano participativo local — issue #8;
@@ -107,7 +109,7 @@ Toda entrega deve preservar os princípios fundadores, resolver problema demonst
 - [ ] publicar relatório de lições aprendidas;
 - [ ] atualizar o framework com base nos testes.
 
-O CASO-001 continua em preparação. A matriz documental e a política de retenção foram concluídas, mas nenhuma série real foi coletada, nenhum polígono oficial foi obtido e nenhum documento técnico integral foi incorporado como evidência.
+O CASO-001 continua em preparação. A localização de um geosserviço oficial e a aprovação do validador sintético não equivalem à obtenção do polígono. Nenhuma série real, feição oficial ou documento técnico integral foi incorporado como evidência.
 
 ### Critério de conclusão
 
@@ -144,15 +146,16 @@ O projeto deve receber, revisar e incorporar contribuições sem perder coerênc
 ### Entregas
 
 - [x] infraestrutura reproduzível do portal;
-- [x] biblioteca navegável com 54 documentos;
+- [x] biblioteca navegável com 55 documentos;
 - [x] catálogo e mapa de relações nas seis camadas;
 - [x] índice público de casos e evidências;
 - [x] validação de metadados, grafo, links e catálogo;
 - [x] validação dos formulários e template de pull request;
 - [x] salvaguardas de privacidade na candidatura pública;
 - [x] análise automática da estrutura física;
-- [x] artefatos e status separados de CI;
-- [x] teste sintético e artefato do pipeline de dados;
+- [x] artefatos e estados separados de CI;
+- [x] teste sintético e artefato do pipeline pluviométrico;
+- [x] teste sintético e artefato do pipeline geoespacial;
 - [ ] ativação inicial do GitHub Pages e primeiro deploy — issue #1;
 - [ ] painel de indicadores demonstrativo;
 - [ ] versões para impressão;
@@ -191,18 +194,19 @@ O ARQ-003 preserva caminhos existentes, direciona aplicações para `casos/`, re
 
 ## Prioridades imediatas
 
-1. executar os downloads mensais autorizados da estação Itapeba e revisar as flags — issue #4;
-2. obter e verificar o polígono oficial da sub-bacia — issue #6;
-3. obter produtos técnicos do Programa Municipal de Drenagem e das intervenções — issue #7;
-4. confirmar interlocutores e participação local — issue #8;
-5. realizar a primeira chamada pública de revisores — issue #3;
-6. obter revisão técnica compatível — issue #9;
-7. emitir nova decisão do portão — issue #2;
-8. habilitar o GitHub Pages — issue #1;
-9. criar a ficha padrão de indicadores;
-10. desenvolver o checklist de transparência e rastreabilidade;
-11. estruturar o protocolo de avaliação do framework;
-12. revisar a licença.
+1. consultar a camada `GPL_SUBBACIAS_ERJ_50`, preservar a resposta e confirmar ou refutar a correspondência com Itapeba — issue #6;
+2. obter recorte da hidrografia RJ25 para conferência topológica — issue #6;
+3. executar os downloads mensais autorizados da estação Itapeba — issue #4;
+4. obter produtos técnicos do Programa Municipal de Drenagem e das intervenções — issue #7;
+5. confirmar interlocutores e participação local — issue #8;
+6. realizar a primeira chamada pública de revisores — issue #3;
+7. obter revisão técnica compatível — issue #9;
+8. emitir nova decisão do portão — issue #2;
+9. habilitar o GitHub Pages — issue #1;
+10. criar a ficha padrão de indicadores;
+11. desenvolver o checklist de transparência e rastreabilidade;
+12. estruturar o protocolo de avaliação do framework;
+13. revisar a licença.
 
 ## Controle de coerência
 
@@ -250,5 +254,6 @@ Antes de iniciar uma entrega, verificar:
 | 0.16.0 | 2026-07-18 | compatível | Publicação do GOV-007 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.17.0 | 2026-07-18 | compatível | Publicação do GOV-008 e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
 | 0.18.0 | 2026-07-18 | compatível | Recorte de Itapeba, inventário de fontes e decisão de manter o portão fechado | Projeto Pragmatismo Cívico |
-| 0.19.0 | 2026-07-18 | compatível | Pipeline pluviométrico reproduzível, protocolo público, quarto status de CI e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
+| 0.19.0 | 2026-07-18 | compatível | Pipeline pluviométrico reproduzível, protocolo público e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
 | 0.20.0 | 2026-07-18 | compatível | Matriz canônica de fontes, política de retenção e linha de base de 54 documentos | Projeto Pragmatismo Cívico |
+| 0.21.0 | 2026-07-18 | compatível | Geosserviços candidatos, protocolo geoespacial, validador GeoJSON e linha de base de 55 documentos | Projeto Pragmatismo Cívico |
