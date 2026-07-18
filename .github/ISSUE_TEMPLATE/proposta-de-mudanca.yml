@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use este formulário conforme o GOV-005. A abertura da issue não presume admissibilidade ou aprovação.
+        Use este formulário conforme o GOV-005. A revisão e a decisão seguirão o GOV-006. A abertura da issue não presume admissibilidade ou aprovação.
 
   - type: input
     id: problem
@@ -126,7 +126,7 @@ body:
     attributes:
       label: Declarações
       options:
-        - label: Consultei o GOV-005 e o Guia de Contribuição.
+        - label: Consultei o GOV-005, o GOV-006 e o Guia de Contribuição.
           required: true
         - label: Verifiquei que a proposta não duplica conteúdo existente sem justificativa.
           required: true
