@@ -86,19 +86,62 @@ jobs:
       - name: Gerar prévia do catálogo documental
         run: python scripts/generate_catalog.py --output catalog-preview.md
 
-      - name: Verificar catálogo publicado
-        run: |
-          diff -u CATALOGO_DOCUMENTAL.md catalog-preview.md || {
-            echo "::error::O catálogo publicado diverge dos metadados ou da navegação. Regenere CATALOGO_DOCUMENTAL.md."
-            exit 1
-          }
-
       - name: Preservar prévia do catálogo
         uses: actions/upload-artifact@v4
         with:
           name: catalog-preview
           path: catalog-preview.md
           retention-days: 7
+
+      - name: Verificar catálogo publicado
+        id: catalog
+        shell: bash
+        run: |
+          set +e
+          diff -u CATALOGO_DOCUMENTAL.md catalog-preview.md > catalog-diff.log
+          status=$?
+          if [[ "$status" != "0" ]]; then
+            cat catalog-diff.log
+            echo "::error::O catálogo publicado diverge dos metadados ou da navegação. Regenere CATALOGO_DOCUMENTAL.md."
+          fi
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Preservar diagnóstico do catálogo
+        if: steps.catalog.outputs.status != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-diff
+          path: catalog-diff.log
+          retention-days: 7
+
+      - name: Registrar status do catálogo
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "${{ steps.catalog.outputs.status }}" == "0" ]]; then
+            state=success
+            description="Catálogo publicado sincronizado"
+          elif [[ "${{ steps.validation.outputs.status }}" != "0" ]]; then
+            state=error
+            description="Catálogo não verificado por falha documental"
+          else
+            state=failure
+            description="Catálogo publicado divergente"
+          fi
+          gh api --method POST \
+            "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+            -f state="$state" \
+            -f context="documentation/catalog" \
+            -f description="$description" \
+            -f target_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
+            > /dev/null || echo "::warning::Não foi possível registrar o status do catálogo."
+
+      - name: Interromper após divergência do catálogo
+        if: steps.catalog.outputs.status != '0'
+        run: exit 1
 
       - name: Preparar acervo para publicação
         run: python scripts/prepare_mkdocs.py
@@ -133,6 +176,9 @@ jobs:
           elif [[ "${{ steps.validation.outputs.status }}" != "0" ]]; then
             state=error
             description="Build não executado por falha documental"
+          elif [[ "${{ steps.catalog.outputs.status }}" != "0" ]]; then
+            state=error
+            description="Build não executado por catálogo divergente"
           else
             state=failure
             description="Falha na compilação estrita do portal"
@@ -146,7 +192,7 @@ jobs:
             > /dev/null || echo "::warning::Não foi possível registrar o status explícito do build."
 
       - name: Interromper após falha do build
-        if: steps.build.outputs.status != '0' && steps.validation.outputs.status == '0'
+        if: steps.build.outputs.status != '0' && steps.validation.outputs.status == '0' && steps.catalog.outputs.status == '0'
         run: |
           cat mkdocs-build.log
           exit 1
