@@ -97,6 +97,7 @@ nav:
   - Governança:
       - Modelo de governança: MODELO_DE_GOVERNANCA.md
       - PPC-META-001 — Metadados e versionamento: PPC-META-001_METADADOS_E_VERSIONAMENTO.md
+      - PPC-000A — Ciclo de vida dos padrões: PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md
       - Indicadores: INDICADORES.md
       - Como contribuir: CONTRIBUTING.md
       - Código de conduta: CODE_OF_CONDUCT.md
