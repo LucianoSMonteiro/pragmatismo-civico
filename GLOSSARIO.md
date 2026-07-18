@@ -1,3 +1,31 @@
+---
+id: GLOSSARIO
+titulo: Glossário do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: padrao-transversal
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - CARTA-DE-PRINCIPIOS
+  - SPECIFICATION
+  - FRAMEWORK-DE-REFERENCIA
+produz_entrada_para: []
+relaciona_se_com:
+  - TEORIA-DO-PRAGMATISMO-CIVICO
+  - CICLO-PC-001
+  - PPC-000
+  - PPC-META-001
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Glossário do Pragmatismo Cívico
 
 Este glossário padroniza os principais termos usados no projeto. As definições devem ser interpretadas em conjunto com a `CARTA_DE_PRINCIPIOS.md`, a `SPECIFICATION.md` e o `FRAMEWORK_DE_REFERENCIA.md`.
@@ -113,3 +141,9 @@ Benefício legítimo gerado para a sociedade por uma política, serviço ou inst
 ## Regra de interpretação
 
 Quando houver dúvida sobre um termo, deve prevalecer a interpretação mais compatível com os princípios fundadores: cidadão no centro, resultados acima de rótulos, evidências, transparência, responsabilidade, cooperação, sustentabilidade, dignidade e melhoria contínua.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica e preservação integral das definições | Projeto Pragmatismo Cívico |
