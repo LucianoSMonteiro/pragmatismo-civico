@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.14.1
+versao: 0.15.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -33,47 +33,39 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho para execução progressiva. A cobertura mínima de identificação, versão, estado e responsabilidade foi concluída para os 38 documentos da navegação canônica. Este documento continua ativo para registrar dívida, catálogo, validação e decisões sobre a estrutura futura.
+Rascunho ativo. As Fases 0 a 5 estão concluídas: os documentos públicos possuem metadados, o catálogo documental está publicado e a navegação canônica contém 39 documentos. A Fase 6 de validação automática foi iniciada e ainda possui verificações pendentes.
 
 ## 1. Objetivo
 
-Transformar a arquitetura definida pelo `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md` em um processo executável, sem mover arquivos precipitadamente, quebrar URLs ou atribuir metadados históricos sem evidência.
+Transformar a arquitetura do ARQ-001 em um processo verificável de inventário, catálogo, validação e evolução documental, sem mover arquivos sem benefício demonstrado, quebrar URLs ou inventar informações históricas.
 
-O documento possui duas funções:
+## 2. Fonte e método
 
-1. inventariar e classificar o acervo público atual;
-2. organizar a evolução de metadados, catálogo, validação e estrutura documental.
+O inventário utiliza:
 
-## 2. Escopo e método do inventário
+- `mkdocs.yml` como fonte da navegação pública;
+- metadados estruturados de cada documento como fonte de identificador, versão, estado e relações;
+- `CATALOGO_DOCUMENTAL.md` como visão pública consolidada;
+- a branch padrão como fonte canônica;
+- commits e execuções de CI como evidência operacional.
 
-O inventário utiliza a navegação canônica de `mkdocs.yml` como fonte dos documentos públicos e a classificação do ARQ-001 como referência das camadas.
-
-Esse recorte:
-
-- representa o acervo apresentado ao usuário;
-- permite rastrear cada item por caminho conhecido;
-- evita declarar como completo um levantamento mais amplo que ainda não foi automatizado;
-- cria uma linha de base verificável para catálogo e validação.
-
-Arquivos de infraestrutura, anexos, ativos, automações e registros históricos fora da navegação deverão ser incorporados em inventário técnico posterior.
+Arquivos de infraestrutura são inventariados separadamente e não entram na contagem dos documentos públicos, salvo quando também aparecem na navegação.
 
 ## 3. Resumo do acervo público
 
-A navegação contém **38 documentos Markdown**.
+A navegação contém **39 documentos Markdown**.
 
 | Camada | Quantidade | Situação geral |
 |---|---:|---|
-| Publicação e acesso | 2 | ambos identificados e versionados; Fase 4C concluída |
+| Publicação e acesso | 3 | página inicial, guia e catálogo identificados e versionados |
 | Princípios e fundamentos | 6 | todos conformes |
 | Governança e arquitetura | 9 | todos conformes |
 | Método | 10 | todos conformes; reciprocidade obrigatória verificada |
 | Ferramentas | 11 | todas conformes e vinculadas aos padrões associados |
 | Aplicações e evidências | 0 | ainda não há estudo de caso oficial publicado |
-| **Total** | **38** | **38 documentos com identificação e versionamento** |
+| **Total** | **39** | **39 documentos identificados, versionados e catalogados** |
 
-Trinta e sete documentos utilizam cabeçalho YAML no início do arquivo. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção humana colapsável, para preservar sua função de página inicial no GitHub e no portal.
-
-Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENSE`, ativos de estilo e automações em `.github/`. Eles são tratados como infraestrutura, não como documentos metodológicos.
+Trinta e oito documentos utilizam cabeçalho YAML no início do arquivo. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável, preservando sua função de página inicial no GitHub e no portal.
 
 ## 4. Inventário por camada
 
@@ -81,10 +73,9 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 | Documento | Identificador | Caminho | Versão | Representação |
 |---|---|---|---:|---|
-| Página inicial | `PORTAL-INICIO` | `README.md` | 0.2.2 | bloco estruturado equivalente e seção colapsável |
+| Página inicial | `PORTAL-INICIO` | `README.md` | 0.2.2 | bloco equivalente e seção colapsável |
 | Guia de início | `GUIA-COMECAR` | `docs/COMECAR.md` | 0.2.0 | cabeçalho YAML |
-
-O guia de início cobre o ciclo completo, diferencia o PPC-000 do PPC-000A e do PPC-META-001 e declara que o framework ainda não possui validação empírica suficiente para estabilidade.
+| Catálogo documental | `CATALOGO-DOCUMENTAL` | `CATALOGO_DOCUMENTAL.md` | 0.1.0 | cabeçalho YAML e geração reproduzível |
 
 ### 4.2 Princípios e fundamentos
 
@@ -104,252 +95,198 @@ A hierarquia declarada permanece: direitos e garantias democráticas → Carta �
 | Documento | Identificador |
 |---|---|
 | PPC-000 | `PPC-000` |
-| Modelo de governança | `GOV-001` |
+| Modelo de Governança | `GOV-001` |
 | Roadmap | `GOV-002` |
-| Guia de contribuição | `GOV-003` |
-| Código de conduta | `GOV-004` |
-| PPC-META-001 | `PPC-META-001` |
-| PPC-000A | `PPC-000A` |
-| Arquitetura documental | `ARQ-001` |
-| Inventário e plano de migração | `ARQ-002` |
+| Guia de Contribuição | `GOV-003` |
+| Código de Conduta | `GOV-004` |
+| Metadados e Versionamento | `PPC-META-001` |
+| Ciclo de Vida dos Padrões | `PPC-000A` |
+| Arquitetura Documental | `ARQ-001` |
+| Inventário e Plano de Migração | `ARQ-002` |
 
 ### 4.4 Método
 
-| Documento | Identificador | Relação principal |
-|---|---|---|
-| Ciclo do Pragmatismo Cívico | `CICLO-PC-001` | visão integrada |
-| PPC-001 | `PPC-001` | diagnóstico |
-| PPC-002 | `PPC-002` | alternativas |
-| PPC-003 | `PPC-003` | avaliação técnica |
-| PPC-004 | `PPC-004` | decisão |
-| Teoria da Mudança | `MODELO-TDM-001` | ponte causal entre decisão e implementação |
-| PPC-005 | `PPC-005` | implementação |
-| PPC-006 | `PPC-006` | monitoramento |
-| PPC-007 | `PPC-007` | avaliação |
-| PPC-008 | `PPC-008` | aprendizagem |
+| Documento | Identificador | Versão | Relação principal |
+|---|---|---:|---|
+| Ciclo do Pragmatismo Cívico | `CICLO-PC-001` | 0.1.0 | visão integrada |
+| PPC-001 | `PPC-001` | 0.1.1 | diagnóstico |
+| PPC-002 | `PPC-002` | 0.1.0 | alternativas |
+| PPC-003 | `PPC-003` | 0.1.0 | avaliação técnica |
+| PPC-004 | `PPC-004` | 0.1.0 | decisão |
+| Teoria da Mudança | `MODELO-TDM-001` | 0.1.0 | ponte causal |
+| PPC-005 | `PPC-005` | 0.1.0 | implementação |
+| PPC-006 | `PPC-006` | 0.1.0 | monitoramento |
+| PPC-007 | `PPC-007` | 0.1.0 | avaliação |
+| PPC-008 | `PPC-008` | 0.1.1 | aprendizagem e retroalimentação entre ciclos |
 
 ### 4.5 Ferramentas
 
-| Documento | Identificador | Documento associado |
-|---|---|---|
-| Ficha PPC-001 | `FICHA-PPC-001` | PPC-001 0.1.1 |
-| Ficha PPC-002 | `FICHA-PPC-002` | PPC-002 0.1.0; estado piloto preservado |
-| Ficha PPC-003 | `FICHA-PPC-003` | PPC-003 0.1.0; estado piloto preservado |
-| Ficha PPC-004 | `FICHA-PPC-004` | PPC-004 0.1.0 |
-| Ficha de Teoria da Mudança | `FICHA-TDM-001` | MODELO-TDM-001 0.1.0 |
-| Ficha PPC-005 | `FICHA-PPC-005` | PPC-005 0.1.0 |
-| Ficha PPC-006 | `FICHA-PPC-006` | PPC-006 0.1.0 |
-| Ficha PPC-007 | `FICHA-PPC-007` | PPC-007 0.1.0 |
-| Ficha PPC-008 | `FICHA-PPC-008` | PPC-008 0.1.0 |
-| Matriz de avaliação | `MATRIZ-PPC-001` | PPC-002 e PPC-003 0.1.0 |
-| Indicadores | `MODELO-INDICADORES-001` | PPC-001 0.1.1, MODELO-TDM-001, PPC-006 e PPC-007 0.1.0 |
+| Documento | Identificador | Versão | Documento associado |
+|---|---|---:|---|
+| Ficha PPC-001 | `FICHA-PPC-001` | 0.1.0 | PPC-001 0.1.1 |
+| Ficha PPC-002 | `FICHA-PPC-002` | 0.1.0, piloto | PPC-002 0.1.0 |
+| Ficha PPC-003 | `FICHA-PPC-003` | 0.1.4, piloto | PPC-003 0.1.0 |
+| Ficha PPC-004 | `FICHA-PPC-004` | 0.1.0 | PPC-004 0.1.0 |
+| Ficha de Teoria da Mudança | `FICHA-TDM-001` | 0.1.0 | MODELO-TDM-001 0.1.0 |
+| Ficha PPC-005 | `FICHA-PPC-005` | 0.1.0 | PPC-005 0.1.0 |
+| Ficha PPC-006 | `FICHA-PPC-006` | 0.1.1 | PPC-006 0.1.0 |
+| Ficha PPC-007 | `FICHA-PPC-007` | 0.1.1 | PPC-007 0.1.0 |
+| Ficha PPC-008 | `FICHA-PPC-008` | 0.1.0 | PPC-008 0.1.0 |
+| Matriz de avaliação | `MATRIZ-PPC-001` | 0.1.0 | PPC-002 e PPC-003 0.1.0 |
+| Indicadores | `MODELO-INDICADORES-001` | 0.1.0 | PPC-001, TDM, PPC-006 e PPC-007 |
 
 ### 4.6 Aplicações e evidências
 
-Nenhum estudo de caso, piloto ou relatório de aplicação está publicado na navegação canônica nesta versão.
+Nenhum estudo de caso, piloto institucional ou relatório de aplicação está publicado na navegação canônica.
 
-## 5. Situação de metadados
+## 5. Infraestrutura fora da navegação
 
-### 5.1 Cobertura concluída
+| Recurso | Função | Tratamento |
+|---|---|---|
+| `mkdocs.yml` | configuração, caminhos e navegação pública | fonte operacional do catálogo |
+| `requirements.txt` | dependências fixadas do portal | infraestrutura |
+| `.github/workflows/pages.yml` | validação, empacotamento e eventual deploy | automação |
+| `scripts/prepare_mkdocs.py` | cria árvore temporária compatível com MkDocs | automação reproduzível |
+| `scripts/generate_catalog.py` | gera o catálogo a partir dos metadados | automação reproduzível |
+| `scripts/validate_metadata_graph.py` | valida estados, IDs, dependências e reciprocidade | validação parcial da Fase 6 |
+| `docs/assets/` | estilos e ativos públicos | infraestrutura do portal |
+| `LICENSE` | licença atual do repositório | revisão de adequação pendente |
+| `.gitignore` | exclui artefatos locais de build | infraestrutura |
 
-Todos os 38 documentos navegáveis possuem:
+## 6. Cobertura e limites
+
+Todos os 39 documentos públicos possuem:
 
 - identificador estável;
 - versão semântica;
 - estado canônico;
-- idioma;
-- responsáveis;
+- idioma e responsáveis;
 - relações documentais aplicáveis;
-- compatibilidade;
-- histórico de alterações.
+- compatibilidade e histórico.
 
-O README constitui uma exceção de representação, não de conteúdo: os mesmos campos estão disponíveis em formato estruturado, sem deslocar a apresentação pública da página.
+A conclusão da cobertura e do catálogo não significa estabilidade do framework. Permanecem ausentes casos oficiais, validação empírica suficiente, política de propostas de mudança e parte da validação automática.
 
-### 5.2 Limite da conclusão
-
-A conclusão da cobertura não significa que o programa documental inteiro esteja encerrado. Ainda faltam:
-
-- catálogo gerado ou mantido por processo repetível;
-- validação automática de identificadores, versões, estados, relações e links;
-- confirmação sistemática do build e da publicação;
-- inventário técnico de arquivos fora da navegação;
-- decisão sobre eventual reorganização física do repositório.
-
-## 6. Dívida documental
+## 7. Dívida documental
 
 | ID | Problema | Risco | Estado | Tratamento |
 |---|---|---|---|---|
-| DD-001 | documentos navegáveis sem metadados | versões e responsabilidades ambíguas | resolvida | Fase 4C concluiu 38 de 38 documentos |
-| DD-002 | reciprocidade das dependências obrigatórias do ciclo | incoerência entre padrões | resolvida | auditoria concluída no lote 2C |
-| DD-003 | matriz e indicadores sem versões associadas | aplicações irreplicáveis | resolvida | corrigida no lote 3C |
-| DD-004 | vínculos genéricos nas ferramentas | grafo inconsistente | resolvida | revisão conjunta concluída no lote 3C |
-| DD-005 | acervo predominantemente na raiz | manutenção futura pode ficar difícil | aberta, baixa | não mover arquivos antes de medir benefício |
-| DD-006 | ausência de catálogo documental gerado | localização depende de navegação manual | aberta | executar Fase 5 |
-| DD-007 | ausência de validação automática de metadados e links | regressões podem chegar ao portal | aberta | executar Fase 6 |
-| DD-008 | camada de aplicações sem estudos de caso | método sem validação empírica documentada | aberta, alta | preparar primeiro caso demonstrativo |
-| DD-009 | datas e históricos anteriores incompletos | risco de história retrospectiva fictícia | controlada | preservar `null` e usar commits como evidência |
-| DD-010 | execuções de push não aparecem no conector utilizado | publicação não confirmada pela auditoria atual | aberta | verificar diretamente no GitHub Actions |
-| DD-011 | arquitetura histórica do Framework desatualizada | descrição incompatível com o acervo | resolvida | Framework 0.2.0 alinhado ao ARQ-001 |
-| DD-012 | Especificação tratava documentos vigentes como futuros | ambiguidade sobre o acervo oficial | resolvida | Especificação 0.2.0 atualizada |
-| DD-013 | ciclo conceitual confundido com ciclo PPC | aplicação inconsistente | resolvida | distinção registrada na Especificação 0.2.0 |
-| DD-014 | sustentabilidade institucional ausente da Especificação | incoerência normativa | resolvida | alinhamento realizado na Especificação 0.2.0 |
-| DD-015 | README não pode usar front matter comum sem risco para a página inicial | apresentação ou automação podem ser prejudicadas | controlada | representação estruturada equivalente e visível em seção colapsável; validador deverá reconhecer a exceção |
-| DD-016 | guia de início cobria apenas o começo do método | aplicação parcial do ciclo | resolvida | GUIA-COMECAR 0.2.0 cobre PPC-001 a PPC-008 e Teoria da Mudança |
-| DD-017 | guia atribuía ciclo de vida e versionamento ao PPC-000 | orientação de governança imprecisa | resolvida | funções separadas entre PPC-000, PPC-000A e PPC-META-001 |
+| DD-001 | documentos navegáveis sem metadados | versões ambíguas | resolvida | Fases 1 a 4 |
+| DD-002 | reciprocidade do ciclo metodológico | grafo incoerente | resolvida | auditoria 2C e validação automática |
+| DD-003 | matriz e indicadores sem versões associadas | aplicações irreplicáveis | resolvida | Fase 3C |
+| DD-004 | vínculos genéricos nas ferramentas | grafo heterogêneo | resolvida | Fase 3C |
+| DD-005 | acervo predominantemente na raiz | manutenção futura difícil | aberta, baixa | decidir somente após validação |
+| DD-006 | ausência de catálogo público | localização manual | resolvida | `CATALOGO-DOCUMENTAL` 0.1.0 |
+| DD-007 | validação automática incompleta | regressões podem chegar ao portal | aberta | concluir Fase 6 |
+| DD-008 | ausência de estudos de caso | método sem validação empírica | aberta, alta | preparar primeiro caso |
+| DD-009 | datas históricas incompletas | história retrospectiva fictícia | controlada | preservar `null` e commits |
+| DD-010 | confirmação de CI limitada | falhas poderiam passar despercebidas | parcialmente resolvida | status explícito `portal/build` e artefatos de diagnóstico |
+| DD-011 | arquitetura histórica do Framework desatualizada | descrição incompatível | resolvida | Framework 0.2.0 |
+| DD-012 | Especificação tratava documentos vigentes como futuros | ambiguidade | resolvida | Especificação 0.2.0 |
+| DD-013 | ciclo conceitual confundido com ciclo PPC | aplicação inconsistente | resolvida | Especificação 0.2.0 |
+| DD-014 | sustentabilidade institucional ausente da Especificação | incoerência normativa | resolvida | Especificação 0.2.0 |
+| DD-015 | README incompatível com front matter comum | apresentação degradada | controlada | representação equivalente reconhecida pelos scripts |
+| DD-016 | guia inicial cobria apenas parte do método | aplicação parcial | resolvida | GUIA-COMECAR 0.2.0 |
+| DD-017 | guia atribuía versionamento ao PPC-000 | orientação imprecisa | resolvida | separação PPC-000/PPC-000A/PPC-META-001 |
+| DD-018 | GitHub Pages ainda não habilitado | portal não é implantado | aberta | issue #1; ativação única pelo proprietário |
+| DD-019 | `docs_dir` inválido e saída dentro do acervo | build estrito falhava | resolvida | árvore temporária `.mkdocs-src` e `site/` externo ao acervo |
+| DD-020 | PPC-008 e Ficha PPC-003 declaravam saídas não recíprocas | dependências circulares ou indevidas | resolvida | relações reclassificadas e validador incorporado |
 
-## 7. Correções e avanços acumulados
+## 8. Avanços acumulados
 
 As revisões produziram:
 
-- cobertura de metadados dos 38 documentos navegáveis;
-- alinhamento da arquitetura pública às seis camadas do ARQ-001;
-- normalização do ciclo metodológico e das onze ferramentas;
+- cobertura de metadados e catálogo dos 39 documentos;
+- alinhamento às seis camadas do ARQ-001;
+- normalização do ciclo e das onze ferramentas;
 - migração dos seis documentos fundadores;
-- reparo da arquitetura histórica do Framework;
-- distinção entre ciclo conceitual e ciclo operacional na Especificação;
-- alinhamento da sustentabilidade institucional;
-- guia de início completo e coerente com a governança vigente;
-- preservação da apresentação pública do README com metadados verificáveis.
-
-A configuração do workflow permanece coerente com GitHub Pages e `mkdocs build --strict`, mas a execução mais recente deve ser confirmada diretamente no histórico do GitHub Actions, pois o conector utilizado não retorna os eventos de push desse workflow.
-
-## 8. Princípios da evolução documental
-
-A evolução deve:
-
-1. não mover arquivos sem benefício demonstrado;
-2. separar migração documental de reparos substantivos;
-3. não inventar datas, autores ou aprovações;
-4. preservar nomes e URLs consolidados;
-5. avançar em lotes pequenos e revisáveis;
-6. atualizar versões de acordo com a mudança real;
-7. declarar relações com base no conteúdo;
-8. verificar links, navegação e publicação;
-9. registrar exceções e dívida residual;
-10. automatizar apenas regras suficientemente estabilizadas.
+- reparos de coerência no Framework, Especificação e guia de início;
+- catálogo gerado por processo repetível;
+- detecção automática de IDs duplicados, estados não canônicos, dependências inexistentes e saídas obrigatórias sem reciprocidade;
+- preparação reproduzível da árvore MkDocs;
+- build estrito confirmado e registrado por status de commit;
+- artefatos de diagnóstico preservados em caso de falha.
 
 ## 9. Plano progressivo
 
-### Fase 0 — Linha de base
+### Fases 0 a 4 — Migração e cobertura
 
-**Estado:** concluída e corrigida.
-
-### Fase 1 — Núcleo de governança
-
-**Estado:** concluída — 5 de 5 documentos migrados.
-
-### Fase 2 — Núcleo metodológico
-
-**Estado:** concluída — 10 de 10 documentos migrados e reciprocidade revisada.
-
-### Fase 3 — Ferramentas
-
-**Estado:** concluída — 11 de 11 ferramentas conformes.
-
-### Fase 4 — Fundamentos e entrada
-
-**Estado:** concluída — 8 de 8 documentos migrados.
-
-Lotes:
-
-- **4A:** Framework de Referência e Carta de Princípios;
-- **4B:** Teoria do Pragmatismo Cívico, Especificação, Manifesto e Glossário;
-- **4C:** README e guia de início, com reparo das rotas de aplicação e da governança dos padrões.
+**Estado:** concluídas.
 
 ### Fase 5 — Catálogo e navegação
 
-**Estado:** próxima.
+**Estado:** concluída.
 
-Entregas:
+Entregas realizadas:
 
-- catálogo público dos 38 documentos;
-- indicação de identificador, versão e estado;
+- catálogo público dos 39 documentos;
+- identificador, versão, estado, tipo e caminho;
 - agrupamento por camada;
-- mapa de dependências e relações;
-- revisão da ordem de leitura;
-- identificação dos documentos técnicos fora da navegação principal.
+- mapa de dependências obrigatórias e relações complementares;
+- rotas de leitura;
+- inventário inicial da infraestrutura fora da navegação;
+- inclusão do catálogo no portal sem mover documentos existentes.
 
 ### Fase 6 — Validação automática
 
-Entregas:
+**Estado:** iniciada.
 
-- esquema de metadados;
-- detecção de identificadores duplicados;
-- validação de versão, estado e compatibilidade;
-- verificação de referências e links;
-- suporte à representação equivalente do README;
-- build estrito;
-- relatório de dívida remanescente.
+Concluído:
+
+- leitura de YAML e da representação equivalente do README;
+- campos mínimos;
+- identificadores duplicados;
+- estados canônicos;
+- existência das dependências;
+- reciprocidade de saídas obrigatórias;
+- preparação e build estrito;
+- status explícito de CI.
+
+Pendente:
+
+- formato completo de versões e compatibilidade;
+- verificação de links internos e âncoras;
+- comparação automática entre catálogo gerado e catálogo publicado;
+- validação das relações de substituição;
+- relatório consolidado de dívida;
+- deploy do portal após habilitação do Pages.
 
 ### Fase 7 — Estrutura física
 
-Somente após catálogo e validação será decidido se arquivos devem sair da raiz. A opção de manter a estrutura atual permanece legítima.
+Somente após a Fase 6 será decidido se arquivos devem sair da raiz. Manter a estrutura atual continua sendo uma opção legítima.
 
-## 10. Checklist de cada lote
-
-Antes do commit:
-
-- [ ] escopo definido;
-- [ ] arquivos lidos integralmente;
-- [ ] metadados baseados em evidência;
-- [ ] versão e estado coerentes;
-- [ ] dependências verificadas;
-- [ ] histórico atualizado;
-- [ ] links preservados;
-- [ ] conteúdo substantivo preservado ou alteração justificada separadamente.
-
-Após o commit:
-
-- [ ] arquivos relidos na branch padrão;
-- [ ] navegação verificada;
-- [ ] roadmap atualizado;
-- [ ] build ou status consultado;
-- [ ] SHA registrado;
-- [ ] dívida residual anotada.
-
-## 11. Critérios da migração mínima
-
-A migração mínima foi concluída porque:
-
-- os 38 documentos possuem identificação, versão, estado e responsáveis;
-- PPCs e ferramentas declaram relações verificáveis;
-- documentos fundadores possuem fonte canônica e histórico;
-- nenhum arquivo foi movido ou teve seu caminho público alterado;
-- a dívida restante está registrada e priorizada.
-
-Catálogo, automação, estudos de caso e estrutura física permanecem etapas posteriores e não devem ser confundidos com a cobertura mínima de metadados.
-
-## 12. Decisões desta versão
+## 10. Critérios e decisões desta versão
 
 Esta versão decide que:
 
-- a Fase 4 está concluída;
-- o README é conforme por representação estruturada equivalente;
-- o guia de início passa a cobrir o ciclo completo;
-- nenhum arquivo será movido durante a criação do catálogo;
-- a próxima execução será a Fase 5;
-- a validação automática deverá reconhecer a exceção documentada do README.
+- a Fase 5 está concluída;
+- a linha de base pública passa de 38 para 39 documentos;
+- o catálogo é gerado a partir das fontes canônicas e publicado no repositório;
+- as relações PPC-008 → PPC-001 e Ficha PPC-003 → PPC-004 são complementares, não dependências obrigatórias;
+- o build do portal está operacional;
+- a implantação depende da ativação inicial do GitHub Pages registrada na issue #1;
+- a próxima execução deve completar a Fase 6.
 
-## 13. Próxima ação
+## 11. Próxima ação
 
-Executar a **Fase 5 — Catálogo e navegação**, criando um catálogo documental público dos 38 documentos, com identificador, versão, estado, camada e relações principais, sem alterar os caminhos vigentes.
+Concluir a **Fase 6 — Validação automática**, acrescentando verificação de versões, compatibilidade, links, substituições e correspondência entre o catálogo gerado e o publicado.
 
-## 14. Histórico de alterações
+## 12. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-17 | inicial | Inventário inicial, dívida documental e plano progressivo de migração | Projeto Pragmatismo Cívico |
-| 0.2.0 | 2026-07-17 | compatível | Atualização do inventário e registro da migração do PPC-000 e do Modelo de Governança | Projeto Pragmatismo Cívico |
-| 0.3.0 | 2026-07-17 | compatível | Correção das camadas, reconhecimento de metadados legados e revisão do README e da navegação | Projeto Pragmatismo Cívico |
+| 0.1.0 | 2026-07-17 | inicial | Inventário inicial, dívida documental e plano progressivo | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-17 | compatível | Migração do PPC-000 e do Modelo de Governança | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-17 | compatível | Correção das camadas e revisão da navegação | Projeto Pragmatismo Cívico |
 | 0.4.0 | 2026-07-17 | compatível | Conclusão da Fase 1 | Projeto Pragmatismo Cívico |
-| 0.5.0 | 2026-07-17 | compatível | Correções de identificadores e normalização da Ficha PPC-003 | Projeto Pragmatismo Cívico |
+| 0.5.0 | 2026-07-17 | compatível | Correções de identificadores e da Ficha PPC-003 | Projeto Pragmatismo Cívico |
 | 0.6.0 | 2026-07-17 | compatível | Conclusão da Fase 2A | Projeto Pragmatismo Cívico |
 | 0.7.0 | 2026-07-17 | compatível | Conclusão da Fase 2B | Projeto Pragmatismo Cívico |
 | 0.8.0 | 2026-07-17 | compatível | Conclusão da Fase 2C | Projeto Pragmatismo Cívico |
-| 0.9.0 | 2026-07-17 | compatível | Conclusão do lote 3A | Projeto Pragmatismo Cívico |
-| 0.10.0 | 2026-07-18 | compatível | Conclusão do lote 3B e consolidação editorial do inventário | Projeto Pragmatismo Cívico |
-| 0.11.0 | 2026-07-18 | compatível | Conclusão do lote 3C, identificação da matriz e dos indicadores e encerramento da Fase 3 | Projeto Pragmatismo Cívico |
-| 0.12.0 | 2026-07-18 | compatível | Conclusão do lote 4A, migração do Framework e da Carta e registro da dívida editorial remanescente | Projeto Pragmatismo Cívico |
-| 0.13.0 | 2026-07-18 | compatível | Conclusão do lote 4B, migração dos quatro documentos fundadores restantes e registro dos reparos normativos associados | Projeto Pragmatismo Cívico |
-| 0.14.0 | 2026-07-18 | compatível | Conclusão do lote 4C, cobertura dos 38 documentos, reparo do guia de início e promoção do catálogo documental | Projeto Pragmatismo Cívico |
-| 0.14.1 | 2026-07-18 | correção | Sincronização da versão 0.2.2 do README após o ajuste de renderização dos metadados | Projeto Pragmatismo Cívico |
+| 0.9.0 | 2026-07-17 | compatível | Conclusão da Fase 3A | Projeto Pragmatismo Cívico |
+| 0.10.0 | 2026-07-18 | compatível | Conclusão da Fase 3B e consolidação editorial | Projeto Pragmatismo Cívico |
+| 0.11.0 | 2026-07-18 | compatível | Conclusão da Fase 3C | Projeto Pragmatismo Cívico |
+| 0.12.0 | 2026-07-18 | compatível | Conclusão da Fase 4A | Projeto Pragmatismo Cívico |
+| 0.13.0 | 2026-07-18 | compatível | Conclusão da Fase 4B e reparos normativos | Projeto Pragmatismo Cívico |
+| 0.14.0 | 2026-07-18 | compatível | Conclusão da Fase 4C e cobertura dos 38 documentos | Projeto Pragmatismo Cívico |
+| 0.14.1 | 2026-07-18 | correção | Sincronização do README 0.2.2 | Projeto Pragmatismo Cívico |
+| 0.15.0 | 2026-07-18 | compatível | Conclusão da Fase 5, publicação do catálogo, reparos do grafo documental e estabilização do build estrito | Projeto Pragmatismo Cívico |
