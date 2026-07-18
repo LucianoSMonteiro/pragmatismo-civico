@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
   statuses: write
@@ -64,7 +64,7 @@ jobs:
         run: |
           if [[ "${{ steps.validation.outputs.status }}" == "0" ]]; then
             state=success
-            description="Metadados, grafo, links e âncoras válidos"
+            description="Metadados, grafo, links, âncoras e evidências válidos"
           else
             state=failure
             description="Falha na validação documental"
@@ -128,7 +128,7 @@ jobs:
         if: steps.data_pipeline.outputs.status != '0'
         run: exit 1
 
-      - name: Testar pipeline geoespacial
+      - name: Testar pipeline geoespacial e registro técnico
         id: geodata_pipeline
         shell: bash
         run: |
@@ -140,7 +140,7 @@ jobs:
           echo "status=$status" >> "$GITHUB_OUTPUT"
           exit 0
 
-      - name: Preservar teste do pipeline geoespacial
+      - name: Preservar teste geoespacial e técnico
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -148,7 +148,7 @@ jobs:
           path: geodata-pipeline-test.log
           retention-days: 14
 
-      - name: Registrar status do pipeline geoespacial
+      - name: Registrar status geoespacial e técnico
         if: always()
         shell: bash
         env:
@@ -156,10 +156,10 @@ jobs:
         run: |
           if [[ "${{ steps.geodata_pipeline.outputs.status }}" == "0" ]]; then
             state=success
-            description="Validador GeoJSON aprovado em testes sintéticos"
+            description="Geometria, coleta e registro técnico aprovados"
           else
             state=failure
-            description="Falha no pipeline geoespacial"
+            description="Falha no pipeline geoespacial ou técnico"
           fi
           gh api --method POST \
             "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
@@ -169,7 +169,7 @@ jobs:
             -f target_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
             > /dev/null || echo "::warning::Não foi possível registrar o status geoespacial."
 
-      - name: Interromper após falha do pipeline geoespacial
+      - name: Interromper após falha geoespacial ou técnica
         if: steps.geodata_pipeline.outputs.status != '0'
         run: exit 1
 
@@ -192,6 +192,18 @@ jobs:
           name: catalog-preview
           path: catalog-preview.md
           retention-days: 7
+
+      - name: Sincronizar catálogo solicitado
+        if: hashFiles('.github/catalog-sync-once') != ''
+        shell: bash
+        run: |
+          cp catalog-preview.md CATALOGO_DOCUMENTAL.md
+          rm .github/catalog-sync-once
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CATALOGO_DOCUMENTAL.md .github/catalog-sync-once
+          git commit -m "docs: sincronizar catálogo gerado pela CI"
+          git push origin HEAD:main
 
       - name: Verificar catálogo publicado
         id: catalog
