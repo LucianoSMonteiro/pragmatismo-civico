@@ -79,7 +79,7 @@ body:
     id: languages
     attributes:
       label: Idiomas de trabalho
-      placeholder: Exemplo: português; inglês para leitura técnica
+      placeholder: "Exemplo: português; inglês para leitura técnica"
     validations:
       required: true
 
