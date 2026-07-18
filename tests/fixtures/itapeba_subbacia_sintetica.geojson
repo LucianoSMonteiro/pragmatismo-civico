@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "name": "fixture-sintetico",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "sub_bacias": "Itapeba — fixture sintético, não oficial",
+        "rh": "SINTETICA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-42.9, -22.95],
+            [-42.8, -22.95],
+            [-42.8, -22.85],
+            [-42.9, -22.85],
+            [-42.9, -22.95]
+          ]
+        ]
+      }
+    }
+  ]
+}
