@@ -39,16 +39,16 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 | Governança e arquitetura | 15 |
 | Método | 10 |
 | Ferramentas | 15 |
-| Aplicações e evidências | 2 |
-| **Total** | **51** |
+| Aplicações e evidências | 3 |
+| **Total** | **52** |
 
 ## Publicação e acesso
 
 | Identificador | Documento | Versão | Estado | Tipo | Caminho |
 |---|---|---:|---|---|---|
 | `CATALOGO-DOCUMENTAL` | [Catálogo Documental do Pragmatismo Cívico](CATALOGO_DOCUMENTAL.md) | `0.1.0` | `rascunho` | `publicacao` | `CATALOGO_DOCUMENTAL.md` |
-| `GUIA-COMECAR` | [Começar no Pragmatismo Cívico](docs/COMECAR.md) | `0.9.0` | `rascunho` | `guia` | `docs/COMECAR.md` |
-| `PORTAL-INICIO` | [Pragmatismo Cívico — Página inicial](README.md) | `0.9.0` | `rascunho` | `publicacao` | `README.md` |
+| `GUIA-COMECAR` | [Começar no Pragmatismo Cívico](docs/COMECAR.md) | `0.10.0` | `rascunho` | `guia` | `docs/COMECAR.md` |
+| `PORTAL-INICIO` | [Pragmatismo Cívico — Página inicial](README.md) | `0.10.0` | `rascunho` | `publicacao` | `README.md` |
 
 ## Princípios e fundamentos
 
@@ -66,11 +66,11 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 | Identificador | Documento | Versão | Estado | Tipo | Caminho |
 |---|---|---:|---|---|---|
 | `ARQ-001` | [Arquitetura Documental do Framework](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | `0.2.0` | `rascunho` | `arquitetura` | `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md` |
-| `ARQ-002` | [Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | `0.21.1` | `rascunho` | `arquitetura` | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` |
+| `ARQ-002` | [Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | `0.22.0` | `rascunho` | `arquitetura` | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` |
 | `ARQ-003` | [Decisão sobre a Estrutura Física do Repositório](ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md) | `0.1.0` | `rascunho` | `arquitetura` | `ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md` |
 | `CADASTRO-REVISORES` | [Cadastro Público de Revisores](CADASTRO_PUBLICO_DE_REVISORES.md) | `0.1.1` | `rascunho` | `governanca` | `CADASTRO_PUBLICO_DE_REVISORES.md` |
 | `GOV-001` | [Modelo de Governança do Pragmatismo Cívico](MODELO_DE_GOVERNANCA.md) | `0.1.0` | `rascunho` | `governanca` | `MODELO_DE_GOVERNANCA.md` |
-| `GOV-002` | [Roadmap do Pragmatismo Cívico](ROADMAP.md) | `0.17.0` | `rascunho` | `governanca` | `ROADMAP.md` |
+| `GOV-002` | [Roadmap do Pragmatismo Cívico](ROADMAP.md) | `0.18.0` | `rascunho` | `governanca` | `ROADMAP.md` |
 | `GOV-003` | [Guia de Contribuição do Pragmatismo Cívico](CONTRIBUTING.md) | `0.5.0` | `rascunho` | `governanca` | `CONTRIBUTING.md` |
 | `GOV-004` | [Código de Conduta do Pragmatismo Cívico](CODE_OF_CONDUCT.md) | `0.1.0` | `rascunho` | `governanca` | `CODE_OF_CONDUCT.md` |
 | `GOV-005` | [Processo de Propostas de Mudança](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md) | `0.1.1` | `rascunho` | `governanca` | `GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md` |
@@ -120,8 +120,9 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 
 | Identificador | Documento | Versão | Estado | Tipo | Caminho |
 |---|---|---:|---|---|---|
-| `CASO-001` | [Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo em Maricá/RJ](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) | `0.1.0` | `rascunho` | `aplicacao` | `casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md` |
-| `CASOS-INDEX` | [Casos e Evidências do Pragmatismo Cívico](casos/README.md) | `0.1.0` | `rascunho` | `publicacao` | `casos/README.md` |
+| `CASO-001` | [Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo na Sub-bacia de Itapeba](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) | `0.2.0` | `rascunho` | `aplicacao` | `casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md` |
+| `CASO-001-PRONTIDAO` | [Registro de Prontidão do CASO-001 — Sub-bacia de Itapeba](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md) | `0.1.0` | `rascunho` | `aplicacao` | `casos/CASO-001_REGISTRO_DE_PRONTIDAO.md` |
+| `CASOS-INDEX` | [Casos e Evidências do Pragmatismo Cívico](casos/README.md) | `0.2.0` | `rascunho` | `publicacao` | `casos/README.md` |
 
 ## Mapa de dependências obrigatórias
 
@@ -133,6 +134,7 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 | `CADASTRO-REVISORES` | `GOV-007`, `GOV-006`, `FICHA-GOV-007`, `PPC-META-001`, `ARQ-001` | — |
 | `CARTA-DE-PRINCIPIOS` | — | `SPECIFICATION`, `FRAMEWORK-DE-REFERENCIA`, `TEORIA-DO-PRAGMATISMO-CIVICO`, `MANIFESTO`, `GLOSSARIO` |
 | `CASO-001` | `GOV-008`, `FICHA-GOV-008`, `CICLO-PC-001`, `PPC-001`, `ARQ-003`, `PPC-META-001`, `ARQ-001` | — |
+| `CASO-001-PRONTIDAO` | `CASO-001`, `GOV-008`, `FICHA-GOV-008`, `GOV-006`, `GOV-007`, `PPC-META-001`, `ARQ-001` | — |
 | `CASOS-INDEX` | `GOV-008`, `ARQ-003`, `ARQ-002`, `PPC-META-001`, `ARQ-001` | — |
 | `CATALOGO-DOCUMENTAL` | `ARQ-001`, `ARQ-002`, `PPC-META-001` | — |
 | `CICLO-PC-001` | `FRAMEWORK-DE-REFERENCIA`, `GOV-001`, `PPC-000`, `PPC-META-001`, `ARQ-001` | — |
@@ -184,11 +186,12 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 | Documento | Relaciona-se com |
 |---|---|
 | `ARQ-001` | `GOV-001`, `GOV-002`, `MKDOCS` |
-| `ARQ-002` | `GOV-002`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `MKDOCS`, `PORTAL-INICIO`, `GUIA-COMECAR`, `CASOS-INDEX`, `CASO-001` |
+| `ARQ-002` | `GOV-002`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `MKDOCS`, `PORTAL-INICIO`, `GUIA-COMECAR`, `CASOS-INDEX`, `CASO-001`, `CASO-001-PRONTIDAO` |
 | `ARQ-003` | `CATALOGO-DOCUMENTAL`, `MKDOCS`, `PORTAL-INICIO`, `GOV-002` |
 | `CADASTRO-REVISORES` | `GOV-003`, `GOV-005` |
-| `CASO-001` | `CASOS-INDEX`, `GOV-006`, `GOV-007`, `MODELO-INDICADORES-001` |
-| `CASOS-INDEX` | `CATALOGO-DOCUMENTAL`, `CASO-001`, `FICHA-GOV-008` |
+| `CASO-001` | `CASOS-INDEX`, `CASO-001-PRONTIDAO`, `GOV-006`, `GOV-007`, `MODELO-INDICADORES-001` |
+| `CASO-001-PRONTIDAO` | `CASOS-INDEX`, `PPC-001`, `MODELO-INDICADORES-001` |
+| `CASOS-INDEX` | `CATALOGO-DOCUMENTAL`, `CASO-001`, `CASO-001-PRONTIDAO`, `FICHA-GOV-008` |
 | `CATALOGO-DOCUMENTAL` | `PORTAL-INICIO`, `GUIA-COMECAR` |
 | `CICLO-PC-001` | `PPC-001`, `PPC-002`, `PPC-003`, `PPC-004`, `MODELO-TDM-001`, `PPC-005`, `PPC-006`, `PPC-007`, `PPC-008` |
 | `FICHA-GOV-005` | `GOV-001`, `GOV-002`, `GOV-004` |
@@ -207,19 +210,19 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 | `FRAMEWORK-DE-REFERENCIA` | `MANIFESTO`, `TEORIA-DO-PRAGMATISMO-CIVICO` |
 | `GLOSSARIO` | `TEORIA-DO-PRAGMATISMO-CIVICO`, `CICLO-PC-001`, `PPC-000`, `PPC-META-001` |
 | `GOV-001` | `PPC-000`, `PPC-000A`, `PPC-META-001`, `ARQ-001` |
-| `GOV-002` | `GOV-003`, `GOV-004`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `ARQ-003` |
+| `GOV-002` | `GOV-003`, `GOV-004`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `ARQ-003`, `CASO-001`, `CASO-001-PRONTIDAO` |
 | `GOV-003` | `GOV-001`, `GOV-002`, `GOV-004`, `FICHA-GOV-005`, `FICHA-GOV-006`, `FICHA-GOV-007`, `FICHA-GOV-008`, `CADASTRO-REVISORES`, `CASOS-INDEX`, `CASO-001` |
 | `GOV-004` | `GOV-002`, `GOV-003`, `PPC-000A` |
 | `GOV-005` | `GOV-002`, `GOV-003`, `ARQ-002`, `FICHA-GOV-005` |
 | `GOV-006` | `GOV-002`, `GOV-003`, `ARQ-002`, `FICHA-GOV-006` |
 | `GOV-007` | `GOV-001`, `GOV-002`, `GOV-003`, `ARQ-002` |
 | `GOV-008` | `GOV-002`, `GOV-003`, `ARQ-002` |
-| `GUIA-COMECAR` | `PORTAL-INICIO`, `CATALOGO-DOCUMENTAL`, `ARQ-003`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `CADASTRO-REVISORES`, `CASOS-INDEX`, `CASO-001`, `PPC-000`, `GOV-003` |
+| `GUIA-COMECAR` | `PORTAL-INICIO`, `CATALOGO-DOCUMENTAL`, `ARQ-003`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `CADASTRO-REVISORES`, `CASOS-INDEX`, `CASO-001`, `CASO-001-PRONTIDAO`, `PPC-000`, `GOV-003` |
 | `MANIFESTO` | `FRAMEWORK-DE-REFERENCIA`, `TEORIA-DO-PRAGMATISMO-CIVICO` |
 | `MATRIZ-PPC-001` | `CICLO-PC-001`, `FICHA-PPC-002`, `FICHA-PPC-003`, `FICHA-PPC-004`, `MODELO-INDICADORES-001` |
 | `MODELO-INDICADORES-001` | `FICHA-PPC-001`, `FICHA-TDM-001`, `FICHA-PPC-006`, `FICHA-PPC-007`, `MATRIZ-PPC-001` |
 | `MODELO-TDM-001` | `PPC-006`, `PPC-007`, `PPC-008` |
-| `PORTAL-INICIO` | `GUIA-COMECAR`, `CATALOGO-DOCUMENTAL`, `ARQ-003`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `CADASTRO-REVISORES`, `CASOS-INDEX`, `CASO-001`, `CICLO-PC-001`, `GOV-003` |
+| `PORTAL-INICIO` | `GUIA-COMECAR`, `CATALOGO-DOCUMENTAL`, `ARQ-003`, `GOV-005`, `GOV-006`, `GOV-007`, `GOV-008`, `CADASTRO-REVISORES`, `CASOS-INDEX`, `CASO-001`, `CASO-001-PRONTIDAO`, `CICLO-PC-001`, `GOV-003` |
 | `PPC-000` | `PPC-000A`, `PPC-META-001`, `ARQ-001`, `GOV-001` |
 | `PPC-000A` | `GOV-001` |
 | `PPC-001` | `PPC-006`, `PPC-007`, `PPC-008` |
@@ -250,7 +253,7 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 
 ### Conduzir casos e produzir evidências
 
-`GOV-008` → `FICHA-GOV-008` → `CASOS-INDEX` → `CASO-001` → `PPC-001`.
+`GOV-008` → `FICHA-GOV-008` → `CASOS-INDEX` → `CASO-001` → `CASO-001-PRONTIDAO` → `PPC-001`.
 
 ### Compreender a arquitetura documental
 
@@ -263,7 +266,8 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 - documentos em `rascunho` ou `piloto` não devem ser apresentados como estáveis;
 - o cadastro público de revisores ainda não possui pessoa elegível ou ativa;
 - a instância plural permanente do GOV-006 ainda não foi constituída;
-- o CASO-001 está em preparação e ainda não contém diagnóstico ou resultados;
+- o CASO-001 está em preparação na sub-bacia de Itapeba e ainda não contém diagnóstico ou resultados;
+- o registro de prontidão documenta fontes e pendências, mas não autoriza o PPC-001;
 - não há estudo de caso concluído nem validação empírica suficiente.
 
 ## Histórico de alterações
