@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.23.0
+versao: 0.24.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -31,6 +31,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-FONTES
   - CASO-001-DADOS-CHUVA
 substitui: []
 substituido_por: null
@@ -42,11 +43,11 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 7 estão concluídas e a Fase 8 está em execução. Os **53 documentos públicos** estão identificados, versionados e submetidos a validação automática.
+Rascunho ativo. As Fases 0 a 7 estão concluídas e a Fase 8 está em execução. Os **54 documentos públicos** estão identificados, versionados e submetidos a validação automática.
 
 A estrutura física é governada pelo ARQ-003; propostas pelo GOV-005; revisão pelo GOV-006; revisores pelo GOV-007; e seleção, prontidão e condução de casos pelo GOV-008.
 
-O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. O cadastro de revisores permanece vazio. O CASO-001 está em preparação na sub-bacia de Itapeba e não possui diagnóstico ou resultado empírico. O pipeline pluviométrico foi testado somente com dados sintéticos.
+O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. O cadastro de revisores permanece vazio. O CASO-001 está em preparação na sub-bacia de Itapeba e não possui diagnóstico ou resultado empírico. A matriz documental foi consolidada, mas nenhum polígono oficial, arquivo técnico integral ou série real foi incorporado.
 
 ## 1. Objetivo
 
@@ -63,7 +64,8 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 - GOV-008 e `FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md` para casos;
 - `casos/README.md` para o índice público;
 - `casos/CASO-001_REGISTRO_DE_PRONTIDAO.md` para a decisão vigente do portão;
-- `casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md` para aquisição, proveniência e qualidade da chuva;
+- `casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md` para o inventário, estado de obtenção e lacunas das fontes;
+- `casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md` para aquisição, proveniência, qualidade, retenção e descarte da chuva;
 - ARQ-003 para caminhos e diretórios;
 - branch padrão, commits, status e artefatos da CI como evidência operacional.
 
@@ -76,10 +78,10 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 | Governança e arquitetura | 15 | inclui GOV-005 a GOV-008, cadastro e ARQ-003 |
 | Método | 10 | todos conformes |
 | Ferramentas | 15 | inclui FICHAS GOV-005 a GOV-008 |
-| Aplicações e evidências | 4 | índice, CASO-001, prontidão e protocolo de dados |
-| **Total** | **53** | **53 documentos submetidos à validação** |
+| Aplicações e evidências | 5 | índice, CASO-001, prontidão, matriz de fontes e protocolo de dados |
+| **Total** | **54** | **54 documentos submetidos à validação** |
 
-Cinquenta e dois documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente.
+Cinquenta e três documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente.
 
 ## 4. Inventário resumido
 
@@ -87,8 +89,8 @@ Cinquenta e dois documentos usam cabeçalho YAML. O `README.md` utiliza represen
 
 | Documento | Identificador | Versão |
 |---|---|---:|
-| Página inicial | `PORTAL-INICIO` | 0.11.0 |
-| Guia de início | `GUIA-COMECAR` | 0.11.0 |
+| Página inicial | `PORTAL-INICIO` | 0.12.0 |
+| Guia de início | `GUIA-COMECAR` | 0.12.0 |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
 
 ### 4.2 Princípios e fundamentos
@@ -108,7 +110,7 @@ Cinquenta e dois documentos usam cabeçalho YAML. O `README.md` utiliza represen
 |---|---|---:|
 | Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
 | Modelo de Governança | `GOV-001` | 0.1.0 |
-| Roadmap | `GOV-002` | 0.19.0 |
+| Roadmap | `GOV-002` | 0.20.0 |
 | Guia de Contribuição | `GOV-003` | 0.5.0 |
 | Código de Conduta | `GOV-004` | 0.1.0 |
 | Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
@@ -119,7 +121,7 @@ Cinquenta e dois documentos usam cabeçalho YAML. O `README.md` utiliza represen
 | Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
 | Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
 | Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.23.0 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.24.0 |
 | Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
@@ -139,12 +141,13 @@ O acervo contém fichas PPC-001 a PPC-008, Ficha de Teoria da Mudança, matriz, 
 
 | Documento | Identificador | Versão | Estado material |
 |---|---|---:|---|
-| Índice de Casos e Evidências | `CASOS-INDEX` | 0.3.0 | índice público |
-| Drenagem e alerta preventivo na sub-bacia de Itapeba | `CASO-001` | 0.2.0 | preparação |
-| Registro de Prontidão do CASO-001 | `CASO-001-PRONTIDAO` | 0.1.0 | portão não aprovado |
-| Protocolo de Dados Pluviométricos | `CASO-001-DADOS-CHUVA` | 0.1.0 | processador testado; coleta real pendente |
+| Índice de Casos e Evidências | `CASOS-INDEX` | 0.4.0 | índice público |
+| Drenagem e alerta preventivo na sub-bacia de Itapeba | `CASO-001` | 0.3.0 | preparação |
+| Registro de Prontidão do CASO-001 | `CASO-001-PRONTIDAO` | 0.2.0 | portão não aprovado |
+| Matriz de Fontes e Lacunas | `CASO-001-FONTES` | 0.1.0 | 13 fontes consolidadas; obtenção integral pendente |
+| Protocolo de Dados Pluviométricos | `CASO-001-DADOS-CHUVA` | 0.2.0 | processador e retenção definidos; coleta real pendente |
 
-O protocolo define estrutura local, hashes, normalização UTC, flags e revisão manual. Nenhum arquivo mensal real foi incorporado.
+A matriz distingue fontes localizadas, consultadas, obtidas e tratadas. Nenhuma fonte foi classificada como obtida ou tratada para uso empírico. O protocolo define hashes, normalização UTC, flags, revisão manual, retenção e descarte. Nenhum arquivo mensal real foi incorporado.
 
 ## 5. Infraestrutura de validação e dados
 
@@ -199,7 +202,7 @@ Status registrados:
 
 O ARQ-003 preserva caminhos existentes e determina aplicações em `casos/`, relatórios em `relatorios/`, automações em `scripts/` e ativos em `docs/assets/`.
 
-Arquivos locais ainda não publicáveis são mantidos em `work/`, ignorado pelo Git. Isso não substitui controles de acesso, licença ou privacidade.
+Arquivos locais ainda não publicáveis são mantidos em `work/`, ignorado pelo Git. A política do CASO-001 define revisão a cada 90 dias, prazos ordinários por categoria, quarentena, registro de descarte, tratamento de backups e limites técnicos. Isso não substitui controles de acesso, licença ou privacidade.
 
 ## 9. Dívida documental e operacional
 
@@ -220,12 +223,12 @@ Arquivos locais ainda não publicáveis são mantidos em `work/`, ignorado pelo 
 | DD-041 | CASO-001 sem prontidão mínima | aberta, alta | issue #2 e registro de prontidão |
 | DD-042 | catálogo não representava a sexta camada | resolvida | camada incorporada ao gerador |
 | DD-043 | analisador estrutural não reconhecia a sexta camada | resolvida | mapeamento para `casos/` |
-| DD-044 | polígono oficial indisponível | aberta, alta | issue #6 |
+| DD-044 | polígono oficial indisponível | aberta, alta | issue #6; anexo cartográfico apenas localizado |
 | DD-045 | série pluviométrica real não coletada | aberta, alta | issue #4; processador pronto |
 | DD-046 | documentos técnicos integrais indisponíveis | aberta, alta | issue #7 |
 | DD-047 | participação e interlocutores não confirmados | aberta, alta | issue #8 |
-| DD-048 | matriz de fontes incompleta | aberta | issue #10 |
-| DD-049 | risco de publicação acidental de dados locais | controlada | `work/` ignorado e protocolo público |
+| DD-048 | matriz de fontes incompleta | resolvida | `CASO-001-FONTES` e issue #10 |
+| DD-049 | risco de publicação acidental e retenção indefinida | controlada | `work/` ignorado, prazos, quarentena e descarte; issue #11 |
 | DD-050 | pipeline de dados sem teste automatizado | resolvida | teste sintético e status `data/pipeline` |
 
 ## 10. Plano progressivo
@@ -242,7 +245,7 @@ A evolução é governada pelos GOV-005 a GOV-008, com rigor proporcional e limi
 
 ## 11. Próxima ação
 
-Executar a aquisição mensal autorizada da estação Itapeba, obter o polígono e os documentos técnicos e formar capacidade de revisão antes de nova decisão do portão.
+Executar a aquisição mensal autorizada da estação Itapeba, obter e verificar a geometria oficial, incorporar os documentos técnicos integrais e formar capacidade de revisão antes de nova decisão do portão.
 
 ## 12. Histórico de alterações
 
@@ -261,3 +264,4 @@ Executar a aquisição mensal autorizada da estação Itapeba, obter o polígono
 | 0.21.1 | 2026-07-18 | correção | Sincronização da versão do Guia de Contribuição | Projeto Pragmatismo Cívico |
 | 0.22.0 | 2026-07-18 | compatível | Registro de prontidão, recorte de Itapeba e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
 | 0.23.0 | 2026-07-18 | compatível | Protocolo pluviométrico, teste sintético, quarto status de CI e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
+| 0.24.0 | 2026-07-18 | compatível | Matriz de fontes, política de retenção, atualização do portão e linha de base de 54 documentos | Projeto Pragmatismo Cívico |
