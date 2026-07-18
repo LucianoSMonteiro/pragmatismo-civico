@@ -1,7 +1,7 @@
 ---
 id: CASO-001
-titulo: Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo em Maricá/RJ
-versao: 0.1.0
+titulo: Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo na Sub-bacia de Itapeba
+versao: 0.2.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -21,31 +21,36 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - CASOS-INDEX
+  - CASO-001-PRONTIDAO
   - GOV-006
   - GOV-007
   - MODELO-INDICADORES-001
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 estado_do_caso: preparacao
-territorio: Maricá/RJ
+territorio: Sub-bacia de Itapeba, Maricá/RJ; polígono oficial pendente
+periodo_preliminar: 2022-01-01 a 2026-06-30
 tipo_de_caso: demonstrativo
+issue_acompanhamento: 2
 ---
 
-# CASO-001 — Drenagem Urbana e Alerta Preventivo em Maricá/RJ
+# CASO-001 — Drenagem Urbana e Alerta Preventivo na Sub-bacia de Itapeba
 
 ## Estado
 
 **Preparação.** Este documento não contém diagnóstico oficial, recomendação de obra, contratação, avaliação de política ou conclusão sobre o sistema de drenagem de Maricá.
 
-A seleção do tema inicia um estudo demonstrativo do método. O PPC-001 somente poderá começar após aprovação do portão de prontidão do GOV-008.
+A pesquisa inicial reduziu o escopo para a sub-bacia de Itapeba e definiu o período preliminar de 2022-01-01 a 2026-06-30. O polígono oficial, as séries tratadas, os documentos técnicos, a participação local e a revisão independente ainda estão pendentes.
+
+O PPC-001 somente poderá começar após nova decisão do portão de prontidão do GOV-008. Consulte o [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md) e a issue #2.
 
 ## 1. Pergunta decisória preliminar
 
-Como estruturar uma decisão pública auditável para reduzir riscos e impactos associados a alagamentos urbanos, considerando diagnóstico territorial, manutenção, intervenções estruturais e baseadas na natureza, monitoramento e alertas, sem presumir antecipadamente qual combinação é adequada?
+Como estruturar uma decisão pública auditável para reduzir riscos e impactos de alagamentos na sub-bacia de Itapeba, articulando macrodrenagem, microdrenagem, manutenção, monitoramento e comunicação de risco, sem presumir previamente a combinação adequada de medidas?
 
-A pergunta será refinada após delimitação territorial e verificação das fontes.
+A pergunta poderá ser refinada após obtenção do polígono, dos projetos e das séries de dados.
 
 ## 2. Justificativa da seleção
 
@@ -58,52 +63,62 @@ O tema foi selecionado para preparação porque:
 - testa diferentes etapas do ciclo sem depender de uma única solução;
 - pode gerar aprendizado reutilizável sobre decisões urbanas sob incerteza.
 
-Essas razões justificam estudar o tema, mas não demonstram que uma intervenção específica seja necessária ou eficaz.
+A sub-bacia de Itapeba foi escolhida como recorte preliminar porque fontes municipais identificam intervenção de macrodrenagem anunciada em 2026, existe estação pluviométrica pública com o nome Itapeba e há registro municipal de acumulado elevado e ocorrências no evento de abril de 2022.
+
+Essas razões justificam preparar o estudo, mas não demonstram que uma intervenção específica seja necessária, suficiente ou eficaz.
 
 ## 3. Delimitação atual
 
 | Elemento | Estado atual |
 |---|---|
 | Município | Maricá/RJ |
-| Bacia, bairro ou corredor | pendente |
-| Período de referência | pendente |
-| Evento ou padrão analisado | pendente |
-| População e grupos afetados | pendente de diagnóstico |
-| Autoridade ou unidade relacionada | pendente |
-| Responsável pelo acesso aos dados | pendente |
+| Unidade | sub-bacia de Itapeba |
+| Polígono | pendente de fonte oficial |
+| Período | 2022-01-01 a 2026-06-30, sujeito à completude das séries |
+| Evento de referência | chuvas de abril de 2022, ainda sem validação completa dos dados brutos |
+| População e grupos afetados | pendente do polígono e de dados oficiais |
+| Unidades potenciais | Defesa Civil, SOMAR, Urbanismo, Meio Ambiente e SANEMAR nas interfaces pertinentes |
+| Responsável pela documentação | Projeto Pragmatismo Cívico |
 | Revisores | cadastro ainda sem pessoas elegíveis |
 
-O município inteiro não será tratado automaticamente como uma única unidade de análise.
+O nome da sub-bacia não será tratado como limite cartográfico suficiente. O estudo não avançará sem geometria verificável.
 
 ## 4. Limites desta versão
 
 Esta versão:
 
-- não afirma que dados ou registros estejam disponíveis;
+- não afirma que todas as fontes necessárias estejam disponíveis;
 - não atribui causa a eventos;
-- não avalia desempenho de órgão ou serviço;
+- não avalia desempenho de órgão, contrato, sistema ou serviço;
 - não estima custos ou benefícios;
 - não seleciona tecnologia, fornecedor ou obra;
-- não define prioridade territorial;
+- não define prioridade territorial fora do recorte preparatório;
 - não coleta dados pessoais;
-- não substitui planos oficiais de emergência, drenagem, defesa civil ou ordenamento territorial.
+- não substitui planos oficiais de emergência, drenagem, defesa civil, saneamento ou ordenamento territorial;
+- não trata comunicação institucional como prova de eficácia.
 
-## 5. Fontes a verificar
+## 5. Fontes verificadas e fontes pendentes
 
-O portão de prontidão deverá confirmar a existência, o período, a cobertura e as limitações de fontes como:
+O [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md) mantém o inventário inicial de fontes oficiais, incluindo:
 
-- precipitação e condições meteorológicas;
-- topografia, hidrografia e uso do solo;
-- cadastro e condição da infraestrutura de drenagem;
-- manutenção, limpeza e obstruções registradas;
-- ocorrências de alagamento, interrupções e danos;
-- expansão urbana e impermeabilização;
-- equipamentos e serviços públicos expostos;
-- grupos com maior vulnerabilidade ou barreiras de acesso;
-- alertas, comunicação de risco e resposta operacional;
-- orçamento, contratos, projetos e capacidade institucional;
-- normas, planos e responsabilidades vigentes;
-- conhecimento de moradores, trabalhadores e equipes de campo.
+- Plano de Contingência Municipal 2026;
+- Programa Municipal de Drenagem;
+- Plano Diretor e Lei Complementar 400/2025;
+- contratos anunciados em 2026 para a sub-bacia de Itapeba;
+- registro municipal das chuvas de abril de 2022;
+- estação pluviométrica Itapeba e dados brutos do Cemaden;
+- sistemas hidrometeorológicos do INEA e da ANA;
+- iniciativa municipal de monitoramento inteligente de drenagem.
+
+Ainda precisam ser obtidos ou verificados:
+
+- polígono oficial da sub-bacia;
+- produtos técnicos completos do programa de drenagem;
+- contrato, projeto, cronograma, geometrias e indicadores das intervenções;
+- séries brutas e metadados de estações;
+- registros administrativos agregados de ocorrências, manutenção e danos;
+- regras e dados de alertas aplicáveis ao recorte;
+- fontes de participação e conhecimento local.
 
 Nenhuma lacuna será preenchida por número inventado ou inferência apresentada como fato.
 
@@ -117,7 +132,7 @@ Sem antecipar recomendação, o caso deverá manter abertas alternativas como:
 - intervenções localizadas de microdrenagem;
 - intervenções estruturais de maior porte;
 - soluções baseadas na natureza e infraestrutura verde;
-- monitoramento hidrometeorológico;
+- monitoramento hidrometeorológico e da rede de drenagem;
 - melhoria de alertas e comunicação;
 - medidas de ordenamento e controle de ocupação;
 - combinação gradual de medidas;
@@ -129,14 +144,16 @@ Alternativas inviáveis ou inadequadas só poderão ser eliminadas com justifica
 
 A preparação deverá mapear, sem presumir representação:
 
-- moradores e usuários dos territórios delimitados;
+- moradores, trabalhadores e usuários da sub-bacia;
 - pessoas com mobilidade reduzida ou barreiras de comunicação;
+- escolas, saúde, assistência e equipamentos públicos;
+- transporte e vias críticas;
 - trabalhadores de manutenção e operação;
 - defesa civil e resposta a emergências;
 - planejamento urbano, obras, saneamento e meio ambiente;
-- transporte, saúde, educação e assistência social quando afetados;
 - comerciantes, prestadores e organizações locais;
-- pesquisadores e profissionais com conhecimento pertinente.
+- pesquisadores e profissionais com conhecimento pertinente;
+- territórios conectados a montante ou a jusante.
 
 Participação não será usada apenas para confirmar uma proposta previamente escolhida.
 
@@ -144,30 +161,32 @@ Participação não será usada apenas para confirmar uma proposta previamente e
 
 | Risco | Salvaguarda inicial |
 |---|---|
-| escopo municipal amplo demais | delimitar unidade territorial e temporal |
-| dados incompletos ou incompatíveis | registrar cobertura, qualidade e lacunas |
-| foco excessivo em tecnologia | comparar alternativas operacionais, estruturais e não intervenção |
+| limite da sub-bacia ainda indefinido | obter polígono e documentar método de recorte |
+| dados incompletos ou incompatíveis | registrar cobertura, qualidade, UTC, lacunas e transformações |
+| foco excessivo em tecnologia | comparar alternativas operacionais, ambientais, estruturais e não intervenção |
 | exposição de pessoas afetadas | usar agregação e minimização de dados |
-| confusão com plano oficial | declarar natureza demonstrativa e não vinculante |
+| confusão com plano ou avaliação oficial | declarar natureza demonstrativa e não vinculante |
 | captura por fornecedor ou interesse político | conflitos públicos e ausência de marca ou solução pré-selecionada |
 | revisão insuficiente | manter caso em preparação até capacidade compatível |
+| comunicação institucional tomada como avaliação | exigir documentos, dados e verificação independente |
 | urgência usada para pular diagnóstico | separar resposta emergencial de decisão estrutural |
 
 ## 9. Portão de prontidão
 
-O caso permanece em preparação até que estejam documentados:
+Situação atual:
 
-- [ ] território e período delimitados;
-- [ ] pergunta decisória revisada;
-- [ ] responsável pela documentação;
-- [ ] autoridade ou unidades relacionadas;
-- [ ] fontes mínimas verificadas;
-- [ ] plano de qualidade, acesso e proteção de dados;
-- [ ] grupos afetados e canais preliminares;
-- [ ] conflitos e riscos iniciais;
-- [ ] versões das ferramentas;
-- [ ] estratégia de revisão;
-- [ ] critérios de suspensão e encerramento.
+- [x] pergunta decisória preliminar revisada;
+- [x] responsável pela documentação identificado;
+- [x] riscos e conflitos iniciais registrados;
+- [x] versões iniciais registradas;
+- [x] critérios de suspensão e encerramento definidos;
+- [ ] polígono territorial oficial obtido;
+- [ ] período confirmado após teste de completude das séries;
+- [ ] fontes mínimas coletadas e avaliadas;
+- [ ] plano de dados executado e testado;
+- [ ] grupos afetados e canais preliminares confirmados;
+- [ ] interlocutores institucionais confirmados;
+- [ ] estratégia de revisão viável.
 
 **Resultado atual:** permanece em preparação.
 
@@ -187,11 +206,12 @@ O caso pode ser encerrado antes de etapas posteriores quando dados, capacidade, 
 
 ## 11. Produtos esperados da preparação
 
-- registro preenchido da FICHA-GOV-008;
+- registro de prontidão atualizado;
+- polígono e memória de delimitação;
 - matriz de fontes e lacunas;
-- delimitação territorial e temporal;
+- teste de qualidade das séries de chuva;
 - mapa preliminar de partes afetadas;
-- registro de conflitos;
+- registro de conflitos e interlocutores;
 - decisão de prontidão, suspensão ou encerramento;
 - plano de trabalho do PPC-001.
 
@@ -204,3 +224,4 @@ A preparação será bem-sucedida quando permitir decidir, com honestidade, se e
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Seleção do primeiro tema demonstrativo e registro dos limites, fontes e portão de prontidão | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Recorte preliminar da sub-bacia de Itapeba, período inicial, fontes verificadas e decisão de manter preparação | Projeto Pragmatismo Cívico |
