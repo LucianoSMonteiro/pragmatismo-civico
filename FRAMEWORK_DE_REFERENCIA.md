@@ -1,3 +1,33 @@
+---
+id: FRAMEWORK-DE-REFERENCIA
+titulo: Framework de Referência do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: principio
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - CARTA-DE-PRINCIPIOS
+  - SPECIFICATION
+produz_entrada_para:
+  - GOV-001
+  - GOV-002
+  - PPC-000
+  - ARQ-001
+  - CICLO-PC-001
+relaciona_se_com:
+  - MANIFESTO
+  - TEORIA-DO-PRAGMATISMO-CIVICO
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Framework de Referência do Pragmatismo Cívico (FRPC)
 
 ## 1. Finalidade
@@ -138,3 +168,9 @@ Sua evolução deve permanecer pública, versionada, fundamentada e acessível �
 Esta é a versão inicial do FRPC. Ela consolida a arquitetura já presente no repositório e estabelece uma proteção explícita contra perda de foco durante a expansão do projeto.
 
 O documento deverá evoluir de forma incremental, preservando sempre a definição central e os princípios fundadores.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica, relações de autoridade e preservação integral do conteúdo normativo | Projeto Pragmatismo Cívico |
