@@ -1,7 +1,7 @@
 ---
 id: CARTA-DE-PRINCIPIOS
 titulo: Carta de Princípios do Pragmatismo Cívico
-versao: 0.1.1
+versao: 0.1.2
 status: rascunho
 tipo: principio
 idioma: pt-BR
@@ -14,10 +14,10 @@ depende_de: []
 produz_entrada_para:
   - SPECIFICATION
   - FRAMEWORK-DE-REFERENCIA
-relaciona_se_com:
-  - MANIFESTO
-  - SPECIFICATION
   - TEORIA-DO-PRAGMATISMO-CIVICO
+  - MANIFESTO
+  - GLOSSARIO
+relaciona_se_com: []
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -106,3 +106,4 @@ Esta carta pode ser aprimorada por processo público, transparente e fundamentad
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica, relação de autoridade e preservação integral dos quinze princípios | Projeto Pragmatismo Cívico |
 | 0.1.1 | 2026-07-18 | correção | Registro da saída normativa consumida pela Especificação, completando a reciprocidade documental sem alteração dos princípios | Projeto Pragmatismo Cívico |
+| 0.1.2 | 2026-07-18 | correção | Normalização das saídas para todos os documentos fundadores que declaram dependência da Carta e remoção de relações redundantes | Projeto Pragmatismo Cívico |
