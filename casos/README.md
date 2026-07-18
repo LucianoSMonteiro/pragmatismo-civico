@@ -1,7 +1,7 @@
 ---
 id: CASOS-INDEX
 titulo: Casos e Evidências do Pragmatismo Cívico
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -20,10 +20,11 @@ produz_entrada_para: []
 relaciona_se_com:
   - CATALOGO-DOCUMENTAL
   - CASO-001
+  - CASO-001-PRONTIDAO
   - FICHA-GOV-008
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -35,9 +36,11 @@ Esta área reúne aplicações, pilotos, avaliações e lições aprendidas. A p
 
 | Caso | Tema | Território | Estado | Resultado disponível |
 |---|---|---|---|---|
-| [CASO-001](CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) | drenagem urbana e alerta preventivo | Maricá/RJ, delimitação interna pendente | preparação | apenas plano de prontidão |
+| [CASO-001](CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) | drenagem urbana e alerta preventivo | sub-bacia de Itapeba; polígono oficial pendente | preparação | [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md), inventário inicial de fontes e pendências |
 
-Ainda não há estudo concluído, diagnóstico oficial, recomendação, implementação ou avaliação de impacto publicada.
+O período preliminar do CASO-001 é 2022-01-01 a 2026-06-30. A pergunta foi refinada e fontes oficiais foram localizadas, mas o portão permanece fechado por falta de geometria oficial, documentos técnicos integrais, dados tratados, participação local e revisão independente.
+
+Ainda não há estudo concluído, diagnóstico oficial, recomendação, implementação avaliada ou estimativa de impacto publicada.
 
 ## Regras de publicação
 
@@ -60,6 +63,16 @@ Casos devem:
 - **suspenso:** existe impedimento temporário registrado;
 - **encerrado:** o caso terminou, inclusive de forma inconclusiva.
 
+## Pendências do CASO-001
+
+1. obter polígono oficial da sub-bacia de Itapeba;
+2. obter produtos técnicos e geometrias de drenagem;
+3. baixar e testar séries pluviométricas;
+4. confirmar interlocutores e registros administrativos;
+5. estruturar participação local;
+6. obter capacidade de revisão ou declarar impossibilidade;
+7. emitir nova decisão do portão na issue #2.
+
 ## Casos futuros
 
 Novos casos somente serão adicionados quando houver responsável, escopo preliminar e registro de seleção. Diretórios ou documentos vazios não devem ser criados para simular capacidade inexistente.
@@ -69,3 +82,4 @@ Novos casos somente serão adicionados quando houver responsável, escopo prelim
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Criação do índice público da camada de aplicações e evidências | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Inclusão do registro de prontidão, recorte de Itapeba e decisão de manter o CASO-001 em preparação | Projeto Pragmatismo Cívico |
