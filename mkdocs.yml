@@ -93,8 +93,12 @@ nav:
       - Ficha de proposta de mudança: FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md
       - Registro de revisão e aprovação: FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md
       - Candidatura e avaliação de revisor: FICHA_GOV-007_CANDIDATURA_E_AVALIACAO_DE_REVISOR.md
+      - Registro de seleção e condução de caso: FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md
       - Matriz de avaliação: MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md
       - Indicadores: INDICADORES.md
+  - Casos e evidências:
+      - Visão geral: casos/README.md
+      - CASO-001 — Drenagem urbana e alerta preventivo: casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md
   - Governança:
       - Modelo de governança: MODELO_DE_GOVERNANCA.md
       - PPC-META-001 — Metadados e versionamento: PPC-META-001_METADADOS_E_VERSIONAMENTO.md
@@ -103,6 +107,7 @@ nav:
       - Política de revisão e aprovação: GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md
       - Programa de revisores: GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md
       - Cadastro público de revisores: CADASTRO_PUBLICO_DE_REVISORES.md
+      - Protocolo de casos demonstrativos: GOV-008_PROTOCOLO_DE_SELECAO_E_CONDUCAO_DE_CASOS.md
       - Como contribuir: CONTRIBUTING.md
       - Código de conduta: CODE_OF_CONDUCT.md
       - Roadmap: ROADMAP.md
