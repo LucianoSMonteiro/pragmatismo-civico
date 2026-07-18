@@ -1,7 +1,7 @@
 ---
 id: SPECIFICATION
 titulo: Especificação do Pragmatismo Cívico
-versao: 0.1.1
+versao: 0.2.0
 status: rascunho
 tipo: principio
 idioma: pt-BR
@@ -65,7 +65,7 @@ O Pragmatismo Cívico tem como objetivos:
 4. incentivar o uso responsável de ciência, engenharia, tecnologia e dados;
 5. reduzir a influência da polarização na avaliação de soluções públicas;
 6. estimular cooperação entre pessoas e instituições com visões diferentes;
-7. incorporar sustentabilidade econômica, social e ambiental;
+7. incorporar sustentabilidade econômica, social, ambiental e institucional;
 8. estabelecer mecanismos permanentes de avaliação e melhoria;
 9. transformar erros e resultados insuficientes em aprendizado institucional;
 10. criar ferramentas abertas que possam ser adaptadas a diferentes contextos.
@@ -108,7 +108,7 @@ Toda política relevante deve permitir verificação independente de sua execuç
 
 ### 7.6 Sustentabilidade
 
-Soluções devem considerar impactos ambientais, sociais, econômicos e intergeracionais.
+Soluções devem considerar impactos ambientais, sociais, econômicos, institucionais e intergeracionais.
 
 ### 7.7 Revisabilidade
 
@@ -155,6 +155,8 @@ O ciclo básico do Pragmatismo Cívico é composto por:
 8. **Aprender** — registrar acertos, erros e limitações.
 9. **Revisar** — corrigir, ampliar, substituir ou encerrar a política.
 
+Esses nove movimentos constituem uma descrição conceitual de governança. Sua implementação operacional vigente é definida pelo `CICLO_DO_PRAGMATISMO_CIVICO.md`, pelos padrões PPC-001 a PPC-008 e pelo Modelo de Teoria da Mudança. A descrição conceitual não substitui as etapas, entradas, saídas e dependências desses documentos.
+
 ## 10. Limites e salvaguardas
 
 Resultados não justificam a violação de direitos fundamentais, da dignidade humana ou das garantias democráticas.
@@ -175,21 +177,23 @@ O Pragmatismo Cívico deverá evoluir por meio de:
 - registro de divergências fundamentadas;
 - testes e estudos de caso.
 
-## 12. Documentos derivados
+## 12. Documentos relacionados e derivados
 
-Esta especificação orientará a elaboração de:
+Esta especificação orienta ou mantém relação de autoridade com documentos já publicados, incluindo:
 
-- Manifesto do Pragmatismo Cívico;
 - Carta de Princípios;
-- Constituição do projeto;
-- White Paper;
-- metodologia de avaliação de políticas;
+- Manifesto do Pragmatismo Cívico;
+- Framework de Referência;
+- Teoria do Pragmatismo Cívico;
+- padrões metodológicos e transversais;
 - indicadores e ferramentas práticas;
 - guias de participação e contribuição.
 
+Uma eventual Constituição do projeto, White Paper ou outra nova classe documental não integra automaticamente o acervo oficial. Sua criação exige proposta formal, função não duplicada, posição arquitetural definida e compatibilidade com os documentos fundadores.
+
 ## 13. Estado do documento
 
-Esta é a versão inicial da especificação. Seu conteúdo deverá ser aprofundado e revisado conforme o projeto avance, preservando sempre os princípios fundamentais acordados em sua fundação.
+Esta é uma versão inicial da especificação. Seu conteúdo deverá ser aprofundado e revisado conforme o projeto avance, preservando sempre os princípios fundamentais acordados em sua fundação.
 
 ## Histórico de alterações
 
@@ -197,3 +201,4 @@ Esta é a versão inicial da especificação. Seu conteúdo deverá ser aprofund
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica, relação de autoridade e preservação integral da especificação fundadora | Projeto Pragmatismo Cívico |
 | 0.1.1 | 2026-07-18 | correção | Normalização das saídas para os documentos fundadores que declaram dependência da Especificação e remoção de relações redundantes | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Alinhamento da sustentabilidade integral, esclarecimento da relação entre ciclo conceitual e ciclo PPC e atualização da seção de documentos derivados | Projeto Pragmatismo Cívico |
