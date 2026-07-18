@@ -1,7 +1,7 @@
 ---
 id: FRAMEWORK-DE-REFERENCIA
 titulo: Framework de Referência do Pragmatismo Cívico
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: principio
 idioma: pt-BR
@@ -19,12 +19,13 @@ produz_entrada_para:
   - PPC-000
   - ARQ-001
   - CICLO-PC-001
+  - GLOSSARIO
 relaciona_se_com:
   - MANIFESTO
   - TEORIA-DO-PRAGMATISMO-CIVICO
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -174,3 +175,4 @@ O documento deverá evoluir de forma incremental, preservando sempre a definiç�
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com identificação canônica, relações de autoridade e preservação integral do conteúdo normativo | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-18 | correção | Registro da saída consumida pelo Glossário, completando a relação documental sem alterar o conteúdo normativo | Projeto Pragmatismo Cívico |
