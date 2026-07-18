@@ -22,6 +22,7 @@ LAYER_DIRECTORIES = {
     "Governança e arquitetura": "governanca",
     "Método": "metodo",
     "Ferramentas": "ferramentas",
+    "Aplicações e evidências": "casos",
 }
 
 # O README precisa permanecer na raiz para continuar funcionando como página de
@@ -150,16 +151,16 @@ def generate_report(documents: list[Document]) -> str:
             "",
             "## Avaliação",
             "",
-            "A organização por diretórios tornaria a estrutura física mais semelhante às camadas lógicas, mas não alteraria a navegação pública, que já é definida pelo `mkdocs.yml` e pelo catálogo.",
+            "A organização integral por diretórios tornaria a estrutura física mais semelhante às camadas lógicas, mas não alteraria a navegação pública, já definida pelo `mkdocs.yml` e pelo catálogo.",
             "",
-            "A migração exigiria alterar caminhos canônicos, referências internas, navegação, catálogo, URLs de edição e possíveis referências externas. O ganho é predominantemente de manutenção visual no repositório, enquanto o custo recai sobre compatibilidade, histórico e manutenção de redirecionamentos.",
+            "Os documentos da camada Aplicações e evidências já utilizam `casos/`, conforme a estrutura híbrida do ARQ-003. A migração das demais camadas ainda exigiria alterar caminhos canônicos, referências internas, navegação, catálogo, URLs de edição e possíveis referências externas.",
             "",
             "## Critério recomendado",
             "",
-            "Manter a estrutura atual enquanto o benefício líquido de mover arquivos não superar os riscos e custos calculados. Reavaliar quando ao menos uma das condições ocorrer:",
+            "Manter a estrutura híbrida enquanto o benefício líquido de mover arquivos não superar os riscos e custos calculados. Reavaliar quando ao menos uma das condições ocorrer:",
             "",
             "- crescimento que torne a localização no repositório materialmente difícil;",
-            "- inclusão recorrente de estudos de caso, relatórios ou anexos;",
+            "- três estudos de caso oficiais ou 60 documentos públicos;",
             "- necessidade de permissões ou automações específicas por diretório;",
             "- disponibilidade de redirecionamentos confiáveis para URLs publicadas;",
             "- evidência de que a estrutura atual causa erros, duplicação ou custo de manutenção relevante.",
