@@ -40,8 +40,8 @@ Os documentos centrais devem ser coerentes entre si, compreensíveis ao público
 
 - [x] ciclo operacional do Pragmatismo Cívico;
 - [x] PPC-000 — especificação do ecossistema de padrões;
-- [x] PPC-001 — definição e diagnóstico de problemas públicos;
 - [x] ficha prática preenchível de problema público;
+- [x] PPC-001 — definição e diagnóstico de problemas públicos;
 - [x] PPC-002 — formulação e comparação de alternativas;
 - [x] ficha preenchível de formulação e comparação de alternativas;
 - [x] matriz de avaliação de políticas públicas;
@@ -102,10 +102,11 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 ### Entregas previstas
 
 - [x] PPC-META-001 — metadados e versionamento dos padrões;
+- [x] PPC-000A — ciclo de vida formal dos PPCs;
+- [x] primeiro lote da migração documental — PPC-000 e Modelo de Governança;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
 - [ ] política de revisão e aprovação;
-- [x] PPC-000A — ciclo de vida formal dos PPCs;
 - [ ] conselho consultivo plural;
 - [ ] regras sobre conflitos de interesse;
 - [ ] fóruns de discussão pública;
@@ -153,9 +154,9 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. executar a Fase 1 da migração documental no PPC-000 e no Modelo de Governança;
-2. completar o lote de governança com roadmap, contribuição e código de conduta;
-3. formalizar o processo de propostas de mudança;
+1. completar o lote de governança com roadmap, contribuição e código de conduta;
+2. formalizar o processo de propostas de mudança;
+3. iniciar a migração do núcleo metodológico pelo ciclo, PPC-001 a PPC-004 e teoria da mudança;
 4. criar a ficha padrão de indicadores;
 5. desenvolver o checklist de transparência e rastreabilidade;
 6. estruturar o protocolo de avaliação do próprio framework;
