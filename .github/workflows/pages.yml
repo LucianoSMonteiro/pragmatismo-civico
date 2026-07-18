@@ -32,12 +32,35 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Construir portal
-        run: mkdocs build --strict --clean
+        id: build
+        shell: bash
+        run: |
+          set +e
+          mkdocs build --strict --clean > mkdocs-build.log 2>&1
+          status=$?
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Preservar diagnóstico do build
+        if: steps.build.outputs.status != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mkdocs-build-log
+          path: mkdocs-build.log
+          retention-days: 7
+
+      - name: Interromper após falha do build
+        if: steps.build.outputs.status != '0'
+        run: |
+          cat mkdocs-build.log
+          exit 1
 
       - name: Configurar GitHub Pages
+        if: steps.build.outputs.status == '0'
         uses: actions/configure-pages@v5
 
       - name: Enviar artefato
+        if: steps.build.outputs.status == '0'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ../site
