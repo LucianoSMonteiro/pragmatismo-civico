@@ -1,3 +1,33 @@
+---
+id: FICHA-PPC-002
+titulo: Ficha PPC-002 — Formulação e Comparação de Alternativas
+versao: 0.1.0
+status: piloto
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: 2026-07-17
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-002
+  - PPC-001
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - FICHA-PPC-001
+  - CICLO-PC-001
+  - PPC-003
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+documento_associado: PPC-002
+versao_documento_associado: 0.1.0
+---
+
 # Ficha PPC-002 — Formulação e Comparação de Alternativas
 
 > Instrumento prático para aplicar o **PPC-002 — Formulação e Comparação de Alternativas**.
@@ -261,6 +291,7 @@ Os critérios e pesos devem ser definidos antes da pontuação final.
 
 **Soma dos pesos:**
 
+
 **Justificativa dos pesos:**
 
 
@@ -442,3 +473,9 @@ Explique por que a alternativa foi recomendada, incluindo resultados esperados, 
 - [Matriz de Avaliação de Políticas Públicas](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md)
 - [Ciclo do Pragmatismo Cívico](CICLO_DO_PRAGMATISMO_CIVICO.md)
 - [PPC-000 — Especificação do Ecossistema PPC](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md)
+
+## Histórico de alterações da ferramenta
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Normalização documental para o PPC-META-001, preservando o estado piloto, o conteúdo e o vínculo com a versão 0.1.0 do PPC-002 | Projeto Pragmatismo Cívico |
