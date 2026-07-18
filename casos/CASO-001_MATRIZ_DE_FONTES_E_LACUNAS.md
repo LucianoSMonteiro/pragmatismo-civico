@@ -1,7 +1,7 @@
 ---
 id: CASO-001-FONTES
 titulo: Matriz de Fontes e Lacunas do CASO-001
-versao: 0.2.0
+versao: 0.2.1
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -41,6 +41,8 @@ A matriz **não valida diagnóstico, causalidade, desempenho de órgão, eficác
 
 Data desta verificação: **18 de julho de 2026**.
 
+A camada estadual de sub-bacias foi confirmada como fonte candidata por seus metadados públicos. Duas séries de aquisição a partir de runners hospedados falharam antes do recebimento de qualquer byte. Isso é uma limitação de conectividade, não consulta vazia e não evidência de ausência da feição.
+
 ## 2. Escala de estado
 
 | Estado | Significado |
@@ -50,6 +52,7 @@ Data desta verificação: **18 de julho de 2026**.
 | obtida | o arquivo integral foi preservado com proveniência e hash |
 | tratada | a fonte foi transformada por procedimento documentado e revisada |
 | pendente | o conteúdo integral, o arquivo ou a cobertura necessária ainda não foi obtido |
+| bloqueada no ambiente | a fonte existe, mas o ambiente de coleta não conseguiu estabelecer conexão ou receber resposta |
 
 Nenhuma fonte desta versão está classificada como `obtida` ou `tratada` para fins empíricos do caso.
 
@@ -70,7 +73,7 @@ Nenhuma fonte desta versão está classificada como `obtida` ou `tratada` para f
 | F-011 | INEA / Monitoramento Hidrometeorológico | portal de dados e documentação | consultada | Estado do Rio de Janeiro |
 | F-012 | ANA / Hidroweb e Rede Hidrometeorológica Nacional | portal de dados | consultada | rede nacional de chuva, nível e vazão |
 | F-013 | Prefeitura / sistema inteligente de prevenção de enchentes | comunicação institucional | consultada | iniciativa municipal divulgada em 2026-06-18 |
-| F-014 | INEA / `GPL_SUBBACIAS_ERJ_50`, camada 4 | geosserviço vetorial poligonal | consultada, feição pendente | sub-bacias do Estado do Rio de Janeiro |
+| F-014 | INEA / `GPL_SUBBACIAS_ERJ_50`, camada 4 | geosserviço vetorial poligonal | consultada em metadados; aquisição hospedada bloqueada; feição pendente | sub-bacias do Estado do Rio de Janeiro |
 | F-015 | INEA, IBGE e SEA-RJ / hidrografia RJ25 | geosserviço vetorial linear | consultada, dados pendentes | hidrografia estadual na escala 1:25.000 |
 
 ## 4. Proveniência, formato e integridade
@@ -90,8 +93,10 @@ Nenhuma fonte desta versão está classificada como `obtida` ou `tratada` para f
 | F-011 | <https://www.inea.rj.gov.br/ar-agua-e-solo/monitoramento-hidrometeorologico/> | HTML e sistemas ligados | licença dos dados históricos não verificada | não aplicável à página dinâmica |
 | F-012 | <https://www.gov.br/ana/pt-br/assuntos/aplicativos-sistemas> e <https://www.snirh.gov.br/hidroweb> | portais e serviços | licença dos conjuntos deve ser confirmada separadamente | pendente para arquivos obtidos |
 | F-013 | <https://www.marica.rj.gov.br/noticia/marica-investe-em-sistema-inteligente-para-prevencao-de-enchentes/> | HTML | não identificada | não aplicável à página dinâmica |
-| F-014 | <https://geoportal.inea.rj.gov.br/server/rest/services/Recursos_Hidricos_Gestao_Costeira/MapServer/4> | ArcGIS Feature Layer; JSON, GeoJSON e PBF | metadados e condições de redistribuição ainda devem ser preservados | pendente para a resposta consultada |
+| F-014 | <https://geoportal.inea.rj.gov.br/server/rest/services/Recursos_Hidricos_Gestao_Costeira/MapServer/4> | ArcGIS Feature Layer; JSON, GeoJSON e PBF | metadados e condições de redistribuição ainda devem ser preservados | nenhum hash da fonte: nenhuma resposta recebida nas tentativas hospedadas |
 | F-015 | <https://geoportal.inea.rj.gov.br/server/rest/services/GLN_HIDROGRAFIA_SEM_CANAL_25K/MapServer/0> | ArcGIS Feature Layer; JSON, GeoJSON e PBF | copyright publicado do IBGE; condições do arquivo exportado devem ser verificadas | pendente |
+
+Os hashes `4d2d2b2c450f1967cbf4ec8113de39d146bad01e408d3bdb4b4f8e4741e87bbe` e `7be511784a29ec17b4ef26b02778e2fd8f97d82e89cdef1a4304cd5147718914` identificam os **artefatos de diagnóstico da CI**, não respostas do GeoINEA.
 
 ## 5. Uso, limitações e lacunas
 
@@ -110,7 +115,7 @@ Nenhuma fonte desta versão está classificada como `obtida` ou `tratada` para f
 | F-011 | buscar chuva, nível, radar e fonte independente de comparação | cobertura estadual não garante estação representativa de Itapeba |
 | F-012 | localizar estações e séries complementares | presença ou ausência de estação não define comparabilidade espacial ou temporal |
 | F-013 | identificar possível fonte futura e alternativa de monitoramento | anúncio não comprova implantação, precisão, cobertura ou eficácia |
-| F-014 | fornecer camada candidata de polígonos estaduais de sub-bacias | não foi confirmada feição denominada Itapeba nem equivalência com o recorte municipal |
+| F-014 | fornecer camada candidata de polígonos estaduais de sub-bacias | runners hospedados não alcançaram o serviço; presença nominal e equivalência temática continuam desconhecidas |
 | F-015 | conferir drenagem e coerência topológica na escala 1:25.000 | linhas de drenagem não definem divisor ou polígono de sub-bacia |
 
 ## 6. Fontes geoespaciais candidatas
@@ -126,10 +131,17 @@ Nenhuma fonte desta versão está classificada como `obtida` ou `tratada` para f
 - **referência espacial publicada:** EPSG:4674 — SIRGAS 2000;
 - **formatos:** JSON, GeoJSON e PBF;
 - **item do serviço:** `e20f5ed7320d45e7a2d0fa2f0e84cf54`;
-- **estado:** metadados consultados; resposta com feição de Itapeba não obtida;
-- **tratamento previsto:** `CASO-001-GEOMETRIA` e `scripts/validar_geojson_subbacia.py`.
+- **estado:** metadados públicos consultados; nenhuma resposta de API recebida pelos runners hospedados;
+- **tratamento:** `CASO-001-GEOMETRIA`, coletor auditável, transporte IPv4 e validador GeoJSON.
 
-A camada é candidata prioritária, mas sua classificação pode não coincidir com a sub-bacia usada pelo programa municipal de drenagem.
+Tentativas executadas:
+
+| Execução | Transporte | Tentativas | Resultado |
+|---:|---|---:|---|
+| `29658467155` | Python HTTP padrão | 3 | timeout antes dos metadados |
+| `29658776194` | `curl --ipv4` | 3 | conexão TCP/TLS não estabelecida antes do timeout |
+
+A camada permanece candidata prioritária. A falha do ambiente hospedado não confirma nem refuta a presença de Itapeba.
 
 ### F-015 — Hidrografia do Projeto RJ25
 
@@ -148,17 +160,17 @@ A camada é candidata prioritária, mas sua classificação pode não coincidir 
 | Requisito | Fontes relacionadas | Estado atual |
 |---|---|---|
 | pergunta preliminar | F-002, F-003, F-004, F-013 | suficiente apenas para formular a pergunta, não para respondê-la |
-| território e período | F-003, F-005, F-006, F-007, F-009, F-014 e F-015 | parcial; período preliminar definido, serviço candidato localizado e polígono pendente |
+| território e período | F-003, F-005, F-006, F-007, F-009, F-014 e F-015 | parcial; serviço candidato localizado, coleta hospedada bloqueada e polígono pendente |
 | autoridades e interlocutores | F-001, F-002, F-004 e F-013 | potenciais, sem participação confirmada |
 | fontes mínimas | F-001 a F-015 | inventário consolidado; arquivos técnicos, feição oficial e dados reais pendentes |
-| plano de dados | F-008 a F-012, F-014, F-015, `CASO-001-DADOS-CHUVA` e `CASO-001-GEOMETRIA` | processadores testados somente com dados sintéticos; execução real pendente |
+| plano de dados | F-008 a F-012, F-014, F-015, `CASO-001-DADOS-CHUVA` e `CASO-001-GEOMETRIA` | códigos testados sinteticamente; execução real depende de ambiente com acesso às fontes |
 | grupos afetados e participação | F-001, F-003, F-004 e F-005 | categorias e processos localizados; recorte e canais do caso pendentes |
 | riscos e conflitos | F-002, F-004 e F-013 | comunicações e fornecedores não serão tratados como avaliação independente |
 | estratégia de revisão | todas | não atendida; cadastro de revisores permanece vazio |
 
 ## 8. Lacunas prioritárias
 
-1. **geometria:** consultar e preservar a feição oficial ou documentar ausência de correspondência nominal; registrar sistema de referência, escala, data, licença e hash;
+1. **geometria:** repetir a consulta em rede que alcance o GeoINEA, preservar a resposta e então confirmar ou refutar correspondência nominal; registrar sistema de referência, escala, data, licença e hash;
 2. **programa de drenagem:** obter produtos técnicos integrais e bases do diagnóstico, prognóstico e plano de ações;
 3. **intervenções de 2026:** obter contratos, projetos, geometrias, cronogramas, medições e indicadores;
 4. **chuva real:** realizar downloads mensais autorizados, gerar hashes, processar e revisar flags;
@@ -171,8 +183,9 @@ A camada é candidata prioritária, mas sua classificação pode não coincidir 
 
 - uma fonte nova recebe identificador estável `F-nnn`;
 - página ou serviço localizado não é marcado como arquivo obtido;
+- falha de rede não é registrada como consulta concluída sem resultado;
 - hash somente é registrado após preservação dos bytes exatos;
-- consulta sem feição também deve ser preservada;
+- consulta concluída sem feição também deve ser preservada;
 - republicação gera nova versão ou novo registro de origem;
 - notícia institucional permanece comunicação, mesmo quando descreve contrato ou resultado;
 - fonte superada não é apagada: seu estado e substituição são registrados;
@@ -187,7 +200,9 @@ A camada é candidata prioritária, mas sua classificação pode não coincidir 
 - [x] limitações, licenças conhecidas e riscos registrados;
 - [x] fontes relacionadas aos requisitos do portão;
 - [x] geosserviço poligonal candidato identificado;
-- [x] validador geoespacial testado com fixture sintético;
+- [x] coletor, transporte IPv4 e validador testados com fixtures;
+- [x] tentativas reais hospedadas e falhas de conectividade documentadas;
+- [ ] resposta oficial da API recebida e preservada;
 - [ ] feição oficial de Itapeba obtida e preservada;
 - [ ] arquivos técnicos integrais obtidos e preservados;
 - [ ] hashes das fontes reais calculados;
@@ -202,3 +217,4 @@ A conclusão documental desta matriz resolve a dispersão do inventário, mas **
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Consolidação de 13 fontes oficiais, estados de obtenção, usos, limitações e lacunas do portão | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-18 | compatível | Inclusão das camadas de sub-bacias e hidrografia do GeoINEA e do protocolo de validação geoespacial | Projeto Pragmatismo Cívico |
+| 0.2.1 | 2026-07-18 | correção | Distinção entre falha de conectividade, consulta vazia e ausência nominal; registro das tentativas hospedadas | Projeto Pragmatismo Cívico |
