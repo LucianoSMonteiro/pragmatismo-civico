@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.6.0
+versao: 0.7.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -141,7 +141,10 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] conclusão da Fase 2C — revisão de reciprocidade das dependências do ciclo completo;
 - [x] conclusão da Fase 3A — fichas PPC-001, PPC-002, PPC-004 e Teoria da Mudança;
 - [x] conclusão da Fase 3B — fichas PPC-005 a PPC-008;
-- [ ] Fase 3C — matriz de avaliação, indicadores e revisão dos vínculos das ferramentas;
+- [x] conclusão da Fase 3C — matriz, indicadores e revisão dos vínculos das ferramentas;
+- [ ] Fase 4A — metadados do Framework de Referência e da Carta de Princípios;
+- [ ] Fase 4B — teoria, especificação, manifesto e glossário;
+- [ ] Fase 4C — README e guia de início;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
 - [ ] política de revisão e aprovação;
@@ -195,7 +198,7 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 ## Prioridades imediatas
 
 1. formalizar o processo de propostas de mudança;
-2. executar a Fase 3C para matriz, indicadores e revisão dos vínculos das ferramentas;
+2. executar a Fase 4A da migração documental para o Framework de Referência e a Carta de Princípios;
 3. criar a ficha padrão de indicadores;
 4. desenvolver o checklist de transparência e rastreabilidade;
 5. estruturar o protocolo de avaliação do próprio framework;
@@ -252,3 +255,4 @@ Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prá
 | 0.4.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 2C e promoção da migração das ferramentas | Projeto Pragmatismo Cívico |
 | 0.5.0 | 2026-07-17 | compatível | Registro da conclusão da Fase 3A e definição dos lotes 3B e 3C | Projeto Pragmatismo Cívico |
 | 0.6.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 3B e promoção da Fase 3C | Projeto Pragmatismo Cívico |
+| 0.7.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 3C, encerramento da migração das ferramentas e promoção da Fase 4A | Projeto Pragmatismo Cívico |
