@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.3.0
+versao: 0.4.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -19,7 +19,7 @@ produz_entrada_para:
   - CATALOGO-DOCUMENTAL
   - VALIDACAO-AUTOMATICA-DE-METADADOS
 relaciona_se_com:
-  - ROADMAP
+  - GOV-002
   - MKDOCS
 substitui: []
 substituido_por: null
@@ -65,7 +65,7 @@ A navegação atual contém **38 documentos Markdown**.
 |---|---:|---|
 | Entrada e publicação | 2 | README sincronizado editorialmente; metadados ainda pendentes |
 | Princípios e fundamentos | 6 | núcleo consolidado; migração deve ser cautelosa |
-| Governança e arquitetura | 9 | seis documentos já possuem cabeçalho PPC-META-001 |
+| Governança e arquitetura | 9 | todos os nove documentos possuem cabeçalho PPC-META-001 |
 | Método | 10 | ciclo completo publicado; relações e versões ainda precisam ser normalizadas |
 | Ferramentas | 11 | uma ficha possui metadados legados; demais vínculos precisam ser normalizados |
 | Aplicações e evidências | 0 | camada ainda sem estudo de caso publicado |
@@ -103,9 +103,9 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 | PPC-000A | `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md` | ciclo de vida | presente | concluída nesta dimensão |
 | Arquitetura documental | `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md` | arquitetura do acervo | presente | concluída nesta dimensão |
 | Inventário e plano de migração | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` | linha de base e execução da migração | presente | concluída nesta dimensão |
-| Guia de contribuição | `CONTRIBUTING.md` | contribuições | a migrar | alta |
-| Código de conduta | `CODE_OF_CONDUCT.md` | conduta comunitária | a migrar | média |
-| Roadmap | `ROADMAP.md` | planejamento | a migrar | alta |
+| Guia de contribuição | `CONTRIBUTING.md` | contribuições | presente | concluída nesta dimensão |
+| Código de conduta | `CODE_OF_CONDUCT.md` | conduta comunitária | presente | concluída nesta dimensão |
+| Roadmap | `ROADMAP.md` | planejamento | presente | concluída nesta dimensão |
 
 ### 4.4 Método
 
@@ -153,7 +153,10 @@ Possuem cabeçalho estruturado alinhado ao PPC-META-001:
 - `PPC-META-001_METADADOS_E_VERSIONAMENTO.md`;
 - `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md`;
 - `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md`;
-- este documento, `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md`.
+- `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md`;
+- `ROADMAP.md`;
+- `CONTRIBUTING.md`;
+- `CODE_OF_CONDUCT.md`.
 
 ### 5.2 Metadados legados verificados
 
@@ -191,9 +194,9 @@ Quando uma informação não puder ser comprovada, deve ser registrada como `nul
 | DD-009 | datas e históricos anteriores não estão uniformemente registrados | risco de história retrospectiva fictícia | alta | preservar incerteza e usar commits como evidência |
 | DD-010 | execuções de push do workflow não são expostas pelo conector utilizado | publicação pode não ser confirmada pela auditoria automatizada | média | manter build estrito e verificar a execução diretamente no GitHub Actions |
 
-## 7. Correções resultantes da revisão de coerência
+## 7. Correções e avanços resultantes das revisões
 
-A revisão do repositório realizada nesta versão produziu as seguintes correções:
+As revisões do repositório produziram as seguintes correções e avanços:
 
 - sincronização do README com PPC-001 a PPC-008, Teoria da Mudança, ferramentas e governança documental;
 - alinhamento da arquitetura descrita no README às seis camadas do ARQ-001;
@@ -201,7 +204,9 @@ A revisão do repositório realizada nesta versão produziu as seguintes correç
 - classificação de `INDICADORES.md` na camada de ferramentas;
 - reconhecimento da Ficha PPC-003 como documento com metadados legados;
 - alinhamento da navegação, movendo Indicadores para a seção de ferramentas;
-- verificação do workflow `.github/workflows/pages.yml` e de sua construção com `mkdocs build --strict`.
+- verificação do workflow `.github/workflows/pages.yml` e de sua construção com `mkdocs build --strict`;
+- migração de `ROADMAP.md`, `CONTRIBUTING.md` e `CODE_OF_CONDUCT.md` para o PPC-META-001;
+- conclusão da Fase 1 do plano de migração documental.
 
 A configuração do workflow está presente e coerente com GitHub Pages, mas a execução mais recente ainda deve ser confirmada no histórico do GitHub Actions, pois o conector utilizado não retorna os eventos de push desse workflow.
 
@@ -224,7 +229,7 @@ A migração deve seguir estas regras:
 
 ### Fase 0 — Linha de base
 
-**Estado:** concluída e corrigida por esta versão.
+**Estado:** concluída e corrigida.
 
 Entregas:
 
@@ -236,25 +241,25 @@ Entregas:
 
 ### Fase 1 — Núcleo de governança
 
-**Estado:** em andamento — 2 de 5 documentos migrados.
+**Estado:** concluída — 5 de 5 documentos migrados.
 
 **Objetivo:** garantir que as regras que governam o restante do acervo sejam elas próprias rastreáveis.
 
-Lote recomendado:
+Lote executado:
 
 1. [x] `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md`;
 2. [x] `MODELO_DE_GOVERNANCA.md`;
-3. [ ] `ROADMAP.md`;
-4. [ ] `CONTRIBUTING.md`;
-5. [ ] `CODE_OF_CONDUCT.md`.
+3. [x] `ROADMAP.md`;
+4. [x] `CONTRIBUTING.md`;
+5. [x] `CODE_OF_CONDUCT.md`.
 
-Ações:
+Ações concluídas:
 
-- adicionar metadados;
-- preservar o conteúdo substantivo;
-- declarar relações com PPC-META-001, PPC-000A e ARQ-001;
-- registrar histórico inicial verificável;
-- distinguir estado documental de conclusão de tarefa no roadmap.
+- adição de metadados;
+- preservação do conteúdo substantivo;
+- declaração de relações com PPC-META-001, PPC-000A e ARQ-001;
+- registro de histórico inicial verificável;
+- distinção entre estado documental e conclusão de tarefas no roadmap.
 
 ### Fase 2 — Núcleo metodológico
 
@@ -388,11 +393,12 @@ Esta versão decide que:
 - nenhum arquivo será movido durante os primeiros lotes;
 - documentos sem evidência histórica não receberão datas ou aprovações retroativas;
 - metadados legados serão preservados e normalizados, não descartados;
+- a Fase 1 está encerrada e a próxima execução da migração será o lote 2A;
 - a estrutura física do repositório será decidida somente depois de metadados, catálogo e validação.
 
 ## 13. Próxima ação
 
-Completar a **Fase 1 — Núcleo de governança**, migrando `ROADMAP.md`, `CONTRIBUTING.md` e `CODE_OF_CONDUCT.md`, sem alterar substantivamente suas regras.
+Executar a **Fase 2A — Núcleo metodológico**, migrando `CICLO_DO_PRAGMATISMO_CIVICO.md`, PPC-001 a PPC-004 e `MODELO_DE_TEORIA_DA_MUDANCA.md`, em lotes pequenos e com verificação de dependências.
 
 ## 14. Histórico de alterações
 
@@ -401,3 +407,4 @@ Completar a **Fase 1 — Núcleo de governança**, migrando `ROADMAP.md`, `CONTR
 | 0.1.0 | 2026-07-17 | inicial | Inventário inicial, dívida documental e plano progressivo de migração | Projeto Pragmatismo Cívico |
 | 0.2.0 | 2026-07-17 | compatível | Atualização do inventário e registro da migração do PPC-000 e do Modelo de Governança | Projeto Pragmatismo Cívico |
 | 0.3.0 | 2026-07-17 | compatível | Correção das camadas, reconhecimento de metadados legados e registro da revisão de coerência do README e da navegação | Projeto Pragmatismo Cívico |
+| 0.4.0 | 2026-07-17 | compatível | Conclusão da Fase 1 com a migração do roadmap, guia de contribuição e código de conduta | Projeto Pragmatismo Cívico |
