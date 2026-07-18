@@ -1,3 +1,38 @@
+---
+id: PPC-008
+titulo: Aprendizagem Institucional e Melhoria Contínua
+versao: 0.1.0
+status: rascunho
+tipo: padrao-metodologico
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-004
+  - MODELO-TDM-001
+  - PPC-005
+  - PPC-006
+  - PPC-007
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-001
+relaciona_se_com:
+  - PPC-000A
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md
+---
+
 # PPC-008 — Aprendizagem Institucional e Melhoria Contínua
 
 ## 1. Objetivo
@@ -126,3 +161,9 @@ A aprendizagem institucional atende ao PPC-008 quando:
 - atualiza a documentação correspondente;
 - permite verificar posteriormente se a melhoria funcionou;
 - retroalimenta um novo ciclo decisório.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do padrão | Projeto Pragmatismo Cívico |
