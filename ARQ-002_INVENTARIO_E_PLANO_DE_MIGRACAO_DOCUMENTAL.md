@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.19.0
+versao: 0.20.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -23,6 +23,7 @@ relaciona_se_com:
   - GOV-002
   - GOV-005
   - GOV-006
+  - GOV-007
   - MKDOCS
   - PORTAL-INICIO
   - GUIA-COMECAR
@@ -36,26 +37,27 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 7 estão concluídas. Os 44 documentos públicos estão identificados, versionados, catalogados e submetidos a validação automática. A estrutura física foi decidida no ARQ-003, o processo de propostas foi publicado no GOV-005 e a revisão e aprovação são governadas pelo GOV-006.
+Rascunho ativo. As Fases 0 a 7 estão concluídas. Os **47 documentos públicos** estão identificados, versionados, catalogados e submetidos a validação automática.
 
-O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. Esse bloqueio operacional não invalida o acervo nem a compilação.
+A estrutura física é governada pelo ARQ-003; propostas pelo GOV-005; revisão e aprovação pelo GOV-006; e candidatura, elegibilidade e cadastro de revisores pelo GOV-007.
+
+O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. O cadastro público existe, mas não possui pessoa elegível ou ativa.
 
 ## 1. Objetivo
 
-Manter um inventário verificável do acervo, de sua arquitetura, automação, dívida e evolução, preservando URLs e histórico e evitando mudanças sem benefício demonstrado.
+Manter inventário verificável do acervo, de sua arquitetura, automação, dívida e evolução, preservando URLs e histórico e evitando mudanças sem benefício demonstrado.
 
 ## 2. Fontes canônicas
 
-O processo utiliza:
-
-- `mkdocs.yml` para a navegação pública;
-- metadados estruturados de cada documento;
+- `mkdocs.yml` para a navegação;
+- metadados estruturados dos documentos;
 - `CATALOGO_DOCUMENTAL.md` para a visão consolidada;
-- GOV-005 para propostas de mudança;
+- GOV-005 para propostas;
 - GOV-006 para revisão, aprovação e verificação;
+- GOV-007 para o programa de revisores;
+- `CADASTRO_PUBLICO_DE_REVISORES.md` para elegibilidade e disponibilidade;
 - ARQ-003 para caminhos e diretórios;
-- a branch padrão como fonte canônica;
-- commits, status e artefatos da CI como evidência operacional.
+- branch padrão, commits, status e artefatos da CI como evidência operacional.
 
 ## 3. Resumo do acervo público
 
@@ -63,13 +65,13 @@ O processo utiliza:
 |---|---:|---|
 | Publicação e acesso | 3 | página inicial, guia e catálogo conformes |
 | Princípios e fundamentos | 6 | todos conformes |
-| Governança e arquitetura | 12 | inclui GOV-005, GOV-006 e ARQ-003 |
+| Governança e arquitetura | 14 | inclui GOV-005 a GOV-007, cadastro e ARQ-003 |
 | Método | 10 | todos conformes |
-| Ferramentas | 13 | inclui as fichas GOV-005 e GOV-006 |
+| Ferramentas | 14 | inclui FICHAS GOV-005 a GOV-007 |
 | Aplicações e evidências | 0 | nenhum estudo de caso oficial publicado |
-| **Total** | **44** | **44 documentos catalogados e validados** |
+| **Total** | **47** | **47 documentos catalogados e validados** |
 
-Quarenta e três documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável.
+Quarenta e seis documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente.
 
 ## 4. Inventário resumido
 
@@ -77,8 +79,8 @@ Quarenta e três documentos usam cabeçalho YAML. O `README.md` utiliza represen
 
 | Documento | Identificador | Versão |
 |---|---|---:|
-| Página inicial | `PORTAL-INICIO` | 0.7.0 |
-| Guia de início | `GUIA-COMECAR` | 0.7.0 |
+| Página inicial | `PORTAL-INICIO` | 0.8.0 |
+| Guia de início | `GUIA-COMECAR` | 0.8.0 |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
 
 ### 4.2 Princípios e fundamentos
@@ -98,42 +100,30 @@ Quarenta e três documentos usam cabeçalho YAML. O `README.md` utiliza represen
 |---|---|---:|
 | Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
 | Modelo de Governança | `GOV-001` | 0.1.0 |
-| Roadmap | `GOV-002` | 0.15.0 |
-| Guia de Contribuição | `GOV-003` | 0.3.0 |
+| Roadmap | `GOV-002` | 0.16.0 |
+| Guia de Contribuição | `GOV-003` | 0.4.0 |
 | Código de Conduta | `GOV-004` | 0.1.0 |
 | Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
 | Política de Revisão e Aprovação | `GOV-006` | 0.1.0 |
+| Programa e Cadastro de Revisores | `GOV-007` | 0.1.0 |
+| Cadastro Público de Revisores | `CADASTRO-REVISORES` | 0.1.1 |
 | Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
 | Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
 | Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.19.0 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.20.0 |
 | Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
 
-| Documento | Identificador | Versão |
-|---|---|---:|
-| Ciclo do Pragmatismo Cívico | `CICLO-PC-001` | 0.1.0 |
-| PPC-001 | `PPC-001` | 0.1.1 |
-| PPC-002 | `PPC-002` | 0.1.0 |
-| PPC-003 | `PPC-003` | 0.1.0 |
-| PPC-004 | `PPC-004` | 0.1.0 |
-| Teoria da Mudança | `MODELO-TDM-001` | 0.1.0 |
-| PPC-005 | `PPC-005` | 0.1.0 |
-| PPC-006 | `PPC-006` | 0.1.0 |
-| PPC-007 | `PPC-007` | 0.1.0 |
-| PPC-008 | `PPC-008` | 0.1.1 |
+O método permanece composto por `CICLO-PC-001`, PPC-001 a PPC-008 e `MODELO-TDM-001`, nas versões registradas no catálogo.
 
 ### 4.5 Ferramentas
 
-| Documento | Identificador | Versão |
-|---|---|---:|
-| Fichas PPC-001 a PPC-008 | `FICHA-PPC-001` a `FICHA-PPC-008` | versões vigentes no catálogo |
-| Ficha de Teoria da Mudança | `FICHA-TDM-001` | 0.1.0 |
-| Ficha de Proposta de Mudança | `FICHA-GOV-005` | 0.1.0 |
-| Registro de Revisão e Aprovação | `FICHA-GOV-006` | 0.1.0 |
-| Matriz de avaliação | `MATRIZ-PPC-001` | 0.1.0 |
-| Indicadores | `MODELO-INDICADORES-001` | 0.1.0 |
+O acervo contém as fichas PPC-001 a PPC-008, Ficha de Teoria da Mudança, matriz, indicadores e:
+
+- `FICHA-GOV-005` — proposta de mudança;
+- `FICHA-GOV-006` — revisão e aprovação;
+- `FICHA-GOV-007` — candidatura e avaliação de revisor.
 
 ## 5. Infraestrutura de validação
 
@@ -142,48 +132,38 @@ Quarenta e três documentos usam cabeçalho YAML. O `README.md` utiliza represen
 | `scripts/generate_catalog.py` | gera o catálogo a partir da navegação e dos metadados |
 | `scripts/validate_metadata_graph.py` | valida campos, formatos, histórico, relações, substituições e ciclos |
 | `scripts/validate_links.py` | valida destinos internos e âncoras |
-| `scripts/validate_issue_forms.py` | valida formulário de issue e template de pull request |
+| `scripts/validate_issue_forms.py` | valida os formulários canônicos e o template de pull request |
 | `scripts/generate_validation_report.py` | produz relatório consolidado e dívida manual conhecida |
-| `scripts/analyze_repository_structure.py` | calcula o impacto de migração física por camada |
-| `scripts/prepare_mkdocs.py` | prepara a árvore temporária compatível com MkDocs |
-| `.github/workflows/pages.yml` | valida, analisa, compara catálogo, compila e empacota o portal |
+| `scripts/analyze_repository_structure.py` | calcula o impacto de migração física |
+| `scripts/prepare_mkdocs.py` | prepara a árvore temporária do portal |
+| `.github/workflows/pages.yml` | valida, analisa, compara catálogo, compila e empacota |
 
-## 6. Governança de mudanças
+A validação dos formulários exige campos canônicos da proposta e da candidatura, declarações obrigatórias e salvaguardas contra publicação de dados pessoais sensíveis.
 
-O GOV-005 estabelece:
+## 6. Governança de mudanças e revisões
 
-- identificadores `PM-AAAA-NNN`;
-- tipos e níveis de impacto;
-- triagem e admissibilidade;
-- fluxos simplificado, ordinário e reforçado;
-- consulta, implementação, reversão e reconsideração.
+O GOV-005 governa proposta, triagem, consulta, implementação, reversão e reconsideração.
 
-O GOV-006 estabelece:
+O GOV-006 governa funções, competência, independência, conflitos, quórum, decisão e verificação.
 
-- funções de secretaria, relatoria, revisão, decisão, implementação e verificação;
-- competência, independência, conflitos, impedimentos e recusas;
-- quórum e maiorias proporcionais ao impacto;
-- limites do regime provisório;
-- critérios para constituir instância plural permanente;
-- registro, emergência e reconsideração.
+O GOV-007 governa candidatura, elegibilidade, disponibilidade, proteção de dados, formação de painéis, revisão periódica e saída do cadastro.
 
-A `FICHA-GOV-005` registra a proposta. A `FICHA-GOV-006` registra composição, quórum, votos, decisão, implementação e verificação. O formulário de issue e o template de pull request operacionalizam a entrada e a implementação.
+O cadastro começa vazio. Mantenedores e autores não são incluídos automaticamente.
 
 ## 7. Validação automática
 
 A CI verifica:
 
-- campos obrigatórios, versões, estados, datas e compatibilidade;
-- responsáveis, histórico e unicidade de identificadores;
-- existência e reciprocidade das relações obrigatórias;
-- substituições e ciclos de dependência;
+- campos, versões, estados, datas, compatibilidade e históricos;
+- identificadores, dependências, reciprocidade, substituições e ciclos;
 - links internos e âncoras;
-- formulário YAML de issue;
-- estrutura mínima do template de pull request;
-- correspondência entre catálogo gerado e publicado;
+- formulários de proposta e candidatura;
+- salvaguardas públicas de privacidade;
+- template de pull request;
+- correspondência do catálogo;
 - preparação e `mkdocs build --strict --clean`.
 
-São registrados os status:
+Status registrados:
 
 - `documentation/validation`;
 - `documentation/catalog`;
@@ -191,13 +171,7 @@ São registrados os status:
 
 ## 8. Estrutura física
 
-O ARQ-003 preserva os caminhos existentes e determina:
-
-- aplicações novas em `casos/`;
-- relatórios oficiais em `relatorios/`;
-- automações em `scripts/`;
-- ativos em `docs/assets/`;
-- reavaliação após três casos oficiais, 60 documentos ou evidência de custo material.
+O ARQ-003 preserva caminhos existentes e determina aplicações em `casos/`, relatórios em `relatorios/`, automações em `scripts/` e ativos em `docs/assets/`.
 
 ## 9. Dívida documental e operacional
 
@@ -206,15 +180,17 @@ O ARQ-003 preserva os caminhos existentes e determina:
 | DD-005 | acervo predominantemente na raiz | controlada | estrutura híbrida do ARQ-003 |
 | DD-008 | ausência de estudos de caso | aberta, alta | preparar primeiro caso demonstrativo |
 | DD-009 | datas históricas incompletas | controlada | preservar `null` e commits |
-| DD-015 | README incompatível com front matter comum | controlada | representação equivalente reconhecida |
+| DD-015 | README sem front matter convencional | controlada | representação equivalente reconhecida |
 | DD-018 | GitHub Pages não habilitado | aberta | issue #1 |
-| DD-028 | mudanças relevantes não possuíam processo operacional único | resolvida | GOV-005, ficha e formulário publicados |
-| DD-029 | formulário poderia depender de rótulo inexistente | resolvida | dependência removida |
-| DD-030 | GOV-003 e GOV-005 formariam ciclo obrigatório | resolvida | GOV-003 permanece dependente; GOV-005 apenas se relaciona ao guia |
-| DD-031 | ausência de política permanente de revisão e aprovação | resolvida | GOV-006 e FICHA-GOV-006 publicados |
-| DD-032 | ausência de instância plural constituída | aberta, controlada | regime provisório limita decisões críticas e fundacionais |
-| DD-033 | ausência de cadastro público de revisores elegíveis | aberta | criar programa e registro de revisores |
-| DD-034 | pull requests não possuíam estrutura de governança comum | resolvida | template publicado e validado pela CI |
+| DD-028 | ausência de processo de mudança | resolvida | GOV-005 |
+| DD-031 | ausência de política de revisão | resolvida | GOV-006 |
+| DD-032 | ausência de instância plural | aberta, controlada | regime provisório limita decisões críticas |
+| DD-033 | ausência de programa e cadastro de revisores | resolvida | GOV-007, ficha, formulário e cadastro publicados |
+| DD-034 | pull requests sem estrutura comum | resolvida | template publicado e validado |
+| DD-035 | cadastro sem revisor elegível ou ativo | aberta, alta | realizar primeira chamada e avaliações públicas |
+| DD-036 | ausência de canal privado para informação confidencial | aberta | não coletar dados confidenciais por issue; definir canal antes de necessidade real |
+| DD-037 | formulário de candidatura teve YAML inválido | resolvida | indentação e placeholder corrigidos; contrato incorporado à CI |
+| DD-038 | saída da FICHA-GOV-007 não era recíproca | resolvida | cadastro passou a depender da ficha |
 
 ## 10. Plano progressivo
 
@@ -225,22 +201,21 @@ O ARQ-003 preserva os caminhos existentes e determina:
 | 6 | validação automática | concluída |
 | 7 | estrutura física | concluída |
 
-A evolução é governada pelo GOV-005 e pelo GOV-006. Alterações futuras devem possuir proposta formal quando ultrapassarem o fluxo editorial simplificado e revisão proporcional ao impacto.
+A evolução é governada pelos GOV-005 a GOV-007, com rigor proporcional e limites explícitos de capacidade.
 
 ## 11. Próxima ação
 
-Criar o cadastro e o programa público de revisores, incluindo candidatura, competência, vínculos, disponibilidade, termos de participação, proteção de dados e critérios para formação dos primeiros painéis. Em paralelo, preparar o primeiro estudo de caso demonstrativo.
+Selecionar e documentar o primeiro estudo de caso demonstrativo e realizar a primeira chamada pública de revisores, sem admitir pessoas automaticamente ou coletar dados confidenciais em issues.
 
 ## 12. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-17 | inicial | Inventário inicial, dívida documental e plano progressivo | Projeto Pragmatismo Cívico |
-| 0.2.0 a 0.14.1 | 2026-07-17 a 2026-07-18 | compatível | Migração, cobertura e sincronizações progressivas do acervo | Projeto Pragmatismo Cívico |
+| 0.1.0 | 2026-07-17 | inicial | Inventário inicial, dívida e plano progressivo | Projeto Pragmatismo Cívico |
+| 0.2.0 a 0.14.1 | 2026-07-17 a 2026-07-18 | compatível | Migração, cobertura e sincronizações progressivas | Projeto Pragmatismo Cívico |
 | 0.15.0 | 2026-07-18 | compatível | Conclusão da Fase 5 e estabilização do build | Projeto Pragmatismo Cívico |
-| 0.15.1 | 2026-07-18 | correção | Verificação de deriva do catálogo | Projeto Pragmatismo Cívico |
 | 0.16.0 | 2026-07-18 | compatível | Conclusão da Fase 6 | Projeto Pragmatismo Cívico |
-| 0.16.1 | 2026-07-18 | correção | Sincronização final da validação | Projeto Pragmatismo Cívico |
-| 0.17.0 | 2026-07-18 | compatível | Conclusão da Fase 7 e decisão pela estrutura híbrida | Projeto Pragmatismo Cívico |
-| 0.18.0 | 2026-07-18 | compatível | Publicação do GOV-005, da ficha de proposta e da validação de formulários de issue | Projeto Pragmatismo Cívico |
-| 0.19.0 | 2026-07-18 | compatível | Publicação do GOV-006, do registro de revisão e do template de pull request | Projeto Pragmatismo Cívico |
+| 0.17.0 | 2026-07-18 | compatível | Conclusão da Fase 7 | Projeto Pragmatismo Cívico |
+| 0.18.0 | 2026-07-18 | compatível | Publicação do GOV-005 e instrumentos | Projeto Pragmatismo Cívico |
+| 0.19.0 | 2026-07-18 | compatível | Publicação do GOV-006 e instrumentos | Projeto Pragmatismo Cívico |
+| 0.20.0 | 2026-07-18 | compatível | Publicação do GOV-007, ficha, formulário, cadastro e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
