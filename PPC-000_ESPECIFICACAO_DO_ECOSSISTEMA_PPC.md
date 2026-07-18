@@ -35,6 +35,8 @@ Todo PPC deve conter:
 - dependências;
 - ferramentas associadas.
 
+A estrutura, a sintaxe e as regras detalhadas desses elementos são definidas pelo `PPC-META-001_METADADOS_E_VERSIONAMENTO.md`.
+
 ## 4. Estados do ciclo de vida
 
 Um PPC pode assumir os seguintes estados:
@@ -132,6 +134,8 @@ Mudanças incompatíveis devem:
 - oferecer orientação de transição;
 - preservar versões anteriores para auditoria.
 
+O detalhamento operacional do versionamento, da compatibilidade e da migração é definido pelo `PPC-META-001_METADADOS_E_VERSIONAMENTO.md`.
+
 ## 8. Critérios para criação de um novo PPC
 
 Uma proposta deve demonstrar:
@@ -197,8 +201,20 @@ Toda mudança deve registrar:
 - impactos esperados;
 - data de revisão futura.
 
+Os metadados, o histórico e a compatibilidade da mudança devem seguir o PPC-META-001.
+
 ## 14. Regra de simplicidade
 
 > Nenhum PPC deve existir apenas para aumentar formalidade documental.
 
 Padrões devem melhorar decisões, proteger direitos, aumentar transparência ou preservar aprendizado. Caso contrário, devem ser simplificados ou removidos.
+
+## 15. Padrões complementares
+
+O PPC-000 estabelece a governança geral do ecossistema e pode ser detalhado por padrões transversais, sem transferir ou alterar seus princípios fundamentais.
+
+Atualmente, complementa este documento:
+
+- `PPC-META-001_METADADOS_E_VERSIONAMENTO.md` — identificação, metadados, histórico, versionamento, compatibilidade e migração documental.
+
+O ciclo de vida completo dos padrões será formalizado em documento próprio, mantendo coerência com os estados definidos neste PPC.
