@@ -99,14 +99,15 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 
 ### Entregas previstas
 
-- processo formal de propostas de mudança;
-- governança de versões;
-- política de revisão e aprovação;
-- ciclo de vida formal dos PPCs;
-- conselho consultivo plural;
-- regras sobre conflitos de interesse;
-- fóruns de discussão pública;
-- programa de colaboradores e revisores.
+- [x] PPC-META-001 — metadados e versionamento dos padrões;
+- [ ] processo formal de propostas de mudança;
+- [ ] governança de versões;
+- [ ] política de revisão e aprovação;
+- [ ] ciclo de vida formal dos PPCs;
+- [ ] conselho consultivo plural;
+- [ ] regras sobre conflitos de interesse;
+- [ ] fóruns de discussão pública;
+- [ ] programa de colaboradores e revisores.
 
 ### Critério de conclusão
 
@@ -150,9 +151,9 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. desenvolver o PPC-META-001 — metadados e versionamento dos padrões;
-2. formalizar o ciclo de vida dos PPCs;
-3. consolidar a arquitetura documental do framework;
+1. formalizar o PPC-000A — ciclo de vida dos padrões;
+2. consolidar a arquitetura documental do framework;
+3. planejar a migração progressiva dos documentos para o PPC-META-001;
 4. criar a ficha padrão de indicadores;
 5. desenvolver o checklist de transparência e rastreabilidade;
 6. estruturar o protocolo de avaliação do próprio framework;
