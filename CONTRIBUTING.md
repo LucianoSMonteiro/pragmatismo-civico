@@ -1,7 +1,7 @@
 ---
 id: GOV-003
 titulo: Guia de Contribuição do Pragmatismo Cívico
-versao: 0.3.0
+versao: 0.4.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -18,6 +18,7 @@ depende_de:
   - ARQ-001
   - GOV-005
   - GOV-006
+  - GOV-007
 produz_entrada_para: []
 relaciona_se_com:
   - GOV-001
@@ -25,6 +26,8 @@ relaciona_se_com:
   - GOV-004
   - FICHA-GOV-005
   - FICHA-GOV-006
+  - FICHA-GOV-007
+  - CADASTRO-REVISORES
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -33,7 +36,7 @@ proxima_revisao: null
 
 # Contribuindo com o Pragmatismo Cívico
 
-Obrigado pelo interesse em contribuir. O Pragmatismo Cívico é um framework aberto, mas sua abertura não significa ausência de critérios. Toda contribuição deve ampliar a utilidade do projeto sem descaracterizar seus princípios fundadores.
+Obrigado pelo interesse em contribuir. A abertura do projeto não significa ausência de critérios. Toda contribuição deve ampliar utilidade sem descaracterizar princípios fundadores.
 
 ## 1. Antes de contribuir
 
@@ -45,185 +48,175 @@ Leia, nesta ordem:
 4. `SPECIFICATION.md`;
 5. `GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md`;
 6. `GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md`;
-7. este guia e o `CODE_OF_CONDUCT.md`.
+7. `GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md`, se pretende revisar;
+8. este guia e o `CODE_OF_CONDUCT.md`.
 
-Para mudanças formais, utilize a `FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md` ou o formulário **Proposta de mudança** disponível nas issues. Revisões e decisões moderadas ou superiores devem possuir registro compatível com a `FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md`.
+Para mudanças formais, use a `FICHA-GOV-005` ou o formulário **Proposta de mudança**. Revisões moderadas ou superiores usam a `FICHA-GOV-006`. Candidaturas a revisor usam a `FICHA-GOV-007` ou o formulário **Candidatura a revisor**.
 
 ## 2. Regra central
 
 > Novas propostas existem para concretizar os princípios fundadores, não para substituí-los silenciosamente.
 
-Uma contribuição deve preservar, no mínimo:
+Toda contribuição deve preservar:
 
-- o cidadão no centro;
-- a avaliação por resultados, não por rótulos ideológicos;
-- o uso crítico de evidências;
+- cidadão no centro;
+- avaliação por resultados e evidências;
 - transparência, auditabilidade e responsabilidade;
-- dignidade humana e direitos fundamentais;
+- dignidade e direitos;
 - sustentabilidade integral;
-- cooperação acima da polarização;
-- revisão e melhoria contínua;
-- neutralidade partidária do framework.
+- cooperação e pluralidade;
+- revisão e aprendizado;
+- neutralidade partidária.
 
 ## 3. Formas de contribuição
 
-São bem-vindas contribuições como:
+São bem-vindas:
 
-- correções de clareza, ortografia ou consistência;
-- referências técnicas e evidências relevantes;
-- aprimoramento de definições e métodos;
-- indicadores e instrumentos de avaliação;
-- modelos e checklists práticos;
+- correções de clareza, ortografia, acessibilidade ou links;
+- evidências e referências verificáveis;
+- aprimoramentos de métodos, indicadores e ferramentas;
 - estudos de caso documentados;
-- identificação de riscos, limitações e efeitos adversos;
-- traduções e melhorias de acessibilidade;
-- propostas de organização que reduzam duplicidade e complexidade.
+- identificação de riscos e limitações;
+- traduções;
+- revisão fundamentada;
+- candidatura ao programa público de revisores.
 
 ## 4. O que não será aceito
 
-Não serão aceitas contribuições que:
-
-- transformem o projeto em plataforma partidária ou eleitoral;
-- defendam pessoas, governos ou campos ideológicos como autoridades incontestáveis;
-- substituam evidências por slogans ou ataques pessoais;
-- ocultem custos, riscos, incertezas ou conflitos de interesse;
-- tratem eficiência como justificativa para violar direitos;
-- criem complexidade sem utilidade prática demonstrável;
-- dupliquem documentos ou conceitos sem necessidade;
-- manipulem dados ou usem referências de forma seletiva e enganosa.
+- propaganda partidária ou eleitoral;
+- ataques pessoais ou intimidação;
+- fabricação, manipulação ou ocultação de evidências;
+- ocultação de conflitos materiais;
+- violação de direitos em nome de eficiência;
+- complexidade sem utilidade demonstrável;
+- duplicação sem justificativa;
+- publicação de dados pessoais sensíveis desnecessários.
 
 ## 5. Teste de coerência
 
 Antes de enviar uma proposta, responda:
 
-1. Qual problema concreto esta contribuição resolve?
-2. Qual princípio fundador ela concretiza?
+1. Qual problema concreto resolve?
+2. Qual princípio concretiza?
 3. Já existe conteúdo com a mesma função?
-4. Que evidências ou experiências sustentam a proposta?
-5. Quais são suas limitações e riscos?
-6. Como seu valor poderá ser verificado?
-7. Ela simplifica ou complica o uso do framework?
+4. Que evidências ou experiências a sustentam?
+5. Quais limitações e riscos existem?
+6. Como seu valor será verificado?
+7. Simplifica ou complica o uso?
 8. Exige atualização de outros documentos?
-9. Pode gerar impacto desigual entre grupos ou territórios?
-10. Preserva a neutralidade partidária e os direitos fundamentais?
+9. Pode produzir impacto desigual?
+10. Preserva neutralidade e direitos?
 
 ## 6. Como propor mudanças
 
-### 6.1 Correções editoriais de baixo impacto
+### 6.1 Correções editoriais
 
-Correções de ortografia, formatação, acessibilidade ou links podem ser apresentadas diretamente em pull request quando não alterarem interpretação, obrigação, método ou compatibilidade.
-
-O pull request deve explicar o problema, o escopo e a ausência de efeito normativo. A CI deve ser aprovada antes da incorporação.
+Correções de baixo impacto podem ser apresentadas diretamente em pull request quando não alterarem interpretação, obrigação, método ou compatibilidade. A CI deve ser aprovada.
 
 ### 6.2 Mudanças formais
 
 Mudanças corretivas relevantes, metodológicas, arquiteturais, de governança, fundacionais, de ciclo de vida ou emergenciais seguem o GOV-005.
 
-A proposta deve ser aberta antes ou junto do trabalho de implementação e incluir:
-
-- problema demonstrado;
-- tipo e impacto;
-- estado atual e alteração pretendida;
-- princípios e documentos relacionados;
-- evidências e limitações;
-- alternativas consideradas, incluindo não alterar;
-- benefícios, riscos e salvaguardas;
-- compatibilidade e migração;
-- plano de implementação, verificação e reversão;
-- conflitos de interesse.
-
-A issue é o registro canônico da proposta. O pull request implementa a decisão, mas não substitui triagem, revisão ou justificativa pública.
+A issue é o registro canônico da proposta. O pull request implementa a decisão, mas não substitui triagem, revisão ou justificativa.
 
 ### 6.3 Revisão e aprovação
 
-A revisão e a decisão seguem o GOV-006. O rigor depende do impacto:
+A revisão segue o GOV-006. O rigor cresce com impacto, risco e irreversibilidade. Insuficiência de revisores deve ser declarada, não ocultada por reclassificação artificial.
 
-- baixo impacto: revisão distinta da autoria quando houver capacidade;
-- impacto moderado: ao menos duas manifestações fundamentadas;
-- impacto alto: painel ampliado, independência proporcional e plano de migração;
-- impacto crítico ou fundacional: fluxo reforçado, consulta pública e quórum permanente.
+### 6.4 Candidatura a revisor
 
-Enquanto a instância plural permanente não existir, propostas altas, críticas ou fundacionais permanecem sujeitas aos limites do regime provisório. A insuficiência de revisores deve ser declarada, não ocultada por reclassificação artificial.
+A candidatura segue o GOV-007 e deve ser aberta pelo formulário **Candidatura a revisor** ou pela `FICHA-GOV-007`.
+
+A issue é pública. Não inclua endereço, telefone, documento oficial, data de nascimento, informação médica, renda, contato privado ou dado de terceiro.
+
+A candidatura deve informar:
+
+- identificação pública;
+- competências e limites;
+- experiência pertinente;
+- contextos conhecidos;
+- vínculos e conflitos gerais;
+- idiomas;
+- disponibilidade;
+- consentimento para publicação mínima.
+
+Elegibilidade não garante convite, remuneração ou posição institucional. Mantenedores e autores não entram automaticamente no cadastro.
 
 ## 7. Mudanças no núcleo e nas aplicações
 
 ### Núcleo normativo
 
-Inclui a Carta de Princípios, a Especificação e o Framework de Referência. Mudanças nesses documentos são fundacionais, seguem fluxo reforçado e não podem adquirir estado estável por decisão unilateral enquanto não houver instância plural formalmente constituída.
+Carta, Especificação e Framework são fundacionais. Não podem adquirir estabilidade por decisão unilateral enquanto faltar instância plural.
 
-### Metodologias e ferramentas
+### Métodos e ferramentas
 
-Podem evoluir com maior frequência, desde que permaneçam compatíveis com o núcleo, tenham utilidade verificável e sigam o rigor proporcional do GOV-005 e do GOV-006.
+Podem evoluir com maior frequência, desde que permaneçam compatíveis, úteis e rastreáveis.
 
-### Aplicações e estudos de caso
+### Aplicações
 
-Devem declarar contexto, hipóteses, dados, limitações, versões utilizadas e resultados. Um caso específico não redefine automaticamente o framework inteiro.
+Devem declarar contexto, hipóteses, dados, limitações, versões e resultados. Novos casos serão publicados em `casos/`.
 
 ## 8. Evidências e referências
 
-Sempre que uma afirmação depender de dados ou pesquisa:
-
-- identifique a fonte;
-- prefira fontes primárias e verificáveis;
-- informe data e contexto;
-- não esconda evidências contrárias relevantes;
-- diferencie fato, interpretação, hipótese e opinião;
-- declare incertezas e limitações.
+- identifique fonte, data e contexto;
+- prefira fontes primárias;
+- diferencie fato, hipótese, interpretação e opinião;
+- declare incertezas e evidências contrárias relevantes;
+- não atribua mais força à evidência do que ela suporta.
 
 ## 9. Linguagem e acessibilidade
 
-Use linguagem clara, respeitosa e compreensível. Termos técnicos devem ser definidos ou ligados ao `GLOSSARIO.md`. Evite jargão desnecessário, retórica partidária e formulações que impeçam participação de pessoas não especialistas.
+Use linguagem clara, respeitosa e compreensível. Defina termos técnicos ou ligue-os ao Glossário. Evite jargão, retórica partidária e barreiras desnecessárias.
 
 ## 10. Estudos de caso
 
-Um estudo de caso deve conter, no mínimo:
+Um caso deve conter, no mínimo:
 
-1. problema público;
-2. população afetada;
-3. linha de base;
-4. alternativas consideradas;
-5. decisão e justificativa;
-6. custos, riscos e responsáveis;
-7. indicadores;
-8. resultados observados;
-9. limitações;
-10. lições aprendidas e revisão recomendada.
-
-Novos casos devem seguir a estrutura híbrida do ARQ-003 e ser publicados em `casos/` quando houver uma entrega real.
+1. problema e população afetada;
+2. linha de base;
+3. alternativas;
+4. decisão e justificativa;
+5. custos, riscos e responsáveis;
+6. indicadores;
+7. resultados;
+8. limitações;
+9. lições e revisão recomendada.
 
 ## 11. Conflitos de interesse
 
-Contribuidores, revisores e decisores devem declarar vínculos financeiros, partidários, profissionais, institucionais ou pessoais que possam influenciar materialmente uma proposta.
-
-Conflitos relevantes são tratados pelo GOV-006. Declaração pode ser suficiente para vínculo de baixa intensidade; conflito material pode exigir restrição, abstenção, impedimento ou substituição.
+Contribuidores, revisores e decisores devem declarar vínculos capazes de influenciar materialmente uma proposta. Conflito pode exigir declaração, restrição, abstenção, impedimento ou substituição.
 
 ## 12. Revisão
 
-As contribuições serão avaliadas por:
+As contribuições são avaliadas por:
 
-- coerência com os princípios fundadores;
+- coerência com princípios;
 - clareza e precisão;
 - qualidade das evidências;
-- utilidade prática;
-- proporcionalidade da complexidade;
-- impactos sobre direitos, equidade e sustentabilidade;
+- utilidade e custo metodológico;
+- direitos, equidade e sustentabilidade;
 - compatibilidade e reversibilidade;
 - capacidade de auditoria e manutenção;
-- conformidade da implementação com a decisão registrada;
-- competência, independência e quórum do processo decisório.
+- competência, independência e quórum;
+- correspondência da implementação com a decisão.
 
-Discordâncias fundamentadas são legítimas. O objetivo da revisão não é eliminar o dissenso, mas tornar decisões e justificativas públicas e verificáveis.
+Dissenso fundamentado deve ser preservado.
 
 ## 13. Pull requests
 
-O template de pull request deve ser preenchido de forma proporcional. Mudanças formais devem referenciar a proposta canônica, o registro de revisão, a compatibilidade, os conflitos e as evidências de CI.
+O template deve ser preenchido proporcionalmente. Mudanças formais referenciam proposta, registro de revisão, compatibilidade, conflitos, reversão e CI.
 
-A aprovação de uma proposta não aprova automaticamente qualquer implementação. O diff deve corresponder à decisão e às condições registradas.
+Aprovar a proposta não aprova automaticamente qualquer implementação. O diff deve corresponder à decisão.
 
-## 14. Histórico de alterações
+## 14. Privacidade e canais públicos
+
+Issues e pull requests são públicos. Enquanto não houver canal privado formal, não envie informação confidencial. Dados sensíveis devem ser omitidos, agregados ou tratados por processo específico antes da coleta.
+
+## 15. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva das regras de contribuição | Projeto Pragmatismo Cívico |
-| 0.2.0 | 2026-07-18 | compatível | Integração do GOV-005, da ficha canônica e do formulário de issue ao fluxo de contribuição | Projeto Pragmatismo Cívico |
-| 0.3.0 | 2026-07-18 | compatível | Integração do GOV-006, do registro de revisão e do template de pull request | Projeto Pragmatismo Cívico |
+| 0.1.0 | 2026-07-17 | inicial | Migração documental das regras de contribuição | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Integração do GOV-005 e do formulário de proposta | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Integração do GOV-006, registro de revisão e template de PR | Projeto Pragmatismo Cívico |
+| 0.4.0 | 2026-07-18 | compatível | Integração do GOV-007, candidatura pública, cadastro e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
