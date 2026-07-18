@@ -88,7 +88,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python -m unittest discover -s tests -p 'test_*.py' \
+          python -m unittest discover -s tests -p 'test_processar_chuva_cemaden.py' \
             > data-pipeline-test.log 2>&1
           status=$?
           cat data-pipeline-test.log
@@ -126,6 +126,51 @@ jobs:
 
       - name: Interromper após falha do pipeline de dados
         if: steps.data_pipeline.outputs.status != '0'
+        run: exit 1
+
+      - name: Testar pipeline geoespacial
+        id: geodata_pipeline
+        shell: bash
+        run: |
+          set +e
+          python -m unittest discover -s tests -p 'test_validar_geojson_subbacia.py' \
+            > geodata-pipeline-test.log 2>&1
+          status=$?
+          cat geodata-pipeline-test.log
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Preservar teste do pipeline geoespacial
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: geodata-pipeline-test
+          path: geodata-pipeline-test.log
+          retention-days: 14
+
+      - name: Registrar status do pipeline geoespacial
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "${{ steps.geodata_pipeline.outputs.status }}" == "0" ]]; then
+            state=success
+            description="Validador GeoJSON aprovado em testes sintéticos"
+          else
+            state=failure
+            description="Falha no pipeline geoespacial"
+          fi
+          gh api --method POST \
+            "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+            -f state="$state" \
+            -f context="geodata/pipeline" \
+            -f description="$description" \
+            -f target_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
+            > /dev/null || echo "::warning::Não foi possível registrar o status geoespacial."
+
+      - name: Interromper após falha do pipeline geoespacial
+        if: steps.geodata_pipeline.outputs.status != '0'
         run: exit 1
 
       - name: Analisar estrutura física do repositório
@@ -179,9 +224,9 @@ jobs:
           if [[ "${{ steps.catalog.outputs.status }}" == "0" ]]; then
             state=success
             description="Catálogo publicado sincronizado"
-          elif [[ "${{ steps.validation.outputs.status }}" != "0" ]]; then
+          elif [[ "${{ steps.validation.outputs.status }}" != "0" || "${{ steps.data_pipeline.outputs.status }}" != "0" || "${{ steps.geodata_pipeline.outputs.status }}" != "0" ]]; then
             state=error
-            description="Catálogo não verificado por falha documental"
+            description="Catálogo não verificado por falha anterior"
           else
             state=failure
             description="Catálogo publicado divergente"
@@ -228,9 +273,9 @@ jobs:
           if [[ "${{ steps.build.outputs.status }}" == "0" ]]; then
             state=success
             description="Portal compilado com mkdocs build --strict"
-          elif [[ "${{ steps.validation.outputs.status }}" != "0" ]]; then
+          elif [[ "${{ steps.validation.outputs.status }}" != "0" || "${{ steps.data_pipeline.outputs.status }}" != "0" || "${{ steps.geodata_pipeline.outputs.status }}" != "0" ]]; then
             state=error
-            description="Build não executado por falha documental"
+            description="Build não executado por falha anterior"
           elif [[ "${{ steps.catalog.outputs.status }}" != "0" ]]; then
             state=error
             description="Build não executado por catálogo divergente"
@@ -247,7 +292,7 @@ jobs:
             > /dev/null || echo "::warning::Não foi possível registrar o status explícito do build."
 
       - name: Interromper após falha do build
-        if: steps.build.outputs.status != '0' && steps.validation.outputs.status == '0' && steps.catalog.outputs.status == '0'
+        if: steps.build.outputs.status != '0' && steps.validation.outputs.status == '0' && steps.data_pipeline.outputs.status == '0' && steps.geodata_pipeline.outputs.status == '0' && steps.catalog.outputs.status == '0'
         run: |
           cat mkdocs-build.log
           exit 1
