@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.7.0
+versao: 0.8.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -66,7 +66,7 @@ A navegação atual contém **38 documentos Markdown**.
 | Publicação e acesso | 2 | README sincronizado editorialmente; metadados ainda pendentes |
 | Princípios e fundamentos | 6 | núcleo consolidado; migração deve ser cautelosa |
 | Governança e arquitetura | 9 | todos os nove documentos possuem cabeçalho PPC-META-001 |
-| Método | 10 | todos os dez documentos migrados; reciprocidade das dependências ainda será revisada |
+| Método | 10 | todos os dez documentos migrados e reciprocidade obrigatória verificada |
 | Ferramentas | 11 | Ficha PPC-003 normalizada; demais vínculos ainda precisam ser estruturados |
 | Aplicações e evidências | 0 | camada ainda sem estudo de caso publicado |
 | **Total** | **38** | migração necessária, sem alteração imediata de caminhos |
@@ -189,7 +189,7 @@ Quando uma informação não puder ser comprovada, deve ser registrada como `nul
 | ID | Problema | Risco | Prioridade | Tratamento proposto |
 |---|---|---|---|---|
 | DD-001 | 18 dos 38 documentos navegáveis ainda não possuem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | migração em lotes controlados |
-| DD-002 | as dependências do ciclo metodológico ainda precisam de revisão completa de reciprocidade | incoerência entre padrões | alta | executar o lote 2C |
+| DD-002 | reciprocidade das dependências obrigatórias do ciclo metodológico precisava ser verificada | incoerência entre padrões | resolvida | auditoria concluída no lote 2C; futura automação deve impedir regressões |
 | DD-003 | ferramentas não registram necessariamente a versão do padrão utilizada | aplicações podem ficar irreplicáveis | alta | adicionar campo de versão e vínculo |
 | DD-004 | identificadores e metadados ainda heterogêneos nas ferramentas remanescentes | automação e catálogo dificultados | média | normalizar progressivamente sem descartar dados úteis |
 | DD-005 | acervo predominantemente na raiz | manutenção futura pode ficar difícil | baixa no estágio atual | não mover arquivos antes de medir benefício |
@@ -215,7 +215,8 @@ As revisões do repositório produziram as seguintes correções e avanços:
 - correção dos relacionamentos canônicos em ARQ-001 e PPC-000A;
 - normalização do cabeçalho da Ficha PPC-003 sem alteração de seu conteúdo metodológico;
 - conclusão do lote 2A com a migração do ciclo, PPC-001 a PPC-004 e Modelo de Teoria da Mudança;
-- conclusão do lote 2B com a migração de PPC-005 a PPC-008.
+- conclusão do lote 2B com a migração de PPC-005 a PPC-008;
+- conclusão do lote 2C com a auditoria das dependências obrigatórias e da retroalimentação PPC-008 → PPC-001.
 
 A configuração do workflow está presente e coerente com GitHub Pages, mas a execução mais recente ainda deve ser confirmada no histórico do GitHub Actions, pois o conector utilizado não retorna os eventos de push desse workflow.
 
@@ -264,7 +265,7 @@ Lote executado:
 
 ### Fase 2 — Núcleo metodológico
 
-**Estado:** em andamento — lotes 2A e 2B concluídos; 10 de 10 documentos migrados; lote 2C pendente.
+**Estado:** concluída — lotes 2A, 2B e 2C finalizados; 10 de 10 documentos migrados.
 
 **Objetivo:** tornar o ciclo PPC rastreável ponta a ponta.
 
@@ -272,18 +273,42 @@ Lotes:
 
 - **2A — concluído:** ciclo, PPC-001 a PPC-004 e teoria da mudança;
 - **2B — concluído:** PPC-005 a PPC-008;
-- **2C — próximo:** revisão de reciprocidade das dependências.
+- **2C — concluído:** revisão de reciprocidade das dependências obrigatórias.
 
-Ações concluídas nos lotes 2A e 2B:
+Ações concluídas:
 
 - adição de metadados e versões;
 - declaração inicial de entradas e saídas;
 - identificação das ferramentas associadas;
 - preservação do estado `rascunho` por ausência de validação formal suficiente;
 - registro de compatibilidade como `inicial`;
-- preservação do conteúdo metodológico.
+- preservação do conteúdo metodológico;
+- verificação da regra do PPC-META-001 segundo a qual toda saída declarada para outro padrão deve possuir dependência correspondente no documento consumidor.
+
+#### Resultado da revisão 2C
+
+As relações obrigatórias declaradas foram verificadas da seguinte forma:
+
+| Documento produtor | Documento consumidor | Resultado |
+|---|---|---|
+| PPC-001 | PPC-002 | PPC-002 declara PPC-001 em `depende_de` |
+| PPC-001 | MODELO-TDM-001 | o modelo declara PPC-001 em `depende_de` |
+| PPC-002 | PPC-003 | PPC-003 declara PPC-002 em `depende_de` |
+| PPC-002 | MODELO-TDM-001 | o modelo declara PPC-002 em `depende_de` |
+| PPC-003 | PPC-004 | PPC-004 declara PPC-003 em `depende_de` |
+| PPC-004 | MODELO-TDM-001 | o modelo declara PPC-004 em `depende_de` |
+| MODELO-TDM-001 | PPC-005 | PPC-005 declara o modelo em `depende_de` |
+| PPC-005 | PPC-006 e PPC-007 | ambos declaram PPC-005 em `depende_de` |
+| PPC-006 | PPC-007 e PPC-008 | ambos declaram PPC-006 em `depende_de` |
+| PPC-007 | PPC-008 | PPC-008 declara PPC-007 em `depende_de` |
+
+A relação `PPC-008 → PPC-001` representa retroalimentação entre ciclos, e não dependência obrigatória para todo novo diagnóstico. Por isso, o PPC-008 registra a saída para PPC-001 e o PPC-001 registra PPC-008 como relação complementar, evitando uma dependência circular obrigatória.
+
+Relações em `relaciona_se_com` não precisam ser simétricas quando um dos documentos já registra a ligação por campo mais forte, como `depende_de` ou `produz_entrada_para`.
 
 ### Fase 3 — Ferramentas
+
+**Estado:** próxima.
 
 **Objetivo:** vincular cada instrumento à versão do padrão que operacionaliza.
 
@@ -395,12 +420,14 @@ Esta versão decide que:
 - a classificação por camada segue o ARQ-001, ainda que a posição no menu possa responder à lógica de uso;
 - nenhum arquivo será movido durante os primeiros lotes;
 - documentos sem evidência histórica não receberão datas ou aprovações retroativas;
-- a Fase 2B está concluída e a próxima execução da migração será o lote 2C;
+- a Fase 2 está concluída, incluindo a revisão de reciprocidade do lote 2C;
+- a retroalimentação PPC-008 → PPC-001 não cria dependência circular obrigatória;
+- a próxima execução da migração será a Fase 3 — Ferramentas;
 - a estrutura física do repositório será decidida somente depois de metadados, catálogo e validação.
 
 ## 13. Próxima ação
 
-Executar a **Fase 2C — Revisão de reciprocidade**, verificando e corrigindo as relações entre o ciclo, PPC-001 a PPC-008 e o Modelo de Teoria da Mudança.
+Executar a **Fase 3 — Ferramentas**, começando pelas fichas PPC-001, PPC-002, PPC-004 e Teoria da Mudança, antes de avançar para as fichas PPC-005 a PPC-008, matriz e indicadores.
 
 ## 14. Histórico de alterações
 
@@ -413,3 +440,4 @@ Executar a **Fase 2C — Revisão de reciprocidade**, verificando e corrigindo a
 | 0.5.0 | 2026-07-17 | compatível | Correção de identificadores canônicos, nomenclatura da sexta camada e normalização da Ficha PPC-003 | Projeto Pragmatismo Cívico |
 | 0.6.0 | 2026-07-17 | compatível | Conclusão da Fase 2A com a migração do ciclo, PPC-001 a PPC-004 e Modelo de Teoria da Mudança | Projeto Pragmatismo Cívico |
 | 0.7.0 | 2026-07-17 | compatível | Conclusão da Fase 2B com a migração de PPC-005 a PPC-008 | Projeto Pragmatismo Cívico |
+| 0.8.0 | 2026-07-17 | compatível | Conclusão da Fase 2C com auditoria da reciprocidade obrigatória e registro da retroalimentação do ciclo | Projeto Pragmatismo Cívico |
