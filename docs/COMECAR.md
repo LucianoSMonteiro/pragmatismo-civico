@@ -1,3 +1,31 @@
+---
+id: GUIA-COMECAR
+titulo: Começar no Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: guia
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+  - CICLO-PC-001
+  - ARQ-001
+  - PPC-META-001
+produz_entrada_para: []
+relaciona_se_com:
+  - PORTAL-INICIO
+  - PPC-000
+  - GOV-003
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Começar
 
 O Pragmatismo Cívico é um framework aberto para governança e decisões de interesse público baseadas em evidências, transparência, responsabilidade e aprendizado contínuo.
@@ -49,3 +77,9 @@ Toda contribuição deve declarar:
 ## Estado atual
 
 O portal encontra-se em versão preliminar. Sua função inicial é tornar o conhecimento existente encontrável, navegável e testável, sem duplicar as fontes oficiais do repositório.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, preservando as rotas e orientações existentes | Projeto Pragmatismo Cívico |
