@@ -42,6 +42,7 @@ LAYER_ORDER = [
     "Governança e arquitetura",
     "Método",
     "Ferramentas",
+    "Aplicações e evidências",
 ]
 
 LAYER_BY_PATH = {
@@ -65,6 +66,7 @@ LAYER_BY_PATH = {
     "GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md": "Governança e arquitetura",
     "GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md": "Governança e arquitetura",
     "CADASTRO_PUBLICO_DE_REVISORES.md": "Governança e arquitetura",
+    "GOV-008_PROTOCOLO_DE_SELECAO_E_CONDUCAO_DE_CASOS.md": "Governança e arquitetura",
     "CONTRIBUTING.md": "Governança e arquitetura",
     "CODE_OF_CONDUCT.md": "Governança e arquitetura",
     "ROADMAP.md": "Governança e arquitetura",
@@ -90,8 +92,11 @@ LAYER_BY_PATH = {
     "FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md": "Ferramentas",
     "FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md": "Ferramentas",
     "FICHA_GOV-007_CANDIDATURA_E_AVALIACAO_DE_REVISOR.md": "Ferramentas",
+    "FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md": "Ferramentas",
     "MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md": "Ferramentas",
     "INDICADORES.md": "Ferramentas",
+    "casos/README.md": "Aplicações e evidências",
+    "casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md": "Aplicações e evidências",
 }
 REQUIRED_FIELDS = ("id", "titulo", "versao", "status", "tipo", "responsaveis")
 
@@ -290,6 +295,10 @@ def generate_catalog(documents: list[Document]) -> str:
             "",
             "`GOV-003` → `GOV-005` → `FICHA-GOV-005` → `GOV-006` → `FICHA-GOV-006` → `GOV-007` → `FICHA-GOV-007` → `CADASTRO-REVISORES`.",
             "",
+            "### Conduzir casos e produzir evidências",
+            "",
+            "`GOV-008` → `FICHA-GOV-008` → `CASOS-INDEX` → `CASO-001` → `PPC-001`.",
+            "",
             "### Compreender a arquitetura documental",
             "",
             "`PPC-000` → `PPC-000A` → `PPC-META-001` → `ARQ-001` → `ARQ-002` → `ARQ-003` → `CATALOGO-DOCUMENTAL`.",
@@ -301,7 +310,8 @@ def generate_catalog(documents: list[Document]) -> str:
             "- documentos em `rascunho` ou `piloto` não devem ser apresentados como estáveis;",
             "- o cadastro público de revisores ainda não possui pessoa elegível ou ativa;",
             "- a instância plural permanente do GOV-006 ainda não foi constituída;",
-            "- a ausência de estudos de caso oficiais permanece uma limitação do framework.",
+            "- o CASO-001 está em preparação e ainda não contém diagnóstico ou resultados;",
+            "- não há estudo de caso concluído nem validação empírica suficiente.",
             "",
             "## Histórico de alterações",
             "",
