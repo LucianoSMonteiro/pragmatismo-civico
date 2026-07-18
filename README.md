@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.5.0
+versao: 0.6.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -21,6 +21,7 @@ relaciona_se_com:
   - GUIA-COMECAR
   - CATALOGO-DOCUMENTAL
   - ARQ-003
+  - GOV-005
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -46,7 +47,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os 40 documentos da navegação canônica estão identificados, versionados, catalogados e validados automaticamente. O ciclo PPC-001 a PPC-008, a Teoria da Mudança, as onze ferramentas e os padrões de governança estão disponíveis para revisão e aplicação experimental. A estrutura física foi avaliada no ARQ-003 e os caminhos existentes serão preservados. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público depende da ativação inicial do GitHub Pages registrada na issue #1.
+**Estado atual:** desenvolvimento aberto. Os 42 documentos da navegação canônica estão identificados, versionados, catalogados e validados automaticamente. O ciclo PPC-001 a PPC-008, a Teoria da Mudança, doze ferramentas e os padrões de governança estão disponíveis para revisão e aplicação experimental. O GOV-005 organiza propostas de mudança, mas a política permanente de revisão e a instância plural ainda não foram constituídas. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público depende da ativação inicial do GitHub Pages registrada na issue #1.
 
 </div>
 
@@ -78,7 +79,7 @@ Comece pelo diagnóstico e avance por alternativas, decisão, implementação, a
 
 ### Usar ferramentas
 
-Acesse fichas, matriz e indicadores para documentar e revisar decisões.
+Acesse fichas, matriz e indicadores para documentar, implementar e revisar decisões.
 
 [Explorar as ferramentas](FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md)
 
@@ -86,11 +87,11 @@ Acesse fichas, matriz e indicadores para documentar e revisar decisões.
 
 <div class="pc-card" markdown>
 
-### Contribuir
+### Propor uma mudança
 
-Participe com propostas rastreáveis, revisáveis e coerentes com os princípios fundadores.
+Registre problema, alternativas, riscos, compatibilidade, revisão, decisão e verificação.
 
-[Como contribuir](CONTRIBUTING.md)
+[Conhecer o processo](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md)
 
 </div>
 
@@ -182,20 +183,41 @@ A decisão será reavaliada após três casos oficiais, 60 documentos ou evidên
 | [PPC-007](PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md) | Avalia resultados e impactos. |
 | [PPC-008](PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md) | Converte evidências em aprendizagem. |
 
-## Governança documental
+## Governança documental e de mudanças
 
 | Recurso | Função |
 |---|---|
 | [PPC-000](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) | Estrutura o ecossistema de padrões. |
 | [PPC-000A](PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) | Define estados e transições. |
 | [PPC-META-001](PPC-META-001_METADADOS_E_VERSIONAMENTO.md) | Define metadados e versionamento. |
+| [GOV-005](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md) | Governa propostas, análise, decisão, implementação e verificação. |
+| [Ficha GOV-005](FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md) | Registra o ciclo completo de uma proposta. |
+| [Guia de Contribuição](CONTRIBUTING.md) | Orienta contribuições editoriais e formais. |
 | [ARQ-001](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | Define camadas e relações. |
 | [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | Acompanha cobertura, validação e dívida. |
 | [ARQ-003](ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md) | Governa caminhos e gatilhos de reorganização. |
 
+### Como uma mudança formal avança
+
+```text
+Problema → Proposta PM-AAAA-NNN → Triagem → Análise
+→ Consulta ou piloto, quando necessário → Decisão
+→ Implementação → Verificação → Encerramento
+```
+
+Mudanças fundacionais não podem adquirir estado estável por decisão unilateral enquanto não houver instância plural formalmente constituída.
+
 ## Validação automática
 
-A CI verifica metadados, versões, estados, histórico, relações, substituições, ciclos, links, catálogo e build estrito. Também produz uma análise do impacto de eventual migração física.
+A CI verifica:
+
+- metadados, versões, estados e históricos;
+- dependências, relações, substituições e ciclos;
+- links e âncoras;
+- formulário YAML de proposta de mudança;
+- catálogo publicado;
+- estrutura física;
+- `mkdocs build --strict --clean`.
 
 Status registrados:
 
@@ -207,7 +229,7 @@ Status registrados:
 
 As prioridades atuais são:
 
-- formalizar o processo de propostas de mudança;
+- criar a política permanente de revisão e aprovação;
 - selecionar e documentar o primeiro estudo de caso;
 - habilitar o GitHub Pages e confirmar o primeiro deploy — issue #1;
 - criar a ficha padrão de indicadores;
@@ -228,7 +250,7 @@ O repositório utiliza atualmente a licença MIT. A adequação entre essa licen
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.5.0
+versao: 0.6.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -247,6 +269,7 @@ relaciona_se_com:
   - GUIA-COMECAR
   - CATALOGO-DOCUMENTAL
   - ARQ-003
+  - GOV-005
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -267,4 +290,5 @@ proxima_revisao: null
 | 0.2.2 | 2026-07-18 | correção | Processamento Markdown do bloco colapsável | Projeto Pragmatismo Cívico |
 | 0.3.0 | 2026-07-18 | compatível | Inclusão do catálogo e atualização para 39 documentos | Projeto Pragmatismo Cívico |
 | 0.4.0 | 2026-07-18 | compatível | Registro da conclusão da validação automática | Projeto Pragmatismo Cívico |
-| 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003, atualização para 40 documentos e publicação da estrutura híbrida | Projeto Pragmatismo Cívico |
+| 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003 e atualização para 40 documentos | Projeto Pragmatismo Cívico |
+| 0.6.0 | 2026-07-18 | compatível | Inclusão do GOV-005, da ficha, do formulário e atualização para 42 documentos | Projeto Pragmatismo Cívico |
