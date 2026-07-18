@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.9.0
+versao: 0.10.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -28,6 +28,7 @@ relaciona_se_com:
   - CADASTRO-REVISORES
   - CASOS-INDEX
   - CASO-001
+  - CASO-001-PRONTIDAO
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -54,7 +55,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os **51 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O processo de mudanças, a política de revisão, o programa de revisores e o protocolo de casos estão publicados como rascunhos. O CASO-001, sobre drenagem urbana e alerta preventivo em Maricá/RJ, está apenas em preparação: não contém diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e não constitui instância plural. O deploy público depende da ativação inicial do GitHub Pages registrada na issue #1.
+**Estado atual:** desenvolvimento aberto. Os **52 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O CASO-001 foi reduzido preliminarmente à sub-bacia de Itapeba, com período de 2022-01-01 a 2026-06-30 e inventário inicial de fontes. O portão permanece fechado: faltam polígono oficial, dados técnicos completos, participação local e revisão independente. Não existe diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e o deploy público depende da ativação inicial do GitHub Pages na issue #1.
 
 </div>
 
@@ -86,9 +87,9 @@ Avance por diagnóstico, alternativas, decisão, implementação, avaliação e 
 
 ### Acompanhar o primeiro caso
 
-Veja a preparação, as lacunas e o portão que impede avançar sem dados e revisão suficientes.
+Veja o recorte de Itapeba, as fontes localizadas e os bloqueios que impedem iniciar o diagnóstico.
 
-[Consultar o CASO-001](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md)
+[Consultar o registro de prontidão](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md)
 
 </div>
 
@@ -190,40 +191,41 @@ Os caminhos existentes permanecem estáveis. Novas aplicações são publicadas 
 | [GOV-006](GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md) | competência, independência, quórum e decisão |
 | [Ficha GOV-006](FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md) | registro da revisão e aprovação |
 | [GOV-007](GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md) | candidatura, elegibilidade, disponibilidade e painéis |
-| [Ficha GOV-007](FICHA_GOV-007_CANDIDATURA_E_AVALIACAO_DE_REVISOR.md) | candidatura e avaliação |
 | [Cadastro de Revisores](CADASTRO_PUBLICO_DE_REVISORES.md) | registro público canônico, atualmente vazio |
 | [GOV-008](GOV-008_PROTOCOLO_DE_SELECAO_E_CONDUCAO_DE_CASOS.md) | seleção, prontidão, condução e encerramento de casos |
-| [Ficha GOV-008](FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md) | registro de seleção e portão de prontidão |
-| [Guia de Contribuição](CONTRIBUTING.md) | orientação para propostas, revisão e candidatura |
-
-### Fluxo de governança
-
-```text
-Problema → Proposta PM-AAAA-NNN → Triagem → Revisão GOV-006
-→ Decisão → Implementação → Verificação → Encerramento
-```
+| [Ficha GOV-008](FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md) | modelo de seleção e portão de prontidão |
+| [Guia de Contribuição](CONTRIBUTING.md) | orientação para propostas, revisão, candidatura e casos |
 
 ### Fluxo de casos
 
 ```text
-Seleção GOV-008 → Portão de prontidão → PPC-001 → ciclo metodológico
+Seleção GOV-008 → registro de prontidão → decisão do portão
+→ PPC-001 somente se aprovado → ciclo metodológico
 → revisão → publicação de evidências e limitações → encerramento
 ```
 
 ## Primeiro caso demonstrativo
 
-O [CASO-001](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) foi selecionado para preparar um estudo sobre drenagem urbana e alerta preventivo em Maricá/RJ.
+O [CASO-001](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) prepara um estudo sobre drenagem urbana e alerta preventivo na sub-bacia de Itapeba, em Maricá/RJ.
 
-Nesta versão:
+O [registro de prontidão](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md):
 
-- o território interno e o período ainda não estão delimitados;
-- as fontes ainda precisam ser verificadas;
-- não existe diagnóstico ou avaliação de órgão;
-- não foi escolhida tecnologia, obra ou fornecedor;
-- o cadastro de revisores ainda não oferece revisão independente;
-- o caso permanece impedido de iniciar o PPC-001 até cumprir o portão de prontidão.
+- refinou a pergunta decisória;
+- definiu período preliminar de 2022-01-01 a 2026-06-30;
+- identificou fontes municipais, Cemaden, INEA e ANA a verificar;
+- registrou plano inicial de dados, atores, riscos e conflitos;
+- manteve o caso em preparação.
 
-Consulte também o [Índice de Casos e Evidências](casos/README.md).
+Continuam pendentes:
+
+- polígono oficial da sub-bacia;
+- produtos técnicos e geometrias das intervenções;
+- séries pluviométricas coletadas e testadas;
+- registros administrativos agregados;
+- participação local;
+- revisão independente.
+
+Preparação não é diagnóstico. A issue #2 acompanha a próxima decisão do portão.
 
 ## Privacidade na candidatura e nos casos
 
@@ -252,15 +254,16 @@ Status registrados:
 
 ## Próximas entregas
 
-- completar o portão de prontidão do CASO-001;
-- realizar a primeira chamada pública de revisores;
-- delimitar território, período e fontes do caso;
+- obter o polígono oficial e os produtos técnicos de Itapeba;
+- coletar e testar séries pluviométricas;
+- confirmar interlocutores e participação local;
+- realizar a primeira chamada pública de revisores — issue #3;
+- emitir nova decisão do portão — issue #2;
 - habilitar o GitHub Pages — issue #1;
 - criar a ficha padrão de indicadores;
 - desenvolver o checklist de transparência;
 - estruturar o protocolo de avaliação do framework;
-- revisar a licença;
-- preparar versões para impressão.
+- revisar a licença.
 
 Consulte o [Roadmap](ROADMAP.md).
 
@@ -274,7 +277,7 @@ O repositório utiliza atualmente a licença MIT. Sua adequação para documenta
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.9.0
+versao: 0.10.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -300,6 +303,7 @@ relaciona_se_com:
   - CADASTRO-REVISORES
   - CASOS-INDEX
   - CASO-001
+  - CASO-001-PRONTIDAO
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -318,5 +322,6 @@ proxima_revisao: null
 | 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003 | Projeto Pragmatismo Cívico |
 | 0.6.0 | 2026-07-18 | compatível | Inclusão do GOV-005 | Projeto Pragmatismo Cívico |
 | 0.7.0 | 2026-07-18 | compatível | Inclusão do GOV-006 | Projeto Pragmatismo Cívico |
-| 0.8.0 | 2026-07-18 | compatível | Inclusão do GOV-007, cadastro, candidatura e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
-| 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008, da camada de aplicações e do CASO-001 em preparação | Projeto Pragmatismo Cívico |
+| 0.8.0 | 2026-07-18 | compatível | Inclusão do GOV-007 e cadastro | Projeto Pragmatismo Cívico |
+| 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008 e CASO-001 | Projeto Pragmatismo Cívico |
+| 0.10.0 | 2026-07-18 | compatível | Recorte de Itapeba, registro de prontidão e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
