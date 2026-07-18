@@ -1,7 +1,7 @@
 ---
 id: ARQ-001
 titulo: Arquitetura Documental do Framework
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -16,14 +16,14 @@ depende_de:
   - PPC-000A
   - PPC-META-001
 produz_entrada_para:
-  - PLANO-DE-MIGRACAO-DOCUMENTAL
+  - ARQ-002
 relaciona_se_com:
-  - MODELO-DE-GOVERNANCA
-  - ROADMAP
+  - GOV-001
+  - GOV-002
   - MKDOCS
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -71,6 +71,7 @@ Esta arquitetura deve ser interpretada em conjunto com:
 - `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md` — governa estados e transições;
 - `PPC-META-001_METADADOS_E_VERSIONAMENTO.md` — governa identificação, versão e relacionamentos;
 - `MODELO_DE_GOVERNANCA.md` — define responsabilidades e decisões institucionais;
+- `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` — inventaria o acervo e organiza a execução progressiva da migração;
 - `mkdocs.yml` — materializa a navegação pública do acervo.
 
 Em caso de conflito, documentos fundadores e normativos prevalecem sobre decisões de organização e navegação.
@@ -157,6 +158,7 @@ Define como o projeto é organizado, mantido, revisado e publicado.
 - `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md`;
 - `PPC-META-001_METADADOS_E_VERSIONAMENTO.md`;
 - `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md`;
+- `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md`;
 - `CONTRIBUTING.md`;
 - `CODE_OF_CONDUCT.md`;
 - `ROADMAP.md`.
@@ -528,3 +530,4 @@ Esta arquitetura não resolve sozinha:
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Primeira publicação da arquitetura documental | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-17 | compatível | Atualização das relações canônicas e incorporação do ARQ-002 à arquitetura publicada | Projeto Pragmatismo Cívico |
