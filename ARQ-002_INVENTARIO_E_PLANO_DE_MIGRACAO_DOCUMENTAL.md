@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.11.0
+versao: 0.12.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -63,13 +63,13 @@ A navegação atual contém **38 documentos Markdown**.
 
 | Camada | Quantidade | Situação geral |
 |---|---:|---|
-| Publicação e acesso | 2 | README sincronizado editorialmente; metadados ainda pendentes |
-| Princípios e fundamentos | 6 | núcleo consolidado; migração deve ser cautelosa |
+| Publicação e acesso | 2 | conteúdo sincronizado; metadados ainda pendentes |
+| Princípios e fundamentos | 6 | Framework e Carta migrados; quatro documentos pendentes |
 | Governança e arquitetura | 9 | todos os nove documentos possuem cabeçalho PPC-META-001 |
 | Método | 10 | todos os dez documentos migrados e reciprocidade obrigatória verificada |
 | Ferramentas | 11 | todas as onze ferramentas conformes; Fase 3 concluída |
 | Aplicações e evidências | 0 | camada ainda sem estudo de caso publicado |
-| **Total** | **38** | 30 documentos conformes e 8 ainda não migrados |
+| **Total** | **38** | 32 documentos conformes e 6 ainda não migrados |
 
 Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENSE`, ativos de estilo e automações em `.github/`. Eles são tratados como infraestrutura, não como documentos metodológicos.
 
@@ -84,43 +84,43 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 ### 4.2 Princípios e fundamentos
 
-| Documento | Caminho | Função | Metadados | Prioridade |
+| Documento | Identificador | Caminho | Metadados | Prioridade |
 |---|---|---|---|---|
-| Framework de referência | `FRAMEWORK_DE_REFERENCIA.md` | fonte conceitual superior | a migrar | crítica |
-| Teoria do Pragmatismo Cívico | `TEORIA_DO_PRAGMATISMO_CIVICO.md` | fundamento teórico | a migrar | alta |
-| Manifesto | `MANIFESTO.md` | declaração identitária | a migrar | média |
-| Carta de princípios | `CARTA_DE_PRINCIPIOS.md` | princípios normativos | a migrar | crítica |
-| Especificação | `SPECIFICATION.md` | especificação fundadora | a migrar | alta |
-| Glossário | `GLOSSARIO.md` | vocabulário oficial | a migrar | alta |
+| Framework de referência | `FRAMEWORK-DE-REFERENCIA` | `FRAMEWORK_DE_REFERENCIA.md` | presente | concluída nesta dimensão |
+| Carta de princípios | `CARTA-DE-PRINCIPIOS` | `CARTA_DE_PRINCIPIOS.md` | presente | concluída nesta dimensão |
+| Teoria do Pragmatismo Cívico | a definir na Fase 4B | `TEORIA_DO_PRAGMATISMO_CIVICO.md` | a migrar | alta |
+| Manifesto | a definir na Fase 4B | `MANIFESTO.md` | a migrar | média |
+| Especificação | `SPECIFICATION` proposto | `SPECIFICATION.md` | a migrar | alta |
+| Glossário | a definir na Fase 4B | `GLOSSARIO.md` | a migrar | alta |
 
 ### 4.3 Governança e arquitetura
 
-| Documento | Caminho | Função | Metadados | Prioridade |
-|---|---|---|---|---|
-| PPC-000 | `PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md` | metanorma do ecossistema PPC | presente | concluída nesta dimensão |
-| Modelo de governança | `MODELO_DE_GOVERNANCA.md` | governança institucional | presente | concluída nesta dimensão |
-| PPC-META-001 | `PPC-META-001_METADADOS_E_VERSIONAMENTO.md` | metadados e versões | presente | concluída nesta dimensão |
-| PPC-000A | `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md` | ciclo de vida | presente | concluída nesta dimensão |
-| Arquitetura documental | `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md` | arquitetura do acervo | presente | concluída nesta dimensão |
-| Inventário e plano de migração | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` | linha de base e execução da migração | presente | concluída nesta dimensão |
-| Guia de contribuição | `CONTRIBUTING.md` | contribuições | presente | concluída nesta dimensão |
-| Código de conduta | `CODE_OF_CONDUCT.md` | conduta comunitária | presente | concluída nesta dimensão |
-| Roadmap | `ROADMAP.md` | planejamento | presente | concluída nesta dimensão |
+| Documento | Identificador | Metadados |
+|---|---|---|
+| PPC-000 | `PPC-000` | presente |
+| Modelo de governança | `GOV-001` | presente |
+| PPC-META-001 | `PPC-META-001` | presente |
+| PPC-000A | `PPC-000A` | presente |
+| Arquitetura documental | `ARQ-001` | presente |
+| Inventário e plano de migração | `ARQ-002` | presente |
+| Guia de contribuição | `GOV-003` | presente |
+| Código de conduta | `GOV-004` | presente |
+| Roadmap | `GOV-002` | presente |
 
 ### 4.4 Método
 
-| Documento | Caminho | Relação principal | Metadados | Prioridade |
-|---|---|---|---|---|
-| Ciclo do Pragmatismo Cívico | `CICLO_DO_PRAGMATISMO_CIVICO.md` | visão integrada | presente | concluída nesta dimensão |
-| PPC-001 | `PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md` | diagnóstico | presente | concluída nesta dimensão |
-| PPC-002 | `PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md` | alternativas | presente | concluída nesta dimensão |
-| PPC-003 | `PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` | avaliação técnica | presente | concluída nesta dimensão |
-| PPC-004 | `PPC-004_DECISAO_E_JUSTIFICATIVA.md` | decisão | presente | concluída nesta dimensão |
-| Teoria da mudança | `MODELO_DE_TEORIA_DA_MUDANCA.md` | ponte entre decisão e implementação | presente | concluída nesta dimensão |
-| PPC-005 | `PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md` | implementação | presente | concluída nesta dimensão |
-| PPC-006 | `PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md` | monitoramento | presente | concluída nesta dimensão |
-| PPC-007 | `PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md` | avaliação | presente | concluída nesta dimensão |
-| PPC-008 | `PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md` | aprendizagem | presente | concluída nesta dimensão |
+| Documento | Identificador | Relação principal | Metadados |
+|---|---|---|---|
+| Ciclo do Pragmatismo Cívico | `CICLO-PC-001` | visão integrada | presente |
+| PPC-001 | `PPC-001` | diagnóstico | presente |
+| PPC-002 | `PPC-002` | alternativas | presente |
+| PPC-003 | `PPC-003` | avaliação técnica | presente |
+| PPC-004 | `PPC-004` | decisão | presente |
+| Teoria da mudança | `MODELO-TDM-001` | ponte entre decisão e implementação | presente |
+| PPC-005 | `PPC-005` | implementação | presente |
+| PPC-006 | `PPC-006` | monitoramento | presente |
+| PPC-007 | `PPC-007` | avaliação | presente |
+| PPC-008 | `PPC-008` | aprendizagem | presente |
 
 ### 4.5 Ferramentas
 
@@ -148,22 +148,19 @@ Nenhum estudo de caso, piloto ou relatório de aplicação está publicado na na
 
 Possuem cabeçalho estruturado alinhado ao PPC-META-001:
 
+- dois documentos de princípios e fundamentos;
 - os nove documentos de governança e arquitetura;
 - os dez documentos da camada de método;
 - as onze ferramentas da navegação canônica.
 
-A lista detalhada e as versões das ferramentas constam da seção 4.5.
-
 ### 5.2 Documentos ainda não migrados
 
-Os oito documentos restantes são:
+Os seis documentos restantes são:
 
 - `README.md`;
 - `docs/COMECAR.md`;
-- `FRAMEWORK_DE_REFERENCIA.md`;
 - `TEORIA_DO_PRAGMATISMO_CIVICO.md`;
 - `MANIFESTO.md`;
-- `CARTA_DE_PRINCIPIOS.md`;
 - `SPECIFICATION.md`;
 - `GLOSSARIO.md`.
 
@@ -173,16 +170,17 @@ A migração não deve presumir data histórica de criação, autoria individual
 
 | ID | Problema | Risco | Prioridade | Tratamento proposto |
 |---|---|---|---|---|
-| DD-001 | 8 dos 38 documentos navegáveis ainda não possuem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | executar Fase 4 |
+| DD-001 | 6 dos 38 documentos navegáveis ainda não possuem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | concluir fases 4B e 4C |
 | DD-002 | reciprocidade das dependências obrigatórias do ciclo metodológico precisava ser verificada | incoerência entre padrões | resolvida | auditoria concluída no lote 2C; futura automação deve impedir regressões |
 | DD-003 | matriz e indicadores não registravam versões dos documentos associados | aplicações poderiam ficar irreplicáveis | resolvida | identificadores e versões registrados no lote 3C |
-| DD-004 | vínculos das ferramentas apresentavam referências genéricas e heterogêneas | catálogo e automação poderiam refletir relações inconsistentes | resolvida nesta etapa | revisão conjunta concluída; futura automação deve validar identificadores |
+| DD-004 | vínculos das ferramentas apresentavam referências genéricas e heterogêneas | catálogo e automação poderiam refletir relações inconsistentes | resolvida | revisão conjunta concluída no lote 3C |
 | DD-005 | acervo predominantemente na raiz | manutenção futura pode ficar difícil | baixa no estágio atual | não mover arquivos antes de medir benefício |
 | DD-006 | ausência de catálogo documental gerado | localização depende do `mkdocs.yml` | média | criar catálogo após migração mínima |
 | DD-007 | ausência de validação automática de metadados e links | erros podem chegar ao portal | média | criar automação após estabilizar esquema |
 | DD-008 | camada de aplicações sem estudos de caso publicados | método sem validação empírica documentada | alta | preparar primeiro caso após ferramentas mínimas |
 | DD-009 | datas e históricos anteriores não estão uniformemente registrados | risco de história retrospectiva fictícia | alta | preservar incerteza e usar commits como evidência |
 | DD-010 | execuções de push do workflow não são expostas pelo conector utilizado | publicação pode não ser confirmada pela auditoria automatizada | média | manter build estrito e verificar a execução diretamente no GitHub Actions |
+| DD-011 | a seção 5 do Framework de Referência conserva descrições históricas que tratam documentos já publicados como futuros | leitores podem confundir arquitetura fundadora e arquitetura vigente | média | realizar revisão substantiva separada, com versionamento e teste de coerência; não corrigir silenciosamente durante migração de metadados |
 
 ## 7. Correções e avanços resultantes das revisões
 
@@ -192,14 +190,12 @@ As revisões do repositório produziram:
 - alinhamento da arquitetura descrita no README às seis camadas do ARQ-001;
 - correção das classificações do inventário e da navegação;
 - verificação da configuração do workflow com `mkdocs build --strict`;
-- conclusão da Fase 1 de governança;
-- conclusão dos lotes 2A, 2B e 2C do núcleo metodológico;
-- normalização das fichas PPC-001 a PPC-008 e da Ficha de Teoria da Mudança;
-- preservação dos estados `piloto` das fichas PPC-002 e PPC-003;
-- identificação da matriz como `MATRIZ-PPC-001`;
-- identificação dos indicadores como `MODELO-INDICADORES-001`;
-- correção dos vínculos genéricos das fichas PPC-006 e PPC-007;
-- conclusão da Fase 3 com onze de onze ferramentas conformes.
+- conclusão das Fases 1, 2 e 3;
+- normalização das onze ferramentas e de seus vínculos;
+- identificação da matriz e dos indicadores;
+- migração do Framework de Referência como `FRAMEWORK-DE-REFERENCIA`;
+- migração da Carta de Princípios como `CARTA-DE-PRINCIPIOS`;
+- preservação integral do conteúdo normativo dos dois documentos fundadores no lote 4A.
 
 A configuração do workflow está presente e coerente com GitHub Pages, mas sua execução mais recente deve ser confirmada diretamente no histórico do GitHub Actions, pois o conector utilizado não retorna eventos de push desse workflow.
 
@@ -208,7 +204,7 @@ A configuração do workflow está presente e coerente com GitHub Pages, mas sua
 A migração deve:
 
 1. não mover arquivos prematuramente;
-2. não alterar conteúdo metodológico apenas para adicionar metadados;
+2. não alterar conteúdo metodológico ou normativo apenas para adicionar metadados;
 3. não inventar datas, autores ou aprovações;
 4. preservar nomes e URLs consolidados;
 5. avançar em lotes pequenos e revisáveis;
@@ -232,21 +228,12 @@ A migração deve:
 
 **Estado:** concluída — lotes 2A, 2B e 2C finalizados; 10 de 10 documentos migrados.
 
-A revisão confirmou a reciprocidade das dependências obrigatórias. A retroalimentação PPC-008 → PPC-001 permanece uma relação complementar, sem criar dependência circular obrigatória.
-
 ### Fase 3 — Ferramentas
 
 **Estado:** concluída — lotes 3A, 3B e 3C finalizados; 11 de 11 ferramentas conformes.
 
-Lotes:
-
-- **3A — concluído:** fichas PPC-001 a PPC-004 e Teoria da Mudança, incluindo complementação da Ficha PPC-003;
-- **3B — concluído:** fichas PPC-005 a PPC-008;
-- **3C — concluído:** matriz, indicadores e revisão conjunta dos vínculos.
-
 A revisão conjunta confirmou que:
 
-- todas as ferramentas possuem identificador estável;
 - cada ficha declara seu padrão principal e a versão utilizada;
 - ferramentas multirreferenciadas registram todos os documentos e versões operacionalizados;
 - referências complementares utilizam identificadores canônicos quando estes existem;
@@ -254,15 +241,15 @@ A revisão conjunta confirmou que:
 
 ### Fase 4 — Fundamentos e entrada
 
-**Estado:** próxima.
+**Estado:** em andamento — lote 4A concluído; 2 de 8 documentos migrados.
 
-**Objetivo:** migrar documentos de maior autoridade sem alterar silenciosamente sua essência.
+Lotes:
 
-Lotes propostos:
-
-- **4A:** `FRAMEWORK_DE_REFERENCIA.md` e `CARTA_DE_PRINCIPIOS.md`;
-- **4B:** `TEORIA_DO_PRAGMATISMO_CIVICO.md`, `SPECIFICATION.md`, `MANIFESTO.md` e `GLOSSARIO.md`;
+- **4A — concluído:** `FRAMEWORK_DE_REFERENCIA.md` e `CARTA_DE_PRINCIPIOS.md`;
+- **4B — próximo:** `TEORIA_DO_PRAGMATISMO_CIVICO.md`, `SPECIFICATION.md`, `MANIFESTO.md` e `GLOSSARIO.md`;
 - **4C:** `README.md` e `docs/COMECAR.md`.
+
+O lote 4A preservou integralmente o conteúdo normativo. Atualizações substantivas ou correções da arquitetura histórica do Framework exigirão processo separado e versão compatível ou incompatível conforme o impacto.
 
 ### Fase 5 — Catálogo e navegação
 
@@ -320,12 +307,13 @@ Esta versão decide que:
 - nenhum arquivo será movido durante os primeiros lotes;
 - documentos sem evidência histórica não receberão datas ou aprovações retroativas;
 - as Fases 1, 2 e 3 estão concluídas;
-- a próxima execução será a Fase 4A;
+- o lote 4A está concluído com preservação estrita do conteúdo normativo;
+- a próxima execução será a Fase 4B;
 - a estrutura física será decidida somente depois de metadados, catálogo e validação.
 
 ## 13. Próxima ação
 
-Executar a **Fase 4A — Fundamentos**, migrando o Framework de Referência e a Carta de Princípios com preservação estrita do conteúdo normativo e das incertezas históricas.
+Executar a **Fase 4B — Fundamentos**, migrando a Teoria do Pragmatismo Cívico, a Especificação, o Manifesto e o Glossário, com identificação canônica e preservação das relações de autoridade.
 
 ## 14. Histórico de alterações
 
@@ -342,3 +330,4 @@ Executar a **Fase 4A — Fundamentos**, migrando o Framework de Referência e a 
 | 0.9.0 | 2026-07-17 | compatível | Conclusão do lote 3A | Projeto Pragmatismo Cívico |
 | 0.10.0 | 2026-07-18 | compatível | Conclusão do lote 3B e consolidação editorial do inventário | Projeto Pragmatismo Cívico |
 | 0.11.0 | 2026-07-18 | compatível | Conclusão do lote 3C, identificação da matriz e dos indicadores e encerramento da Fase 3 | Projeto Pragmatismo Cívico |
+| 0.12.0 | 2026-07-18 | compatível | Conclusão do lote 4A, migração do Framework e da Carta e registro da dívida editorial remanescente | Projeto Pragmatismo Cívico |
