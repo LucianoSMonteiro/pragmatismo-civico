@@ -1,7 +1,7 @@
 ---
 id: CASO-001-DADOS-CHUVA
 titulo: Protocolo de Aquisição e Qualidade de Dados Pluviométricos do CASO-001
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -19,11 +19,12 @@ depende_de:
 produz_entrada_para: []
 relaciona_se_com:
   - CASOS-INDEX
+  - CASO-001-FONTES
   - PPC-001
   - MODELO-INDICADORES-001
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 issue_acompanhamento: 4
 script_associado: scripts/processar_chuva_cemaden.py
@@ -194,15 +195,74 @@ Arquivos brutos ou derivados somente devem entrar na árvore pública após deci
 
 Até essa decisão, somente o protocolo, o processador e o fixture sintético permanecem públicos.
 
-## 12. Rastreamento
+## 12. Retenção e descarte local
 
+### 12.1 Princípios
+
+- retenção deve ser necessária, proporcional e vinculada à finalidade do caso;
+- arquivo bruto não é alterado, mas pode ser eliminado quando sua retenção deixar de ser necessária ou permitida;
+- manifesto, relatório e decisão de descarte preservam a memória sem exigir conservação indefinida dos dados;
+- obrigação legal, contratual, de auditoria ou preservação de evidência prevalece sobre os prazos ordinários;
+- material suspeito, não autorizado ou contendo dado pessoal desnecessário deve ser isolado imediatamente.
+
+### 12.2 Prazos ordinários
+
+| Categoria | Retenção mínima | Destino previsto |
+|---|---|---|
+| `raw/` — originais autorizados | durante o caso e por 12 meses após seu encerramento | preservar se necessário para auditoria; caso contrário, descartar com registro |
+| `processed/` — derivados não publicados | durante o caso e por 12 meses após o encerramento | publicar versão aprovada ou descartar |
+| `manifest/` — hashes e proveniência | durante o caso e por 24 meses após o encerramento | preservar no relatório final quando não houver restrição |
+| `reports/` — qualidade e revisão | durante o caso e por 24 meses após o encerramento | incorporar ao acervo público quando aprovado |
+| temporários, cópias intermediárias e duplicatas verificadas | até 30 dias após processamento e conferência de hash | eliminar |
+| fixture sintético e testes | enquanto o processador for mantido | preservar no repositório |
+| arquivo não autorizado, excessivo ou com dado sensível desnecessário | somente pelo tempo necessário para confirmar a ocorrência, no máximo 7 dias salvo obrigação de preservação | colocar em quarentena e eliminar com registro |
+
+Os prazos são máximos ordinários, não autorização automática para conservar. A revisão pode determinar descarte antecipado quando a finalidade terminar ou a retenção aumentar risco sem benefício.
+
+### 12.3 Revisão periódica
+
+Enquanto o caso estiver ativo, o responsável deve revisar o inventário local pelo menos a cada 90 dias e registrar:
+
+- categorias e quantidade de arquivos;
+- espaço ocupado;
+- existência de cópias e backups;
+- licença e restrições conhecidas;
+- necessidade de continuidade;
+- incidentes, acessos excepcionais e decisões de descarte.
+
+No encerramento, deve ser produzido inventário final com a destinação de cada conjunto.
+
+### 12.4 Procedimento de descarte
+
+1. identificar arquivo, categoria, caminho e hash quando disponível;
+2. confirmar que não existe obrigação de retenção ou litígio conhecido;
+3. registrar motivo, responsável e autorização;
+4. mover para quarentena local restrita por até sete dias, quando o risco não exigir eliminação imediata;
+5. eliminar a cópia principal e as cópias controladas;
+6. registrar data, método e limitações do descarte;
+7. verificar backups e registrar quando a expiração ocorrer apenas pelo ciclo normal do provedor.
+
+Não se deve prometer apagamento irrecuperável em SSD, armazenamento em nuvem ou sistema com snapshots quando essa propriedade não puder ser tecnicamente verificada. Nesses casos, o registro deve declarar a limitação e impedir novo acesso ou restauração deliberada.
+
+### 12.5 Backups, acesso e incidentes
+
+- backups seguem o mesmo prazo da fonte, com criptografia e acesso mínimo quando disponíveis;
+- credenciais e caminhos locais não são publicados;
+- incidente de exposição suspende o processamento e exige avaliação antes da continuidade;
+- arquivos potencialmente maliciosos não devem ser abertos fora de ambiente isolado;
+- descarte não substitui comunicação de incidente quando houver obrigação aplicável.
+
+## 13. Rastreamento
+
+- [Matriz de fontes e lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) — proveniência e pendências;
 - issue #4 — coleta mensal real;
-- issue #5 — processador, teste e CI;
-- issue #11 — armazenamento local seguro;
+- issue #5 — processador, teste e CI, concluída;
+- issue #11 — armazenamento, retenção e descarte;
 - issue #2 — decisão consolidada do portão.
 
-## 13. Histórico de alterações
+## 14. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Criação do protocolo, estrutura local, processador, produtos e controles de qualidade | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Definição de retenção, revisão periódica, quarentena, descarte, backups e limites técnicos | Projeto Pragmatismo Cívico |
