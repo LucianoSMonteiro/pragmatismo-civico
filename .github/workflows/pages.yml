@@ -10,6 +10,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  statuses: write
 
 concurrency:
   group: pages
@@ -18,6 +19,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pages_enabled: ${{ steps.pages.outputs.enabled }}
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
@@ -52,56 +55,59 @@ jobs:
           path: mkdocs-build.log
           retention-days: 7
 
+      - name: Registrar status do build
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "${{ steps.build.outputs.status }}" == "0" ]]; then
+            state=success
+            description="Portal compilado com mkdocs build --strict"
+          else
+            state=failure
+            description="Falha na compilação estrita do portal"
+          fi
+          gh api --method POST \
+            "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+            -f state="$state" \
+            -f context="portal/build" \
+            -f description="$description" \
+            -f target_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
+            > /dev/null || echo "::warning::Não foi possível registrar o status explícito do build."
+
       - name: Interromper após falha do build
         if: steps.build.outputs.status != '0'
         run: |
           cat mkdocs-build.log
           exit 1
 
-      - name: Garantir configuração do GitHub Pages
+      - name: Verificar disponibilidade do GitHub Pages
         id: pages
         if: steps.build.outputs.status == '0'
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          set +e
-          if gh api "repos/${GITHUB_REPOSITORY}/pages" > pages-api.log 2>&1; then
-            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" \
-              -f build_type=workflow >> pages-api.log 2>&1
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" > /dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
           else
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" \
-              -f build_type=workflow >> pages-api.log 2>&1
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Build validado. A publicação será ativada automaticamente após o GitHub Pages ser habilitado para GitHub Actions nas configurações do repositório."
           fi
-          status=$?
-          echo "status=$status" >> "$GITHUB_OUTPUT"
-          exit 0
-
-      - name: Preservar diagnóstico do GitHub Pages
-        if: steps.build.outputs.status == '0' && steps.pages.outputs.status != '0'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pages-api-log
-          path: pages-api.log
-          retention-days: 7
-
-      - name: Interromper após falha da configuração do Pages
-        if: steps.build.outputs.status == '0' && steps.pages.outputs.status != '0'
-        run: |
-          cat pages-api.log
-          exit 1
 
       - name: Configurar GitHub Pages
-        if: steps.build.outputs.status == '0' && steps.pages.outputs.status == '0'
+        if: steps.pages.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
 
-      - name: Enviar artefato
-        if: steps.build.outputs.status == '0' && steps.pages.outputs.status == '0'
+      - name: Enviar artefato do portal
+        if: steps.build.outputs.status == '0'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
+    if: needs.build.outputs.pages_enabled == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
