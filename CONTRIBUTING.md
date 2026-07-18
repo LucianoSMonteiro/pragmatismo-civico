@@ -1,3 +1,32 @@
+---
+id: GOV-003
+titulo: Guia de Contribuição do Pragmatismo Cívico
+versao: 0.1.0
+status: rascunho
+tipo: governanca
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - FRAMEWORK-DE-REFERENCIA
+  - PPC-000
+  - PPC-000A
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - GOV-001
+  - GOV-002
+  - GOV-004
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+---
+
 # Contribuindo com o Pragmatismo Cívico
 
 Obrigado pelo interesse em contribuir. O Pragmatismo Cívico é um framework aberto, mas sua abertura não significa ausência de critérios. Toda contribuição deve ampliar a utilidade do projeto sem descaracterizar seus princípios fundadores.
@@ -148,3 +177,9 @@ As contribuições serão avaliadas por:
 - capacidade de auditoria e revisão.
 
 Discordâncias fundamentadas são legítimas. O objetivo da revisão não é eliminar o dissenso, mas tornar decisões e justificativas públicas e verificáveis.
+
+## 13. Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva das regras de contribuição | Projeto Pragmatismo Cívico |
