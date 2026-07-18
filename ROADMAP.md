@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.10.0
+versao: 0.11.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -145,6 +145,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] conclusão da Fase 4A — metadados do Framework de Referência e da Carta de Princípios;
 - [x] conclusão da Fase 4B — teoria, especificação, manifesto, glossário e reparos de coerência;
 - [x] conclusão da Fase 4C — README, guia de início e cobertura dos 38 documentos navegáveis;
+- [x] conclusão da Fase 5 — catálogo público, mapa de dependências e navegação com 39 documentos;
 - [ ] processo formal de propostas de mudança;
 - [ ] governança de versões;
 - [ ] política de revisão e aprovação;
@@ -159,17 +160,20 @@ O projeto deve conseguir receber, avaliar e incorporar contribuições sem perde
 
 ## Fase 5 — Plataforma pública
 
-**Objetivo:** tornar o conhecimento acessível e reutilizável.
+**Objetivo:** tornar o conhecimento acessível, verificável e reutilizável.
 
 ### Entregas previstas
 
-- [x] estrutura inicial do portal no GitHub Pages;
+- [x] infraestrutura de build do portal;
 - [x] biblioteca navegável de princípios, padrões e ferramentas;
 - [x] README sincronizado com o ciclo completo e a governança documental;
 - [x] navegação revisada segundo a arquitetura documental;
-- [x] cobertura de identificação e versionamento dos 38 documentos navegáveis;
-- [ ] catálogo documental público e mapa de dependências;
-- [ ] apresentação de identificador, versão e estado no portal;
+- [x] identificação e versionamento dos 39 documentos navegáveis;
+- [x] catálogo documental público e mapa de dependências;
+- [x] apresentação de identificador, versão e estado por meio do catálogo;
+- [x] preparação reproduzível e `mkdocs build --strict`;
+- [ ] ativação inicial do GitHub Pages e primeiro deploy público — issue #1;
+- [ ] validação automática completa de metadados, relações e links;
 - [ ] painel de indicadores demonstrativo;
 - [ ] catálogo de estudos de caso;
 - [ ] versões para impressão;
@@ -179,7 +183,7 @@ O projeto deve conseguir receber, avaliar e incorporar contribuições sem perde
 
 ### Critério de conclusão
 
-Cidadãos, gestores, pesquisadores e organizações devem conseguir localizar, compreender, baixar e aplicar os materiais com facilidade.
+Cidadãos, gestores, pesquisadores e organizações devem conseguir localizar, compreender, verificar, baixar e aplicar os materiais com facilidade.
 
 ## Fase 6 — Rede de aplicação
 
@@ -201,8 +205,8 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 ## Prioridades imediatas
 
 1. formalizar o processo de propostas de mudança;
-2. criar o catálogo documental público e o mapa de dependências;
-3. implementar validação automática de metadados, identificadores e links;
+2. concluir a validação automática de versões, compatibilidade, links, substituições e correspondência do catálogo;
+3. habilitar o GitHub Pages para GitHub Actions e confirmar o primeiro deploy — issue #1;
 4. criar a ficha padrão de indicadores;
 5. desenvolver o checklist de transparência e rastreabilidade;
 6. estruturar o protocolo de avaliação do próprio framework;
@@ -263,3 +267,4 @@ Este roadmap é vivo. Sua evolução deve refletir evidências, aprendizado prá
 | 0.8.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4A e promoção da Fase 4B | Projeto Pragmatismo Cívico |
 | 0.9.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4B, dos reparos de coerência e promoção da Fase 4C | Projeto Pragmatismo Cívico |
 | 0.10.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 4C, da cobertura dos 38 documentos e promoção do catálogo e da validação | Projeto Pragmatismo Cívico |
+| 0.11.0 | 2026-07-18 | compatível | Conclusão da Fase 5, publicação do catálogo, estabilização do build estrito e promoção da validação automática | Projeto Pragmatismo Cívico |
