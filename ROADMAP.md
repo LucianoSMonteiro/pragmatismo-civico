@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.13.0
+versao: 0.14.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -22,6 +22,7 @@ produz_entrada_para: []
 relaciona_se_com:
   - GOV-003
   - GOV-004
+  - GOV-005
   - ARQ-003
 substitui: []
 substituido_por: null
@@ -106,9 +107,10 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] catálogo e mapa de dependências — Fase 5;
 - [x] validação automática — Fase 6;
 - [x] decisão sobre a estrutura física — Fase 7;
-- [ ] processo formal de propostas de mudança;
-- [ ] política de revisão e aprovação;
-- [ ] regras sobre conflitos de interesse;
+- [x] processo formal de propostas de mudança — GOV-005;
+- [x] ficha e formulário de issue para propostas;
+- [ ] política permanente de revisão e aprovação;
+- [ ] regras institucionais sobre conflitos, impedimentos e recusas;
 - [ ] fóruns de discussão pública;
 - [ ] programa de colaboradores e revisores;
 - [ ] conselho consultivo plural.
@@ -124,9 +126,10 @@ O projeto deve receber, avaliar e incorporar contribuições sem perder coerênc
 ### Entregas
 
 - [x] infraestrutura reproduzível do portal;
-- [x] biblioteca navegável com 40 documentos;
+- [x] biblioteca navegável com 42 documentos;
 - [x] catálogo e mapa de relações;
 - [x] validação de metadados, grafo, links e catálogo;
+- [x] validação dos formulários de issue;
 - [x] análise automática da estrutura física;
 - [x] artefatos e status separados de CI;
 - [ ] ativação inicial do GitHub Pages e primeiro deploy — issue #1;
@@ -154,6 +157,21 @@ Cidadãos, gestores, pesquisadores e organizações devem conseguir localizar, c
 - [ ] publicação de avaliações independentes;
 - [ ] comunidade internacional de práticas.
 
+## Governança de mudanças vigente
+
+O GOV-005 estabelece:
+
+- identificadores `PM-AAAA-NNN`;
+- tipos e níveis de impacto;
+- triagem e admissibilidade;
+- fluxos simplificado, ordinário e reforçado;
+- consulta pública, revisão e conflitos de interesse;
+- competência provisória dos mantenedores;
+- limites para mudanças fundacionais;
+- implementação, verificação, reversão e reconsideração.
+
+A próxima evolução deve transformar esse processo provisório em uma política permanente de revisão e aprovação, sem fingir representatividade que ainda não existe.
+
 ## Decisão arquitetural vigente
 
 O ARQ-003 adotou uma estrutura híbrida:
@@ -165,7 +183,7 @@ O ARQ-003 adotou uma estrutura híbrida:
 
 ## Prioridades imediatas
 
-1. formalizar o processo de propostas de mudança;
+1. criar a política permanente de revisão e aprovação;
 2. selecionar e documentar o primeiro estudo de caso demonstrativo;
 3. habilitar o GitHub Pages para GitHub Actions e confirmar o primeiro deploy — issue #1;
 4. criar a ficha padrão de indicadores;
@@ -211,16 +229,8 @@ Antes de iniciar uma entrega, deve-se verificar:
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-17 | inicial | Migração documental e registro da Fase 1 | Projeto Pragmatismo Cívico |
-| 0.2.0 | 2026-07-17 | compatível | Conclusão da Fase 2A | Projeto Pragmatismo Cívico |
-| 0.3.0 | 2026-07-17 | compatível | Conclusão da Fase 2B | Projeto Pragmatismo Cívico |
-| 0.4.0 | 2026-07-17 | compatível | Conclusão da Fase 2C | Projeto Pragmatismo Cívico |
-| 0.5.0 | 2026-07-17 | compatível | Conclusão da Fase 3A | Projeto Pragmatismo Cívico |
-| 0.6.0 | 2026-07-18 | compatível | Conclusão da Fase 3B | Projeto Pragmatismo Cívico |
-| 0.7.0 | 2026-07-18 | compatível | Conclusão da Fase 3C | Projeto Pragmatismo Cívico |
-| 0.8.0 | 2026-07-18 | compatível | Conclusão da Fase 4A | Projeto Pragmatismo Cívico |
-| 0.9.0 | 2026-07-18 | compatível | Conclusão da Fase 4B | Projeto Pragmatismo Cívico |
-| 0.10.0 | 2026-07-18 | compatível | Conclusão da Fase 4C e cobertura dos 38 documentos | Projeto Pragmatismo Cívico |
+| 0.1.0 a 0.10.0 | 2026-07-17 a 2026-07-18 | compatível | Migração e cobertura progressiva do acervo | Projeto Pragmatismo Cívico |
 | 0.11.0 | 2026-07-18 | compatível | Conclusão da Fase 5 e promoção da validação automática | Projeto Pragmatismo Cívico |
-| 0.12.0 | 2026-07-18 | compatível | Conclusão da Fase 6 | Projeto Pragmatismo Cívico |
-| 0.13.0 | 2026-07-18 | compatível | Conclusão da Fase 7, adoção da estrutura híbrida e promoção da governança de mudanças | Projeto Pragmatismo Cívico |
+| 0.12.0 | 2026-07-18 | compatível | Conclusão da Fase 6 e relatório persistente | Projeto Pragmatismo Cívico |
+| 0.13.0 | 2026-07-18 | compatível | Conclusão da Fase 7 e decisão pela estrutura híbrida | Projeto Pragmatismo Cívico |
+| 0.14.0 | 2026-07-18 | compatível | Publicação do GOV-005, da ficha, do formulário e da validação de issue forms | Projeto Pragmatismo Cívico |
