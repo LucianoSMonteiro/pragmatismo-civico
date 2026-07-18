@@ -1,3 +1,36 @@
+---
+id: PPC-002
+titulo: Formulação e Comparação de Alternativas
+versao: 0.1.0
+status: rascunho
+tipo: padrao-metodologico
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-001
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-003
+  - MODELO-TDM-001
+relaciona_se_com:
+  - PPC-004
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md
+  - MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md
+---
+
 # PPC-002 — Formulação e Comparação de Alternativas
 
 ## Status
@@ -259,3 +292,9 @@ Em emergências, a análise pode ser abreviada, mas deve registrar incertezas, j
 - **Utiliza:** Matriz de Avaliação de Políticas Públicas.
 - **Produz entrada para:** avaliação, decisão, implementação e monitoramento.
 - **Relacionado a:** Ciclo do Pragmatismo Cívico e PPC-000.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do padrão | Projeto Pragmatismo Cívico |
