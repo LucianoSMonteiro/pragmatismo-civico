@@ -18,7 +18,7 @@ MANUAL_DEBT = (
     "GitHub Pages ainda exige ativação inicial pelo proprietário na issue #1.",
     "A camada de aplicações e evidências ainda não possui estudo de caso oficial.",
     "A adequação da licença para documentação, ferramentas e eventual software permanece pendente.",
-    "A política de revisão e aprovação e a instância plural permanente ainda não foram constituídas.",
+    "A instância plural permanente de revisão e aprovação ainda não foi constituída.",
 )
 
 
@@ -74,8 +74,11 @@ def build_report(
             f"{links.anchors_checked} âncoras |"
         ),
         (
-            f"| Formulários de issue | {status_label(issue_forms.ok)} | "
-            f"{issue_forms.forms} formulário(s); {issue_forms.fields} campo(s) |"
+            f"| Templates de contribuição | {status_label(issue_forms.ok)} | "
+            f"{issue_forms.forms} formulário(s) de issue; "
+            f"{issue_forms.fields} campo(s); "
+            f"{issue_forms.pull_request_templates} template(s) de PR; "
+            f"{issue_forms.pull_request_checkboxes} verificação(ões) de PR |"
         ),
         "",
     ]
@@ -84,7 +87,7 @@ def build_report(
     add_findings(lines, "Achados de links e âncoras", links.errors, links.warnings)
     add_findings(
         lines,
-        "Achados de formulários de issue",
+        "Achados de templates de contribuição",
         issue_forms.errors,
         issue_forms.warnings,
     )
@@ -96,7 +99,7 @@ def build_report(
             "",
             "## Escopo da automação",
             "",
-            "A execução verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown e estrutura mínima dos formulários YAML de issue.",
+            "A execução verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown, formulários YAML de issue e o template de pull request.",
             "",
             "Ela não substitui revisão humana de mérito, aprovação metodológica, validação empírica, transições formais de estado ou avaliação da qualidade das evidências.",
             "",
