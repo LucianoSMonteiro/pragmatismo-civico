@@ -83,6 +83,16 @@ jobs:
           cat validation-report.md
           exit 1
 
+      - name: Analisar estrutura física do repositório
+        run: python scripts/analyze_repository_structure.py --output structure-analysis.md
+
+      - name: Preservar análise estrutural
+        uses: actions/upload-artifact@v4
+        with:
+          name: structure-analysis
+          path: structure-analysis.md
+          retention-days: 14
+
       - name: Gerar prévia do catálogo documental
         run: python scripts/generate_catalog.py --output catalog-preview.md
 
