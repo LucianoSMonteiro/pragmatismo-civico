@@ -66,7 +66,7 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 | Identificador | Documento | Versão | Estado | Tipo | Caminho |
 |---|---|---:|---|---|---|
 | `ARQ-001` | [Arquitetura Documental do Framework](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | `0.2.0` | `rascunho` | `arquitetura` | `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md` |
-| `ARQ-002` | [Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | `0.25.0` | `rascunho` | `arquitetura` | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` |
+| `ARQ-002` | [Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | `0.26.0` | `rascunho` | `arquitetura` | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` |
 | `ARQ-003` | [Decisão sobre a Estrutura Física do Repositório](ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md) | `0.1.0` | `rascunho` | `arquitetura` | `ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md` |
 | `CADASTRO-REVISORES` | [Cadastro Público de Revisores](CADASTRO_PUBLICO_DE_REVISORES.md) | `0.1.1` | `rascunho` | `governanca` | `CADASTRO_PUBLICO_DE_REVISORES.md` |
 | `GOV-001` | [Modelo de Governança do Pragmatismo Cívico](MODELO_DE_GOVERNANCA.md) | `0.1.0` | `rascunho` | `governanca` | `MODELO_DE_GOVERNANCA.md` |
@@ -122,9 +122,9 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 |---|---|---:|---|---|---|
 | `CASO-001` | [Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo na Sub-bacia de Itapeba](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) | `0.4.0` | `rascunho` | `aplicacao` | `casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md` |
 | `CASO-001-DADOS-CHUVA` | [Protocolo de Aquisição e Qualidade de Dados Pluviométricos do CASO-001](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md) | `0.2.0` | `rascunho` | `aplicacao` | `casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md` |
-| `CASO-001-FONTES` | [Matriz de Fontes e Lacunas do CASO-001](casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) | `0.2.0` | `rascunho` | `aplicacao` | `casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md` |
-| `CASO-001-GEOMETRIA` | [Protocolo de Aquisição, Validação e Delimitação Geoespacial do CASO-001](casos/CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md) | `0.1.0` | `rascunho` | `aplicacao` | `casos/CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md` |
-| `CASO-001-PRONTIDAO` | [Registro de Prontidão do CASO-001 — Sub-bacia de Itapeba](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md) | `0.3.0` | `rascunho` | `aplicacao` | `casos/CASO-001_REGISTRO_DE_PRONTIDAO.md` |
+| `CASO-001-FONTES` | [Matriz de Fontes e Lacunas do CASO-001](casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) | `0.2.1` | `rascunho` | `aplicacao` | `casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md` |
+| `CASO-001-GEOMETRIA` | [Protocolo de Aquisição, Validação e Delimitação Geoespacial do CASO-001](casos/CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md) | `0.2.0` | `rascunho` | `aplicacao` | `casos/CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md` |
+| `CASO-001-PRONTIDAO` | [Registro de Prontidão do CASO-001 — Sub-bacia de Itapeba](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md) | `0.3.1` | `rascunho` | `aplicacao` | `casos/CASO-001_REGISTRO_DE_PRONTIDAO.md` |
 | `CASOS-INDEX` | [Casos e Evidências do Pragmatismo Cívico](casos/README.md) | `0.5.0` | `rascunho` | `publicacao` | `casos/README.md` |
 
 ## Mapa de dependências obrigatórias
