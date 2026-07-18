@@ -13,7 +13,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. O ciclo metodológico completo — PPC-001 a PPC-008 —, a Teoria da Mudança, suas fichas práticas e os padrões iniciais de governança documental já estão publicados para revisão, teste e aplicação experimental. Ainda não há estudo de caso oficial publicado.
+**Estado atual:** desenvolvimento aberto. O ciclo metodológico completo — PPC-001 a PPC-008 —, a Teoria da Mudança, suas fichas práticas e os padrões iniciais de governança documental já estão publicados para revisão, teste e aplicação experimental. A primeira fase da migração documental de governança foi concluída. Ainda não há estudo de caso oficial publicado.
 
 </div>
 
@@ -203,9 +203,8 @@ O documento central para essa verificação é o [Framework de Referência](FRAM
 
 As prioridades atuais são:
 
-- completar a migração documental do núcleo de governança;
 - formalizar o processo de propostas de mudança;
-- iniciar a migração do núcleo metodológico;
+- iniciar a Fase 2A da migração documental pelo ciclo, PPC-001 a PPC-004 e Teoria da Mudança;
 - criar a ficha padrão de indicadores;
 - desenvolver o checklist de transparência e rastreabilidade;
 - estruturar o protocolo de avaliação do próprio framework;
