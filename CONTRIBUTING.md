@@ -1,7 +1,7 @@
 ---
 id: GOV-003
 titulo: Guia de Contribuição do Pragmatismo Cívico
-versao: 0.4.0
+versao: 0.5.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -19,6 +19,7 @@ depende_de:
   - GOV-005
   - GOV-006
   - GOV-007
+  - GOV-008
 produz_entrada_para: []
 relaciona_se_com:
   - GOV-001
@@ -27,7 +28,10 @@ relaciona_se_com:
   - FICHA-GOV-005
   - FICHA-GOV-006
   - FICHA-GOV-007
+  - FICHA-GOV-008
   - CADASTRO-REVISORES
+  - CASOS-INDEX
+  - CASO-001
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -49,9 +53,10 @@ Leia, nesta ordem:
 5. `GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md`;
 6. `GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md`;
 7. `GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md`, se pretende revisar;
-8. este guia e o `CODE_OF_CONDUCT.md`.
+8. `GOV-008_PROTOCOLO_DE_SELECAO_E_CONDUCAO_DE_CASOS.md`, se pretende propor ou colaborar em caso;
+9. este guia e o `CODE_OF_CONDUCT.md`.
 
-Para mudanças formais, use a `FICHA-GOV-005` ou o formulário **Proposta de mudança**. Revisões moderadas ou superiores usam a `FICHA-GOV-006`. Candidaturas a revisor usam a `FICHA-GOV-007` ou o formulário **Candidatura a revisor**.
+Para mudanças formais, use a `FICHA-GOV-005` ou o formulário **Proposta de mudança**. Revisões moderadas ou superiores usam a `FICHA-GOV-006`. Candidaturas usam a `FICHA-GOV-007`. Casos usam a `FICHA-GOV-008`.
 
 ## 2. Regra central
 
@@ -90,7 +95,9 @@ São bem-vindas:
 - violação de direitos em nome de eficiência;
 - complexidade sem utilidade demonstrável;
 - duplicação sem justificativa;
-- publicação de dados pessoais sensíveis desnecessários.
+- publicação de dados pessoais sensíveis desnecessários;
+- caso apresentado como concluído sem diagnóstico, revisão ou evidência correspondente;
+- promoção de fornecedor, obra ou tecnologia como conclusão previamente escolhida.
 
 ## 5. Teste de coerência
 
@@ -107,7 +114,7 @@ Antes de enviar uma proposta, responda:
 9. Pode produzir impacto desigual?
 10. Preserva neutralidade e direitos?
 
-## 6. Como propor mudanças
+## 6. Como contribuir
 
 ### 6.1 Correções editoriais
 
@@ -142,6 +149,23 @@ A candidatura deve informar:
 
 Elegibilidade não garante convite, remuneração ou posição institucional. Mantenedores e autores não entram automaticamente no cadastro.
 
+### 6.5 Casos e evidências
+
+A seleção e condução de casos seguem o GOV-008. Antes de iniciar o PPC-001, o caso deve possuir:
+
+- pergunta decisória preliminar sem solução presumida;
+- território e período delimitados;
+- responsável pela documentação;
+- fontes mínimas verificadas;
+- plano de qualidade, acesso e proteção de dados;
+- grupos afetados e canais preliminares;
+- riscos e conflitos;
+- versões dos documentos utilizados;
+- estratégia de revisão;
+- critérios de suspensão e encerramento.
+
+Use a `FICHA-GOV-008`. O portão de prontidão pode decidir não avançar. Isso é resultado legítimo e deve ser preservado.
+
 ## 7. Mudanças no núcleo e nas aplicações
 
 ### Núcleo normativo
@@ -154,7 +178,9 @@ Podem evoluir com maior frequência, desde que permaneçam compatíveis, úteis 
 
 ### Aplicações
 
-Devem declarar contexto, hipóteses, dados, limitações, versões e resultados. Novos casos serão publicados em `casos/`.
+Devem declarar contexto, hipóteses, dados, limitações, versões, estado do caso e resultados disponíveis. Novos casos são publicados em `casos/`.
+
+Preparação não é diagnóstico; diagnóstico não é decisão; plano não é implementação; indicador não é resultado; associação não é impacto causal.
 
 ## 8. Evidências e referências
 
@@ -162,7 +188,8 @@ Devem declarar contexto, hipóteses, dados, limitações, versões e resultados.
 - prefira fontes primárias;
 - diferencie fato, hipótese, interpretação e opinião;
 - declare incertezas e evidências contrárias relevantes;
-- não atribua mais força à evidência do que ela suporta.
+- não atribua mais força à evidência do que ela suporta;
+- não preencha lacunas com dados inventados.
 
 ## 9. Linguagem e acessibilidade
 
@@ -170,21 +197,25 @@ Use linguagem clara, respeitosa e compreensível. Defina termos técnicos ou lig
 
 ## 10. Estudos de caso
 
-Um caso deve conter, no mínimo:
+Um caso completo deve conter, quando aplicável:
 
-1. problema e população afetada;
-2. linha de base;
-3. alternativas;
-4. decisão e justificativa;
-5. custos, riscos e responsáveis;
-6. indicadores;
-7. resultados;
-8. limitações;
-9. lições e revisão recomendada.
+1. registro de seleção e prontidão;
+2. problema e população afetada;
+3. linha de base;
+4. alternativas;
+5. decisão e justificativa;
+6. custos, riscos e responsáveis;
+7. indicadores;
+8. implementação e monitoramento;
+9. resultados e impactos;
+10. limitações;
+11. lições e revisão recomendada.
+
+Casos em preparação devem publicar apenas o que realmente existe e marcar claramente os itens pendentes. O CASO-001 permanece nesse estado.
 
 ## 11. Conflitos de interesse
 
-Contribuidores, revisores e decisores devem declarar vínculos capazes de influenciar materialmente uma proposta. Conflito pode exigir declaração, restrição, abstenção, impedimento ou substituição.
+Contribuidores, revisores e decisores devem declarar vínculos capazes de influenciar materialmente uma proposta ou caso. Conflito pode exigir declaração, restrição, abstenção, impedimento ou substituição.
 
 ## 12. Revisão
 
@@ -198,7 +229,8 @@ As contribuições são avaliadas por:
 - compatibilidade e reversibilidade;
 - capacidade de auditoria e manutenção;
 - competência, independência e quórum;
-- correspondência da implementação com a decisão.
+- correspondência da implementação com a decisão;
+- correspondência entre estado declarado e evidência realmente disponível.
 
 Dissenso fundamentado deve ser preservado.
 
@@ -220,3 +252,4 @@ Issues e pull requests são públicos. Enquanto não houver canal privado formal
 | 0.2.0 | 2026-07-18 | compatível | Integração do GOV-005 e do formulário de proposta | Projeto Pragmatismo Cívico |
 | 0.3.0 | 2026-07-18 | compatível | Integração do GOV-006, registro de revisão e template de PR | Projeto Pragmatismo Cívico |
 | 0.4.0 | 2026-07-18 | compatível | Integração do GOV-007, candidatura pública, cadastro e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
+| 0.5.0 | 2026-07-18 | compatível | Integração do GOV-008, portão de prontidão e regras para casos e evidências | Projeto Pragmatismo Cívico |
