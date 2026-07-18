@@ -16,7 +16,6 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "mkdocs.yml"
 CATALOG_PATH = "CATALOGO_DOCUMENTAL.md"
-
 CATALOG_METADATA: dict[str, object] = {
     "id": "CATALOGO-DOCUMENTAL",
     "titulo": "Catálogo Documental do Pragmatismo Cívico",
@@ -64,6 +63,8 @@ LAYER_BY_PATH = {
     "ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md": "Governança e arquitetura",
     "GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md": "Governança e arquitetura",
     "GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md": "Governança e arquitetura",
+    "GOV-007_PROGRAMA_E_CADASTRO_PUBLICO_DE_REVISORES.md": "Governança e arquitetura",
+    "CADASTRO_PUBLICO_DE_REVISORES.md": "Governança e arquitetura",
     "CONTRIBUTING.md": "Governança e arquitetura",
     "CODE_OF_CONDUCT.md": "Governança e arquitetura",
     "ROADMAP.md": "Governança e arquitetura",
@@ -88,10 +89,10 @@ LAYER_BY_PATH = {
     "FICHA_PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md": "Ferramentas",
     "FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md": "Ferramentas",
     "FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md": "Ferramentas",
+    "FICHA_GOV-007_CANDIDATURA_E_AVALIACAO_DE_REVISOR.md": "Ferramentas",
     "MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md": "Ferramentas",
     "INDICADORES.md": "Ferramentas",
 }
-
 REQUIRED_FIELDS = ("id", "titulo", "versao", "status", "tipo", "responsaveis")
 
 
@@ -202,30 +203,6 @@ def yaml_front_matter(metadata: dict[str, object]) -> str:
     return f"---\n{body}\n---\n"
 
 
-def append_document_tables(lines: list[str], documents: list[Document]) -> None:
-    for layer in LAYER_ORDER:
-        lines.extend(
-            [
-                f"## {layer}",
-                "",
-                "| Identificador | Documento | Versão | Estado | Tipo | Caminho |",
-                "|---|---|---:|---|---|---|",
-            ]
-        )
-        for document in sorted(
-            (item for item in documents if item.layer == layer),
-            key=lambda item: (str(item.metadata["id"]), item.path),
-        ):
-            metadata = document.metadata
-            title = str(metadata["titulo"]).replace("|", "\\|")
-            lines.append(
-                f"| `{metadata['id']}` | [{title}]({document.path}) | "
-                f"`{metadata['versao']}` | `{metadata['status']}` | "
-                f"`{metadata['tipo']}` | `{document.path}` |"
-            )
-        lines.append("")
-
-
 def generate_catalog(documents: list[Document]) -> str:
     counts = Counter(document.layer for document in documents)
     lines = [
@@ -234,7 +211,7 @@ def generate_catalog(documents: list[Document]) -> str:
         "",
         "Este catálogo apresenta a fonte canônica dos documentos públicos, seus identificadores, versões, estados e relações principais.",
         "",
-        "Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A presença no catálogo não significa aprovação, estabilidade ou validação empírica; essas propriedades são determinadas pelo campo `status` e pelo histórico correspondente.",
+        "Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A presença no catálogo não significa aprovação, estabilidade ou validação empírica.",
         "",
         "## Visão geral",
         "",
@@ -244,13 +221,32 @@ def generate_catalog(documents: list[Document]) -> str:
     lines.extend(f"| {layer} | {counts[layer]} |" for layer in LAYER_ORDER)
     lines.extend([f"| **Total** | **{len(documents)}** |", ""])
 
-    append_document_tables(lines, documents)
+    for layer in LAYER_ORDER:
+        lines.extend(
+            [
+                f"## {layer}",
+                "",
+                "| Identificador | Documento | Versão | Estado | Tipo | Caminho |",
+                "|---|---|---:|---|---|---|",
+            ]
+        )
+        layer_documents = sorted(
+            (document for document in documents if document.layer == layer),
+            key=lambda document: (str(document.metadata["id"]), document.path),
+        )
+        for document in layer_documents:
+            metadata = document.metadata
+            title = str(metadata["titulo"]).replace("|", "\\|")
+            lines.append(
+                f"| `{metadata['id']}` | [{title}]({document.path}) | "
+                f"`{metadata['versao']}` | `{metadata['status']}` | "
+                f"`{metadata['tipo']}` | `{document.path}` |"
+            )
+        lines.append("")
 
     lines.extend(
         [
             "## Mapa de dependências obrigatórias",
-            "",
-            "A tabela registra apenas `depende_de`. Relações complementares aparecem na seção seguinte.",
             "",
             "| Documento | Depende de | Produz entrada para |",
             "|---|---|---|",
@@ -290,9 +286,9 @@ def generate_catalog(documents: list[Document]) -> str:
             "",
             "`CICLO-PC-001` → `PPC-001` → `PPC-002` → `PPC-003` → `PPC-004` → `MODELO-TDM-001` → `PPC-005` → `PPC-006` → `PPC-007` → `PPC-008`.",
             "",
-            "### Governar mudanças",
+            "### Governar mudanças e revisões",
             "",
-            "`GOV-003` → `GOV-005` → `FICHA-GOV-005` → `GOV-006` → `FICHA-GOV-006`.",
+            "`GOV-003` → `GOV-005` → `FICHA-GOV-005` → `GOV-006` → `FICHA-GOV-006` → `GOV-007` → `FICHA-GOV-007` → `CADASTRO-REVISORES`.",
             "",
             "### Compreender a arquitetura documental",
             "",
@@ -302,8 +298,8 @@ def generate_catalog(documents: list[Document]) -> str:
             "",
             "- a branch padrão do repositório é a fonte canônica;",
             "- o catálogo deve ser regenerado quando a navegação ou os metadados mudarem;",
-            "- aplicações concluídas devem preservar a versão efetivamente utilizada;",
             "- documentos em `rascunho` ou `piloto` não devem ser apresentados como estáveis;",
+            "- o cadastro público de revisores ainda não possui pessoa elegível ou ativa;",
             "- a instância plural permanente do GOV-006 ainda não foi constituída;",
             "- a ausência de estudos de caso oficiais permanece uma limitação do framework.",
             "",
