@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.15.0
+versao: 0.15.1
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -33,7 +33,7 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 5 estão concluídas: os documentos públicos possuem metadados, o catálogo documental está publicado e a navegação canônica contém 39 documentos. A Fase 6 de validação automática foi iniciada e ainda possui verificações pendentes.
+Rascunho ativo. As Fases 0 a 5 estão concluídas: os documentos públicos possuem metadados, o catálogo documental está publicado e a navegação canônica contém 39 documentos. A Fase 6 de validação automática foi iniciada e já verifica também a correspondência entre o catálogo gerado e o publicado.
 
 ## 1. Objetivo
 
@@ -73,8 +73,8 @@ Trinta e oito documentos utilizam cabeçalho YAML no início do arquivo. O `READ
 
 | Documento | Identificador | Caminho | Versão | Representação |
 |---|---|---|---:|---|
-| Página inicial | `PORTAL-INICIO` | `README.md` | 0.2.2 | bloco equivalente e seção colapsável |
-| Guia de início | `GUIA-COMECAR` | `docs/COMECAR.md` | 0.2.0 | cabeçalho YAML |
+| Página inicial | `PORTAL-INICIO` | `README.md` | 0.3.0 | bloco equivalente e seção colapsável |
+| Guia de início | `GUIA-COMECAR` | `docs/COMECAR.md` | 0.3.0 | cabeçalho YAML |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | `CATALOGO_DOCUMENTAL.md` | 0.1.0 | cabeçalho YAML e geração reproduzível |
 
 ### 4.2 Princípios e fundamentos
@@ -176,7 +176,7 @@ A conclusão da cobertura e do catálogo não significa estabilidade do framewor
 | DD-004 | vínculos genéricos nas ferramentas | grafo heterogêneo | resolvida | Fase 3C |
 | DD-005 | acervo predominantemente na raiz | manutenção futura difícil | aberta, baixa | decidir somente após validação |
 | DD-006 | ausência de catálogo público | localização manual | resolvida | `CATALOGO-DOCUMENTAL` 0.1.0 |
-| DD-007 | validação automática incompleta | regressões podem chegar ao portal | aberta | concluir Fase 6 |
+| DD-007 | validação automática incompleta | regressões podem chegar ao portal | aberta | concluir Fase 6; deriva do catálogo já bloqueada |
 | DD-008 | ausência de estudos de caso | método sem validação empírica | aberta, alta | preparar primeiro caso |
 | DD-009 | datas históricas incompletas | história retrospectiva fictícia | controlada | preservar `null` e commits |
 | DD-010 | confirmação de CI limitada | falhas poderiam passar despercebidas | parcialmente resolvida | status explícito `portal/build` e artefatos de diagnóstico |
@@ -190,6 +190,7 @@ A conclusão da cobertura e do catálogo não significa estabilidade do framewor
 | DD-018 | GitHub Pages ainda não habilitado | portal não é implantado | aberta | issue #1; ativação única pelo proprietário |
 | DD-019 | `docs_dir` inválido e saída dentro do acervo | build estrito falhava | resolvida | árvore temporária `.mkdocs-src` e `site/` externo ao acervo |
 | DD-020 | PPC-008 e Ficha PPC-003 declaravam saídas não recíprocas | dependências circulares ou indevidas | resolvida | relações reclassificadas e validador incorporado |
+| DD-021 | catálogo publicado podia divergir das fontes canônicas | versões e relações desatualizadas | resolvida | CI compara geração reproduzível com arquivo publicado |
 
 ## 8. Avanços acumulados
 
@@ -202,6 +203,7 @@ As revisões produziram:
 - reparos de coerência no Framework, Especificação e guia de início;
 - catálogo gerado por processo repetível;
 - detecção automática de IDs duplicados, estados não canônicos, dependências inexistentes e saídas obrigatórias sem reciprocidade;
+- bloqueio automático de divergência entre catálogo gerado e publicado;
 - preparação reproduzível da árvore MkDocs;
 - build estrito confirmado e registrado por status de commit;
 - artefatos de diagnóstico preservados em caso de falha.
@@ -238,6 +240,7 @@ Concluído:
 - estados canônicos;
 - existência das dependências;
 - reciprocidade de saídas obrigatórias;
+- correspondência entre catálogo gerado e publicado;
 - preparação e build estrito;
 - status explícito de CI.
 
@@ -245,7 +248,6 @@ Pendente:
 
 - formato completo de versões e compatibilidade;
 - verificação de links internos e âncoras;
-- comparação automática entre catálogo gerado e catálogo publicado;
 - validação das relações de substituição;
 - relatório consolidado de dívida;
 - deploy do portal após habilitação do Pages.
@@ -259,8 +261,9 @@ Somente após a Fase 6 será decidido se arquivos devem sair da raiz. Manter a e
 Esta versão decide que:
 
 - a Fase 5 está concluída;
-- a linha de base pública passa de 38 para 39 documentos;
+- a linha de base pública contém 39 documentos;
 - o catálogo é gerado a partir das fontes canônicas e publicado no repositório;
+- a CI deve falhar quando o catálogo publicado divergir da geração atual;
 - as relações PPC-008 → PPC-001 e Ficha PPC-003 → PPC-004 são complementares, não dependências obrigatórias;
 - o build do portal está operacional;
 - a implantação depende da ativação inicial do GitHub Pages registrada na issue #1;
@@ -268,7 +271,7 @@ Esta versão decide que:
 
 ## 11. Próxima ação
 
-Concluir a **Fase 6 — Validação automática**, acrescentando verificação de versões, compatibilidade, links, substituições e correspondência entre o catálogo gerado e o publicado.
+Concluir a **Fase 6 — Validação automática**, acrescentando verificação de versões, compatibilidade, links, substituições e relatório consolidado de dívida.
 
 ## 12. Histórico de alterações
 
@@ -290,3 +293,4 @@ Concluir a **Fase 6 — Validação automática**, acrescentando verificação d
 | 0.14.0 | 2026-07-18 | compatível | Conclusão da Fase 4C e cobertura dos 38 documentos | Projeto Pragmatismo Cívico |
 | 0.14.1 | 2026-07-18 | correção | Sincronização do README 0.2.2 | Projeto Pragmatismo Cívico |
 | 0.15.0 | 2026-07-18 | compatível | Conclusão da Fase 5, publicação do catálogo, reparos do grafo documental e estabilização do build estrito | Projeto Pragmatismo Cívico |
+| 0.15.1 | 2026-07-18 | correção | Sincronização das versões de entrada e registro da verificação automática de deriva do catálogo | Projeto Pragmatismo Cívico |
