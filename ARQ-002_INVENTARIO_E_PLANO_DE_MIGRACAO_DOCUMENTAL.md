@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.5.0
+versao: 0.6.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -66,7 +66,7 @@ A navegação atual contém **38 documentos Markdown**.
 | Publicação e acesso | 2 | README sincronizado editorialmente; metadados ainda pendentes |
 | Princípios e fundamentos | 6 | núcleo consolidado; migração deve ser cautelosa |
 | Governança e arquitetura | 9 | todos os nove documentos possuem cabeçalho PPC-META-001 |
-| Método | 10 | ciclo completo publicado; relações e versões ainda precisam ser normalizadas |
+| Método | 10 | lote 2A concluído; seis documentos migrados e quatro pendentes |
 | Ferramentas | 11 | Ficha PPC-003 normalizada; demais vínculos ainda precisam ser estruturados |
 | Aplicações e evidências | 0 | camada ainda sem estudo de caso publicado |
 | **Total** | **38** | migração necessária, sem alteração imediata de caminhos |
@@ -111,12 +111,12 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 | Documento | Caminho | Relação principal | Metadados | Prioridade |
 |---|---|---|---|---|
-| Ciclo do Pragmatismo Cívico | `CICLO_DO_PRAGMATISMO_CIVICO.md` | visão integrada | a migrar | alta |
-| PPC-001 | `PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md` | diagnóstico | a migrar | alta |
-| PPC-002 | `PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md` | alternativas | a migrar | alta |
-| PPC-003 | `PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` | avaliação técnica | a migrar | alta |
-| PPC-004 | `PPC-004_DECISAO_E_JUSTIFICATIVA.md` | decisão | a migrar | alta |
-| Teoria da mudança | `MODELO_DE_TEORIA_DA_MUDANCA.md` | ponte entre decisão e implementação | a migrar | alta |
+| Ciclo do Pragmatismo Cívico | `CICLO_DO_PRAGMATISMO_CIVICO.md` | visão integrada | presente | concluída nesta dimensão |
+| PPC-001 | `PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md` | diagnóstico | presente | concluída nesta dimensão |
+| PPC-002 | `PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md` | alternativas | presente | concluída nesta dimensão |
+| PPC-003 | `PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` | avaliação técnica | presente | concluída nesta dimensão |
+| PPC-004 | `PPC-004_DECISAO_E_JUSTIFICATIVA.md` | decisão | presente | concluída nesta dimensão |
+| Teoria da mudança | `MODELO_DE_TEORIA_DA_MUDANCA.md` | ponte entre decisão e implementação | presente | concluída nesta dimensão |
 | PPC-005 | `PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md` | implementação | a migrar | alta |
 | PPC-006 | `PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md` | monitoramento | a migrar | alta |
 | PPC-007 | `PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md` | avaliação | a migrar | alta |
@@ -157,7 +157,13 @@ Possuem cabeçalho estruturado alinhado ao PPC-META-001:
 - `ROADMAP.md`;
 - `CONTRIBUTING.md`;
 - `CODE_OF_CONDUCT.md`;
-- `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`.
+- `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`;
+- `CICLO_DO_PRAGMATISMO_CIVICO.md`;
+- `PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md`;
+- `PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md`;
+- `PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`;
+- `PPC-004_DECISAO_E_JUSTIFICATIVA.md`;
+- `MODELO_DE_TEORIA_DA_MUDANCA.md`.
 
 ### 5.2 Documentos ainda não migrados
 
@@ -178,8 +184,8 @@ Quando uma informação não puder ser comprovada, deve ser registrada como `nul
 
 | ID | Problema | Risco | Prioridade | Tratamento proposto |
 |---|---|---|---|---|
-| DD-001 | maioria dos documentos sem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | migração em lotes controlados |
-| DD-002 | dependências do ciclo metodológico não registradas de modo uniforme | incoerência entre padrões | alta | declarar relações recíprocas |
+| DD-001 | 22 dos 38 documentos navegáveis ainda não possuem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | migração em lotes controlados |
+| DD-002 | dependências do ciclo metodológico ainda não estão uniformes em todos os padrões | incoerência entre padrões | alta | concluir lotes 2B e 2C |
 | DD-003 | ferramentas não registram necessariamente a versão do padrão utilizada | aplicações podem ficar irreplicáveis | alta | adicionar campo de versão e vínculo |
 | DD-004 | identificadores e metadados ainda heterogêneos nas ferramentas remanescentes | automação e catálogo dificultados | média | normalizar progressivamente sem descartar dados úteis |
 | DD-005 | acervo predominantemente na raiz | manutenção futura pode ficar difícil | baixa no estágio atual | não mover arquivos antes de medir benefício |
@@ -203,7 +209,8 @@ As revisões do repositório produziram as seguintes correções e avanços:
 - migração de `ROADMAP.md`, `CONTRIBUTING.md` e `CODE_OF_CONDUCT.md` para o PPC-META-001;
 - conclusão da Fase 1 do plano de migração documental;
 - correção dos relacionamentos canônicos em ARQ-001 e PPC-000A;
-- normalização do cabeçalho da Ficha PPC-003 sem alteração de seu conteúdo metodológico.
+- normalização do cabeçalho da Ficha PPC-003 sem alteração de seu conteúdo metodológico;
+- conclusão do lote 2A com a migração do ciclo, PPC-001 a PPC-004 e Modelo de Teoria da Mudança.
 
 A configuração do workflow está presente e coerente com GitHub Pages, mas a execução mais recente ainda deve ser confirmada no histórico do GitHub Actions, pois o conector utilizado não retorna os eventos de push desse workflow.
 
@@ -233,7 +240,7 @@ Entregas:
 - inventário inicial dos 38 documentos navegáveis;
 - classificação por camada alinhada ao ARQ-001;
 - registro da dívida documental inicial;
-- normalização inicial de metadados legados;
+- reconhecimento de metadados legados;
 - proibição explícita de movimentação prematura.
 
 ### Fase 1 — Núcleo de governança
@@ -250,43 +257,34 @@ Lote executado:
 4. [x] `CONTRIBUTING.md`;
 5. [x] `CODE_OF_CONDUCT.md`.
 
-Ações concluídas:
-
-- adição de metadados;
-- preservação do conteúdo substantivo;
-- declaração de relações com PPC-META-001, PPC-000A e ARQ-001;
-- registro de histórico inicial verificável;
-- distinção entre estado documental e conclusão de tarefas no roadmap.
-
 ### Fase 2 — Núcleo metodológico
+
+**Estado:** em andamento — lote 2A concluído; 6 de 10 documentos migrados.
 
 **Objetivo:** tornar o ciclo PPC rastreável ponta a ponta.
 
 Lotes:
 
-- **2A:** ciclo, PPC-001 a PPC-004 e teoria da mudança;
-- **2B:** PPC-005 a PPC-008;
+- **2A — concluído:** ciclo, PPC-001 a PPC-004 e teoria da mudança;
+- **2B — próximo:** PPC-005 a PPC-008;
 - **2C:** revisão de reciprocidade das dependências.
 
-Ações:
+Ações concluídas no lote 2A:
 
-- adicionar metadados e versões;
-- declarar entradas e saídas;
-- identificar ferramentas associadas;
-- registrar compatibilidade como `inicial` quando não houver versão anterior formal;
-- preservar o estado `rascunho` até validação real.
+- adição de metadados e versões;
+- declaração de entradas e saídas;
+- identificação das ferramentas associadas;
+- preservação do estado `rascunho` por ausência de validação formal suficiente;
+- registro de compatibilidade como `inicial`;
+- preservação do conteúdo metodológico.
 
 ### Fase 3 — Ferramentas
 
 **Objetivo:** vincular cada instrumento à versão do padrão que operacionaliza.
 
-Avanço concluído:
+Ações:
 
-- [x] normalização do cabeçalho da `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`.
-
-Ações restantes:
-
-- atribuir identificadores estáveis às ferramentas remanescentes;
+- atribuir identificadores estáveis;
 - declarar documento associado;
 - inserir campo para versão do padrão utilizado;
 - distinguir campos obrigatórios e opcionais;
@@ -392,13 +390,12 @@ Esta versão decide que:
 - a classificação por camada segue o ARQ-001, ainda que a posição no menu possa responder à lógica de uso;
 - nenhum arquivo será movido durante os primeiros lotes;
 - documentos sem evidência histórica não receberão datas ou aprovações retroativas;
-- metadados legados serão preservados e normalizados, não descartados;
-- a Fase 1 está encerrada e a próxima execução da migração será o lote 2A;
+- a Fase 2A está concluída e a próxima execução da migração será o lote 2B;
 - a estrutura física do repositório será decidida somente depois de metadados, catálogo e validação.
 
 ## 13. Próxima ação
 
-Executar a **Fase 2A — Núcleo metodológico**, migrando `CICLO_DO_PRAGMATISMO_CIVICO.md`, PPC-001 a PPC-004 e `MODELO_DE_TEORIA_DA_MUDANCA.md`, em lotes pequenos e com verificação de dependências.
+Executar a **Fase 2B — Núcleo metodológico**, migrando PPC-005 a PPC-008 e preparando a revisão de reciprocidade das dependências do ciclo completo.
 
 ## 14. Histórico de alterações
 
@@ -409,3 +406,4 @@ Executar a **Fase 2A — Núcleo metodológico**, migrando `CICLO_DO_PRAGMATISMO
 | 0.3.0 | 2026-07-17 | compatível | Correção das camadas, reconhecimento de metadados legados e registro da revisão de coerência do README e da navegação | Projeto Pragmatismo Cívico |
 | 0.4.0 | 2026-07-17 | compatível | Conclusão da Fase 1 com a migração do roadmap, guia de contribuição e código de conduta | Projeto Pragmatismo Cívico |
 | 0.5.0 | 2026-07-17 | compatível | Correção de identificadores canônicos, nomenclatura da sexta camada e normalização da Ficha PPC-003 | Projeto Pragmatismo Cívico |
+| 0.6.0 | 2026-07-17 | compatível | Conclusão da Fase 2A com a migração do ciclo, PPC-001 a PPC-004 e Modelo de Teoria da Mudança | Projeto Pragmatismo Cívico |
