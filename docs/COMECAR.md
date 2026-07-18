@@ -1,7 +1,7 @@
 ---
 id: GUIA-COMECAR
 titulo: Começar no Pragmatismo Cívico
-versao: 0.12.0
+versao: 0.13.0
 status: rascunho
 tipo: guia
 idioma: pt-BR
@@ -29,6 +29,7 @@ relaciona_se_com:
   - CASO-001
   - CASO-001-PRONTIDAO
   - CASO-001-FONTES
+  - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
   - PPC-000
   - GOV-003
@@ -95,11 +96,12 @@ Use:
 - [CASO-001](../casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md);
 - [Registro de Prontidão](../casos/CASO-001_REGISTRO_DE_PRONTIDAO.md);
 - [Matriz de Fontes e Lacunas](../casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md);
+- [Protocolo de Geometria e Delimitação](../casos/CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md);
 - [Protocolo de Dados Pluviométricos](../casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md).
 
-O CASO-001 está em preparação na sub-bacia de Itapeba. A matriz consolida 13 fontes públicas e diferencia o que foi localizado, consultado, obtido ou tratado. O processador de chuva gera CSV normalizado, manifesto com hashes e relatório de qualidade, e é testado em CI com dados sintéticos.
+O CASO-001 está em preparação na sub-bacia de Itapeba. A matriz consolida 15 fontes. O protocolo geoespacial registra uma camada poligonal candidata do GeoINEA e a hidrografia RJ25; o protocolo pluviométrico registra aquisição, qualidade, retenção e descarte.
 
-Nenhum arquivo mensal real foi incorporado e nenhum polígono oficial foi obtido. Faltam coleta autorizada, produtos técnicos integrais, registros agregados, interlocutores confirmados, participação local e revisão independente. A issue #2 acompanha a decisão do portão; as issues #4, #6 a #9 acompanham os bloqueios materiais.
+Os validadores de chuva e geometria passaram apenas com dados sintéticos. Nenhum arquivo mensal real ou feição oficial de Itapeba foi incorporado. Faltam produtos técnicos integrais, registros agregados, interlocutores confirmados, participação local e revisão independente. A issue #2 acompanha a decisão do portão; as issues #4, #6 a #9 acompanham os bloqueios materiais.
 
 ## Quero propor uma mudança
 
@@ -142,7 +144,7 @@ Os caminhos existentes foram preservados. O crescimento seguirá:
 
 ## Estado atual
 
-O acervo contém **54 documentos** identificados, versionados e submetidos à validação automática. A camada de aplicações contém índice, CASO-001, registro de prontidão, matriz de fontes e protocolo pluviométrico. A CI possui o status separado `data/pipeline`. Ainda não há série real coletada, estudo concluído, revisor elegível ou ativo, instância plural permanente ou validação empírica suficiente. O deploy público aguarda a ativação inicial do GitHub Pages na issue #1.
+O acervo contém **55 documentos** identificados, versionados e submetidos à validação automática. A camada de aplicações contém índice, CASO-001, registro de prontidão, matriz de fontes e protocolos geoespacial e pluviométrico. A CI possui os estados separados `data/pipeline` e `geodata/pipeline`. Ainda não há geometria ou série real processada, estudo concluído, revisor elegível ou ativo, instância plural permanente ou validação empírica suficiente. O deploy público aguarda a ativação inicial do GitHub Pages na issue #1.
 
 ## Histórico de alterações
 
@@ -157,3 +159,4 @@ O acervo contém **54 documentos** identificados, versionados e submetidos à va
 | 0.10.0 | 2026-07-18 | compatível | Recorte de Itapeba, registro de prontidão e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
 | 0.11.0 | 2026-07-18 | compatível | Protocolo pluviométrico, teste sintético, status de dados e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
 | 0.12.0 | 2026-07-18 | compatível | Matriz de fontes, política de retenção e linha de base de 54 documentos | Projeto Pragmatismo Cívico |
+| 0.13.0 | 2026-07-18 | compatível | Protocolo geoespacial, validador GeoJSON, novo status de CI e linha de base de 55 documentos | Projeto Pragmatismo Cívico |
