@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.14.0
+versao: 0.14.1
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -81,7 +81,7 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 | Documento | Identificador | Caminho | Versão | Representação |
 |---|---|---|---:|---|
-| Página inicial | `PORTAL-INICIO` | `README.md` | 0.2.1 | bloco estruturado equivalente e seção colapsável |
+| Página inicial | `PORTAL-INICIO` | `README.md` | 0.2.2 | bloco estruturado equivalente e seção colapsável |
 | Guia de início | `GUIA-COMECAR` | `docs/COMECAR.md` | 0.2.0 | cabeçalho YAML |
 
 O guia de início cobre o ciclo completo, diferencia o PPC-000 do PPC-000A e do PPC-META-001 e declara que o framework ainda não possui validação empírica suficiente para estabilidade.
@@ -352,3 +352,4 @@ Executar a **Fase 5 — Catálogo e navegação**, criando um catálogo document
 | 0.12.0 | 2026-07-18 | compatível | Conclusão do lote 4A, migração do Framework e da Carta e registro da dívida editorial remanescente | Projeto Pragmatismo Cívico |
 | 0.13.0 | 2026-07-18 | compatível | Conclusão do lote 4B, migração dos quatro documentos fundadores restantes e registro dos reparos normativos associados | Projeto Pragmatismo Cívico |
 | 0.14.0 | 2026-07-18 | compatível | Conclusão do lote 4C, cobertura dos 38 documentos, reparo do guia de início e promoção do catálogo documental | Projeto Pragmatismo Cívico |
+| 0.14.1 | 2026-07-18 | correção | Sincronização da versão 0.2.2 do README após o ajuste de renderização dos metadados | Projeto Pragmatismo Cívico |
