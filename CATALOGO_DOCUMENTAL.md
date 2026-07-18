@@ -65,7 +65,7 @@ Ele é gerado a partir do `mkdocs.yml` e dos metadados de cada documento. A pres
 | Identificador | Documento | Versão | Estado | Tipo | Caminho |
 |---|---|---:|---|---|---|
 | `ARQ-001` | [Arquitetura Documental do Framework](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | `0.2.0` | `rascunho` | `arquitetura` | `ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md` |
-| `ARQ-002` | [Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | `0.15.0` | `rascunho` | `arquitetura` | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` |
+| `ARQ-002` | [Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | `0.15.1` | `rascunho` | `arquitetura` | `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md` |
 | `GOV-001` | [Modelo de Governança do Pragmatismo Cívico](MODELO_DE_GOVERNANCA.md) | `0.1.0` | `rascunho` | `governanca` | `MODELO_DE_GOVERNANCA.md` |
 | `GOV-002` | [Roadmap do Pragmatismo Cívico](ROADMAP.md) | `0.11.0` | `rascunho` | `governanca` | `ROADMAP.md` |
 | `GOV-003` | [Guia de Contribuição do Pragmatismo Cívico](CONTRIBUTING.md) | `0.1.0` | `rascunho` | `governanca` | `CONTRIBUTING.md` |
