@@ -1,12 +1,12 @@
 ---
 id: FICHA-PPC-003
 titulo: Ficha de Avaliação Técnica de Alternativas
-versao: 0.1.3
+versao: 0.1.4
 status: piloto
 tipo: ferramenta
 idioma: pt-BR
 data_criacao: null
-data_versao: 2026-07-17
+data_versao: 2026-07-18
 responsaveis:
   - Comunidade Pragmatismo Cívico
 aprovadores: []
@@ -16,10 +16,10 @@ depende_de:
   - PPC-003
   - PPC-META-001
   - ARQ-001
-produz_entrada_para:
-  - PPC-004
+produz_entrada_para: []
 relaciona_se_com:
   - CICLO-PC-001
+  - PPC-004
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -417,6 +417,7 @@ Pontos formais de revisão:
 | 0.1.1 | 2026-07-17 | correção | Normalização dos metadados conforme PPC-META-001, sem alteração metodológica | Projeto Pragmatismo Cívico |
 | 0.1.2 | 2026-07-17 | correção | Alinhamento do histórico ao formato mínimo do PPC-META-001 | Projeto Pragmatismo Cívico |
 | 0.1.3 | 2026-07-17 | correção | Declaração da versão 0.1.0 do PPC-003 operacionalizada pela ficha e inclusão das dependências documentais transversais | Projeto Pragmatismo Cívico |
+| 0.1.4 | 2026-07-18 | correção | Reclassificação do vínculo com o PPC-004 como relação complementar, evitando dependência obrigatória do padrão em uma ferramenta específica | Projeto Pragmatismo Cívico |
 
 ## 17. Saída para o PPC-004
 
