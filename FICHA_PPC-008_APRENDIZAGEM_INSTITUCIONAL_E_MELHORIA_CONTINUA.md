@@ -1,3 +1,33 @@
+---
+id: FICHA-PPC-008
+titulo: Ficha PPC-008 — Aprendizagem Institucional e Melhoria Contínua
+versao: 0.1.0
+status: rascunho
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-008
+  - PPC-007
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - CICLO-PC-001
+  - PPC-001
+  - PPC-000A
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+documento_associado: PPC-008
+versao_documento_associado: 0.1.0
+---
+
 # Ficha PPC-008 — Aprendizagem Institucional e Melhoria Contínua
 
 Use esta ficha para converter evidências, avaliações e experiência de implementação em mudanças documentadas e memória institucional.
@@ -91,3 +121,9 @@ Para cada lição, registrar:
 - [ ] decisões de rejeição também são justificadas;
 - [ ] memória institucional preservada;
 - [ ] aprendizagem alimenta o próximo ciclo.
+
+## Histórico de alterações da ferramenta
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, com vínculo à versão 0.1.0 do PPC-008 e preservação dos campos operacionais | Projeto Pragmatismo Cívico |
