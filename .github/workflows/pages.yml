@@ -40,6 +40,13 @@ jobs:
       - name: Gerar prévia do catálogo documental
         run: python scripts/generate_catalog.py --output catalog-preview.md
 
+      - name: Verificar catálogo publicado
+        run: |
+          diff -u CATALOGO_DOCUMENTAL.md catalog-preview.md || {
+            echo "::error::O catálogo publicado diverge dos metadados ou da navegação. Regenere CATALOGO_DOCUMENTAL.md."
+            exit 1
+          }
+
       - name: Preservar prévia do catálogo
         uses: actions/upload-artifact@v4
         with:
