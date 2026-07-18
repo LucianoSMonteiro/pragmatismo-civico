@@ -5,14 +5,8 @@ repo_name: LucianoSMonteiro/pragmatismo-civico
 repo_url: https://github.com/LucianoSMonteiro/pragmatismo-civico
 edit_uri: edit/main/
 
-docs_dir: .
-site_dir: ../site
-
-exclude_docs: |
-  .github/
-  .git/
-  LICENSE
-  requirements.txt
+docs_dir: .mkdocs-src
+site_dir: site
 
 copyright: Conteúdo aberto e versionado pela comunidade do Pragmatismo Cívico.
 
