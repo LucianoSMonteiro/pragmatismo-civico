@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import base64
 import hashlib
+import json
 import os
 import shutil
 import sys
@@ -15,7 +16,12 @@ from pathlib import Path
 from generate_catalog import ROOT, load_documents
 from validate_issue_forms import IssueFormValidationResult, validate_issue_forms
 from validate_links import LinkValidationResult, validate_links
-from validate_metadata_graph import ValidationResult, validate_documents
+from validate_metadata_graph import ValidationResult as MetadataValidationResult, validate_documents
+from validar_registro_documentos_tecnicos import (
+    DEFAULT_REGISTRY,
+    ValidationResult as EvidenceValidationResult,
+    validate_registry,
+)
 
 
 MANUAL_DEBT = (
@@ -49,13 +55,14 @@ def add_findings(lines: list[str], title: str, errors: list[str], warnings: list
 
 
 def build_report(
-    metadata: ValidationResult,
+    metadata: MetadataValidationResult,
     links: LinkValidationResult,
     issue_forms: IssueFormValidationResult,
+    evidence: EvidenceValidationResult,
 ) -> str:
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     commit = os.environ.get("GITHUB_SHA", "execução local")
-    overall_ok = metadata.ok and links.ok and issue_forms.ok
+    overall_ok = metadata.ok and links.ok and issue_forms.ok and evidence.ok
 
     lines = [
         "# Relatório de Validação Documental",
@@ -87,6 +94,12 @@ def build_report(
             f"{issue_forms.pull_request_templates} template(s) de PR; "
             f"{issue_forms.pull_request_checkboxes} verificação(ões) de PR |"
         ),
+        (
+            f"| Registro de evidências técnicas | {status_label(evidence.ok)} | "
+            f"{evidence.records} fontes; {evidence.claims} alegações; "
+            f"{evidence.inconsistencies} inconsistências; "
+            f"{evidence.required_documents} documentos requeridos |"
+        ),
         "",
     ]
 
@@ -98,6 +111,12 @@ def build_report(
         issue_forms.errors,
         issue_forms.warnings,
     )
+    add_findings(
+        lines,
+        "Achados do registro de evidências técnicas",
+        evidence.errors,
+        evidence.warnings,
+    )
 
     lines.extend(["## Dívida manual conhecida", ""])
     lines.extend(f"- {item}" for item in MANUAL_DEBT)
@@ -106,7 +125,9 @@ def build_report(
             "",
             "## Escopo da automação",
             "",
-            "A execução documental verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown, os formulários canônicos de proposta e candidatura, salvaguardas públicas de privacidade e o template de pull request.",
+            "A execução documental verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown, os formulários canônicos de proposta e candidatura, salvaguardas públicas de privacidade, o template de pull request e o registro estruturado de fontes técnicas, alegações, inconsistências e documentos requeridos.",
+            "",
+            "O registro de evidências impede classificar comunicação institucional como evidência financeira primária e exige caminho local e SHA-256 para qualquer fonte marcada como obtida ou tratada.",
             "",
             "Os pipelines `data/pipeline` e `geodata/pipeline` são executados separadamente com fixtures sintéticos. Eles verificam o funcionamento do código, não a oficialidade, representatividade, suficiência ou qualidade de fontes reais.",
             "",
@@ -127,12 +148,7 @@ def wrap_base64(data: bytes, width: int = 88) -> list[str]:
 
 
 def build_geoinea_appendix() -> str:
-    """Executa uma coleta externa somente quando o marcador explícito existe.
-
-    Todos os arquivos produzidos são incorporados ao relatório em Base64, com
-    tamanho e SHA-256. Assim o artefato padrão da CI preserva os bytes exatos sem
-    transformar uma dependência externa em requisito permanente do build.
-    """
+    """Executa coleta externa somente quando o marcador explícito existe."""
     if not GEOINEA_MARKER.is_file():
         return ""
 
@@ -226,6 +242,13 @@ def build_geoinea_appendix() -> str:
     return "\n".join(lines)
 
 
+def load_evidence_registry() -> EvidenceValidationResult:
+    payload = json.loads(DEFAULT_REGISTRY.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError("A raiz do registro de documentos técnicos deve ser objeto.")
+    return validate_registry(payload)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="validation-report.md")
@@ -235,8 +258,14 @@ def main() -> int:
     metadata_result = validate_documents(documents)
     link_result = validate_links(documents)
     issue_form_result = validate_issue_forms()
+    evidence_result = load_evidence_registry()
 
-    report = build_report(metadata_result, link_result, issue_form_result)
+    report = build_report(
+        metadata_result,
+        link_result,
+        issue_form_result,
+        evidence_result,
+    )
     appendix = build_geoinea_appendix()
     if appendix:
         report = f"{report}\n\n{appendix}\n"
@@ -248,12 +277,17 @@ def main() -> int:
     output_path.write_text(report, encoding="utf-8")
 
     print(f"Relatório gerado em {output_path}")
-    return 0 if metadata_result.ok and link_result.ok and issue_form_result.ok else 1
+    return 0 if (
+        metadata_result.ok
+        and link_result.ok
+        and issue_form_result.ok
+        and evidence_result.ok
+    ) else 1
 
 
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
-    except (FileNotFoundError, TypeError, ValueError) as error:
+    except (FileNotFoundError, TypeError, ValueError, json.JSONDecodeError) as error:
         print(f"ERRO: {error}", file=sys.stderr)
         raise SystemExit(1) from error
