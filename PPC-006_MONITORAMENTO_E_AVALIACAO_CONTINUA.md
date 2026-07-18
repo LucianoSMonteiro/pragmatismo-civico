@@ -1,3 +1,38 @@
+---
+id: PPC-006
+titulo: Monitoramento e Avaliação Contínua
+versao: 0.1.0
+status: rascunho
+tipo: padrao-metodologico
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-005
+  - MODELO-TDM-001
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-007
+  - PPC-008
+relaciona_se_com:
+  - PPC-001
+  - PPC-004
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md
+  - INDICADORES.md
+---
+
 # PPC-006 — Monitoramento e Avaliação Contínua
 
 ## 1. Objetivo
@@ -154,3 +189,9 @@ O monitoramento atende ao PPC-006 quando:
 - considera efeitos distributivos e direitos;
 - registra respostas aos desvios;
 - pode provocar revisão da política.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do padrão | Projeto Pragmatismo Cívico |
