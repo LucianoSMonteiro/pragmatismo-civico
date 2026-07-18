@@ -1,7 +1,7 @@
 ---
 id: CADASTRO-REVISORES
 titulo: Cadastro Público de Revisores
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -13,16 +13,16 @@ aprovadores: []
 depende_de:
   - GOV-007
   - GOV-006
+  - FICHA-GOV-007
   - PPC-META-001
   - ARQ-001
 produz_entrada_para: []
 relaciona_se_com:
-  - FICHA-GOV-007
   - GOV-003
   - GOV-005
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -115,3 +115,4 @@ O cadastro é adequado quando:
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Criação do registro público, inicialmente vazio, com esquema de dados e regras de atualização | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-18 | correção | Declaração da FICHA-GOV-007 como entrada obrigatória para admissão e atualização do cadastro | Projeto Pragmatismo Cívico |
