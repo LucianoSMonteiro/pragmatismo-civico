@@ -1,3 +1,36 @@
+---
+id: PPC-003
+titulo: Avaliação Técnica de Alternativas
+versao: 0.1.0
+status: rascunho
+tipo: padrao-metodologico
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-001
+  - PPC-002
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-004
+relaciona_se_com:
+  - MODELO-TDM-001
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md
+  - MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md
+---
+
 # PPC-003 — Avaliação Técnica de Alternativas
 
 ## Status
@@ -443,8 +476,8 @@ Quando o tempo for limitado, a análise pode ser abreviada, mas deve registrar:
 - **Produz entrada para:** PPC-004 — decisão e justificativa.
 - **Relacionado a:** PPC-000, Ciclo do Pragmatismo Cívico, Indicadores e Modelo de Governança.
 
-## 19. Controle de versão
+## 19. Histórico de alterações
 
-| Versão | Status | Alteração |
-|---|---|---|
-| 0.1.0 | Rascunho | Primeira especificação pública do padrão. |
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, preservando a primeira especificação pública | Projeto Pragmatismo Cívico |
