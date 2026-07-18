@@ -1,16 +1,28 @@
 ---
 id: FICHA-PPC-003
 titulo: Ficha de Avaliação Técnica de Alternativas
-versao: 0.1.0
+versao: 0.1.1
 status: piloto
-fase_cpc: avaliar
-padrao_relacionado: PPC-003
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Comunidade Pragmatismo Cívico
+aprovadores: []
 depende_de:
   - PPC-001
   - PPC-002
-produz_entradas_para:
+  - PPC-003
+produz_entrada_para:
   - PPC-004
-ultima_revisao: 2026-07-17
+relaciona_se_com: []
+substitui: []
+substituido_por: null
+compatibilidade: compativel
+proxima_revisao: null
+fase_cpc: avaliar
+padrao_relacionado: PPC-003
 ---
 
 # Ficha PPC-003 — Avaliação Técnica de Alternativas
@@ -18,6 +30,8 @@ ultima_revisao: 2026-07-17
 Esta ficha operacionaliza o `PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`. Deve ser preenchida de forma proporcional ao impacto, à incerteza, à irreversibilidade e aos riscos da decisão.
 
 > A ficha não decide automaticamente. Ela torna o julgamento técnico explícito, comparável, revisável e auditável.
+
+O estado `piloto` foi preservado do cabeçalho anterior. Qualquer transição futura deve seguir o PPC-000A e possuir registro verificável.
 
 ## 1. Identificação da avaliação
 
@@ -390,11 +404,12 @@ Pontos formais de revisão:
 | Revisão independente | | | |
 | Autoridade destinatária | | | |
 
-## 16. Controle de versões
+## 16. Histórico de alterações
 
 | Versão | Data | Alteração | Responsável |
 |---|---|---|---|
-| 0.1.0 | 2026-07-17 | Versão piloto da ficha | Comunidade Pragmatismo Cívico |
+| 0.1.0 | 2026-07-17 | Versão piloto da ficha registrada no repositório | Comunidade Pragmatismo Cívico |
+| 0.1.1 | 2026-07-17 | Normalização dos metadados conforme PPC-META-001, sem alteração metodológica | Projeto Pragmatismo Cívico |
 
 ## 17. Saída para o PPC-004
 
