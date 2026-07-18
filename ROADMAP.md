@@ -47,8 +47,14 @@ Os documentos centrais devem ser coerentes entre si, compreensíveis ao público
 - [x] ficha prática de avaliação técnica;
 - [x] PPC-004 — decisão e justificativa;
 - [x] ficha prática de decisão e justificativa;
-- [ ] modelo de teoria da mudança;
-- [ ] ficha de indicadores;
+- [x] modelo de teoria da mudança;
+- [x] ficha prática de teoria da mudança;
+- [x] PPC-005 — implementação e gestão adaptativa;
+- [x] PPC-006 — monitoramento e avaliação contínua;
+- [x] PPC-007 — avaliação de resultados e impactos;
+- [x] PPC-008 — aprendizagem institucional e melhoria contínua;
+- [ ] fichas práticas dos PPC-005 a PPC-008;
+- [ ] ficha padrão de indicadores;
 - [ ] protocolo de revisão periódica;
 - [ ] checklist de transparência e rastreabilidade;
 - [ ] modelo de relatório de decisão;
@@ -144,15 +150,16 @@ O framework deve possuir aplicações documentadas, avaliações externas e uma 
 
 ## Prioridades imediatas
 
-1. desenvolver o modelo de teoria da mudança;
-2. criar a ficha padrão de indicadores;
-3. desenvolver o protocolo de revisão periódica;
-4. desenvolver o checklist de transparência e rastreabilidade;
-5. criar o modelo consolidado de relatório de decisão;
-6. estruturar o protocolo de avaliação do próprio framework;
-7. selecionar e documentar o primeiro estudo de caso demonstrativo;
-8. revisar a licença para distinguir documentação, ferramentas e eventual software;
-9. preparar versões para impressão dos padrões e fichas.
+1. criar as fichas práticas dos PPC-005 a PPC-008;
+2. desenvolver o PPC-META-001 — metadados e versionamento dos padrões;
+3. formalizar o ciclo de vida dos PPCs;
+4. consolidar a arquitetura documental do framework;
+5. criar a ficha padrão de indicadores;
+6. desenvolver o checklist de transparência e rastreabilidade;
+7. estruturar o protocolo de avaliação do próprio framework;
+8. selecionar e documentar o primeiro estudo de caso demonstrativo;
+9. revisar a licença para distinguir documentação, ferramentas e eventual software;
+10. preparar versões para impressão dos padrões e fichas.
 
 ## Controle de coerência
 
