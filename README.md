@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.6.0
+versao: 0.7.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -22,6 +22,7 @@ relaciona_se_com:
   - CATALOGO-DOCUMENTAL
   - ARQ-003
   - GOV-005
+  - GOV-006
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -47,7 +48,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os 42 documentos da navegação canônica estão identificados, versionados, catalogados e validados automaticamente. O ciclo PPC-001 a PPC-008, a Teoria da Mudança, doze ferramentas e os padrões de governança estão disponíveis para revisão e aplicação experimental. O GOV-005 organiza propostas de mudança, mas a política permanente de revisão e a instância plural ainda não foram constituídas. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público depende da ativação inicial do GitHub Pages registrada na issue #1.
+**Estado atual:** desenvolvimento aberto. Os 44 documentos da navegação canônica estão identificados, versionados, catalogados e validados automaticamente. O ciclo PPC-001 a PPC-008, a Teoria da Mudança, treze ferramentas e os padrões de governança estão disponíveis para revisão e aplicação experimental. O GOV-005 governa propostas e o GOV-006 governa revisão, aprovação e verificação. A instância plural permanente ainda não foi constituída, portanto decisões críticas e fundacionais permanecem limitadas pelo regime provisório. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar estabilidade. O deploy público depende da ativação inicial do GitHub Pages registrada na issue #1.
 
 </div>
 
@@ -87,11 +88,11 @@ Acesse fichas, matriz e indicadores para documentar, implementar e revisar decis
 
 <div class="pc-card" markdown>
 
-### Propor uma mudança
+### Propor e revisar uma mudança
 
-Registre problema, alternativas, riscos, compatibilidade, revisão, decisão e verificação.
+Registre problema, alternativas, riscos, compatibilidade, composição, quórum, decisão e verificação.
 
-[Conhecer o processo](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md)
+[Conhecer a governança de mudanças](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md)
 
 </div>
 
@@ -190,8 +191,10 @@ A decisão será reavaliada após três casos oficiais, 60 documentos ou evidên
 | [PPC-000](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) | Estrutura o ecossistema de padrões. |
 | [PPC-000A](PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) | Define estados e transições. |
 | [PPC-META-001](PPC-META-001_METADADOS_E_VERSIONAMENTO.md) | Define metadados e versionamento. |
-| [GOV-005](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md) | Governa propostas, análise, decisão, implementação e verificação. |
-| [Ficha GOV-005](FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md) | Registra o ciclo completo de uma proposta. |
+| [GOV-005](GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md) | Governa identificação, triagem e ciclo da proposta. |
+| [Ficha GOV-005](FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md) | Registra o conteúdo e a evolução da proposta. |
+| [GOV-006](GOV-006_POLITICA_DE_REVISAO_E_APROVACAO.md) | Governa competência, independência, quórum, aprovação e reconsideração. |
+| [Registro GOV-006](FICHA_GOV-006_REGISTRO_DE_REVISAO_E_APROVACAO.md) | Registra composição, conflitos, votos, decisão e verificação. |
 | [Guia de Contribuição](CONTRIBUTING.md) | Orienta contribuições editoriais e formais. |
 | [ARQ-001](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | Define camadas e relações. |
 | [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | Acompanha cobertura, validação e dívida. |
@@ -201,8 +204,8 @@ A decisão será reavaliada após três casos oficiais, 60 documentos ou evidên
 
 ```text
 Problema → Proposta PM-AAAA-NNN → Triagem → Análise
-→ Consulta ou piloto, quando necessário → Decisão
-→ Implementação → Verificação → Encerramento
+→ Revisão e consulta proporcional → Decisão motivada
+→ Implementação → Verificação → Encerramento ou reconsideração
 ```
 
 Mudanças fundacionais não podem adquirir estado estável por decisão unilateral enquanto não houver instância plural formalmente constituída.
@@ -215,6 +218,7 @@ A CI verifica:
 - dependências, relações, substituições e ciclos;
 - links e âncoras;
 - formulário YAML de proposta de mudança;
+- template de pull request;
 - catálogo publicado;
 - estrutura física;
 - `mkdocs build --strict --clean`.
@@ -229,7 +233,7 @@ Status registrados:
 
 As prioridades atuais são:
 
-- criar a política permanente de revisão e aprovação;
+- criar o cadastro público e o programa de revisores;
 - selecionar e documentar o primeiro estudo de caso;
 - habilitar o GitHub Pages e confirmar o primeiro deploy — issue #1;
 - criar a ficha padrão de indicadores;
@@ -250,7 +254,7 @@ O repositório utiliza atualmente a licença MIT. A adequação entre essa licen
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.6.0
+versao: 0.7.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -270,6 +274,7 @@ relaciona_se_com:
   - CATALOGO-DOCUMENTAL
   - ARQ-003
   - GOV-005
+  - GOV-006
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -292,3 +297,4 @@ proxima_revisao: null
 | 0.4.0 | 2026-07-18 | compatível | Registro da conclusão da validação automática | Projeto Pragmatismo Cívico |
 | 0.5.0 | 2026-07-18 | compatível | Inclusão do ARQ-003 e atualização para 40 documentos | Projeto Pragmatismo Cívico |
 | 0.6.0 | 2026-07-18 | compatível | Inclusão do GOV-005, da ficha, do formulário e atualização para 42 documentos | Projeto Pragmatismo Cívico |
+| 0.7.0 | 2026-07-18 | compatível | Inclusão do GOV-006, do registro de revisão, do template de pull request e atualização para 44 documentos | Projeto Pragmatismo Cívico |
