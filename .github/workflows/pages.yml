@@ -58,14 +58,45 @@ jobs:
           cat mkdocs-build.log
           exit 1
 
-      - name: Configurar GitHub Pages
+      - name: Garantir configuração do GitHub Pages
+        id: pages
         if: steps.build.outputs.status == '0'
-        uses: actions/configure-pages@v5
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" > pages-api.log 2>&1; then
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" \
+              -f build_type=workflow >> pages-api.log 2>&1
+          else
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" \
+              -f build_type=workflow >> pages-api.log 2>&1
+          fi
+          status=$?
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Preservar diagnóstico do GitHub Pages
+        if: steps.build.outputs.status == '0' && steps.pages.outputs.status != '0'
+        uses: actions/upload-artifact@v4
         with:
-          enablement: true
+          name: pages-api-log
+          path: pages-api.log
+          retention-days: 7
+
+      - name: Interromper após falha da configuração do Pages
+        if: steps.build.outputs.status == '0' && steps.pages.outputs.status != '0'
+        run: |
+          cat pages-api.log
+          exit 1
+
+      - name: Configurar GitHub Pages
+        if: steps.build.outputs.status == '0' && steps.pages.outputs.status == '0'
+        uses: actions/configure-pages@v5
 
       - name: Enviar artefato
-        if: steps.build.outputs.status == '0'
+        if: steps.build.outputs.status == '0' && steps.pages.outputs.status == '0'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
