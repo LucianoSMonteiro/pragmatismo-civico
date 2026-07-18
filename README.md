@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.10.0
+versao: 0.11.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -29,6 +29,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-DADOS-CHUVA
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -55,7 +56,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os **52 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O CASO-001 foi reduzido preliminarmente à sub-bacia de Itapeba, com período de 2022-01-01 a 2026-06-30 e inventário inicial de fontes. O portão permanece fechado: faltam polígono oficial, dados técnicos completos, participação local e revisão independente. Não existe diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e o deploy público depende da ativação inicial do GitHub Pages na issue #1.
+**Estado atual:** desenvolvimento aberto. Os **53 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O CASO-001 permanece em preparação na sub-bacia de Itapeba. Seu processador pluviométrico foi aprovado em teste sintético e possui protocolo de proveniência e qualidade, mas nenhum arquivo mensal real foi incorporado. Faltam polígono oficial, dados técnicos integrais, participação local e revisão independente. Não existe diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e o deploy público depende da ativação inicial do GitHub Pages na issue #1.
 
 </div>
 
@@ -87,9 +88,9 @@ Avance por diagnóstico, alternativas, decisão, implementação, avaliação e 
 
 ### Acompanhar o primeiro caso
 
-Veja o recorte de Itapeba, as fontes localizadas e os bloqueios que impedem iniciar o diagnóstico.
+Veja o recorte de Itapeba, as fontes localizadas, o pipeline de dados e os bloqueios que impedem iniciar o diagnóstico.
 
-[Consultar o registro de prontidão](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md)
+[Consultar o protocolo pluviométrico](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md)
 
 </div>
 
@@ -166,7 +167,7 @@ Consulte:
 - [ARQ-003 — Estrutura Física](ARQ-003_DECISAO_SOBRE_A_ESTRUTURA_FISICA_DO_REPOSITORIO.md);
 - [Catálogo Documental](CATALOGO_DOCUMENTAL.md).
 
-Os caminhos existentes permanecem estáveis. Novas aplicações são publicadas em `casos/` e relatórios oficiais em `relatorios/`.
+Os caminhos existentes permanecem estáveis. Novas aplicações são publicadas em `casos/`, relatórios oficiais em `relatorios/` e arquivos locais ainda não publicáveis em `work/`, ignorado pelo Git.
 
 ## Padrões metodológicos
 
@@ -212,18 +213,27 @@ O [registro de prontidão](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md):
 
 - refinou a pergunta decisória;
 - definiu período preliminar de 2022-01-01 a 2026-06-30;
-- identificou fontes municipais, Cemaden, INEA e ANA a verificar;
+- identificou fontes oficiais a verificar;
 - registrou plano inicial de dados, atores, riscos e conflitos;
 - manteve o caso em preparação.
 
+O [protocolo pluviométrico](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md):
+
+- separa aquisição humana de processamento automatizado;
+- calcula SHA-256 das fontes;
+- normaliza UTC e horário de Brasília;
+- sinaliza datas inválidas, valores ausentes ou negativos, duplicidades e lacunas;
+- produz CSV, manifesto JSON e relatório Markdown;
+- é testado com fixture exclusivamente sintético.
+
 Continuam pendentes:
 
-- polígono oficial da sub-bacia;
-- produtos técnicos e geometrias das intervenções;
-- séries pluviométricas coletadas e testadas;
-- registros administrativos agregados;
-- participação local;
-- revisão independente.
+- polígono oficial da sub-bacia — issue #6;
+- produtos técnicos e geometrias — issue #7;
+- downloads mensais reais e revisão das flags — issue #4;
+- matriz consolidada de fontes — issue #10;
+- participação local — issue #8;
+- revisão independente — issue #9.
 
 Preparação não é diagnóstico. A issue #2 acompanha a próxima decisão do portão.
 
@@ -243,26 +253,30 @@ A CI verifica:
 - formulários de proposta e candidatura;
 - salvaguardas públicas de privacidade;
 - template de pull request;
+- pipeline pluviométrico com dados sintéticos;
 - catálogo nas seis camadas e estrutura física;
 - `mkdocs build --strict --clean`.
 
 Status registrados:
 
 - `documentation/validation`;
+- `data/pipeline`;
 - `documentation/catalog`;
 - `portal/build`.
 
 ## Próximas entregas
 
-- obter o polígono oficial e os produtos técnicos de Itapeba;
-- coletar e testar séries pluviométricas;
-- confirmar interlocutores e participação local;
+- realizar os downloads mensais autorizados — issue #4;
+- obter o polígono oficial — issue #6;
+- obter produtos técnicos — issue #7;
+- consolidar a matriz de fontes — issue #10;
+- confirmar interlocutores e participação — issue #8;
 - realizar a primeira chamada pública de revisores — issue #3;
+- obter revisão técnica — issue #9;
 - emitir nova decisão do portão — issue #2;
 - habilitar o GitHub Pages — issue #1;
 - criar a ficha padrão de indicadores;
 - desenvolver o checklist de transparência;
-- estruturar o protocolo de avaliação do framework;
 - revisar a licença.
 
 Consulte o [Roadmap](ROADMAP.md).
@@ -277,7 +291,7 @@ O repositório utiliza atualmente a licença MIT. Sua adequação para documenta
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.10.0
+versao: 0.11.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -304,6 +318,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-DADOS-CHUVA
   - CICLO-PC-001
   - GOV-003
 substitui: []
@@ -325,3 +340,4 @@ proxima_revisao: null
 | 0.8.0 | 2026-07-18 | compatível | Inclusão do GOV-007 e cadastro | Projeto Pragmatismo Cívico |
 | 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008 e CASO-001 | Projeto Pragmatismo Cívico |
 | 0.10.0 | 2026-07-18 | compatível | Recorte de Itapeba, registro de prontidão e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
+| 0.11.0 | 2026-07-18 | compatível | Protocolo pluviométrico, pipeline sintético, quarto status de CI e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
