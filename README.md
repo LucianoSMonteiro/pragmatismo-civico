@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.3.0
+versao: 0.4.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -45,7 +45,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os 39 documentos da navegação canônica estão identificados, versionados e catalogados. O ciclo PPC-001 a PPC-008, a Teoria da Mudança, as onze ferramentas e os padrões de governança estão disponíveis para revisão e aplicação experimental. O grafo documental e o build estrito do portal são verificados pela automação. O deploy público ainda depende da ativação inicial do GitHub Pages registrada na issue #1. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar o framework estável.
+**Estado atual:** desenvolvimento aberto. Os 39 documentos da navegação canônica estão identificados, versionados, catalogados e submetidos a validação automática. A execução aprovada verifica metadados, versões, estados, datas, compatibilidade, histórico, dependências, substituições, links internos, âncoras, correspondência do catálogo e build estrito. O deploy público ainda depende da ativação inicial do GitHub Pages registrada na issue #1. Ainda não há estudo de caso oficial nem validação empírica suficiente para declarar o framework estável.
 
 </div>
 
@@ -137,10 +137,10 @@ Novo ciclo pelo PPC-001
 
 > Toda decisão pública é uma hipótese que deve ser justificada, testada, medida, revisada e aperfeiçoada em benefício das pessoas.
 
-O framework não pergunta apenas de onde veio uma proposta. Pergunta:
+O framework pergunta:
 
-- qual problema real ela procura resolver;
-- quais evidências a sustentam;
+- qual problema real procura resolver;
+- quais evidências sustentam a análise;
 - quais alternativas foram consideradas;
 - quais direitos, riscos e custos estão envolvidos;
 - como a decisão será implementada, monitorada e revista;
@@ -167,45 +167,43 @@ O Pragmatismo Cívico **não é uma ideologia, filosofia política, doutrina, pa
 
 ## Arquitetura documental
 
-O acervo é organizado em seis camadas lógicas conectadas:
+O acervo é organizado em seis camadas lógicas:
 
-1. **Princípios e fundamentos** — identidade, teoria, princípios e especificações fundadoras.
-2. **Governança e arquitetura** — manutenção, metadados, ciclo de vida, contribuição e organização documental.
-3. **Método** — ciclo operacional e padrões PPC aplicáveis às decisões públicas.
-4. **Ferramentas** — fichas, matrizes, indicadores, checklists e modelos.
-5. **Aplicações e evidências** — estudos de caso, pilotos, avaliações e lições aprendidas.
-6. **Publicação e acesso** — repositório, portal, busca, navegação e versões de distribuição.
+1. **Princípios e fundamentos**;
+2. **Governança e arquitetura**;
+3. **Método**;
+4. **Ferramentas**;
+5. **Aplicações e evidências**;
+6. **Publicação e acesso**.
 
-A definição completa está no [ARQ-001 — Arquitetura Documental do Framework](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md). O estado do acervo é acompanhado pelo [ARQ-002 — Inventário e Plano de Migração Documental](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md), enquanto o [Catálogo Documental](CATALOGO_DOCUMENTAL.md) reúne identificadores, versões, estados, caminhos e relações dos documentos públicos.
+A definição completa está no [ARQ-001](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md). O estado do acervo e da validação está no [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md). O [Catálogo Documental](CATALOGO_DOCUMENTAL.md) reúne identificadores, versões, estados, caminhos e relações.
 
 ## Padrões metodológicos disponíveis
 
 | Recurso | Função |
 |---|---|
-| [PPC-001](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md) | Define e diagnostica o problema público, sua linha de base, causas, efeitos e grupos afetados. |
-| [PPC-002](PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md) | Orienta a geração e comparação de alternativas, incluindo inação, riscos e reversibilidade. |
-| [PPC-003](PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md) | Estrutura a avaliação técnica, a qualidade das evidências e a recomendação. |
-| [PPC-004](PPC-004_DECISAO_E_JUSTIFICATIVA.md) | Registra a decisão pública, a competência, a justificativa e as alternativas descartadas. |
-| [Teoria da Mudança](MODELO_DE_TEORIA_DA_MUDANCA.md) | Explicita a lógica causal, as hipóteses, os resultados e os impactos pretendidos. |
-| [PPC-005](PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md) | Transforma a decisão em intervenção executável, responsável e adaptável. |
-| [PPC-006](PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md) | Acompanha execução, produtos, resultados, riscos e hipóteses. |
-| [PPC-007](PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md) | Avalia resultados, impactos, atribuição, custos e efeitos adversos. |
-| [PPC-008](PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md) | Converte evidências e experiência em memória institucional e melhoria contínua. |
+| [PPC-001](PPC-001_DIAGNOSTICO_DE_PROBLEMAS_PUBLICOS.md) | Define e diagnostica o problema público. |
+| [PPC-002](PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md) | Formula e compara alternativas. |
+| [PPC-003](PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md) | Estrutura a avaliação técnica. |
+| [PPC-004](PPC-004_DECISAO_E_JUSTIFICATIVA.md) | Registra a decisão e sua justificativa. |
+| [Teoria da Mudança](MODELO_DE_TEORIA_DA_MUDANCA.md) | Explicita a lógica causal. |
+| [PPC-005](PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md) | Organiza implementação e adaptação. |
+| [PPC-006](PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md) | Acompanha execução e resultados. |
+| [PPC-007](PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md) | Avalia resultados e impactos. |
+| [PPC-008](PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md) | Converte evidências em aprendizado. |
 
 ## Governança dos padrões
 
 | Recurso | Função |
 |---|---|
-| [PPC-000](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) | Define como os padrões PPC são estruturados, validados, mantidos e relacionados. |
-| [PPC-META-001](PPC-META-001_METADADOS_E_VERSIONAMENTO.md) | Padroniza identificadores, metadados, versões, compatibilidade e histórico. |
-| [PPC-000A](PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) | Define estados, transições, revisão, substituição, obsolescência e arquivamento. |
-| [Modelo de Governança](MODELO_DE_GOVERNANCA.md) | Organiza o ciclo decisório, os papéis e as salvaguardas de governança. |
-| [ARQ-001](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | Define camadas, categorias, dependências e organização do acervo. |
-| [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | Inventaria o acervo, registra dívida documental e organiza a evolução. |
+| [PPC-000](PPC-000_ESPECIFICACAO_DO_ECOSSISTEMA_PPC.md) | Estrutura o ecossistema PPC. |
+| [PPC-META-001](PPC-META-001_METADADOS_E_VERSIONAMENTO.md) | Padroniza metadados e versões. |
+| [PPC-000A](PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md) | Define estados e transições. |
+| [Modelo de Governança](MODELO_DE_GOVERNANCA.md) | Organiza papéis e salvaguardas. |
+| [ARQ-001](ARQ-001_ARQUITETURA_DOCUMENTAL_DO_FRAMEWORK.md) | Define a arquitetura documental. |
+| [ARQ-002](ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md) | Inventaria, valida e orienta a evolução do acervo. |
 
 ## Ferramentas disponíveis
-
-Cada etapa possui instrumento prático correspondente:
 
 - [Ficha PPC-001](FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md);
 - [Ficha PPC-002](FICHA_PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md);
@@ -216,42 +214,41 @@ Cada etapa possui instrumento prático correspondente:
 - [Ficha PPC-006](FICHA_PPC-006_MONITORAMENTO_E_AVALIACAO_CONTINUA.md);
 - [Ficha PPC-007](FICHA_PPC-007_AVALIACAO_DE_RESULTADOS_E_IMPACTOS.md);
 - [Ficha PPC-008](FICHA_PPC-008_APRENDIZAGEM_INSTITUCIONAL_E_MELHORIA_CONTINUA.md);
-- [Matriz de Avaliação de Políticas Públicas](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md);
-- [Indicadores do Pragmatismo Cívico](INDICADORES.md).
+- [Matriz de Avaliação](MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md);
+- [Indicadores](INDICADORES.md).
 
-## Regra de preservação da essência
+## Validação automática
 
-Toda expansão do projeto deve concretizar os princípios fundadores, e não redefini-los. Novos documentos e ferramentas precisam demonstrar:
+Cada execução na branch padrão:
 
-- qual problema real procuram resolver;
-- quais princípios colocam em prática;
-- como seus resultados poderão ser avaliados;
-- como direitos, transparência e responsabilidade serão protegidos;
-- por que acrescentam capacidade prática sem produzir complexidade desnecessária.
+- valida os 39 documentos e o grafo de relações;
+- verifica links internos e âncoras;
+- gera um relatório consolidado preservado como artefato;
+- compara o catálogo publicado com a geração atual;
+- executa `mkdocs build --strict --clean`;
+- registra os status `documentation/validation` e `portal/build`.
 
-O documento central para essa verificação é o [Framework de Referência](FRAMEWORK_DE_REFERENCIA.md).
+A automação apoia a governança, mas não substitui revisão humana, aprovação metodológica ou validação empírica.
 
 ## Próximas entregas
 
 As prioridades atuais são:
 
 - formalizar o processo de propostas de mudança;
-- concluir a validação automática de versões, compatibilidade, links, substituições e correspondência do catálogo;
-- habilitar o GitHub Pages para GitHub Actions e confirmar o primeiro deploy — issue #1;
+- habilitar o GitHub Pages e confirmar o primeiro deploy — issue #1;
+- avaliar a estrutura física do repositório na Fase 7;
 - criar a ficha padrão de indicadores;
 - desenvolver o checklist de transparência e rastreabilidade;
 - estruturar o protocolo de avaliação do próprio framework;
-- selecionar e documentar o primeiro estudo de caso demonstrativo;
-- revisar a licença aplicável à documentação, às ferramentas e a eventual software;
-- preparar versões para impressão dos padrões e fichas.
+- selecionar o primeiro estudo de caso demonstrativo;
+- revisar a licença;
+- preparar versões para impressão.
 
-A evolução planejada está registrada no [Roadmap](ROADMAP.md).
+A evolução planejada está no [Roadmap](ROADMAP.md).
 
 ## Licença e colaboração
 
 O repositório utiliza atualmente a licença MIT. A adequação entre a licença, os documentos conceituais, as ferramentas e eventual software será revisada antes da primeira versão estável.
-
-Contribuições são organizadas por regras públicas de governança, integridade, rastreabilidade e preservação dos princípios fundadores.
 
 <details markdown="1">
 <summary>Metadados documentais</summary>
@@ -259,7 +256,7 @@ Contribuições são organizadas por regras públicas de governança, integridad
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.3.0
+versao: 0.4.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -291,8 +288,9 @@ proxima_revisao: null
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001 por representação estruturada equivalente, preservando a apresentação do README no GitHub e no portal | Projeto Pragmatismo Cívico |
-| 0.2.0 | 2026-07-18 | compatível | Registro da conclusão da migração mínima dos 38 documentos e atualização das prioridades de catálogo e validação | Projeto Pragmatismo Cívico |
-| 0.2.1 | 2026-07-18 | correção | Inclusão de representação humana colapsável dos metadados, sem prejudicar a abertura da página | Projeto Pragmatismo Cívico |
-| 0.2.2 | 2026-07-18 | correção | Ativação do processamento Markdown no bloco colapsável de metadados | Projeto Pragmatismo Cívico |
-| 0.3.0 | 2026-07-18 | compatível | Inclusão do catálogo, atualização para 39 documentos e registro do build estrito validado e do bloqueio de deploy | Projeto Pragmatismo Cívico |
+| 0.1.0 | 2026-07-18 | inicial | Migração documental por representação estruturada equivalente | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Registro da migração mínima dos 38 documentos | Projeto Pragmatismo Cívico |
+| 0.2.1 | 2026-07-18 | correção | Inclusão da seção humana de metadados | Projeto Pragmatismo Cívico |
+| 0.2.2 | 2026-07-18 | correção | Ativação do processamento Markdown na seção de metadados | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Inclusão do catálogo e atualização para 39 documentos | Projeto Pragmatismo Cívico |
+| 0.4.0 | 2026-07-18 | compatível | Registro da conclusão da Fase 6 e da validação automática integral do acervo | Projeto Pragmatismo Cívico |
