@@ -17,6 +17,7 @@ from validate_metadata_graph import ValidationResult, validate_documents
 MANUAL_DEBT = (
     "GitHub Pages ainda exige ativação inicial pelo proprietário na issue #1.",
     "O CASO-001 existe apenas em preparação e ainda não possui diagnóstico, revisão independente ou resultado empírico.",
+    "Nenhuma feição oficial de Itapeba, série pluviométrica real ou documento técnico integral foi incorporado ao caso.",
     "A adequação da licença para documentação, ferramentas e eventual software permanece pendente.",
     "O cadastro público de revisores existe, mas ainda não possui pessoa elegível ou ativa.",
     "A instância plural permanente de revisão e aprovação ainda não foi constituída.",
@@ -100,9 +101,11 @@ def build_report(
             "",
             "## Escopo da automação",
             "",
-            "A execução verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown, os formulários canônicos de proposta e candidatura, salvaguardas públicas de privacidade e o template de pull request.",
+            "A execução documental verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown, os formulários canônicos de proposta e candidatura, salvaguardas públicas de privacidade e o template de pull request.",
             "",
-            "Ela não substitui revisão humana de mérito, avaliação real de competência, aprovação metodológica, validação empírica, transições formais de estado ou avaliação da qualidade das evidências.",
+            "Os pipelines `data/pipeline` e `geodata/pipeline` são executados separadamente com fixtures sintéticos. Eles verificam o funcionamento do código, não a oficialidade, representatividade, suficiência ou qualidade de fontes reais.",
+            "",
+            "A automação não substitui revisão humana de mérito, avaliação real de competência, aprovação metodológica, validação empírica, transições formais de estado ou avaliação da qualidade das evidências.",
             "",
         ]
     )
