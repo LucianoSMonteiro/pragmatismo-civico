@@ -1,12 +1,12 @@
 ---
 id: GOV-003
 titulo: Guia de Contribuição do Pragmatismo Cívico
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
 data_criacao: null
-data_versao: 2026-07-17
+data_versao: 2026-07-18
 responsaveis:
   - Projeto Pragmatismo Cívico
 aprovadores: []
@@ -16,14 +16,16 @@ depende_de:
   - PPC-000A
   - PPC-META-001
   - ARQ-001
+  - GOV-005
 produz_entrada_para: []
 relaciona_se_com:
   - GOV-001
   - GOV-002
   - GOV-004
+  - FICHA-GOV-005
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -39,7 +41,10 @@ Leia, nesta ordem:
 2. `CARTA_DE_PRINCIPIOS.md`;
 3. `FRAMEWORK_DE_REFERENCIA.md`;
 4. `SPECIFICATION.md`;
-5. este guia e o `CODE_OF_CONDUCT.md`.
+5. `GOV-005_PROCESSO_DE_PROPOSTAS_DE_MUDANCA.md`;
+6. este guia e o `CODE_OF_CONDUCT.md`.
+
+Para mudanças formais, utilize a `FICHA_GOV-005_PROPOSTA_DE_MUDANCA.md` ou o formulário **Proposta de mudança** disponível nas issues do repositório.
 
 ## 2. Regra central
 
@@ -101,34 +106,44 @@ Antes de enviar uma proposta, responda:
 
 ## 6. Como propor mudanças
 
-Para correções pequenas, uma alteração direta e bem explicada pode ser suficiente.
+### 6.1 Correções editoriais de baixo impacto
 
-Para mudanças conceituais, metodológicas ou estruturais, a proposta deve incluir:
+Correções de ortografia, formatação, acessibilidade ou links podem ser apresentadas diretamente em pull request quando não alterarem interpretação, obrigação, método ou compatibilidade.
 
-- problema identificado;
-- texto ou estrutura atual;
-- alteração proposta;
-- justificativa;
-- princípios relacionados;
-- evidências ou referências;
-- impactos esperados;
-- riscos e alternativas consideradas;
-- documentos que precisarão ser atualizados;
-- critério para avaliar se a mudança funcionou.
+O pull request deve explicar o problema, o escopo e a ausência de efeito normativo. A CI deve ser aprovada antes da incorporação.
+
+### 6.2 Mudanças formais
+
+Mudanças corretivas relevantes, metodológicas, arquiteturais, de governança, fundacionais, de ciclo de vida ou emergenciais seguem o GOV-005.
+
+A proposta deve ser aberta antes ou junto do trabalho de implementação e incluir:
+
+- problema demonstrado;
+- tipo e impacto;
+- estado atual e alteração pretendida;
+- princípios e documentos relacionados;
+- evidências e limitações;
+- alternativas consideradas, incluindo não alterar;
+- benefícios, riscos e salvaguardas;
+- compatibilidade e migração;
+- plano de implementação, verificação e reversão;
+- conflitos de interesse.
+
+A issue é o registro canônico da proposta. O pull request implementa a decisão, mas não substitui a triagem, a revisão ou a justificativa pública.
 
 ## 7. Mudanças no núcleo e nas aplicações
 
 ### Núcleo normativo
 
-Inclui a Carta de Princípios, a Especificação e o Framework de Referência. Mudanças nesses documentos devem ser raras, explícitas, justificadas e submetidas a revisão mais cuidadosa.
+Inclui a Carta de Princípios, a Especificação e o Framework de Referência. Mudanças nesses documentos são fundacionais, seguem fluxo reforçado e não podem adquirir estado estável por decisão unilateral enquanto não houver instância plural formalmente constituída.
 
 ### Metodologias e ferramentas
 
-Podem evoluir com maior frequência, desde que permaneçam compatíveis com o núcleo e tenham utilidade verificável.
+Podem evoluir com maior frequência, desde que permaneçam compatíveis com o núcleo, tenham utilidade verificável e sigam o rigor proporcional do GOV-005.
 
 ### Aplicações e estudos de caso
 
-Devem declarar contexto, hipóteses, dados, limitações e resultados. Um caso específico não redefine automaticamente o framework inteiro.
+Devem declarar contexto, hipóteses, dados, limitações, versões utilizadas e resultados. Um caso específico não redefine automaticamente o framework inteiro.
 
 ## 8. Evidências e referências
 
@@ -160,9 +175,13 @@ Um estudo de caso deve conter, no mínimo:
 9. limitações;
 10. lições aprendidas e revisão recomendada.
 
+Novos casos devem seguir a estrutura híbrida do ARQ-003 e ser publicados em `casos/` quando houver uma entrega real.
+
 ## 11. Conflitos de interesse
 
-Contribuidores devem declarar vínculos financeiros, partidários, profissionais ou institucionais que possam influenciar materialmente uma proposta. A existência de vínculo não invalida automaticamente a contribuição, mas sua ocultação compromete a confiança.
+Contribuidores e revisores devem declarar vínculos financeiros, partidários, profissionais, institucionais ou pessoais que possam influenciar materialmente uma proposta. A existência de vínculo não invalida automaticamente a contribuição, mas sua ocultação compromete a confiança.
+
+Conflitos relevantes devem ser tratados segundo o GOV-005, inclusive com abstenção decisória quando a independência estiver comprometida.
 
 ## 12. Revisão
 
@@ -174,7 +193,9 @@ As contribuições serão avaliadas por:
 - utilidade prática;
 - proporcionalidade da complexidade;
 - impactos sobre direitos, equidade e sustentabilidade;
-- capacidade de auditoria e revisão.
+- compatibilidade e reversibilidade;
+- capacidade de auditoria e revisão;
+- conformidade da implementação com a decisão registrada.
 
 Discordâncias fundamentadas são legítimas. O objetivo da revisão não é eliminar o dissenso, mas tornar decisões e justificativas públicas e verificáveis.
 
@@ -183,3 +204,4 @@ Discordâncias fundamentadas são legítimas. O objetivo da revisão não é eli
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva das regras de contribuição | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Integração do GOV-005, da ficha canônica e do formulário de issue ao fluxo de contribuição | Projeto Pragmatismo Cívico |
