@@ -39,17 +39,22 @@ A estrutura, a sintaxe e as regras detalhadas desses elementos são definidas pe
 
 ## 4. Estados do ciclo de vida
 
-Um PPC pode assumir os seguintes estados:
+Os estados canônicos do ecossistema são:
 
-1. **Rascunho** — proposta inicial ainda não submetida a validação.
-2. **Revisão pública** — documento aberto a contribuições estruturadas.
-3. **Piloto** — padrão aplicado em contexto real ou simulado.
-4. **Estável** — versão validada e recomendada para uso geral.
-5. **Em revisão** — padrão estável sob reavaliação formal.
-6. **Obsoleto** — padrão não recomendado, mantido para rastreabilidade.
-7. **Substituído** — padrão sucedido por outro documento identificado.
+1. **Ideia** — necessidade ou hipótese ainda não formalizada.
+2. **Proposta** — iniciativa formal submetida à análise de admissibilidade.
+3. **Rascunho** — documento estruturado ainda não suficientemente validado.
+4. **Revisão pública** — versão aberta a contribuições estruturadas.
+5. **Piloto** — padrão em aplicação controlada para geração de evidências.
+6. **Estável** — versão validada e recomendada dentro do escopo declarado.
+7. **Em revisão** — padrão estável submetido a reavaliação formal.
+8. **Substituído** — padrão sucedido por outro documento identificado.
+9. **Obsoleto** — padrão não recomendado, sem sucessor obrigatório.
+10. **Arquivado** — documento retirado do catálogo ativo e preservado para memória.
 
-Nenhum PPC deve nascer diretamente como estável.
+Os valores de metadados, critérios de entrada e saída, transições permitidas, responsabilidades e registros obrigatórios são definidos pelo `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md`.
+
+Nenhum PPC deve nascer diretamente como estável. Mudanças de estado devem ser justificadas, registradas e comunicadas.
 
 ## 5. Estrutura mínima obrigatória
 
@@ -167,6 +172,8 @@ Antes de alcançar o estado estável, um PPC deve passar, quando aplicável, por
 - avaliação do custo de aplicação;
 - incorporação documentada das lições aprendidas.
 
+A decisão de estabilidade deve observar os portões e os registros definidos pelo PPC-000A.
+
 ## 11. Qualidade do padrão
 
 A qualidade de um PPC deve ser avaliada em pelo menos cinco dimensões:
@@ -189,6 +196,8 @@ Um PPC pode ser declarado obsoleto quando:
 
 A obsolescência não apaga o documento. O histórico deve permanecer acessível.
 
+As diferenças entre substituição, obsolescência e arquivamento, bem como suas exigências de migração e comunicação, são definidas pelo PPC-000A.
+
 ## 13. Governança de mudanças
 
 Toda mudança deve registrar:
@@ -201,7 +210,7 @@ Toda mudança deve registrar:
 - impactos esperados;
 - data de revisão futura.
 
-Os metadados, o histórico e a compatibilidade da mudança devem seguir o PPC-META-001.
+Os metadados, o histórico e a compatibilidade da mudança devem seguir o PPC-META-001. As transições de estado devem seguir o PPC-000A.
 
 ## 14. Regra de simplicidade
 
@@ -213,8 +222,7 @@ Padrões devem melhorar decisões, proteger direitos, aumentar transparência ou
 
 O PPC-000 estabelece a governança geral do ecossistema e pode ser detalhado por padrões transversais, sem transferir ou alterar seus princípios fundamentais.
 
-Atualmente, complementa este documento:
+Atualmente, complementam este documento:
 
-- `PPC-META-001_METADADOS_E_VERSIONAMENTO.md` — identificação, metadados, histórico, versionamento, compatibilidade e migração documental.
-
-O ciclo de vida completo dos padrões será formalizado em documento próprio, mantendo coerência com os estados definidos neste PPC.
+- `PPC-META-001_METADADOS_E_VERSIONAMENTO.md` — identificação, metadados, histórico, versionamento, compatibilidade e migração documental;
+- `PPC-000A_CICLO_DE_VIDA_DOS_PADROES.md` — estados, transições, validação, manutenção, substituição, obsolescência e arquivamento.
