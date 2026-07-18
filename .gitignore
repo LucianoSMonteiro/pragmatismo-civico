@@ -3,3 +3,6 @@ site/
 __pycache__/
 *.py[cod]
 work/
+geoinea-result/
+geoinea-query.log
+geoinea-geometry-validation.log
