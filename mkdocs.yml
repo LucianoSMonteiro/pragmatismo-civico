@@ -96,6 +96,7 @@ nav:
       - Matriz de avaliação: MATRIZ_DE_AVALIACAO_DE_POLITICAS_PUBLICAS.md
   - Governança:
       - Modelo de governança: MODELO_DE_GOVERNANCA.md
+      - PPC-META-001 — Metadados e versionamento: PPC-META-001_METADADOS_E_VERSIONAMENTO.md
       - Indicadores: INDICADORES.md
       - Como contribuir: CONTRIBUTING.md
       - Código de conduta: CODE_OF_CONDUCT.md
