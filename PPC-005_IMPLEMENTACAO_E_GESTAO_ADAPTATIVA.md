@@ -1,3 +1,37 @@
+---
+id: PPC-005
+titulo: Implementação e Gestão Adaptativa
+versao: 0.1.0
+status: rascunho
+tipo: padrao-metodologico
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-17
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-004
+  - MODELO-TDM-001
+  - GOV-001
+  - PPC-000
+  - PPC-META-001
+  - ARQ-001
+  - CICLO-PC-001
+produz_entrada_para:
+  - PPC-006
+  - PPC-007
+relaciona_se_com:
+  - PPC-003
+  - PPC-008
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+ferramentas_associadas:
+  - FICHA_PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md
+---
+
 # PPC-005 — Implementação e Gestão Adaptativa
 
 ## 1. Objetivo
@@ -123,3 +157,9 @@ Uma implementação atende ao PPC-005 quando:
 - produz dados úteis para monitoramento;
 - documenta adaptações;
 - possui critérios de pausa, revisão e encerramento.
+
+## Histórico de alterações
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-17 | inicial | Migração documental para o PPC-META-001, sem alteração substantiva do padrão | Projeto Pragmatismo Cívico |
