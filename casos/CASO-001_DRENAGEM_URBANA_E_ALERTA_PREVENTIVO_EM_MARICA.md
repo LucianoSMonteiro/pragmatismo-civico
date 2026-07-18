@@ -1,7 +1,7 @@
 ---
 id: CASO-001
 titulo: Preparação do Estudo Demonstrativo sobre Drenagem Urbana e Alerta Preventivo na Sub-bacia de Itapeba
-versao: 0.4.0
+versao: 0.5.0
 status: rascunho
 tipo: aplicacao
 idioma: pt-BR
@@ -23,6 +23,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001-PRONTIDAO
   - CASO-001-FONTES
+  - CASO-001-DOCUMENTOS-TECNICOS
   - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
   - GOV-006
@@ -45,9 +46,11 @@ issue_acompanhamento: 2
 
 **Preparação.** Este documento não contém diagnóstico oficial, recomendação de obra, contratação, avaliação de política ou conclusão sobre o sistema de drenagem de Maricá.
 
-A pesquisa inicial reduziu o escopo para a sub-bacia de Itapeba e definiu o período preliminar de 2022-01-01 a 2026-06-30. A matriz consolidou 15 fontes públicas; os protocolos de chuva e geometria possuem validadores testados com fixtures sintéticos. O polígono oficial, as séries reais, os documentos técnicos, a participação local e a revisão independente continuam pendentes.
+A pesquisa reduziu o escopo para a sub-bacia de Itapeba e definiu o período preliminar de 2022-01-01 a 2026-06-30. A matriz consolidou 15 fontes públicas. O registro técnico estrutura 8 fontes oficiais ou institucionais, 20 alegações, 3 inconsistências e 7 grupos documentais pendentes.
 
-O PPC-001 somente poderá começar após nova decisão do portão de prontidão do GOV-008. Consulte o [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md), a [matriz de fontes](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md), o [protocolo geoespacial](CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md) e a issue #2.
+Nenhum programa final, contrato integral, projeto, medição, feição oficial ou série real foi incorporado. O PPC-001 somente poderá começar após nova decisão do portão de prontidão do GOV-008.
+
+Consulte o [registro de prontidão](CASO-001_REGISTRO_DE_PRONTIDAO.md), a [matriz de fontes](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md), os [documentos técnicos e contratações](CASO-001_DOCUMENTOS_TECNICOS_E_CONTRATACOES.md), o [protocolo geoespacial](CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md) e a issue #2.
 
 ## 1. Pergunta decisória preliminar
 
@@ -57,16 +60,9 @@ A pergunta poderá ser refinada após obtenção do polígono, dos projetos e da
 
 ## 2. Justificativa da seleção
 
-O tema foi selecionado para preparação porque:
+O tema foi selecionado porque integra engenharia civil, gestão pública, sustentabilidade e tecnologia; permite comparar medidas operacionais, estruturais, ambientais e informacionais; exige articulação entre evidência, capacidade institucional e conhecimento local; e pode produzir aprendizado reutilizável sobre decisões sob incerteza.
 
-- integra engenharia civil, gestão pública, sustentabilidade e tecnologia;
-- permite comparar manutenção, obras, soluções baseadas na natureza, monitoramento, comunicação e não intervenção;
-- possui efeitos potencialmente mensuráveis e distribuídos territorialmente;
-- exige articulação entre evidência técnica, capacidade institucional e conhecimento local;
-- testa diferentes etapas do ciclo sem depender de uma única solução;
-- pode gerar aprendizado reutilizável sobre decisões urbanas sob incerteza.
-
-A sub-bacia de Itapeba foi escolhida como recorte preliminar porque fontes municipais identificam intervenção de macrodrenagem anunciada em 2026, existe estação pluviométrica pública com o nome Itapeba e há registro municipal de acumulado elevado e ocorrências no evento de abril de 2022.
+A sub-bacia de Itapeba foi escolhida como recorte preliminar porque fontes municipais identificam intervenção de drenagem anunciada, existe estação pluviométrica pública denominada Itapeba e há registro municipal de acumulado elevado e ocorrências em abril de 2022.
 
 Essas razões justificam preparar o estudo, mas não demonstram que uma intervenção específica seja necessária, suficiente ou eficaz.
 
@@ -76,188 +72,152 @@ Essas razões justificam preparar o estudo, mas não demonstram que uma interven
 |---|---|
 | Município | Maricá/RJ |
 | Unidade | sub-bacia de Itapeba |
-| Polígono | pendente; camada estadual candidata localizada, feição ainda não obtida |
-| Sistema de referência candidato | EPSG:4674 — SIRGAS 2000, conforme serviços do GeoINEA |
+| Polígono | pendente; fonte estadual candidata localizada, resposta oficial ainda não obtida |
+| Sistema de referência candidato | EPSG:4674 — SIRGAS 2000 |
 | Período | 2022-01-01 a 2026-06-30, sujeito à completude das séries |
-| Evento de referência | chuvas de abril de 2022, ainda sem validação completa dos dados brutos |
-| População e grupos afetados | pendente do polígono e de dados oficiais |
-| Unidades potenciais | Defesa Civil, SOMAR, Urbanismo, Meio Ambiente e SANEMAR nas interfaces pertinentes |
+| Evento de referência | chuvas de abril de 2022, sem validação completa dos dados brutos |
+| População e grupos afetados | pendentes do polígono e de dados oficiais |
 | Responsável pela documentação | Projeto Pragmatismo Cívico |
 | Revisores | cadastro ainda sem pessoas elegíveis |
 
-O nome da sub-bacia não será tratado como limite cartográfico suficiente. A camada `GPL_SUBBACIAS_ERJ_50` é fonte candidata, mas sua existência não comprova que haja feição denominada Itapeba ou equivalência com o recorte municipal. O estudo não avançará sem geometria verificável.
+O nome da sub-bacia não será tratado como limite cartográfico suficiente. A camada `GPL_SUBBACIAS_ERJ_50` é fonte candidata, mas nenhuma resposta da API foi recebida nas tentativas hospedadas.
 
-## 4. Limites desta versão
+## 4. Fontes e documentos técnicos
+
+A [Matriz de Fontes e Lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) registra 15 fontes gerais. O [Registro de Documentos Técnicos, Financiamentos e Contratações](CASO-001_DOCUMENTOS_TECNICOS_E_CONTRATACOES.md) separa:
+
+- comunicação institucional;
+- registro do agente financeiro;
+- orientação procedimental de seleção;
+- índice de contratação;
+- registro histórico;
+- documentos integrais ainda requeridos.
+
+Nenhuma fonte está classificada como obtida ou tratada para fins empíricos.
+
+## 5. Achados financeiros e contratuais preliminares
+
+As fontes consultadas indicam três intervenções de drenagem relacionadas ao Novo PAC em territórios descritos como Itaipuaçu, Itapeba e Jardim Atlântico, com R$ 117 milhões de recursos do FGTS e investimento total agregado de aproximadamente R$ 123,1 milhões.
+
+Esses valores são agregados. Ainda faltam números individuais de proposta, operação, termo e contrato, valores por território, contrapartidas, cronogramas, metas físicas e condições de desembolso.
+
+O Pregão Eletrônico 14/2026 — Smart Drainage possui objeto tecnológico e valor estimado próprios. Não foi demonstrada vinculação financeira ou contratual com as três operações de drenagem do Novo PAC. Registro de preços, valor estimado e certame em andamento não equivalem a contrato, despesa executada ou implantação.
+
+## 6. Inconsistências abertas
+
+| Tema | Alegações em conflito | Tratamento atual |
+|---|---|---|
+| beneficiários | aproximadamente 19.500 pessoas na fonte da CAIXA versus mais de 300 mil na comunicação municipal | manter ambos atribuídos; obter memória de cálculo e definições |
+| nomes territoriais | Barroco, Jardim Atlântico Oeste, Jardim Atlântico, Itaipuaçu e Itapeba | individualizar objetos nos contratos e projetos |
+| investimento e financiamento | aproximadamente R$ 123,1 milhões de investimento versus R$ 117 milhões de FGTS | explicação provisória por contrapartida; confirmar nos instrumentos |
+
+Nenhuma inconsistência será resolvida escolhendo arbitrariamente o número ou nome mais conveniente.
+
+## 7. Documentos requeridos
+
+| ID | Grupo documental | Estado |
+|---|---|---|
+| `REQ-001` | Programa Municipal de Drenagem — versão final e produtos intermediários | pendente |
+| `REQ-002` | contratação da consultoria e ordens de serviço | pendente |
+| `REQ-003` | cartas-consulta e anexos das três operações do Novo PAC | pendente |
+| `REQ-004` | termos de compromisso e contratos de financiamento individualizados | pendente |
+| `REQ-005` | projetos ou anteprojetos, QCI, mapas de risco, geometrias e fotografias | pendente |
+| `REQ-006` | edital, termo de referência e anexos do Pregão 14/2026 | pendente |
+| `REQ-007` | cronogramas, medições, indicadores e relatórios de execução | pendente |
+
+## 8. Limites desta versão
 
 Esta versão:
 
-- não afirma que todas as fontes necessárias estejam disponíveis;
+- não afirma que todas as fontes estejam disponíveis;
 - não afirma que uma feição oficial de Itapeba tenha sido obtida;
+- não trata notícia como contrato ou projeto;
+- não trata financiamento como obra executada;
+- não trata registro de preços como contratação concluída;
 - não atribui causa a eventos;
 - não avalia desempenho de órgão, contrato, sistema ou serviço;
-- não estima custos ou benefícios;
+- não estima custos ou benefícios além de reproduzir valores atribuídos às fontes;
 - não seleciona tecnologia, fornecedor ou obra;
-- não define prioridade territorial fora do recorte preparatório;
 - não coleta dados pessoais;
-- não substitui planos oficiais de emergência, drenagem, defesa civil, saneamento ou ordenamento territorial;
-- não trata comunicação institucional como prova de eficácia;
-- não trata fixture sintético como dado ou mapa real.
+- não substitui planos oficiais;
+- não trata fixture sintético como dado real.
 
-## 5. Fontes verificadas e fontes pendentes
+## 9. Alternativas que o diagnóstico deverá permitir examinar
 
-A [Matriz de Fontes e Lacunas](CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md) registra 15 fontes com identificador, classe, órgão, URL, cobertura, estado de obtenção, formato, licença conhecida, hash, uso, risco e relação com o portão.
+Sem antecipar recomendação, o caso deverá manter abertas não intervenção, manutenção, revisão operacional, microdrenagem, intervenções estruturais, soluções baseadas na natureza, monitoramento, alertas, medidas de ordenamento, combinações graduais e pilotos reversíveis.
 
-Ela inclui:
+Alternativas só poderão ser eliminadas com justificativa verificável.
 
-- Plano de Contingência Municipal 2026;
-- contratos anunciados em 2026 para Itapeba;
-- registro municipal das chuvas de abril de 2022;
-- Programa Municipal de Drenagem;
-- Plano Diretor, Lei Complementar nº 400/2025 e anexo de mapas;
-- estação pluviométrica Itapeba e interfaces do Cemaden;
-- monitoramento hidrometeorológico do INEA e Hidroweb da ANA;
-- iniciativa municipal de monitoramento inteligente da drenagem;
-- camada estadual poligonal de sub-bacias do GeoINEA;
-- base de hidrografia RJ25, na escala 1:25.000.
+## 10. Pessoas e unidades a considerar
 
-A matriz diferencia fonte `localizada`, `consultada`, `obtida` e `tratada`. Nenhuma fonte desta versão foi classificada como obtida ou tratada para fins empíricos.
+A preparação deverá mapear, sem presumir representação, moradores, trabalhadores, pessoas com barreiras de mobilidade ou comunicação, escolas, saúde, assistência, transporte, comércio, equipes operacionais, organizações locais, pesquisadores e territórios conectados a montante ou jusante.
 
-Ainda precisam ser obtidos ou verificados:
+Participação não será usada apenas para confirmar proposta previamente escolhida.
 
-- feição oficial da sub-bacia ou evidência documentada de ausência de correspondência nominal;
-- produtos técnicos completos do programa de drenagem;
-- contrato, projeto, cronograma, geometrias e indicadores das intervenções;
-- séries brutas e metadados de estações;
-- registros administrativos agregados de ocorrências, manutenção e danos;
-- regras e dados de alertas aplicáveis ao recorte;
-- fontes de participação e conhecimento local.
+## 11. Riscos e salvaguardas
 
-Nenhuma lacuna será preenchida por número inventado, digitalização apresentada como oficial ou inferência apresentada como fato.
-
-## 6. Infraestrutura geoespacial
-
-O [protocolo de geometria e delimitação](CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md) registra:
-
-- camada poligonal `GPL_SUBBACIAS_ERJ_50`, ID `4`, do GeoINEA;
-- hidrografia do Projeto RJ25, em escala 1:25.000;
-- referência espacial EPSG:4674 publicada pelos serviços;
-- procedimento de consulta, preservação, hash e revisão;
-- hierarquia de evidência cartográfica;
-- critérios que impedem converter nome de bairro ou linha de drenagem em polígono oficial;
-- validador `scripts/validar_geojson_subbacia.py`;
-- fixture sintético e teste de rejeição de geometria inválida.
-
-O status `geodata/pipeline` confirma apenas o funcionamento do validador sobre dados sintéticos.
-
-## 7. Alternativas que o diagnóstico deverá permitir examinar
-
-Sem antecipar recomendação, o caso deverá manter abertas alternativas como:
-
-- não intervenção e manutenção do arranjo atual;
-- manutenção preventiva e corretiva;
-- revisão de rotinas operacionais;
-- intervenções localizadas de microdrenagem;
-- intervenções estruturais de maior porte;
-- soluções baseadas na natureza e infraestrutura verde;
-- monitoramento hidrometeorológico e da rede de drenagem;
-- melhoria de alertas e comunicação;
-- medidas de ordenamento e controle de ocupação;
-- combinação gradual de medidas;
-- piloto reversível antes de expansão.
-
-Alternativas inviáveis ou inadequadas só poderão ser eliminadas com justificativa verificável.
-
-## 8. Pessoas e unidades a considerar
-
-A preparação deverá mapear, sem presumir representação:
-
-- moradores, trabalhadores e usuários da sub-bacia;
-- pessoas com mobilidade reduzida ou barreiras de comunicação;
-- escolas, saúde, assistência e equipamentos públicos;
-- transporte e vias críticas;
-- trabalhadores de manutenção e operação;
-- defesa civil e resposta a emergências;
-- planejamento urbano, obras, saneamento e meio ambiente;
-- comerciantes, prestadores e organizações locais;
-- pesquisadores e profissionais com conhecimento pertinente;
-- territórios conectados a montante ou a jusante.
-
-Participação não será usada apenas para confirmar uma proposta previamente escolhida.
-
-## 9. Riscos iniciais
-
-| Risco | Salvaguarda inicial |
+| Risco | Salvaguarda |
 |---|---|
-| limite da sub-bacia ainda indefinido | obter feição oficial, preservar consulta e documentar método de recorte |
-| camada estadual incompatível com o recorte municipal | comparar atributos, conceitos, projetos e fontes municipais |
-| dados incompletos ou incompatíveis | registrar cobertura, qualidade, UTC, lacunas e transformações |
-| retenção excessiva ou publicação acidental | aplicar política de retenção, quarentena, descarte e revisão periódica |
-| foco excessivo em tecnologia | comparar alternativas operacionais, ambientais, estruturais e não intervenção |
-| exposição de pessoas afetadas | usar agregação e minimização de dados |
-| confusão com plano ou avaliação oficial | declarar natureza demonstrativa e não vinculante |
-| captura por fornecedor ou interesse político | conflitos públicos e ausência de marca ou solução pré-selecionada |
-| revisão insuficiente | manter caso em preparação até capacidade compatível |
-| comunicação institucional tomada como avaliação | exigir documentos, dados e verificação independente |
-| urgência usada para pular diagnóstico | separar resposta emergencial de decisão estrutural |
+| limite territorial indefinido | obter feição oficial e memória de delimitação |
+| comunicação tomada como contrato | classes de evidência e validação automática |
+| financiamento confundido com execução | exigir contratos, projetos, cronogramas e medições |
+| Smart Drainage confundido com obras do PAC | manter objetos separados até vínculo documental |
+| números conflitantes | preservar atribuição e exigir memória de cálculo |
+| dados incompletos | registrar cobertura, qualidade, lacunas e transformações |
+| foco excessivo em tecnologia | comparar alternativas operacionais, ambientais e estruturais |
+| captura por fornecedor ou interesse | conflitos públicos e ausência de solução pré-selecionada |
+| revisão insuficiente | manter o caso em preparação |
 
-## 10. Portão de prontidão
-
-Situação atual:
+## 12. Portão de prontidão
 
 - [x] pergunta decisória preliminar revisada;
 - [x] responsável pela documentação identificado;
-- [x] riscos e conflitos iniciais registrados;
-- [x] versões iniciais registradas;
-- [x] critérios de suspensão e encerramento definidos;
-- [x] matriz de fontes e lacunas consolidada;
-- [x] processamento, retenção e descarte de chuva documentados e testados sinteticamente;
-- [x] protocolo e validador geoespacial testados sinteticamente;
+- [x] riscos, conflitos e critérios de suspensão registrados;
+- [x] matriz de fontes consolidada;
+- [x] registro técnico estruturado e validado;
+- [x] protocolos pluviométrico e geoespacial testados com fixtures;
 - [ ] polígono territorial oficial obtido;
-- [ ] período confirmado após teste de completude das séries;
-- [ ] fontes mínimas obtidas e avaliadas integralmente;
-- [ ] plano de dados executado com dados reais e revisão manual;
-- [ ] grupos afetados e canais preliminares confirmados;
+- [ ] programa final e contratos integrais obtidos;
+- [ ] projetos, geometrias, cronogramas e medições obtidos;
+- [ ] período confirmado após completude das séries;
+- [ ] plano de dados executado com dados reais;
+- [ ] grupos afetados e canais confirmados;
 - [ ] interlocutores institucionais confirmados;
 - [ ] estratégia de revisão viável.
 
 **Resultado atual:** permanece em preparação.
 
-## 11. Sequência metodológica prevista
+## 13. Sequência metodológica prevista
 
 1. GOV-008 — seleção e prontidão;
-2. PPC-001 — diagnóstico do problema delimitado;
-3. PPC-002 — formulação de alternativas;
-4. PPC-003 — avaliação técnica;
-5. PPC-004 — decisão demonstrativa e justificativa;
-6. Teoria da Mudança;
-7. PPC-005 e PPC-006 — plano de implementação e monitoramento, se aplicável;
-8. PPC-007 — plano ou avaliação de resultados;
-9. PPC-008 — lições sobre o caso e sobre o framework.
+2. PPC-001 — diagnóstico, apenas se o portão for aprovado;
+3. PPC-002 a PPC-004 — alternativas, avaliação e decisão;
+4. Teoria da Mudança;
+5. PPC-005 a PPC-008 — implementação, monitoramento, avaliação e aprendizagem, quando proporcionais.
 
-O caso pode ser encerrado antes de etapas posteriores quando dados, capacidade, ética ou proporcionalidade não permitirem continuidade.
+O caso pode ser suspenso ou encerrado antes do diagnóstico quando dados, capacidade, ética ou proporcionalidade não permitirem continuidade.
 
-## 12. Produtos esperados da preparação
+## 14. Produtos esperados da preparação
 
-- [x] registro de prontidão atualizado;
-- [x] matriz de fontes e lacunas;
-- [x] processador e protocolo de qualidade das séries de chuva;
-- [x] protocolo e validador de geometria;
-- [ ] polígono oficial e memória de delimitação aplicada ao arquivo real;
-- [ ] teste e revisão da série real;
+- [x] registro de prontidão;
+- [x] matriz de fontes;
+- [x] registro estruturado de documentos técnicos;
+- [x] processador e protocolo pluviométrico;
+- [x] coletor e protocolo geoespacial;
+- [ ] programa, contratos e projetos integrais;
+- [ ] polígono oficial e memória de delimitação;
+- [ ] série real revisada;
 - [ ] mapa preliminar de partes afetadas;
-- [ ] registro de conflitos e interlocutores confirmados;
-- [ ] decisão de prontidão, suspensão ou encerramento;
+- [ ] interlocutores e conflitos confirmados;
+- [ ] decisão do portão;
 - [ ] plano de trabalho do PPC-001.
 
-## 13. Critério de sucesso desta etapa
-
-A preparação será bem-sucedida quando permitir decidir, com honestidade, se existe capacidade mínima para iniciar o diagnóstico. Avançar de etapa não é, por si só, medida de sucesso.
-
-## 14. Histórico de alterações
+## 15. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
-| 0.1.0 | 2026-07-18 | inicial | Seleção do primeiro tema demonstrativo e registro dos limites, fontes e portão de prontidão | Projeto Pragmatismo Cívico |
-| 0.2.0 | 2026-07-18 | compatível | Recorte preliminar da sub-bacia de Itapeba, período inicial, fontes verificadas e decisão de manter preparação | Projeto Pragmatismo Cívico |
-| 0.3.0 | 2026-07-18 | compatível | Integração da matriz de fontes, retenção de dados e atualização dos produtos e bloqueios do portão | Projeto Pragmatismo Cívico |
-| 0.4.0 | 2026-07-18 | compatível | Inclusão das fontes geoespaciais, protocolo de delimitação, validador e status `geodata/pipeline` | Projeto Pragmatismo Cívico |
+| 0.1.0 | 2026-07-18 | inicial | Seleção do primeiro tema demonstrativo e registro dos limites, fontes e portão | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Recorte de Itapeba, período e fontes verificadas | Projeto Pragmatismo Cívico |
+| 0.3.0 | 2026-07-18 | compatível | Matriz de fontes e protocolo pluviométrico | Projeto Pragmatismo Cívico |
+| 0.4.0 | 2026-07-18 | compatível | Fontes geoespaciais, protocolo e validador | Projeto Pragmatismo Cívico |
+| 0.5.0 | 2026-07-18 | compatível | Registro técnico, financiamento, contratações, inconsistências e documentos requeridos | Projeto Pragmatismo Cívico |
