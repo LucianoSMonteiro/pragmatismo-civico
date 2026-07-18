@@ -18,6 +18,7 @@ MANUAL_DEBT = (
     "GitHub Pages ainda exige ativação inicial pelo proprietário na issue #1.",
     "A camada de aplicações e evidências ainda não possui estudo de caso oficial.",
     "A adequação da licença para documentação, ferramentas e eventual software permanece pendente.",
+    "O cadastro público de revisores existe, mas ainda não possui pessoa elegível ou ativa.",
     "A instância plural permanente de revisão e aprovação ainda não foi constituída.",
 )
 
@@ -99,9 +100,9 @@ def build_report(
             "",
             "## Escopo da automação",
             "",
-            "A execução verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown, formulários YAML de issue e o template de pull request.",
+            "A execução verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown, os formulários canônicos de proposta e candidatura, salvaguardas públicas de privacidade e o template de pull request.",
             "",
-            "Ela não substitui revisão humana de mérito, aprovação metodológica, validação empírica, transições formais de estado ou avaliação da qualidade das evidências.",
+            "Ela não substitui revisão humana de mérito, avaliação real de competência, aprovação metodológica, validação empírica, transições formais de estado ou avaliação da qualidade das evidências.",
             "",
         ]
     )
