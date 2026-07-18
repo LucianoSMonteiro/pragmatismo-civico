@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from generate_catalog import ROOT, load_documents
+from validate_issue_forms import IssueFormValidationResult, validate_issue_forms
 from validate_links import LinkValidationResult, validate_links
 from validate_metadata_graph import ValidationResult, validate_documents
 
@@ -17,7 +18,7 @@ MANUAL_DEBT = (
     "GitHub Pages ainda exige ativação inicial pelo proprietário na issue #1.",
     "A camada de aplicações e evidências ainda não possui estudo de caso oficial.",
     "A adequação da licença para documentação, ferramentas e eventual software permanece pendente.",
-    "A política formal de propostas de mudança ainda não foi publicada.",
+    "A política de revisão e aprovação e a instância plural permanente ainda não foram constituídas.",
 )
 
 
@@ -40,10 +41,14 @@ def add_findings(lines: list[str], title: str, errors: list[str], warnings: list
         lines.append("")
 
 
-def build_report(metadata: ValidationResult, links: LinkValidationResult) -> str:
+def build_report(
+    metadata: ValidationResult,
+    links: LinkValidationResult,
+    issue_forms: IssueFormValidationResult,
+) -> str:
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     commit = os.environ.get("GITHUB_SHA", "execução local")
-    overall_ok = metadata.ok and links.ok
+    overall_ok = metadata.ok and links.ok and issue_forms.ok
 
     lines = [
         "# Relatório de Validação Documental",
@@ -68,11 +73,21 @@ def build_report(metadata: ValidationResult, links: LinkValidationResult) -> str
             f"{links.links} destinos; {links.internal_links} internos; "
             f"{links.anchors_checked} âncoras |"
         ),
+        (
+            f"| Formulários de issue | {status_label(issue_forms.ok)} | "
+            f"{issue_forms.forms} formulário(s); {issue_forms.fields} campo(s) |"
+        ),
         "",
     ]
 
     add_findings(lines, "Achados de metadados e grafo", metadata.errors, metadata.warnings)
     add_findings(lines, "Achados de links e âncoras", links.errors, links.warnings)
+    add_findings(
+        lines,
+        "Achados de formulários de issue",
+        issue_forms.errors,
+        issue_forms.warnings,
+    )
 
     lines.extend(["## Dívida manual conhecida", ""])
     lines.extend(f"- {item}" for item in MANUAL_DEBT)
@@ -81,7 +96,7 @@ def build_report(metadata: ValidationResult, links: LinkValidationResult) -> str
             "",
             "## Escopo da automação",
             "",
-            "A execução verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos e âncoras Markdown.",
+            "A execução verifica campos obrigatórios, versões semânticas, estados, idioma, datas, compatibilidade, listas sem duplicidade, histórico da versão corrente, referências, reciprocidade de saídas e substituições, ciclos de dependência, destinos internos, âncoras Markdown e estrutura mínima dos formulários YAML de issue.",
             "",
             "Ela não substitui revisão humana de mérito, aprovação metodológica, validação empírica, transições formais de estado ou avaliação da qualidade das evidências.",
             "",
@@ -98,15 +113,19 @@ def main() -> int:
     documents = load_documents(include_catalog=True)
     metadata_result = validate_documents(documents)
     link_result = validate_links(documents)
+    issue_form_result = validate_issue_forms()
 
     output_path = Path(args.output)
     if not output_path.is_absolute():
         output_path = ROOT / output_path
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(build_report(metadata_result, link_result), encoding="utf-8")
+    output_path.write_text(
+        build_report(metadata_result, link_result, issue_form_result),
+        encoding="utf-8",
+    )
 
     print(f"Relatório gerado em {output_path}")
-    return 0 if metadata_result.ok and link_result.ok else 1
+    return 0 if metadata_result.ok and link_result.ok and issue_form_result.ok else 1
 
 
 if __name__ == "__main__":
