@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.18.0
+versao: 0.19.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -22,6 +22,7 @@ produz_entrada_para:
 relaciona_se_com:
   - GOV-002
   - GOV-005
+  - GOV-006
   - MKDOCS
   - PORTAL-INICIO
   - GUIA-COMECAR
@@ -35,7 +36,7 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 7 estão concluídas. Os 42 documentos públicos estão identificados, versionados, catalogados e submetidos a validação automática. A estrutura física foi decidida no ARQ-003 e o processo de propostas de mudança foi publicado no GOV-005.
+Rascunho ativo. As Fases 0 a 7 estão concluídas. Os 44 documentos públicos estão identificados, versionados, catalogados e submetidos a validação automática. A estrutura física foi decidida no ARQ-003, o processo de propostas foi publicado no GOV-005 e a revisão e aprovação são governadas pelo GOV-006.
 
 O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. Esse bloqueio operacional não invalida o acervo nem a compilação.
 
@@ -50,7 +51,8 @@ O processo utiliza:
 - `mkdocs.yml` para a navegação pública;
 - metadados estruturados de cada documento;
 - `CATALOGO_DOCUMENTAL.md` para a visão consolidada;
-- GOV-005 para propostas e decisões de mudança;
+- GOV-005 para propostas de mudança;
+- GOV-006 para revisão, aprovação e verificação;
 - ARQ-003 para caminhos e diretórios;
 - a branch padrão como fonte canônica;
 - commits, status e artefatos da CI como evidência operacional.
@@ -61,13 +63,13 @@ O processo utiliza:
 |---|---:|---|
 | Publicação e acesso | 3 | página inicial, guia e catálogo conformes |
 | Princípios e fundamentos | 6 | todos conformes |
-| Governança e arquitetura | 11 | inclui GOV-005 e ARQ-003 |
+| Governança e arquitetura | 12 | inclui GOV-005, GOV-006 e ARQ-003 |
 | Método | 10 | todos conformes |
-| Ferramentas | 12 | inclui a Ficha GOV-005 |
+| Ferramentas | 13 | inclui as fichas GOV-005 e GOV-006 |
 | Aplicações e evidências | 0 | nenhum estudo de caso oficial publicado |
-| **Total** | **42** | **42 documentos catalogados e validados** |
+| **Total** | **44** | **44 documentos catalogados e validados** |
 
-Quarenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável.
+Quarenta e três documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável.
 
 ## 4. Inventário resumido
 
@@ -75,8 +77,8 @@ Quarenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 
 | Documento | Identificador | Versão |
 |---|---|---:|
-| Página inicial | `PORTAL-INICIO` | 0.6.0 |
-| Guia de início | `GUIA-COMECAR` | 0.6.0 |
+| Página inicial | `PORTAL-INICIO` | 0.7.0 |
+| Guia de início | `GUIA-COMECAR` | 0.7.0 |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
 
 ### 4.2 Princípios e fundamentos
@@ -96,14 +98,15 @@ Quarenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 |---|---|---:|
 | Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
 | Modelo de Governança | `GOV-001` | 0.1.0 |
-| Roadmap | `GOV-002` | 0.14.0 |
-| Guia de Contribuição | `GOV-003` | 0.2.0 |
+| Roadmap | `GOV-002` | 0.15.0 |
+| Guia de Contribuição | `GOV-003` | 0.3.0 |
 | Código de Conduta | `GOV-004` | 0.1.0 |
 | Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
+| Política de Revisão e Aprovação | `GOV-006` | 0.1.0 |
 | Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
 | Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
 | Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.18.0 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.19.0 |
 | Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
@@ -128,6 +131,7 @@ Quarenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 | Fichas PPC-001 a PPC-008 | `FICHA-PPC-001` a `FICHA-PPC-008` | versões vigentes no catálogo |
 | Ficha de Teoria da Mudança | `FICHA-TDM-001` | 0.1.0 |
 | Ficha de Proposta de Mudança | `FICHA-GOV-005` | 0.1.0 |
+| Registro de Revisão e Aprovação | `FICHA-GOV-006` | 0.1.0 |
 | Matriz de avaliação | `MATRIZ-PPC-001` | 0.1.0 |
 | Indicadores | `MODELO-INDICADORES-001` | 0.1.0 |
 
@@ -138,7 +142,7 @@ Quarenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 | `scripts/generate_catalog.py` | gera o catálogo a partir da navegação e dos metadados |
 | `scripts/validate_metadata_graph.py` | valida campos, formatos, histórico, relações, substituições e ciclos |
 | `scripts/validate_links.py` | valida destinos internos e âncoras |
-| `scripts/validate_issue_forms.py` | valida a estrutura dos formulários YAML de issue |
+| `scripts/validate_issue_forms.py` | valida formulário de issue e template de pull request |
 | `scripts/generate_validation_report.py` | produz relatório consolidado e dívida manual conhecida |
 | `scripts/analyze_repository_structure.py` | calcula o impacto de migração física por camada |
 | `scripts/prepare_mkdocs.py` | prepara a árvore temporária compatível com MkDocs |
@@ -149,15 +153,21 @@ Quarenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 O GOV-005 estabelece:
 
 - identificadores `PM-AAAA-NNN`;
-- tipos editorial, corretivo, metodológico, arquitetural, de governança, fundacional, de ciclo de vida e emergencial;
-- níveis de impacto;
+- tipos e níveis de impacto;
 - triagem e admissibilidade;
 - fluxos simplificado, ordinário e reforçado;
-- consulta, revisão, decisão e conflitos de interesse;
-- implementação, verificação, reversão e reconsideração;
-- competência provisória e limite para mudanças fundacionais.
+- consulta, implementação, reversão e reconsideração.
 
-A `FICHA-GOV-005` e o formulário `.github/ISSUE_TEMPLATE/proposta-de-mudanca.yml` operacionalizam o processo.
+O GOV-006 estabelece:
+
+- funções de secretaria, relatoria, revisão, decisão, implementação e verificação;
+- competência, independência, conflitos, impedimentos e recusas;
+- quórum e maiorias proporcionais ao impacto;
+- limites do regime provisório;
+- critérios para constituir instância plural permanente;
+- registro, emergência e reconsideração.
+
+A `FICHA-GOV-005` registra a proposta. A `FICHA-GOV-006` registra composição, quórum, votos, decisão, implementação e verificação. O formulário de issue e o template de pull request operacionalizam a entrada e a implementação.
 
 ## 7. Validação automática
 
@@ -168,7 +178,8 @@ A CI verifica:
 - existência e reciprocidade das relações obrigatórias;
 - substituições e ciclos de dependência;
 - links internos e âncoras;
-- estrutura mínima dos formulários de issue;
+- formulário YAML de issue;
+- estrutura mínima do template de pull request;
 - correspondência entre catálogo gerado e publicado;
 - preparação e `mkdocs build --strict --clean`.
 
@@ -200,8 +211,10 @@ O ARQ-003 preserva os caminhos existentes e determina:
 | DD-028 | mudanças relevantes não possuíam processo operacional único | resolvida | GOV-005, ficha e formulário publicados |
 | DD-029 | formulário poderia depender de rótulo inexistente | resolvida | dependência removida |
 | DD-030 | GOV-003 e GOV-005 formariam ciclo obrigatório | resolvida | GOV-003 permanece dependente; GOV-005 apenas se relaciona ao guia |
-| DD-031 | ausência de política permanente de revisão e aprovação | aberta | próxima prioridade de governança |
-| DD-032 | ausência de instância plural constituída | aberta | decisões fundacionais permanecem limitadas |
+| DD-031 | ausência de política permanente de revisão e aprovação | resolvida | GOV-006 e FICHA-GOV-006 publicados |
+| DD-032 | ausência de instância plural constituída | aberta, controlada | regime provisório limita decisões críticas e fundacionais |
+| DD-033 | ausência de cadastro público de revisores elegíveis | aberta | criar programa e registro de revisores |
+| DD-034 | pull requests não possuíam estrutura de governança comum | resolvida | template publicado e validado pela CI |
 
 ## 10. Plano progressivo
 
@@ -212,11 +225,11 @@ O ARQ-003 preserva os caminhos existentes e determina:
 | 6 | validação automática | concluída |
 | 7 | estrutura física | concluída |
 
-A evolução passa a ser governada pelo GOV-005. Alterações futuras devem possuir proposta formal quando ultrapassarem o fluxo editorial simplificado.
+A evolução é governada pelo GOV-005 e pelo GOV-006. Alterações futuras devem possuir proposta formal quando ultrapassarem o fluxo editorial simplificado e revisão proporcional ao impacto.
 
 ## 11. Próxima ação
 
-Criar a política permanente de revisão e aprovação, detalhando competências, quóruns ou critérios decisórios, independência, impedimentos, prazos, consulta e transição entre a governança provisória e uma instância plural. Em paralelo, preparar o primeiro estudo de caso demonstrativo.
+Criar o cadastro e o programa público de revisores, incluindo candidatura, competência, vínculos, disponibilidade, termos de participação, proteção de dados e critérios para formação dos primeiros painéis. Em paralelo, preparar o primeiro estudo de caso demonstrativo.
 
 ## 12. Histórico de alterações
 
@@ -230,3 +243,4 @@ Criar a política permanente de revisão e aprovação, detalhando competências
 | 0.16.1 | 2026-07-18 | correção | Sincronização final da validação | Projeto Pragmatismo Cívico |
 | 0.17.0 | 2026-07-18 | compatível | Conclusão da Fase 7 e decisão pela estrutura híbrida | Projeto Pragmatismo Cívico |
 | 0.18.0 | 2026-07-18 | compatível | Publicação do GOV-005, da ficha de proposta e da validação de formulários de issue | Projeto Pragmatismo Cívico |
+| 0.19.0 | 2026-07-18 | compatível | Publicação do GOV-006, do registro de revisão e do template de pull request | Projeto Pragmatismo Cívico |
