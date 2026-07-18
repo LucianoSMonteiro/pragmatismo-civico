@@ -1,7 +1,7 @@
 ---
 id: GUIA-COMECAR
 titulo: Começar no Pragmatismo Cívico
-versao: 0.10.0
+versao: 0.11.0
 status: rascunho
 tipo: guia
 idioma: pt-BR
@@ -28,6 +28,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-DADOS-CHUVA
   - PPC-000
   - GOV-003
 substitui: []
@@ -91,11 +92,12 @@ Use:
 - [Ficha GOV-008](../FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md);
 - [Índice de Casos e Evidências](../casos/README.md);
 - [CASO-001](../casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md);
-- [Registro de Prontidão](../casos/CASO-001_REGISTRO_DE_PRONTIDAO.md).
+- [Registro de Prontidão](../casos/CASO-001_REGISTRO_DE_PRONTIDAO.md);
+- [Protocolo de Dados Pluviométricos](../casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md).
 
-O CASO-001 está em preparação na sub-bacia de Itapeba. O registro atual define período preliminar de 2022-01-01 a 2026-06-30 e localiza fontes oficiais, mas não autoriza o diagnóstico.
+O CASO-001 está em preparação na sub-bacia de Itapeba. O processador de chuva gera CSV normalizado, manifesto com hashes e relatório de qualidade, e é testado em CI com dados sintéticos.
 
-Faltam polígono oficial, produtos técnicos, séries tratadas, registros agregados, interlocutores confirmados, participação local e revisão independente. A issue #2 acompanha a próxima decisão do portão.
+Nenhum arquivo mensal real foi incorporado. Faltam polígono oficial, coleta autorizada, produtos técnicos, registros agregados, interlocutores confirmados, participação local e revisão independente. A issue #2 acompanha a decisão do portão; as issues #4 a #11 acompanham as frentes materiais.
 
 ## Quero propor uma mudança
 
@@ -133,11 +135,12 @@ Os caminhos existentes foram preservados. O crescimento seguirá:
 - aplicações em `casos/`;
 - relatórios em `relatorios/`;
 - automações em `scripts/`;
-- ativos em `docs/assets/`.
+- ativos em `docs/assets/`;
+- arquivos locais ainda não publicáveis em `work/`, ignorado pelo Git.
 
 ## Estado atual
 
-O acervo contém **52 documentos** identificados, versionados e submetidos à validação automática. A camada de aplicações contém índice, CASO-001 e registro de prontidão. Ainda não há estudo concluído, revisor elegível ou ativo, instância plural permanente ou validação empírica suficiente. O deploy público aguarda a ativação inicial do GitHub Pages na issue #1.
+O acervo contém **53 documentos** identificados, versionados e submetidos à validação automática. A camada de aplicações contém índice, CASO-001, registro de prontidão e protocolo pluviométrico. A CI possui o status separado `data/pipeline`. Ainda não há série real coletada, estudo concluído, revisor elegível ou ativo, instância plural permanente ou validação empírica suficiente. O deploy público aguarda a ativação inicial do GitHub Pages na issue #1.
 
 ## Histórico de alterações
 
@@ -150,3 +153,4 @@ O acervo contém **52 documentos** identificados, versionados e submetidos à va
 | 0.8.0 | 2026-07-18 | compatível | Inclusão do GOV-007 e cadastro | Projeto Pragmatismo Cívico |
 | 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008 e CASO-001 | Projeto Pragmatismo Cívico |
 | 0.10.0 | 2026-07-18 | compatível | Recorte de Itapeba, registro de prontidão e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
+| 0.11.0 | 2026-07-18 | compatível | Protocolo pluviométrico, teste sintético, status de dados e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
