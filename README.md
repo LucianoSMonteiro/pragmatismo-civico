@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.1.0
+versao: 0.2.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -23,7 +23,7 @@ relaciona_se_com:
   - GOV-003
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 -->
@@ -43,7 +43,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. O ciclo metodológico completo — PPC-001 a PPC-008 —, a Teoria da Mudança, suas fichas práticas e os padrões iniciais de governança documental já estão publicados para revisão, teste e aplicação experimental. As migrações documentais da governança, do método, das ferramentas e dos seis documentos de princípios e fundamentos foram concluídas. Trinta e seis dos 38 documentos navegáveis estão conformes ao padrão de metadados. Restam apenas o README e o guia de início. Ainda não há estudo de caso oficial publicado.
+**Estado atual:** desenvolvimento aberto. O ciclo metodológico completo — PPC-001 a PPC-008 —, a Teoria da Mudança, suas fichas práticas e os padrões de governança documental estão publicados para revisão, teste e aplicação experimental. Os 38 documentos da navegação canônica possuem identificação e versionamento documental. A migração mínima de metadados foi concluída, mas ainda não há estudo de caso oficial publicado nem validação empírica suficiente para declarar o framework estável.
 
 </div>
 
@@ -234,7 +234,8 @@ O documento central para essa verificação é o [Framework de Referência](FRAM
 As prioridades atuais são:
 
 - formalizar o processo de propostas de mudança;
-- executar a Fase 4C da migração documental para o README e o guia de início;
+- criar o catálogo documental público e o mapa de dependências;
+- implementar validação automática de metadados, identificadores e links;
 - criar a ficha padrão de indicadores;
 - desenvolver o checklist de transparência e rastreabilidade;
 - estruturar o protocolo de avaliação do próprio framework;
@@ -255,3 +256,4 @@ Contribuições são organizadas por regras públicas de governança, integridad
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001 por representação estruturada equivalente, preservando a apresentação do README no GitHub e no portal | Projeto Pragmatismo Cívico |
+| 0.2.0 | 2026-07-18 | compatível | Registro da conclusão da migração mínima dos 38 documentos e atualização das prioridades de catálogo e validação | Projeto Pragmatismo Cívico |
