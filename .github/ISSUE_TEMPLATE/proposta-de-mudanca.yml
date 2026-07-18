@@ -1,0 +1,136 @@
+name: Proposta de mudança
+description: Propor alteração editorial, corretiva, metodológica, arquitetural, de governança, fundacional ou de ciclo de vida.
+title: "[PM] "
+labels:
+  - proposta-de-mudanca
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este formulário conforme o GOV-005. A abertura da issue não presume admissibilidade ou aprovação.
+
+  - type: input
+    id: problem
+    attributes:
+      label: Problema demonstrado
+      description: Descreva o problema concreto antes da solução pretendida.
+      placeholder: Qual problema existe, onde ocorre e quem ou o que é afetado?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: proposal_type
+    attributes:
+      label: Tipo principal
+      options:
+        - Editorial
+        - Corretiva
+        - Metodológica
+        - Arquitetural
+        - Governança
+        - Fundacional
+        - Ciclo de vida
+        - Emergencial
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impacto estimado
+      options:
+        - Baixo
+        - Moderado
+        - Alto
+        - Crítico
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_state
+    attributes:
+      label: Estado atual
+      description: Identifique documentos, versões, regras, ferramentas ou processos vigentes.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Mudança proposta
+      description: Descreva o resultado pretendido e o que deve mudar.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidências, experiências ou incidentes
+      description: Inclua fontes e limitações. Diferencie fato, hipótese e opinião.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: Inclua a alternativa de manter o estado atual quando plausível.
+    validations:
+      required: true
+
+  - type: textarea
+    id: principles
+    attributes:
+      label: Princípios e documentos relacionados
+      description: Identifique princípios fundadores e documentos afetados.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Riscos, efeitos adversos e salvaguardas
+      description: Considere direitos, equidade, sustentabilidade, reversibilidade e manutenção.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: compatibility
+    attributes:
+      label: Compatibilidade estimada
+      options:
+        - inicial
+        - compativel
+        - parcial
+        - incompativel
+        - ainda não determinada
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementação, verificação e reversão
+      description: Liste entregas, testes, critérios de sucesso e mecanismo de reversão.
+    validations:
+      required: true
+
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: Conflitos de interesse
+      description: Declare vínculos materiais ou informe que não há conflito conhecido.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declarations
+    attributes:
+      label: Declarações
+      options:
+        - label: Consultei o GOV-005 e o Guia de Contribuição.
+          required: true
+        - label: Verifiquei que a proposta não duplica conteúdo existente sem justificativa.
+          required: true
+        - label: Entendo que a proposta pode ser devolvida, rejeitada, condicionada ou submetida a fluxo reforçado.
+          required: true
