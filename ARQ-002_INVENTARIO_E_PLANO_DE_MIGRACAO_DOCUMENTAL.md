@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.4.0
+versao: 0.5.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -63,11 +63,11 @@ A navegação atual contém **38 documentos Markdown**.
 
 | Camada | Quantidade | Situação geral |
 |---|---:|---|
-| Entrada e publicação | 2 | README sincronizado editorialmente; metadados ainda pendentes |
+| Publicação e acesso | 2 | README sincronizado editorialmente; metadados ainda pendentes |
 | Princípios e fundamentos | 6 | núcleo consolidado; migração deve ser cautelosa |
 | Governança e arquitetura | 9 | todos os nove documentos possuem cabeçalho PPC-META-001 |
 | Método | 10 | ciclo completo publicado; relações e versões ainda precisam ser normalizadas |
-| Ferramentas | 11 | uma ficha possui metadados legados; demais vínculos precisam ser normalizados |
+| Ferramentas | 11 | Ficha PPC-003 normalizada; demais vínculos ainda precisam ser estruturados |
 | Aplicações e evidências | 0 | camada ainda sem estudo de caso publicado |
 | **Total** | **38** | migração necessária, sem alteração imediata de caminhos |
 
@@ -75,7 +75,7 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 
 ## 4. Inventário por camada
 
-### 4.1 Entrada e publicação
+### 4.1 Publicação e acesso
 
 | Documento | Caminho | Função | Metadados | Prioridade |
 |---|---|---|---|---|
@@ -128,7 +128,7 @@ Arquivos conhecidos de suporte incluem `mkdocs.yml`, `requirements.txt`, `LICENS
 |---|---|---|---|---|
 | Ficha PPC-001 | `FICHA_PPC-001_DIAGNOSTICO_DE_PROBLEMA_PUBLICO.md` | PPC-001 | a migrar | média |
 | Ficha PPC-002 | `FICHA_PPC-002_FORMULACAO_E_COMPARACAO_DE_ALTERNATIVAS.md` | PPC-002 | a migrar | média |
-| Ficha PPC-003 | `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` | PPC-003 | metadados legados; a normalizar | alta |
+| Ficha PPC-003 | `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` | PPC-003 | presente | concluída nesta dimensão |
 | Ficha PPC-004 | `FICHA_PPC-004_DECISAO_E_JUSTIFICATIVA.md` | PPC-004 | a migrar | média |
 | Ficha de teoria da mudança | `FICHA_TEORIA_DA_MUDANCA.md` | modelo de teoria da mudança | a migrar | média |
 | Ficha PPC-005 | `FICHA_PPC-005_IMPLEMENTACAO_E_GESTAO_ADAPTATIVA.md` | PPC-005 | a migrar | média |
@@ -156,15 +156,10 @@ Possuem cabeçalho estruturado alinhado ao PPC-META-001:
 - `ARQ-002_INVENTARIO_E_PLANO_DE_MIGRACAO_DOCUMENTAL.md`;
 - `ROADMAP.md`;
 - `CONTRIBUTING.md`;
-- `CODE_OF_CONDUCT.md`.
+- `CODE_OF_CONDUCT.md`;
+- `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`.
 
-### 5.2 Metadados legados verificados
-
-A `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md` possui cabeçalho anterior ao esquema atual. O cabeçalho é útil e deve ser preservado durante a migração, mas utiliza campos heterogêneos e ainda não atende ao conjunto mínimo do PPC-META-001.
-
-Ela deve ser normalizada, e não tratada como documento completamente sem metadados.
-
-### 5.3 Documentos ainda não migrados
+### 5.2 Documentos ainda não migrados
 
 Os demais itens do inventário devem ser tratados como não migrados até verificação direta e registro no próprio documento.
 
@@ -186,7 +181,7 @@ Quando uma informação não puder ser comprovada, deve ser registrada como `nul
 | DD-001 | maioria dos documentos sem cabeçalho PPC-META-001 | versões e responsabilidades ambíguas | alta | migração em lotes controlados |
 | DD-002 | dependências do ciclo metodológico não registradas de modo uniforme | incoerência entre padrões | alta | declarar relações recíprocas |
 | DD-003 | ferramentas não registram necessariamente a versão do padrão utilizada | aplicações podem ficar irreplicáveis | alta | adicionar campo de versão e vínculo |
-| DD-004 | presença de metadados legados e identificadores heterogêneos | automação e catálogo dificultados | média | preservar dados úteis e normalizar o esquema |
+| DD-004 | identificadores e metadados ainda heterogêneos nas ferramentas remanescentes | automação e catálogo dificultados | média | normalizar progressivamente sem descartar dados úteis |
 | DD-005 | acervo predominantemente na raiz | manutenção futura pode ficar difícil | baixa no estágio atual | não mover arquivos antes de medir benefício |
 | DD-006 | ausência de catálogo documental gerado | localização depende do `mkdocs.yml` | média | criar catálogo após migração mínima |
 | DD-007 | ausência de validação automática de metadados e links | erros podem chegar ao portal | média | criar automação após estabilizar esquema |
@@ -201,12 +196,14 @@ As revisões do repositório produziram as seguintes correções e avanços:
 - sincronização do README com PPC-001 a PPC-008, Teoria da Mudança, ferramentas e governança documental;
 - alinhamento da arquitetura descrita no README às seis camadas do ARQ-001;
 - reclassificação de ARQ-001, ARQ-002 e PPC-000 na camada de governança e arquitetura;
+- adoção do nome canônico **Publicação e acesso** para a sexta camada;
 - classificação de `INDICADORES.md` na camada de ferramentas;
-- reconhecimento da Ficha PPC-003 como documento com metadados legados;
 - alinhamento da navegação, movendo Indicadores para a seção de ferramentas;
 - verificação do workflow `.github/workflows/pages.yml` e de sua construção com `mkdocs build --strict`;
 - migração de `ROADMAP.md`, `CONTRIBUTING.md` e `CODE_OF_CONDUCT.md` para o PPC-META-001;
-- conclusão da Fase 1 do plano de migração documental.
+- conclusão da Fase 1 do plano de migração documental;
+- correção dos relacionamentos canônicos em ARQ-001 e PPC-000A;
+- normalização do cabeçalho da Ficha PPC-003 sem alteração de seu conteúdo metodológico.
 
 A configuração do workflow está presente e coerente com GitHub Pages, mas a execução mais recente ainda deve ser confirmada no histórico do GitHub Actions, pois o conector utilizado não retorna os eventos de push desse workflow.
 
@@ -236,7 +233,7 @@ Entregas:
 - inventário inicial dos 38 documentos navegáveis;
 - classificação por camada alinhada ao ARQ-001;
 - registro da dívida documental inicial;
-- reconhecimento de metadados legados;
+- normalização inicial de metadados legados;
 - proibição explícita de movimentação prematura.
 
 ### Fase 1 — Núcleo de governança
@@ -283,10 +280,13 @@ Ações:
 
 **Objetivo:** vincular cada instrumento à versão do padrão que operacionaliza.
 
-Ações:
+Avanço concluído:
 
-- atribuir identificadores estáveis;
-- normalizar o cabeçalho legado da Ficha PPC-003;
+- [x] normalização do cabeçalho da `FICHA_PPC-003_AVALIACAO_TECNICA_DE_ALTERNATIVAS.md`.
+
+Ações restantes:
+
+- atribuir identificadores estáveis às ferramentas remanescentes;
 - declarar documento associado;
 - inserir campo para versão do padrão utilizado;
 - distinguir campos obrigatórios e opcionais;
@@ -408,3 +408,4 @@ Executar a **Fase 2A — Núcleo metodológico**, migrando `CICLO_DO_PRAGMATISMO
 | 0.2.0 | 2026-07-17 | compatível | Atualização do inventário e registro da migração do PPC-000 e do Modelo de Governança | Projeto Pragmatismo Cívico |
 | 0.3.0 | 2026-07-17 | compatível | Correção das camadas, reconhecimento de metadados legados e registro da revisão de coerência do README e da navegação | Projeto Pragmatismo Cívico |
 | 0.4.0 | 2026-07-17 | compatível | Conclusão da Fase 1 com a migração do roadmap, guia de contribuição e código de conduta | Projeto Pragmatismo Cívico |
+| 0.5.0 | 2026-07-17 | compatível | Correção de identificadores canônicos, nomenclatura da sexta camada e normalização da Ficha PPC-003 | Projeto Pragmatismo Cívico |
