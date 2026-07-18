@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.21.1
+versao: 0.22.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -30,6 +30,7 @@ relaciona_se_com:
   - GUIA-COMECAR
   - CASOS-INDEX
   - CASO-001
+  - CASO-001-PRONTIDAO
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -40,11 +41,11 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 7 estão concluídas. Os **51 documentos públicos** estão identificados, versionados e submetidos a validação automática.
+Rascunho ativo. As Fases 0 a 7 estão concluídas e a Fase 8 está em execução. Os **52 documentos públicos** estão identificados, versionados e submetidos a validação automática.
 
 A estrutura física é governada pelo ARQ-003; propostas pelo GOV-005; revisão pelo GOV-006; revisores pelo GOV-007; e seleção, prontidão e condução de casos pelo GOV-008.
 
-O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. O cadastro de revisores permanece vazio. O CASO-001 está em preparação e não possui diagnóstico ou resultado empírico.
+O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. O cadastro de revisores permanece vazio. O CASO-001 está em preparação na sub-bacia de Itapeba e não possui diagnóstico ou resultado empírico.
 
 ## 1. Objetivo
 
@@ -59,7 +60,8 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 - GOV-006 para revisão, aprovação e verificação;
 - GOV-007 e `CADASTRO_PUBLICO_DE_REVISORES.md` para revisores;
 - GOV-008 e `FICHA_GOV-008_REGISTRO_DE_SELECAO_E_CONDUCAO_DE_CASO.md` para casos;
-- `casos/README.md` para o índice público de aplicações;
+- `casos/README.md` para o índice público;
+- `casos/CASO-001_REGISTRO_DE_PRONTIDAO.md` para a decisão vigente do portão;
 - ARQ-003 para caminhos e diretórios;
 - branch padrão, commits, status e artefatos da CI como evidência operacional.
 
@@ -72,10 +74,10 @@ Manter inventário verificável do acervo, de sua arquitetura, automação, dív
 | Governança e arquitetura | 15 | inclui GOV-005 a GOV-008, cadastro e ARQ-003 |
 | Método | 10 | todos conformes |
 | Ferramentas | 15 | inclui FICHAS GOV-005 a GOV-008 |
-| Aplicações e evidências | 2 | índice público e CASO-001 em preparação |
-| **Total** | **51** | **51 documentos submetidos à validação** |
+| Aplicações e evidências | 3 | índice, CASO-001 e registro de prontidão |
+| **Total** | **52** | **52 documentos submetidos à validação** |
 
-Cinquenta documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente.
+Cinquenta e um documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente.
 
 ## 4. Inventário resumido
 
@@ -83,8 +85,8 @@ Cinquenta documentos usam cabeçalho YAML. O `README.md` utiliza representação
 
 | Documento | Identificador | Versão |
 |---|---|---:|
-| Página inicial | `PORTAL-INICIO` | 0.9.0 |
-| Guia de início | `GUIA-COMECAR` | 0.9.0 |
+| Página inicial | `PORTAL-INICIO` | 0.10.0 |
+| Guia de início | `GUIA-COMECAR` | 0.10.0 |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
 
 ### 4.2 Princípios e fundamentos
@@ -104,7 +106,7 @@ Cinquenta documentos usam cabeçalho YAML. O `README.md` utiliza representação
 |---|---|---:|
 | Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
 | Modelo de Governança | `GOV-001` | 0.1.0 |
-| Roadmap | `GOV-002` | 0.17.0 |
+| Roadmap | `GOV-002` | 0.18.0 |
 | Guia de Contribuição | `GOV-003` | 0.5.0 |
 | Código de Conduta | `GOV-004` | 0.1.0 |
 | Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
@@ -115,7 +117,7 @@ Cinquenta documentos usam cabeçalho YAML. O `README.md` utiliza representação
 | Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
 | Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
 | Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.21.1 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.22.0 |
 | Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
@@ -135,10 +137,11 @@ O acervo contém fichas PPC-001 a PPC-008, Ficha de Teoria da Mudança, matriz, 
 
 | Documento | Identificador | Versão | Estado material |
 |---|---|---:|---|
-| Índice de Casos e Evidências | `CASOS-INDEX` | 0.1.0 | índice público inicial |
-| Drenagem urbana e alerta preventivo em Maricá/RJ | `CASO-001` | 0.1.0 | preparação; portão de prontidão não aprovado |
+| Índice de Casos e Evidências | `CASOS-INDEX` | 0.2.0 | índice público |
+| Drenagem e alerta preventivo na sub-bacia de Itapeba | `CASO-001` | 0.2.0 | preparação |
+| Registro de Prontidão do CASO-001 | `CASO-001-PRONTIDAO` | 0.1.0 | portão não aprovado |
 
-A existência do CASO-001 não equivale a estudo concluído, diagnóstico oficial ou validação empírica.
+O registro define o período preliminar de 2022-01-01 a 2026-06-30, documenta fontes públicas e mantém pendentes polígono, séries tratadas, documentos técnicos, participação e revisão.
 
 ## 5. Infraestrutura de validação
 
@@ -149,7 +152,7 @@ A existência do CASO-001 não equivale a estudo concluído, diagnóstico oficia
 | `scripts/validate_links.py` | valida destinos internos e âncoras |
 | `scripts/validate_issue_forms.py` | valida formulários e template de pull request |
 | `scripts/generate_validation_report.py` | produz relatório consolidado e dívida manual conhecida |
-| `scripts/analyze_repository_structure.py` | calcula impacto de migração física |
+| `scripts/analyze_repository_structure.py` | calcula impacto de migração física e reconhece `casos/` |
 | `scripts/prepare_mkdocs.py` | prepara a árvore temporária do portal |
 | `.github/workflows/pages.yml` | valida, analisa, compara catálogo, compila e empacota |
 
@@ -163,7 +166,7 @@ O GOV-007 governa candidatura, elegibilidade, disponibilidade, proteção de dad
 
 O GOV-008 governa seleção, portão de prontidão, dados, participação, revisão, publicação, suspensão e encerramento de casos.
 
-O cadastro começa vazio. O CASO-001 deve publicar essa limitação e não pode simular revisão independente.
+O cadastro começa vazio. O CASO-001 publica essa limitação e não pode simular revisão independente.
 
 ## 7. Validação automática
 
@@ -188,7 +191,7 @@ Status registrados:
 
 O ARQ-003 preserva caminhos existentes e determina aplicações em `casos/`, relatórios em `relatorios/`, automações em `scripts/` e ativos em `docs/assets/`.
 
-A criação efetiva de `casos/` confirmou a estratégia híbrida sem mover documentos anteriores.
+A criação dos três documentos em `casos/` confirma a estratégia híbrida sem mover o núcleo documental.
 
 ## 9. Dívida documental e operacional
 
@@ -203,12 +206,14 @@ A criação efetiva de `casos/` confirmou a estratégia híbrida sem mover docum
 | DD-031 | ausência de política de revisão | resolvida | GOV-006 |
 | DD-032 | ausência de instância plural | aberta, controlada | regime provisório limita decisões críticas |
 | DD-033 | ausência de programa de revisores | resolvida | GOV-007 e instrumentos |
-| DD-035 | cadastro sem revisor elegível ou ativo | aberta, alta | realizar primeira chamada e avaliações públicas |
+| DD-035 | cadastro sem revisor elegível ou ativo | aberta, alta | issue #3 |
 | DD-036 | ausência de canal privado | aberta | não coletar conteúdo confidencial por issue |
-| DD-039 | ciclo entre GOV-003 e GOV-007 | resolvida | vínculo reclassificado como complementar |
 | DD-040 | ausência de protocolo para casos | resolvida | GOV-008 e FICHA-GOV-008 |
-| DD-041 | CASO-001 sem prontidão mínima | aberta, alta | delimitar território, fontes, responsáveis, dados e revisão |
-| DD-042 | catálogo não representava a sexta camada | resolvida | camada Aplicações e evidências incorporada ao gerador |
+| DD-041 | CASO-001 sem prontidão mínima | aberta, alta | issue #2 e registro de prontidão |
+| DD-042 | catálogo não representava a sexta camada | resolvida | camada incorporada ao gerador |
+| DD-043 | analisador estrutural não reconhecia a sexta camada | resolvida | mapeamento `Aplicações e evidências` para `casos/` |
+| DD-044 | polígono e documentos técnicos de Itapeba indisponíveis no acervo | aberta, alta | obter fontes oficiais antes do PPC-001 |
+| DD-045 | séries pluviométricas ainda não coletadas e testadas | aberta, alta | baixar dados brutos, documentar UTC e qualidade |
 
 ## 10. Plano progressivo
 
@@ -218,13 +223,13 @@ A criação efetiva de `casos/` confirmou a estratégia híbrida sem mover docum
 | 5 | catálogo e navegação | concluída |
 | 6 | validação automática | concluída |
 | 7 | estrutura física | concluída |
-| 8 | primeiros casos e evidências | iniciada |
+| 8 | primeiros casos e evidências | em execução |
 
 A evolução é governada pelos GOV-005 a GOV-008, com rigor proporcional e limites explícitos de capacidade.
 
 ## 11. Próxima ação
 
-Completar o portão de prontidão do CASO-001 e realizar a primeira chamada pública de revisores, sem inventar dados, presumir solução ou coletar conteúdo confidencial em issues.
+Obter polígono e documentação técnica da sub-bacia de Itapeba, testar as séries pluviométricas e realizar a primeira chamada pública de revisores antes de nova decisão do portão.
 
 ## 12. Histórico de alterações
 
@@ -239,5 +244,6 @@ Completar o portão de prontidão do CASO-001 e realizar a primeira chamada púb
 | 0.19.0 | 2026-07-18 | compatível | Publicação do GOV-006 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.20.0 | 2026-07-18 | compatível | Publicação do GOV-007 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.20.1 | 2026-07-18 | correção | Eliminação do ciclo GOV-003/GOV-007 | Projeto Pragmatismo Cívico |
-| 0.21.0 | 2026-07-18 | compatível | Publicação do GOV-008, ativação da sexta camada e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
+| 0.21.0 | 2026-07-18 | compatível | Publicação do GOV-008 e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
 | 0.21.1 | 2026-07-18 | correção | Sincronização da versão do Guia de Contribuição | Projeto Pragmatismo Cívico |
+| 0.22.0 | 2026-07-18 | compatível | Registro de prontidão, recorte de Itapeba e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
