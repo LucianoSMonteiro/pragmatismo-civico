@@ -1,7 +1,7 @@
 ---
 id: PPC-000A
 titulo: Ciclo de Vida dos Padrões
-versao: 0.1.0
+versao: 0.1.1
 status: rascunho
 tipo: padrao-transversal
 idioma: pt-BR
@@ -15,10 +15,10 @@ depende_de:
   - PPC-META-001
 produz_entrada_para: []
 relaciona_se_com:
-  - MODELO-DE-GOVERNANCA
+  - GOV-001
 substitui: []
 substituido_por: null
-compatibilidade: inicial
+compatibilidade: compativel
 proxima_revisao: null
 ---
 
@@ -622,3 +622,4 @@ A adoção será progressiva:
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
 | 0.1.0 | 2026-07-17 | inicial | Primeira publicação do ciclo de vida dos padrões | Projeto Pragmatismo Cívico |
+| 0.1.1 | 2026-07-17 | correção | Substituição do relacionamento legado pelo identificador canônico GOV-001 | Projeto Pragmatismo Cívico |
