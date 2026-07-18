@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.16.0
+versao: 0.17.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -25,6 +25,7 @@ relaciona_se_com:
   - GOV-005
   - GOV-006
   - GOV-007
+  - GOV-008
   - ARQ-003
 substitui: []
 substituido_por: null
@@ -76,13 +77,21 @@ Toda entrega deve preservar os princípios fundadores, resolver problema demonst
 
 ### Entregas
 
-- [ ] seleção transparente do primeiro caso;
-- [ ] aplicação completa do ciclo;
+- [x] protocolo de seleção e condução de casos — GOV-008;
+- [x] ficha de seleção, prontidão e condução — FICHA-GOV-008;
+- [x] índice público da camada de aplicações e evidências;
+- [x] seleção e preparação do primeiro caso — CASO-001, drenagem urbana e alerta preventivo em Maricá/RJ;
+- [ ] aprovação do portão de prontidão do CASO-001;
+- [ ] delimitação territorial, temporal e institucional do CASO-001;
+- [ ] aplicação do PPC-001 ao CASO-001;
+- [ ] aplicação completa do ciclo, quando proporcional e viável;
 - [ ] publicação de dados, hipóteses e limitações;
 - [ ] revisão independente;
 - [ ] avaliação da utilidade e do custo metodológico;
 - [ ] relatório de lições aprendidas;
 - [ ] atualização do framework com base nos testes.
+
+O CASO-001 está em preparação. Sua seleção não constitui diagnóstico, recomendação, validação empírica ou decisão oficial.
 
 ### Critério de conclusão
 
@@ -103,6 +112,7 @@ Ao menos três casos, em domínios distintos, devem produzir documentação audi
 - [x] registro de revisão e template de pull request;
 - [x] programa e cadastro público de revisores — GOV-007;
 - [x] ficha e formulário de candidatura;
+- [x] protocolo de casos demonstrativos — GOV-008;
 - [ ] primeira chamada pública e primeiras admissões;
 - [ ] fóruns de discussão pública;
 - [ ] instância plural permanente.
@@ -118,8 +128,9 @@ O projeto deve receber, revisar e incorporar contribuições sem perder coerênc
 ### Entregas
 
 - [x] infraestrutura reproduzível do portal;
-- [x] biblioteca navegável com 47 documentos;
-- [x] catálogo e mapa de relações;
+- [x] biblioteca navegável com 51 documentos;
+- [x] catálogo e mapa de relações nas seis camadas;
+- [x] índice público de casos e evidências;
 - [x] validação de metadados, grafo, links e catálogo;
 - [x] validação dos formulários e template de pull request;
 - [x] salvaguardas de privacidade na candidatura pública;
@@ -127,7 +138,6 @@ O projeto deve receber, revisar e incorporar contribuições sem perder coerênc
 - [x] artefatos e status separados de CI;
 - [ ] ativação inicial do GitHub Pages e primeiro deploy — issue #1;
 - [ ] painel de indicadores demonstrativo;
-- [ ] catálogo de estudos de caso;
 - [ ] versões para impressão;
 - [ ] Livro Base;
 - [ ] materiais educativos;
@@ -154,22 +164,25 @@ O GOV-006 governa funções, competência, independência, conflitos, quórum, d
 
 O GOV-007 governa candidatura, elegibilidade, disponibilidade, proteção de dados, formação de painéis e manutenção do cadastro.
 
-O cadastro público existe, mas permanece vazio. Isso significa que os requisitos permanentes de painel ainda não foram atingidos e que continuam aplicáveis os limites do regime provisório.
+O GOV-008 governa seleção, prontidão, condução, publicação, suspensão e encerramento de casos.
+
+O cadastro público de revisores permanece vazio. Isso mantém os limites do regime provisório e impede que o CASO-001 alegue revisão independente inexistente.
 
 ## Decisão arquitetural vigente
 
-O ARQ-003 preserva os caminhos existentes e direciona novas aplicações para `casos/` e relatórios para `relatorios/`. A decisão será revista após três casos, 60 documentos ou evidência de custo material.
+O ARQ-003 preserva caminhos existentes, direciona novas aplicações para `casos/` e relatórios para `relatorios/`. A decisão será revista após três casos, 60 documentos ou evidência de custo material.
 
 ## Prioridades imediatas
 
-1. selecionar e documentar o primeiro estudo de caso demonstrativo;
-2. realizar a primeira chamada pública de revisores e avaliar candidaturas sem coleta de dados confidenciais em issues;
-3. habilitar o GitHub Pages e confirmar o primeiro deploy — issue #1;
-4. criar a ficha padrão de indicadores;
-5. desenvolver o checklist de transparência e rastreabilidade;
-6. estruturar o protocolo de avaliação do framework;
-7. revisar a licença;
-8. preparar versões para impressão.
+1. completar o portão de prontidão do CASO-001 sem inventar dados ou presumir solução;
+2. realizar a primeira chamada pública de revisores e avaliar candidaturas sem dados confidenciais em issues;
+3. delimitar território, período, fontes e unidades responsáveis do CASO-001;
+4. habilitar o GitHub Pages e confirmar o primeiro deploy — issue #1;
+5. criar a ficha padrão de indicadores;
+6. desenvolver o checklist de transparência e rastreabilidade;
+7. estruturar o protocolo de avaliação do framework;
+8. revisar a licença;
+9. preparar versões para impressão.
 
 ## Controle de coerência
 
@@ -215,3 +228,4 @@ Antes de iniciar uma entrega, verificar:
 | 0.14.0 | 2026-07-18 | compatível | Publicação do GOV-005 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.15.0 | 2026-07-18 | compatível | Publicação do GOV-006 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.16.0 | 2026-07-18 | compatível | Publicação do GOV-007, cadastro, ficha, formulário e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
+| 0.17.0 | 2026-07-18 | compatível | Publicação do GOV-008, ativação da camada de aplicações e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
