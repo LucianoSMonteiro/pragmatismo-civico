@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.11.0
+versao: 0.12.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -29,6 +29,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-FONTES
   - CASO-001-DADOS-CHUVA
   - CICLO-PC-001
   - GOV-003
@@ -56,7 +57,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os **53 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O CASO-001 permanece em preparação na sub-bacia de Itapeba. Seu processador pluviométrico foi aprovado em teste sintético e possui protocolo de proveniência e qualidade, mas nenhum arquivo mensal real foi incorporado. Faltam polígono oficial, dados técnicos integrais, participação local e revisão independente. Não existe diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e o deploy público depende da ativação inicial do GitHub Pages na issue #1.
+**Estado atual:** desenvolvimento aberto. Os **54 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O CASO-001 permanece em preparação na sub-bacia de Itapeba. A matriz consolida 13 fontes públicas e o protocolo define processamento, retenção e descarte, mas nenhum polígono oficial, arquivo técnico integral ou dado mensal real foi incorporado. Não existe diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e o deploy público depende da ativação inicial do GitHub Pages na issue #1.
 
 </div>
 
@@ -88,9 +89,9 @@ Avance por diagnóstico, alternativas, decisão, implementação, avaliação e 
 
 ### Acompanhar o primeiro caso
 
-Veja o recorte de Itapeba, as fontes localizadas, o pipeline de dados e os bloqueios que impedem iniciar o diagnóstico.
+Veja as fontes localizadas, o estado de obtenção, as lacunas e os bloqueios que impedem iniciar o diagnóstico.
 
-[Consultar o protocolo pluviométrico](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md)
+[Consultar a matriz de fontes](casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md)
 
 </div>
 
@@ -213,9 +214,16 @@ O [registro de prontidão](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md):
 
 - refinou a pergunta decisória;
 - definiu período preliminar de 2022-01-01 a 2026-06-30;
-- identificou fontes oficiais a verificar;
-- registrou plano inicial de dados, atores, riscos e conflitos;
+- avaliou individualmente os requisitos do portão;
 - manteve o caso em preparação.
+
+A [matriz de fontes](casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md):
+
+- consolida 13 fontes públicas com identificadores `F-001` a `F-013`;
+- diferencia norma, plano, cartografia, comunicação e portal de dados;
+- registra cobertura, estado de obtenção, licença conhecida, hash, uso e risco;
+- declara que nenhuma fonte foi ainda obtida ou tratada para uso empírico;
+- relaciona as lacunas aos requisitos do portão.
 
 O [protocolo pluviométrico](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md):
 
@@ -224,14 +232,14 @@ O [protocolo pluviométrico](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md
 - normaliza UTC e horário de Brasília;
 - sinaliza datas inválidas, valores ausentes ou negativos, duplicidades e lacunas;
 - produz CSV, manifesto JSON e relatório Markdown;
-- é testado com fixture exclusivamente sintético.
+- é testado com fixture exclusivamente sintético;
+- define revisão a cada 90 dias, retenção por categoria, quarentena e descarte documentado.
 
 Continuam pendentes:
 
 - polígono oficial da sub-bacia — issue #6;
 - produtos técnicos e geometrias — issue #7;
 - downloads mensais reais e revisão das flags — issue #4;
-- matriz consolidada de fontes — issue #10;
 - participação local — issue #8;
 - revisão independente — issue #9.
 
@@ -267,9 +275,8 @@ Status registrados:
 ## Próximas entregas
 
 - realizar os downloads mensais autorizados — issue #4;
-- obter o polígono oficial — issue #6;
-- obter produtos técnicos — issue #7;
-- consolidar a matriz de fontes — issue #10;
+- obter e verificar o polígono oficial — issue #6;
+- obter produtos técnicos integrais — issue #7;
 - confirmar interlocutores e participação — issue #8;
 - realizar a primeira chamada pública de revisores — issue #3;
 - obter revisão técnica — issue #9;
@@ -291,7 +298,7 @@ O repositório utiliza atualmente a licença MIT. Sua adequação para documenta
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.11.0
+versao: 0.12.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -318,6 +325,7 @@ relaciona_se_com:
   - CASOS-INDEX
   - CASO-001
   - CASO-001-PRONTIDAO
+  - CASO-001-FONTES
   - CASO-001-DADOS-CHUVA
   - CICLO-PC-001
   - GOV-003
@@ -341,3 +349,4 @@ proxima_revisao: null
 | 0.9.0 | 2026-07-18 | compatível | Inclusão do GOV-008 e CASO-001 | Projeto Pragmatismo Cívico |
 | 0.10.0 | 2026-07-18 | compatível | Recorte de Itapeba, registro de prontidão e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
 | 0.11.0 | 2026-07-18 | compatível | Protocolo pluviométrico, pipeline sintético, quarto status de CI e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
+| 0.12.0 | 2026-07-18 | compatível | Matriz de fontes, política de retenção e linha de base de 54 documentos | Projeto Pragmatismo Cívico |
