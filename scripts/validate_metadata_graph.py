@@ -99,8 +99,7 @@ def has_current_version_in_history(document: Document) -> bool:
     source = (ROOT / document.path).read_text(encoding="utf-8")
     version = re.escape(str(document.metadata["versao"]))
     history_match = re.search(
-        r"^##+\s+(?:\d+(?:\.\d+)*\s*[-—.]?\s*)?"
-        r"Hist[oó]rico de (?:altera[cç][oõ]es|vers[oõ]es)\s*$",
+        r"^##+\s+(?:\d+(?:\.\d+)*\s*[-—.]?\s*)?Hist[oó]rico\b[^\n]*$",
         source,
         flags=re.MULTILINE | re.IGNORECASE,
     )
