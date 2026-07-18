@@ -1,8 +1,46 @@
+---
+id: MATRIZ-PPC-001
+titulo: Matriz de Avaliação de Políticas Públicas
+versao: 0.1.0
+status: rascunho
+tipo: ferramenta
+idioma: pt-BR
+data_criacao: null
+data_versao: 2026-07-18
+responsaveis:
+  - Projeto Pragmatismo Cívico
+aprovadores: []
+depende_de:
+  - PPC-001
+  - PPC-002
+  - PPC-003
+  - PPC-META-001
+  - ARQ-001
+produz_entrada_para: []
+relaciona_se_com:
+  - CICLO-PC-001
+  - FICHA-PPC-002
+  - FICHA-PPC-003
+  - FICHA-PPC-004
+  - MODELO-INDICADORES-001
+substitui: []
+substituido_por: null
+compatibilidade: inicial
+proxima_revisao: null
+documentos_associados:
+  - id: PPC-002
+    versao: 0.1.0
+  - id: PPC-003
+    versao: 0.1.0
+---
+
 # Matriz de Avaliação de Políticas Públicas
 
 ## Status
 
-Versão inicial para aplicação experimental e revisão pública.
+Rascunho inicial preparado para aplicação experimental e revisão pública. Não há registro de transição formal para os estados `piloto` ou `revisao-publica`.
+
+O campo `documentos_associados` registra os padrões e versões que esta ferramenta operacionaliza.
 
 ## Finalidade
 
@@ -198,3 +236,9 @@ A avaliação é considerada auditável quando um terceiro consegue reconstruir:
 ## Evolução
 
 A matriz deve ser testada em casos reais e revisada com base em resultados, dificuldades de uso e avaliações independentes, sempre preservando os princípios fundadores do Pragmatismo Cívico.
+
+## Histórico de alterações da ferramenta
+
+| Versão | Data | Tipo | Alteração | Responsável |
+|---|---|---|---|---|
+| 0.1.0 | 2026-07-18 | inicial | Migração documental para o PPC-META-001, identificação formal e vínculo às versões 0.1.0 dos PPC-002 e PPC-003 | Projeto Pragmatismo Cívico |
