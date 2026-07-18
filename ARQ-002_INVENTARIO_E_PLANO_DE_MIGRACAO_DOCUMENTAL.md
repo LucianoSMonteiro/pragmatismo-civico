@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.16.1
+versao: 0.17.0
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -18,6 +18,7 @@ depende_de:
 produz_entrada_para:
   - CATALOGO-DOCUMENTAL
   - VALIDACAO-AUTOMATICA-DE-METADADOS
+  - ARQ-003
 relaciona_se_com:
   - GOV-002
   - MKDOCS
@@ -33,21 +34,22 @@ proxima_revisao: null
 
 ## Status
 
-Rascunho ativo. As Fases 0 a 6 estão concluídas: os 39 documentos públicos estão identificados, versionados, catalogados e submetidos a validação automática de metadados, relações, links, âncoras, catálogo e build estrito.
+Rascunho ativo. As Fases 0 a 7 estão concluídas. Os 40 documentos públicos estão identificados, versionados, catalogados e submetidos a validação automática. A estrutura física vigente foi avaliada e a decisão registrada no ARQ-003.
 
-O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. Esse bloqueio é operacional e não invalida a aprovação do acervo nem da compilação.
+O GitHub Pages ainda depende de ativação inicial pelo proprietário, registrada na issue #1. Esse bloqueio operacional não invalida o acervo nem a compilação.
 
 ## 1. Objetivo
 
-Transformar a arquitetura do ARQ-001 em um processo verificável de inventário, catálogo, validação e evolução documental, sem mover arquivos sem benefício demonstrado, quebrar URLs ou inventar informações históricas.
+Transformar a arquitetura do ARQ-001 em um processo verificável de inventário, catálogo, validação e evolução documental, preservando URLs e histórico e evitando mudanças físicas sem benefício demonstrado.
 
 ## 2. Fontes canônicas
 
 O processo utiliza:
 
-- `mkdocs.yml` como fonte da navegação pública;
+- `mkdocs.yml` para a navegação pública;
 - metadados estruturados de cada documento;
-- `CATALOGO_DOCUMENTAL.md` como visão consolidada;
+- `CATALOGO_DOCUMENTAL.md` para a visão consolidada;
+- ARQ-003 para a decisão sobre caminhos e diretórios;
 - a branch padrão como fonte canônica;
 - commits, status e artefatos da CI como evidência operacional.
 
@@ -57,13 +59,13 @@ O processo utiliza:
 |---|---:|---|
 | Publicação e acesso | 3 | página inicial, guia e catálogo conformes |
 | Princípios e fundamentos | 6 | todos conformes |
-| Governança e arquitetura | 9 | todos conformes |
+| Governança e arquitetura | 10 | todos conformes, incluindo ARQ-003 |
 | Método | 10 | todos conformes |
 | Ferramentas | 11 | todas conformes e vinculadas aos padrões |
 | Aplicações e evidências | 0 | nenhum estudo de caso oficial publicado |
-| **Total** | **39** | **39 documentos validados** |
+| **Total** | **40** | **40 documentos catalogados e validados** |
 
-Trinta e oito documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável.
+Trinta e nove documentos usam cabeçalho YAML. O `README.md` utiliza representação estruturada equivalente em comentário HTML e seção colapsável.
 
 ## 4. Inventário resumido
 
@@ -71,8 +73,8 @@ Trinta e oito documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 
 | Documento | Identificador | Versão |
 |---|---|---:|
-| Página inicial | `PORTAL-INICIO` | 0.4.0 |
-| Guia de início | `GUIA-COMECAR` | 0.4.0 |
+| Página inicial | `PORTAL-INICIO` | 0.5.0 |
+| Guia de início | `GUIA-COMECAR` | 0.5.0 |
 | Catálogo documental | `CATALOGO-DOCUMENTAL` | 0.1.0 |
 
 ### 4.2 Princípios e fundamentos
@@ -88,17 +90,18 @@ Trinta e oito documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 
 ### 4.3 Governança e arquitetura
 
-| Documento | Identificador |
-|---|---|
-| Especificação do Ecossistema PPC | `PPC-000` |
-| Modelo de Governança | `GOV-001` |
-| Roadmap | `GOV-002` |
-| Guia de Contribuição | `GOV-003` |
-| Código de Conduta | `GOV-004` |
-| Metadados e Versionamento | `PPC-META-001` |
-| Ciclo de Vida dos Padrões | `PPC-000A` |
-| Arquitetura Documental | `ARQ-001` |
-| Inventário e Plano de Migração | `ARQ-002` |
+| Documento | Identificador | Versão |
+|---|---|---:|
+| Especificação do Ecossistema PPC | `PPC-000` | 0.1.0 |
+| Modelo de Governança | `GOV-001` | 0.1.0 |
+| Roadmap | `GOV-002` | 0.13.0 |
+| Guia de Contribuição | `GOV-003` | 0.1.0 |
+| Código de Conduta | `GOV-004` | 0.1.0 |
+| Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
+| Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
+| Arquitetura Documental | `ARQ-001` | 0.2.0 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.17.0 |
+| Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
 
@@ -139,113 +142,80 @@ Trinta e oito documentos usam cabeçalho YAML. O `README.md` utiliza representa�
 | `scripts/validate_metadata_graph.py` | valida campos, formatos, histórico, relações, substituições e ciclos |
 | `scripts/validate_links.py` | valida destinos internos e âncoras |
 | `scripts/generate_validation_report.py` | produz relatório consolidado e dívida manual conhecida |
-| `scripts/prepare_mkdocs.py` | prepara árvore temporária compatível com MkDocs |
-| `.github/workflows/pages.yml` | executa validação, compara catálogo, compila e empacota o portal |
+| `scripts/analyze_repository_structure.py` | calcula o impacto de uma migração física por camada |
+| `scripts/prepare_mkdocs.py` | prepara a árvore temporária compatível com MkDocs |
+| `.github/workflows/pages.yml` | valida, analisa, compara catálogo, compila e empacota o portal |
 
-## 6. Resultado da Fase 6
+## 6. Validação automática
 
-A execução final `29633147790`, no commit `d49f6ad9865823928f9b5d7071e724f572f70df7`, foi aprovada com:
+A CI verifica:
 
-| Medida | Resultado |
-|---|---:|
-| Documentos avaliados | 39 |
-| Dependências obrigatórias | 174 |
-| Saídas declaradas | 46 |
-| Relações complementares | 113 |
-| Substituições vigentes | 0 |
-| Destinos internos verificados | 126 |
-| Âncoras verificadas | 0 |
-| Erros | 0 |
-| Avisos | 0 |
-
-A automação verifica:
-
-- presença dos campos obrigatórios;
-- versões no formato `X.Y.Z`;
-- estados, idioma, datas e compatibilidade;
-- responsáveis e listas sem duplicidade;
-- presença da versão corrente no histórico;
-- existência de referências;
-- reciprocidade de saídas e substituições;
-- ciclos de dependências obrigatórias;
+- campos obrigatórios, versões, estados, datas e compatibilidade;
+- responsáveis, histórico e unicidade de identificadores;
+- existência e reciprocidade das relações obrigatórias;
+- substituições e ciclos de dependência;
 - links internos e âncoras;
 - correspondência entre catálogo gerado e publicado;
 - preparação e `mkdocs build --strict --clean`.
 
-Três status de commit são registrados:
+São registrados os status:
 
 - `documentation/validation`;
 - `documentation/catalog`;
 - `portal/build`.
 
-Os artefatos `validation-report`, `catalog-preview` e `github-pages` são preservados nas execuções aplicáveis. O relatório de validação permanece disponível por 14 dias, inclusive quando a execução é reprovada.
+Os artefatos incluem `validation-report`, `catalog-preview`, `structure-analysis` e `github-pages` nas execuções aplicáveis.
 
-## 7. Limites da automação
+## 7. Resultado da Fase 7
 
-A automação não substitui:
+A análise executada no run `29633432120`, com 39 documentos na linha de base, mostrou:
 
-- revisão humana do mérito;
-- aprovação metodológica;
-- avaliação da qualidade das evidências;
-- comprovação da adequação de uma mudança de versão;
-- registro formal de transições de estado;
-- validação empírica por aplicações reais.
+| Medida | Resultado |
+|---|---:|
+| Documentos na raiz | 38 |
+| Documentos que seriam movidos | 37 |
+| Links entre documentos públicos | 125 |
+| Referências potencialmente afetadas | 124 |
+| Entradas de navegação a revisar | 37 |
+
+A migração atingiria quase todo o acervo sem melhorar a navegação do portal, que já é lógica e independente da estrutura física.
+
+O ARQ-003 decidiu pela estrutura híbrida:
+
+- preservar os caminhos existentes;
+- usar `casos/` para novas aplicações;
+- usar `relatorios/` para relatórios oficiais;
+- manter automações, workflows e ativos nos diretórios atuais;
+- reavaliar após três casos oficiais, 60 documentos ou evidência de custo material da estrutura vigente.
 
 ## 8. Dívida documental e operacional
 
 | ID | Problema | Estado | Tratamento |
 |---|---|---|---|
-| DD-005 | acervo predominantemente na raiz | aberta, baixa | avaliar na Fase 7 |
-| DD-007 | validação automática incompleta | resolvida | Fase 6 concluída |
+| DD-005 | acervo predominantemente na raiz | controlada | estrutura híbrida adotada no ARQ-003 |
 | DD-008 | ausência de estudos de caso | aberta, alta | preparar primeiro caso demonstrativo |
 | DD-009 | datas históricas incompletas | controlada | preservar `null` e commits |
 | DD-015 | README incompatível com front matter comum | controlada | representação equivalente reconhecida |
 | DD-018 | GitHub Pages não habilitado | aberta | issue #1 |
-| DD-019 | configuração original do MkDocs inválida | resolvida | árvore temporária e saída isolada |
-| DD-020 | relações obrigatórias indevidas | resolvida | reclassificação e validação automática |
-| DD-021 | possível deriva do catálogo | resolvida | comparação obrigatória na CI |
-| DD-022 | validação não produzia diagnóstico persistente | resolvida | relatório e log preservados como artefato |
-| DD-023 | parser de histórico não reconhecia títulos numerados ou qualificados | resolvida | parser ampliado sem dispensar a versão corrente |
-| DD-024 | prévia do catálogo era preservada somente após comparação | resolvida | artefato enviado antes da verificação |
-| DD-025 | divergência do catálogo era registrada como falha de build | resolvida | status `documentation/catalog` separado |
+| DD-026 | migração física ameaçaria quase todos os links | resolvida | caminhos existentes preservados |
+| DD-027 | crescimento futuro poderia ampliar a raiz indefinidamente | controlada | casos e relatórios terão diretórios próprios |
 
 ## 9. Plano progressivo
 
-### Fases 0 a 4 — Migração e cobertura
+| Fase | Tema | Estado |
+|---|---|---|
+| 0 a 4 | migração e cobertura | concluídas |
+| 5 | catálogo e navegação | concluída |
+| 6 | validação automática | concluída |
+| 7 | estrutura física | concluída |
 
-**Estado:** concluídas.
+A evolução arquitetural deixa de ser uma migração em aberto. Alterações futuras dependerão dos gatilhos e requisitos do ARQ-003.
 
-### Fase 5 — Catálogo e navegação
+## 10. Próxima ação
 
-**Estado:** concluída.
+A prioridade geral passa a ser a governança de mudanças: criar um processo formal de propostas, análise, decisão, implementação e registro público. Em paralelo, deve ser preparado o primeiro estudo de caso demonstrativo.
 
-### Fase 6 — Validação automática
-
-**Estado:** concluída.
-
-### Fase 7 — Estrutura física
-
-**Estado:** próxima decisão arquitetural.
-
-A Fase 7 deve comparar os custos e benefícios de manter os documentos na raiz ou migrá-los para diretórios por camada. Nenhum arquivo será movido sem plano de redirecionamento, verificação de links e benefício demonstrado.
-
-## 10. Decisões desta versão
-
-Esta versão decide que:
-
-- a Fase 6 está concluída;
-- a CI deve preservar relatório e prévia antes de qualquer interrupção;
-- validação, catálogo e build possuem status distintos;
-- o bloqueio do Pages permanece separado da validação do acervo;
-- a estrutura física não será alterada automaticamente;
-- a próxima prioridade geral do projeto é formalizar propostas de mudança;
-- a próxima prioridade arquitetural é avaliar a Fase 7.
-
-## 11. Próxima ação
-
-Formalizar o processo de propostas de mudança no eixo de governança e, em paralelo, preparar uma decisão fundamentada sobre a Fase 7 da arquitetura documental.
-
-## 12. Histórico de alterações
+## 11. Histórico de alterações
 
 | Versão | Data | Tipo | Alteração | Responsável |
 |---|---|---|---|---|
@@ -264,7 +234,8 @@ Formalizar o processo de propostas de mudança no eixo de governança e, em para
 | 0.13.0 | 2026-07-18 | compatível | Conclusão da Fase 4B e reparos normativos | Projeto Pragmatismo Cívico |
 | 0.14.0 | 2026-07-18 | compatível | Conclusão da Fase 4C e cobertura dos 38 documentos | Projeto Pragmatismo Cívico |
 | 0.14.1 | 2026-07-18 | correção | Sincronização do README 0.2.2 | Projeto Pragmatismo Cívico |
-| 0.15.0 | 2026-07-18 | compatível | Conclusão da Fase 5, publicação do catálogo e estabilização do build | Projeto Pragmatismo Cívico |
+| 0.15.0 | 2026-07-18 | compatível | Conclusão da Fase 5 e publicação do catálogo | Projeto Pragmatismo Cívico |
 | 0.15.1 | 2026-07-18 | correção | Registro da verificação de deriva do catálogo | Projeto Pragmatismo Cívico |
-| 0.16.0 | 2026-07-18 | compatível | Conclusão da Fase 6, validação integral e relatório persistente | Projeto Pragmatismo Cívico |
-| 0.16.1 | 2026-07-18 | correção | Sincronização das versões de entrada, execução final, artefatos e terceiro status da CI | Projeto Pragmatismo Cívico |
+| 0.16.0 | 2026-07-18 | compatível | Conclusão da Fase 6 e validação automática completa | Projeto Pragmatismo Cívico |
+| 0.16.1 | 2026-07-18 | correção | Sincronização das versões e dos três status de CI | Projeto Pragmatismo Cívico |
+| 0.17.0 | 2026-07-18 | compatível | Conclusão da Fase 7, adoção da estrutura híbrida e incorporação do ARQ-003 | Projeto Pragmatismo Cívico |
