@@ -1,0 +1,4 @@
+.mkdocs-src/
+site/
+__pycache__/
+*.py[cod]
