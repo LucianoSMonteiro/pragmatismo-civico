@@ -1,7 +1,7 @@
 ---
 id: GOV-002
 titulo: Roadmap do Pragmatismo Cívico
-versao: 0.17.0
+versao: 0.18.0
 status: rascunho
 tipo: governanca
 idioma: pt-BR
@@ -27,6 +27,8 @@ relaciona_se_com:
   - GOV-007
   - GOV-008
   - ARQ-003
+  - CASO-001
+  - CASO-001-PRONTIDAO
 substitui: []
 substituido_por: null
 compatibilidade: compativel
@@ -80,18 +82,25 @@ Toda entrega deve preservar os princípios fundadores, resolver problema demonst
 - [x] protocolo de seleção e condução de casos — GOV-008;
 - [x] ficha de seleção, prontidão e condução — FICHA-GOV-008;
 - [x] índice público da camada de aplicações e evidências;
-- [x] seleção e preparação do primeiro caso — CASO-001, drenagem urbana e alerta preventivo em Maricá/RJ;
-- [ ] aprovação do portão de prontidão do CASO-001;
-- [ ] delimitação territorial, temporal e institucional do CASO-001;
-- [ ] aplicação do PPC-001 ao CASO-001;
-- [ ] aplicação completa do ciclo, quando proporcional e viável;
-- [ ] publicação de dados, hipóteses e limitações;
-- [ ] revisão independente;
-- [ ] avaliação da utilidade e do custo metodológico;
-- [ ] relatório de lições aprendidas;
-- [ ] atualização do framework com base nos testes.
+- [x] seleção do primeiro caso — CASO-001;
+- [x] recorte preliminar para a sub-bacia de Itapeba;
+- [x] período preliminar de 2022-01-01 a 2026-06-30;
+- [x] inventário inicial de fontes oficiais e registro de prontidão;
+- [x] decisão motivada de manter o caso em preparação;
+- [ ] obter polígono oficial da sub-bacia de Itapeba;
+- [ ] obter produtos técnicos, projetos, geometrias e cronogramas;
+- [ ] coletar e testar séries pluviométricas e registros administrativos;
+- [ ] confirmar interlocutores e plano participativo local;
+- [ ] obter capacidade de revisão compatível;
+- [ ] aprovar, suspender ou encerrar o portão de prontidão;
+- [ ] aplicar o PPC-001 somente após aprovação do portão;
+- [ ] aplicar o ciclo completo quando proporcional e viável;
+- [ ] publicar dados, hipóteses e limitações;
+- [ ] avaliar utilidade e custo metodológico;
+- [ ] publicar relatório de lições aprendidas;
+- [ ] atualizar o framework com base nos testes.
 
-O CASO-001 está em preparação. Sua seleção não constitui diagnóstico, recomendação, validação empírica ou decisão oficial.
+O CASO-001 continua em preparação. O registro de fontes e a delimitação preliminar não constituem diagnóstico, recomendação, avaliação de órgão ou validação empírica.
 
 ### Critério de conclusão
 
@@ -128,7 +137,7 @@ O projeto deve receber, revisar e incorporar contribuições sem perder coerênc
 ### Entregas
 
 - [x] infraestrutura reproduzível do portal;
-- [x] biblioteca navegável com 51 documentos;
+- [x] biblioteca navegável com 52 documentos;
 - [x] catálogo e mapa de relações nas seis camadas;
 - [x] índice público de casos e evidências;
 - [x] validação de metadados, grafo, links e catálogo;
@@ -166,23 +175,26 @@ O GOV-007 governa candidatura, elegibilidade, disponibilidade, proteção de dad
 
 O GOV-008 governa seleção, prontidão, condução, publicação, suspensão e encerramento de casos.
 
-O cadastro público de revisores permanece vazio. Isso mantém os limites do regime provisório e impede que o CASO-001 alegue revisão independente inexistente.
+O cadastro público de revisores permanece vazio. Isso impede que o CASO-001 alegue revisão independente e mantém o portão em preparação.
 
 ## Decisão arquitetural vigente
 
-O ARQ-003 preserva caminhos existentes, direciona novas aplicações para `casos/` e relatórios para `relatorios/`. A decisão será revista após três casos, 60 documentos ou evidência de custo material.
+O ARQ-003 preserva caminhos existentes, direciona aplicações para `casos/` e relatórios para `relatorios/`. A decisão será revista após três casos, 60 documentos ou evidência de custo material.
 
 ## Prioridades imediatas
 
-1. completar o portão de prontidão do CASO-001 sem inventar dados ou presumir solução;
-2. realizar a primeira chamada pública de revisores e avaliar candidaturas sem dados confidenciais em issues;
-3. delimitar território, período, fontes e unidades responsáveis do CASO-001;
-4. habilitar o GitHub Pages e confirmar o primeiro deploy — issue #1;
-5. criar a ficha padrão de indicadores;
-6. desenvolver o checklist de transparência e rastreabilidade;
-7. estruturar o protocolo de avaliação do framework;
-8. revisar a licença;
-9. preparar versões para impressão.
+1. obter o polígono oficial da sub-bacia de Itapeba;
+2. coletar e testar as séries da estação Cemaden Itapeba;
+3. obter produtos técnicos do Programa Municipal de Drenagem e das intervenções de 2026;
+4. confirmar interlocutores, registros agregados e plano participativo;
+5. realizar a primeira chamada pública de revisores;
+6. emitir nova decisão do portão de prontidão;
+7. habilitar o GitHub Pages — issue #1;
+8. criar a ficha padrão de indicadores;
+9. desenvolver o checklist de transparência e rastreabilidade;
+10. estruturar o protocolo de avaliação do framework;
+11. revisar a licença;
+12. preparar versões para impressão.
 
 ## Controle de coerência
 
@@ -227,5 +239,6 @@ Antes de iniciar uma entrega, verificar:
 | 0.13.0 | 2026-07-18 | compatível | Conclusão da Fase 7 | Projeto Pragmatismo Cívico |
 | 0.14.0 | 2026-07-18 | compatível | Publicação do GOV-005 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.15.0 | 2026-07-18 | compatível | Publicação do GOV-006 e instrumentos | Projeto Pragmatismo Cívico |
-| 0.16.0 | 2026-07-18 | compatível | Publicação do GOV-007, cadastro, ficha, formulário e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
-| 0.17.0 | 2026-07-18 | compatível | Publicação do GOV-008, ativação da camada de aplicações e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
+| 0.16.0 | 2026-07-18 | compatível | Publicação do GOV-007 e instrumentos | Projeto Pragmatismo Cívico |
+| 0.17.0 | 2026-07-18 | compatível | Publicação do GOV-008 e seleção preparatória do CASO-001 | Projeto Pragmatismo Cívico |
+| 0.18.0 | 2026-07-18 | compatível | Recorte preliminar de Itapeba, inventário de fontes e decisão de manter o portão fechado | Projeto Pragmatismo Cívico |
