@@ -2,7 +2,7 @@
 ---
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.12.0
+versao: 0.13.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -30,6 +30,7 @@ relaciona_se_com:
   - CASO-001
   - CASO-001-PRONTIDAO
   - CASO-001-FONTES
+  - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
   - CICLO-PC-001
   - GOV-003
@@ -57,7 +58,7 @@ O **Pragmatismo Cívico** é um framework aberto para governança e decisões de
 
 <div class="pc-status" markdown>
 
-**Estado atual:** desenvolvimento aberto. Os **54 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O CASO-001 permanece em preparação na sub-bacia de Itapeba. A matriz consolida 13 fontes públicas e o protocolo define processamento, retenção e descarte, mas nenhum polígono oficial, arquivo técnico integral ou dado mensal real foi incorporado. Não existe diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e o deploy público depende da ativação inicial do GitHub Pages na issue #1.
+**Estado atual:** desenvolvimento aberto. Os **55 documentos** da navegação canônica estão identificados, versionados e submetidos à validação automática. O CASO-001 permanece em preparação na sub-bacia de Itapeba. A matriz consolida 15 fontes e os protocolos pluviométrico e geoespacial possuem validadores aprovados apenas com fixtures sintéticos. Nenhuma feição oficial de Itapeba, arquivo mensal real ou produto técnico integral foi incorporado. Não existe diagnóstico, recomendação ou resultado empírico. O cadastro de revisores permanece vazio e o deploy público depende da ativação inicial do GitHub Pages na issue #1.
 
 </div>
 
@@ -89,9 +90,9 @@ Avance por diagnóstico, alternativas, decisão, implementação, avaliação e 
 
 ### Acompanhar o primeiro caso
 
-Veja as fontes localizadas, o estado de obtenção, as lacunas e os bloqueios que impedem iniciar o diagnóstico.
+Veja fontes, geosserviços candidatos, protocolos de dados e bloqueios que impedem iniciar o diagnóstico.
 
-[Consultar a matriz de fontes](casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md)
+[Consultar o protocolo geoespacial](casos/CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md)
 
 </div>
 
@@ -210,20 +211,23 @@ Seleção GOV-008 → registro de prontidão → decisão do portão
 
 O [CASO-001](casos/CASO-001_DRENAGEM_URBANA_E_ALERTA_PREVENTIVO_EM_MARICA.md) prepara um estudo sobre drenagem urbana e alerta preventivo na sub-bacia de Itapeba, em Maricá/RJ.
 
-O [registro de prontidão](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md):
-
-- refinou a pergunta decisória;
-- definiu período preliminar de 2022-01-01 a 2026-06-30;
-- avaliou individualmente os requisitos do portão;
-- manteve o caso em preparação.
+O [registro de prontidão](casos/CASO-001_REGISTRO_DE_PRONTIDAO.md) refinou a pergunta, definiu o período preliminar, avaliou os requisitos do portão e manteve o caso em preparação.
 
 A [matriz de fontes](casos/CASO-001_MATRIZ_DE_FONTES_E_LACUNAS.md):
 
-- consolida 13 fontes públicas com identificadores `F-001` a `F-013`;
+- consolida 15 fontes públicas com identificadores `F-001` a `F-015`;
 - diferencia norma, plano, cartografia, comunicação e portal de dados;
-- registra cobertura, estado de obtenção, licença conhecida, hash, uso e risco;
-- declara que nenhuma fonte foi ainda obtida ou tratada para uso empírico;
+- inclui uma camada poligonal estadual de sub-bacias e a hidrografia RJ25;
+- declara que nenhuma fonte foi obtida ou tratada para uso empírico;
 - relaciona as lacunas aos requisitos do portão.
+
+O [protocolo geoespacial](casos/CASO-001_PROTOCOLO_DE_GEOMETRIA_E_DELIMITACAO.md):
+
+- registra fontes candidatas do GeoINEA;
+- exige preservar consulta, arquivo, parâmetros, licença e hash;
+- impede tratar linha de drenagem, bairro ou croqui como polígono oficial;
+- valida estrutura GeoJSON, anéis, coordenadas, extensão e nome esperado;
+- é testado apenas com polígono sintético.
 
 O [protocolo pluviométrico](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md):
 
@@ -231,13 +235,13 @@ O [protocolo pluviométrico](casos/CASO-001_PROTOCOLO_DE_DADOS_PLUVIOMETRICOS.md
 - calcula SHA-256 das fontes;
 - normaliza UTC e horário de Brasília;
 - sinaliza datas inválidas, valores ausentes ou negativos, duplicidades e lacunas;
-- produz CSV, manifesto JSON e relatório Markdown;
-- é testado com fixture exclusivamente sintético;
-- define revisão a cada 90 dias, retenção por categoria, quarentena e descarte documentado.
+- produz CSV, manifesto e relatório;
+- é testado apenas com fixture sintético;
+- define retenção, quarentena e descarte.
 
 Continuam pendentes:
 
-- polígono oficial da sub-bacia — issue #6;
+- feição oficial e memória de delimitação — issue #6;
 - produtos técnicos e geometrias — issue #7;
 - downloads mensais reais e revisão das flags — issue #4;
 - participação local — issue #8;
@@ -262,6 +266,7 @@ A CI verifica:
 - salvaguardas públicas de privacidade;
 - template de pull request;
 - pipeline pluviométrico com dados sintéticos;
+- pipeline GeoJSON com geometrias sintéticas;
 - catálogo nas seis camadas e estrutura física;
 - `mkdocs build --strict --clean`.
 
@@ -269,13 +274,14 @@ Status registrados:
 
 - `documentation/validation`;
 - `data/pipeline`;
+- `geodata/pipeline`;
 - `documentation/catalog`;
 - `portal/build`.
 
 ## Próximas entregas
 
 - realizar os downloads mensais autorizados — issue #4;
-- obter e verificar o polígono oficial — issue #6;
+- obter e verificar a feição oficial — issue #6;
 - obter produtos técnicos integrais — issue #7;
 - confirmar interlocutores e participação — issue #8;
 - realizar a primeira chamada pública de revisores — issue #3;
@@ -298,7 +304,7 @@ O repositório utiliza atualmente a licença MIT. Sua adequação para documenta
 ```yaml
 id: PORTAL-INICIO
 titulo: Pragmatismo Cívico — Página inicial
-versao: 0.12.0
+versao: 0.13.0
 status: rascunho
 tipo: publicacao
 idioma: pt-BR
@@ -326,6 +332,7 @@ relaciona_se_com:
   - CASO-001
   - CASO-001-PRONTIDAO
   - CASO-001-FONTES
+  - CASO-001-GEOMETRIA
   - CASO-001-DADOS-CHUVA
   - CICLO-PC-001
   - GOV-003
@@ -350,3 +357,4 @@ proxima_revisao: null
 | 0.10.0 | 2026-07-18 | compatível | Recorte de Itapeba, registro de prontidão e linha de base de 52 documentos | Projeto Pragmatismo Cívico |
 | 0.11.0 | 2026-07-18 | compatível | Protocolo pluviométrico, pipeline sintético, quarto status de CI e linha de base de 53 documentos | Projeto Pragmatismo Cívico |
 | 0.12.0 | 2026-07-18 | compatível | Matriz de fontes, política de retenção e linha de base de 54 documentos | Projeto Pragmatismo Cívico |
+| 0.13.0 | 2026-07-18 | compatível | Protocolo geoespacial, validador GeoJSON, quinto status de CI e linha de base de 55 documentos | Projeto Pragmatismo Cívico |
