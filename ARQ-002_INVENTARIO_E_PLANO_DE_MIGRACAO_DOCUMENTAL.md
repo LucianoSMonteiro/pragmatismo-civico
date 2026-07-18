@@ -1,7 +1,7 @@
 ---
 id: ARQ-002
 titulo: Inventário e Plano de Migração Documental
-versao: 0.20.0
+versao: 0.20.1
 status: rascunho
 tipo: arquitetura
 idioma: pt-BR
@@ -105,12 +105,12 @@ Quarenta e seis documentos usam cabeçalho YAML. O `README.md` utiliza represent
 | Código de Conduta | `GOV-004` | 0.1.0 |
 | Processo de Propostas de Mudança | `GOV-005` | 0.1.1 |
 | Política de Revisão e Aprovação | `GOV-006` | 0.1.0 |
-| Programa e Cadastro de Revisores | `GOV-007` | 0.1.0 |
+| Programa e Cadastro de Revisores | `GOV-007` | 0.1.1 |
 | Cadastro Público de Revisores | `CADASTRO-REVISORES` | 0.1.1 |
 | Metadados e Versionamento | `PPC-META-001` | 0.2.0 |
 | Ciclo de Vida dos Padrões | `PPC-000A` | 0.1.1 |
 | Arquitetura Documental | `ARQ-001` | 0.2.0 |
-| Inventário e Plano de Migração | `ARQ-002` | 0.20.0 |
+| Inventário e Plano de Migração | `ARQ-002` | 0.20.1 |
 | Decisão sobre a Estrutura Física | `ARQ-003` | 0.1.0 |
 
 ### 4.4 Método
@@ -191,6 +191,7 @@ O ARQ-003 preserva caminhos existentes e determina aplicações em `casos/`, rel
 | DD-036 | ausência de canal privado para informação confidencial | aberta | não coletar dados confidenciais por issue; definir canal antes de necessidade real |
 | DD-037 | formulário de candidatura teve YAML inválido | resolvida | indentação e placeholder corrigidos; contrato incorporado à CI |
 | DD-038 | saída da FICHA-GOV-007 não era recíproca | resolvida | cadastro passou a depender da ficha |
+| DD-039 | GOV-003 e GOV-007 formavam ciclo obrigatório | resolvida | GOV-007 passou a relacionar-se com o guia sem depender dele |
 
 ## 10. Plano progressivo
 
@@ -219,3 +220,4 @@ Selecionar e documentar o primeiro estudo de caso demonstrativo e realizar a pri
 | 0.18.0 | 2026-07-18 | compatível | Publicação do GOV-005 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.19.0 | 2026-07-18 | compatível | Publicação do GOV-006 e instrumentos | Projeto Pragmatismo Cívico |
 | 0.20.0 | 2026-07-18 | compatível | Publicação do GOV-007, ficha, formulário, cadastro e salvaguardas de privacidade | Projeto Pragmatismo Cívico |
+| 0.20.1 | 2026-07-18 | correção | Sincronização da versão do GOV-007 e registro da eliminação do ciclo com GOV-003 | Projeto Pragmatismo Cívico |
