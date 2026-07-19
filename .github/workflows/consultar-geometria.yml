@@ -1,0 +1,130 @@
+name: Consultar geometria oficial
+
+on:
+  workflow_dispatch:
+    inputs:
+      nome:
+        description: Nome a consultar no campo sub_bacias
+        required: true
+        default: Itapeba
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/consultar-geometria.yml
+      - scripts/consultar_subbacia_inea.py
+      - scripts/validar_geojson_subbacia.py
+      - tests/test_consultar_subbacia_inea.py
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  consultar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Testar cliente de aquisição
+        run: python -m unittest discover -s tests -p 'test_consultar_subbacia_inea.py'
+
+      - name: Consultar camada oficial
+        id: query
+        shell: bash
+        env:
+          NOME: ${{ inputs.nome || 'Itapeba' }}
+        run: |
+          set +e
+          python scripts/consultar_subbacia_inea.py \
+            --name "$NOME" \
+            --output-dir acquisition \
+            > acquisition.log 2>&1
+          status=$?
+          cat acquisition.log
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          if [[ -f acquisition/query-manifest.json ]]; then
+            count=$(python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('acquisition/query-manifest.json').read_text(encoding='utf-8'))
+          print(data.get('response', {}).get('feature_count', -1))
+          PY
+            )
+          else
+            count=-1
+          fi
+          echo "feature_count=$count" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Validar geometria retornada
+        id: geometry
+        if: steps.query.outputs.status == '0' && steps.query.outputs.feature_count != '0'
+        shell: bash
+        run: |
+          set +e
+          python scripts/validar_geojson_subbacia.py \
+            --input acquisition/response.geojson \
+            --manifest acquisition/geometry-manifest.json \
+            --report acquisition/geometry-report.md \
+            --source-url "$(python -c "import json; print(json.load(open('acquisition/query-manifest.json'))['query']['url'])")" \
+            --accessed-at "$(date -u +%F)" \
+            --source-srid EPSG:4674 \
+            --expected-name "${{ inputs.nome || 'Itapeba' }}" \
+            > geometry-validation.log 2>&1
+          status=$?
+          cat geometry-validation.log
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Registrar status da consulta
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          query_status="${{ steps.query.outputs.status }}"
+          count="${{ steps.query.outputs.feature_count }}"
+          geometry_status="${{ steps.geometry.outputs.status }}"
+          if [[ "$query_status" != "0" ]]; then
+            state=failure
+            description="Falha ao consultar ou preservar a resposta do GeoINEA"
+          elif [[ "$count" == "0" ]]; then
+            state=success
+            description="Consulta preservada: nenhuma correspondência nominal"
+          elif [[ "$geometry_status" == "0" ]]; then
+            state=success
+            description="Consulta preservada e geometria estruturalmente válida"
+          else
+            state=failure
+            description="Feição encontrada, mas a validação geométrica falhou"
+          fi
+          gh api --method POST \
+            "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+            -f state="$state" \
+            -f context="geodata/source-query" \
+            -f description="$description" \
+            -f target_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
+            > /dev/null
+
+      - name: Preservar consulta e validação
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: geoinea-itapeba-query
+          path: |
+            acquisition/
+            acquisition.log
+            geometry-validation.log
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Interromper em falha material
+        if: steps.query.outputs.status != '0' || (steps.query.outputs.feature_count != '0' && steps.geometry.outputs.status != '0')
+        run: exit 1
