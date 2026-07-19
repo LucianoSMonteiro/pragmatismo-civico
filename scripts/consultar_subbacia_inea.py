@@ -17,7 +17,7 @@ DEFAULT_LAYER_URL = (
     "https://geoportal.inea.rj.gov.br/server/rest/services/"
     "Recursos_Hidricos_Gestao_Costeira/MapServer/4/query"
 )
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -25,8 +25,9 @@ def sha256_bytes(data: bytes) -> str:
 
 
 def build_query_url(base_url: str, name: str, out_sr: int) -> str:
+    escaped_name = name.upper().replace("'", "''")
     params = {
-        "where": f"UPPER(sub_bacias) LIKE '%{name.upper().replace("'", "''")}%'",
+        "where": f"UPPER(sub_bacias) LIKE '%{escaped_name}%'",
         "outFields": "*",
         "returnGeometry": "true",
         "outSR": str(out_sr),
