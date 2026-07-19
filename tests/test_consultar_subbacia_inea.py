@@ -8,7 +8,7 @@ import threading
 import unittest
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs, urlsplit
+from urllib.parse import parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts" / "consultar_subbacia_inea.py"
@@ -29,8 +29,9 @@ class Handler(BaseHTTPRequestHandler):
         ],
     }
 
-    def do_GET(self) -> None:  # noqa: N802
-        query = parse_qs(urlsplit(self.path).query)
+    def do_POST(self) -> None:  # noqa: N802
+        length = int(self.headers.get("Content-Length", "0"))
+        query = parse_qs(self.rfile.read(length).decode("utf-8"))
         if query.get("f") != ["geojson"] or query.get("outSR") != ["4674"]:
             self.send_response(400)
             self.end_headers()
@@ -64,6 +65,10 @@ class ConsultarSubbaciaIneaTest(unittest.TestCase):
                         f"http://127.0.0.1:{server.server_port}/query",
                         "--output-dir",
                         str(output),
+                        "--timeout",
+                        "5",
+                        "--retries",
+                        "2",
                     ],
                     cwd=ROOT,
                     capture_output=True,
@@ -72,6 +77,8 @@ class ConsultarSubbaciaIneaTest(unittest.TestCase):
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
                 manifest = json.loads((output / "query-manifest.json").read_text(encoding="utf-8"))
+                self.assertEqual(manifest["query"]["method"], "POST")
+                self.assertEqual(manifest["query"]["attempts_used"], 1)
                 self.assertEqual(manifest["http"]["status"], 200)
                 self.assertEqual(manifest["response"]["feature_count"], 1)
                 self.assertEqual(manifest["response"]["matched_names"], ["Itapeba teste"])
