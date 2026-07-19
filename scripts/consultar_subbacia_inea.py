@@ -7,6 +7,8 @@ import argparse
 import hashlib
 import json
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -17,32 +19,61 @@ DEFAULT_LAYER_URL = (
     "https://geoportal.inea.rj.gov.br/server/rest/services/"
     "Recursos_Hidricos_Gestao_Costeira/MapServer/4/query"
 )
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 
 
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def build_query_url(base_url: str, name: str, out_sr: int) -> str:
+def build_query_params(name: str, out_sr: int) -> dict[str, str]:
     escaped_name = name.upper().replace("'", "''")
-    params = {
+    return {
         "where": f"UPPER(sub_bacias) LIKE '%{escaped_name}%'",
         "outFields": "*",
         "returnGeometry": "true",
         "outSR": str(out_sr),
         "f": "geojson",
     }
+
+
+def build_query_url(base_url: str, params: dict[str, str]) -> str:
     return f"{base_url}?{urllib.parse.urlencode(params)}"
 
 
-def fetch(url: str, timeout: float) -> tuple[bytes, dict[str, str], int]:
-    request = urllib.request.Request(
-        url,
-        headers={"User-Agent": "pragmatismo-civico-geodata/0.1"},
-    )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return response.read(), dict(response.headers.items()), int(response.status)
+def fetch(
+    base_url: str,
+    params: dict[str, str],
+    timeout: float,
+    retries: int,
+) -> tuple[bytes, dict[str, str], int, int]:
+    body = urllib.parse.urlencode(params).encode("utf-8")
+    last_error: Exception | None = None
+    for attempt in range(1, retries + 1):
+        request = urllib.request.Request(
+            base_url,
+            data=body,
+            method="POST",
+            headers={
+                "User-Agent": "pragmatismo-civico-geodata/0.2",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "application/geo+json, application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return (
+                    response.read(),
+                    dict(response.headers.items()),
+                    int(response.status),
+                    attempt,
+                )
+        except (TimeoutError, urllib.error.URLError, urllib.error.HTTPError) as error:
+            last_error = error
+            if attempt < retries:
+                time.sleep(min(2 ** (attempt - 1), 8))
+    assert last_error is not None
+    raise last_error
 
 
 def validate_payload(raw: bytes) -> dict[str, Any]:
@@ -65,8 +96,12 @@ def main() -> int:
     parser.add_argument("--layer-url", default=DEFAULT_LAYER_URL)
     parser.add_argument("--out-sr", type=int, default=4674)
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--timeout", type=float, default=45.0)
+    parser.add_argument("--timeout", type=float, default=120.0)
+    parser.add_argument("--retries", type=int, default=3)
     args = parser.parse_args()
+
+    if args.retries < 1:
+        parser.error("--retries deve ser maior ou igual a 1")
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -74,11 +109,17 @@ def main() -> int:
     manifest_path = output_dir / "query-manifest.json"
     report_path = output_dir / "query-report.md"
 
-    query_url = build_query_url(args.layer_url, args.name, args.out_sr)
+    params = build_query_params(args.name, args.out_sr)
+    query_url = build_query_url(args.layer_url, params)
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
     try:
-        raw, headers, status = fetch(query_url, args.timeout)
+        raw, headers, status, attempts = fetch(
+            args.layer_url,
+            params,
+            args.timeout,
+            args.retries,
+        )
         raw_path.write_bytes(raw)
         payload = validate_payload(raw)
         features = payload["features"]
@@ -95,10 +136,15 @@ def main() -> int:
             "tool": {"name": "consultar_subbacia_inea.py", "version": VERSION},
             "generated_at_utc": generated_at,
             "query": {
+                "method": "POST",
                 "layer_url": args.layer_url,
-                "url": query_url,
+                "display_url": query_url,
+                "parameters": params,
                 "name": args.name,
                 "out_sr": args.out_sr,
+                "timeout_seconds": args.timeout,
+                "max_attempts": args.retries,
+                "attempts_used": attempts,
             },
             "http": {
                 "status": status,
@@ -136,6 +182,8 @@ def main() -> int:
                     "",
                     f"- **Data UTC:** `{generated_at}`",
                     f"- **Nome consultado:** `{args.name}`",
+                    f"- **Método:** `POST`",
+                    f"- **Tentativas usadas:** {attempts}",
                     f"- **HTTP:** `{status}`",
                     f"- **Feições:** {len(features)}",
                     f"- **Nomes retornados:** {', '.join(names) if names else '—'}",
@@ -154,7 +202,16 @@ def main() -> int:
         failure = {
             "tool": {"name": "consultar_subbacia_inea.py", "version": VERSION},
             "generated_at_utc": generated_at,
-            "query": {"url": query_url, "name": args.name, "out_sr": args.out_sr},
+            "query": {
+                "method": "POST",
+                "layer_url": args.layer_url,
+                "display_url": query_url,
+                "parameters": params,
+                "name": args.name,
+                "out_sr": args.out_sr,
+                "timeout_seconds": args.timeout,
+                "max_attempts": args.retries,
+            },
             "error": f"{type(error).__name__}: {error}",
         }
         manifest_path.write_text(
