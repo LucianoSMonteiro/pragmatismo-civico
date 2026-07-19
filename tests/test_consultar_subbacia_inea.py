@@ -15,30 +15,40 @@ SCRIPT = ROOT / "scripts" / "consultar_subbacia_inea.py"
 
 
 class Handler(BaseHTTPRequestHandler):
-    payload = {
-        "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "properties": {"sub_bacias": "Itapeba teste"},
-                "geometry": {
-                    "type": "Polygon",
-                    "coordinates": [[[-42.9, -22.9], [-42.8, -22.9], [-42.8, -22.8], [-42.9, -22.9]]],
-                },
-            }
-        ],
-    }
-
     def do_POST(self) -> None:  # noqa: N802
         length = int(self.headers.get("Content-Length", "0"))
         query = parse_qs(self.rfile.read(length).decode("utf-8"))
-        if query.get("f") != ["geojson"] or query.get("outSR") != ["4674"]:
+        if query.get("f") == ["json"] and query.get("returnGeometry") == ["false"]:
+            payload = {
+                "features": [
+                    {"attributes": {"objectid": 7, "sub_bacias": "Itapeba teste"}},
+                    {"attributes": {"objectid": 8, "sub_bacias": "Outra bacia"}},
+                ]
+            }
+            content_type = "application/json"
+        elif query.get("f") == ["geojson"] and query.get("objectIds") == ["7"]:
+            payload = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {"objectid": 7, "sub_bacias": "Itapeba teste"},
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [[[-42.9, -22.9], [-42.8, -22.9], [-42.8, -22.8], [-42.9, -22.9]]],
+                        },
+                    }
+                ],
+            }
+            content_type = "application/geo+json"
+        else:
             self.send_response(400)
             self.end_headers()
             return
-        raw = json.dumps(self.payload).encode("utf-8")
+
+        raw = json.dumps(payload).encode("utf-8")
         self.send_response(200)
-        self.send_header("Content-Type", "application/geo+json")
+        self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(raw)))
         self.end_headers()
         self.wfile.write(raw)
@@ -48,7 +58,7 @@ class Handler(BaseHTTPRequestHandler):
 
 
 class ConsultarSubbaciaIneaTest(unittest.TestCase):
-    def test_preserva_resposta_manifesto_e_relatorio(self) -> None:
+    def test_preserva_indice_resposta_manifesto_e_relatorio(self) -> None:
         server = HTTPServer(("127.0.0.1", 0), Handler)
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -77,13 +87,15 @@ class ConsultarSubbaciaIneaTest(unittest.TestCase):
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
                 manifest = json.loads((output / "query-manifest.json").read_text(encoding="utf-8"))
-                self.assertEqual(manifest["query"]["method"], "POST")
-                self.assertEqual(manifest["query"]["attempts_used"], 1)
-                self.assertEqual(manifest["http"]["status"], 200)
+                self.assertEqual(manifest["index_query"]["method"], "POST")
+                self.assertEqual(manifest["index_query"]["attempts_used"], 1)
+                self.assertEqual(manifest["selection"]["object_ids"], [7])
+                self.assertEqual(manifest["selection"]["matched_names"], ["Itapeba teste"])
                 self.assertEqual(manifest["response"]["feature_count"], 1)
-                self.assertEqual(manifest["response"]["matched_names"], ["Itapeba teste"])
                 self.assertFalse(manifest["response"]["empty"])
+                self.assertEqual(manifest["response"]["origin"], "geoinea")
                 self.assertEqual(len(manifest["response"]["sha256"]), 64)
+                self.assertTrue((output / "index-response.json").is_file())
                 self.assertTrue((output / "response.geojson").is_file())
                 self.assertIn("correspondencia_nominal", manifest["interpretation"])
         finally:
